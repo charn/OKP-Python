@@ -50,15 +50,64 @@
     
 	<h2>2. Alkiorakenne – millaisista palikoista ohjelmat rakennetaan</h2>
 	<ul>
-        <li>tunnukset</li>
-        <li>varatut sanat, avainsanat</li>
-        <li>literaalivakiot</li>
-        <li>erottimet, sisennykset, rivinvaihdot</li>
+        <li><a href="#tunnukset">tunnukset</a></li>
+        <li><a href="#varatut-sanat">varatut sanat, avainsanat</a></li>
+        <li><a href="#literaalivakiot">literaalivakiot</a></li>
+        <li><a href="#erottimet-yms">erottimet, sisennykset, rivinvaihdot</a></li>
         <li>...</li>
         <li>havainnollisia selostettuja pieniä esimerkkejä</li>
         <li>arvio kieleen valittujen ratkaisujen eduista ja haitoista</li>
     </ul>
+    <h3 id="tunnukset">Tunnukset</h3>
+    <p>Python 3:ssa tunnukset voidaan nimetä käyttäen merkkejä a-z, A-Z, 0-9 ja _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet ja iso kirjamiet tulkitaan eri kirjaimiksi. Tunnukset voivat olla rajoittamattoman pituisia. Lisäksi Python 3 tukee joitain ASCII-järjestelmän ulkpuolisia unicode-merkkejä. Tarkempi listaus tuetuista merkeistä löytyy osoitteesta: <a href="http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>. Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue, excluding ID_Start. Näiden merkkijoukkojen yhdiste sisältää kaikki unicode-merkit joita voi esiintyä python tunnuksen nimessä, siten että tunnuksen nimi voi alkaa vain ensimmäisen joukon merkillä.
+    <a href="#ref-tunnukset-py3-spec">Lähde</a>
+    </p>
+    <p>Seuraavassa lyhyt esimerkki joka demonstroi erikoisempien merkkien käyttöä Python 3 ohjelmassa:
+    <pre>
+#!/usr/bin/python3.1
+# -*- coding: UTF-8 -*-
+
+def python_3_tukee_unicodemerkkejä_varsin_laajasti(ភាសាខ្មែរ="khemrin kieli khmeriksi"):
+	print("Hei vaan ja hellurei!", ភាសាខ្មែរ)
+	
+	epävalidia_python_koodia='kuitenkin_esim_€_merkki_ei_ole_sallittu = "epic fai"'
+	try:
+		exec(epävalidia_python_koodia)
+	except SyntaxError as se:
+		print("€-merkki ei ollut sallittu muuttujan nimessä :'(", se)
+	
+	validia_python_koodia = epävalidia_python_koodia.replace("€", "e")
+	exec(validia_python_koodia)
+	print("Hyvin pyyhkii. No problemo, kun €-merkit vaihdettiin e-kirjaimiksi")
+
+if __name__ == "__main__":
+	python_3_tukee_unicodemerkkejä_varsin_laajasti()
+</pre>
+	<a href="esimerkit/unicode_sample.py">Lataa esimerkki tästä</a>
+    </p>
+    
+    <h3 id="varatut-sanat">Varatut sanat</h3>
+    <p>
+    Seuraavassa listattuna (Pyton 3.0.1:n mukainen, tässä on pieniä eroavaisuuksia 2.x -sarjan kanssa) varatut sanat sen tarkemmin niitä esittelemättä.
+    	<pre>
+False      class      finally    is         return
+None       continue   for        lambda     try
+True       def        from       nonlocal   while
+and        del        global     not        with
+as         elif       if         or         yield
+assert     else       import     pass
+break      except     in         raise</pre>
+<a href="#ref-varatut-sanat-py3-spec">Lähde</a>
+    </p>
+    
+    <h3 id="literaalivakiot">Literaalivakiot</h3>
+    <p>
     
     <h2>Lähteet</h2>
+    <ul>
+    	<li id="ref-varatut-sanat-py3-spec"><a href="http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#keywords">http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#keywords</a></li>
+    	
+    	<li id="ref-tunnukset-py3-spec"><a href="http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords">http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords</a></li>
+	</ul>
 </body>
 </html>
