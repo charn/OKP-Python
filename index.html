@@ -1,78 +1,96 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
 
+<html>
 <head>
-    <title>OKP: Python kevytspesifikaatio</title>
-    <meta http-equiv="content-type" 
-        content="text/html;charset=utf-8" />
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+
+  <title>OKP: Python kevytspesifikaatio</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
 </head>
 
 <body>
-    <h1>OKP: Python kevytspesifikaatio</h1>
+  <h1>OKP: Python kevytspesifikaatio</h1>
 
-    <h2>Työryhmä</h2>
-    <ul> 
-        <li>Juhani Åhman &lt;juhani.ahman@cs.helsinki.fi&gt;</li>
-        <li>Juha Louhiranta &lt;juha.louhiranta@helsinki.fi&gt;</li>
-        <li>Matti Nauha &lt;mtnauha@cs.helsinki.fi&gt;</li>
-        <li>Timo Lehto &lt;timo.lehto@cs.helsinki.fi&gt;</li>
-    </ul>
-    
-    <h2>1. Kielen taustaa ja miniesimerkki</h2>
-	<p>
-		kuka/ketkä-missä-milloin-miksi, mihin käyttöön, ...,<br/>
-		<ul>
-			<li>Keskeinen suunnittelufilosofia: selkeä, luettava syntaksi</li>
-			<li>Tulkattava</li>
-			<li>Oliosuuntautunut ohjelmointikieli</li>
-			<li>Korkean tason dynaamiset datatyypit</li>
-			<li>Kattavat standardikirjastot ja saatavilla paljon kolmansien osapuolien moduuleja eri tarkoituksiin</li>
-			<li>Poikkeuksiin <i>(exception)</i> pohjautuva virheiden hallinta</li>
-			<li>Tukee useita ohjelmointiparadigmoja <i>(esim. oliopohjainen, proseduraalinen, funktionaalinen)</i></li>
-			<li>Toimii useilla eri alustoilla, esim.
-				<ul>
-					<li>Windows</li>
-					<li>Mac</li>
-					<li>Linux</li>
-					<li>Amiga</li>
-					<li>Nokia series 60</li>
-				</ul>
-			</li>
-			<li>Avoin lähdekoodi, vapaasti käytettävissä ja jaettavissa (myös kaupalliseen käyttöön)</li>
-			<li>Upotettavissa sovelluksiin skriptausrajapintana <i>(esim. Blender)</i></li>
-		</ul>
-	</p>
-	<p>
-		Yleisin Pythonin toteutus on CPython, joka on kirjoitettu C-kielellä. 
-		CPython kääntää Python ohjelmat. Se kääntää Python ohjelmat 
-		tavukoodiksi, joka suoritetaan virtuaalikoneessa. CPython on saatavilla 
-		useille eri käyttöjärjestelmille ja sen mukana tulee 
-		laaja peruskirjasto.
-	</p>
-	<p>
-		Muita Python toteutuksia on esimerkiksi Jython, IronPython ja PyPy.
-	</p>
-	<p>
-		Käyttökohteet...
-	</p>
-	<p>
-		...
-	</p>
-    
-    <h3>Fibonacci esimerkki</h3>
-    <p>
-        Seuraavassa esimerkki ohjelmasta, joka lukee yhden syöttöluvun, 
-        laskee ensimmäisen Fibonaccin luvun, joka on syöttölukua suurempi 
-        ja lopuksi tulostaa kyseisen Fibonaccin luvun.
-    </p> 
-    <pre>
+  <h2>Työryhmä</h2>
+
+  <ul>
+    <li>Juhani Åhman &lt;juhani.ahman@cs.helsinki.fi&gt;</li>
+
+    <li>Juha Louhiranta &lt;juha.louhiranta@helsinki.fi&gt;</li>
+
+    <li>Matti Nauha &lt;mtnauha@cs.helsinki.fi&gt;</li>
+
+    <li>Timo Lehto &lt;timo.lehto@cs.helsinki.fi&gt;</li>
+  </ul>
+
+  <h2>1. Kielen taustaa ja miniesimerkki</h2>
+
+  <p>kuka/ketkä-missä-milloin-miksi, mihin käyttöön, ...,<br></p>
+
+  <ul>
+    <li>Keskeinen suunnittelufilosofia: selkeä, luettava syntaksi</li>
+
+    <li>Tulkattava</li>
+
+    <li>Oliosuuntautunut ohjelmointikieli</li>
+
+    <li>Korkean tason dynaamiset datatyypit</li>
+
+    <li>Kattavat standardikirjastot ja saatavilla paljon kolmansien osapuolien
+    moduuleja eri tarkoituksiin</li>
+
+    <li>Poikkeuksiin <i>(exception)</i> pohjautuva virheiden hallinta</li>
+
+    <li>Tukee useita ohjelmointiparadigmoja <i>(esim. oliopohjainen,
+    proseduraalinen, funktionaalinen)</i></li>
+
+    <li>Toimii useilla eri alustoilla, esim.
+
+      <ul>
+        <li>Windows</li>
+
+        <li>Mac</li>
+
+        <li>Linux</li>
+
+        <li>Amiga</li>
+
+        <li>Nokia series 60</li>
+      </ul>
+    </li>
+
+    <li>Avoin lähdekoodi, vapaasti käytettävissä ja jaettavissa (myös
+    kaupalliseen käyttöön)</li>
+
+    <li>Upotettavissa sovelluksiin skriptausrajapintana <i>(esim.
+    Blender)</i></li>
+  </ul>
+
+  <p>Yleisin Pythonin toteutus on CPython, joka on kirjoitettu C-kielellä.
+  CPython kääntää Python ohjelmat. Se kääntää Python ohjelmat tavukoodiksi,
+  joka suoritetaan virtuaalikoneessa. CPython on saatavilla useille eri
+  käyttöjärjestelmille ja sen mukana tulee laaja peruskirjasto.</p>
+
+  <p>Muita Python toteutuksia on esimerkiksi Jython, IronPython ja PyPy.</p>
+
+  <p>Käyttökohteet...</p>
+
+  <p>...</p>
+
+  <h3>Fibonacci esimerkki</h3>
+
+  <p>Seuraavassa esimerkki ohjelmasta, joka lukee yhden syöttöluvun, laskee
+  ensimmäisen Fibonaccin luvun, joka on syöttölukua suurempi ja lopuksi
+  tulostaa kyseisen Fibonaccin luvun.</p>
+  <pre>
 import sys
 
 def fib(n):
     """Palauttaa ensimmäisen Fibonaccin luvun, joka on syöttölukua suurempi."""
     a, b = 0, 1
-    while b <= n:
+    while b &lt;= n:
         a, b = b, a+b
     return b
 
@@ -82,67 +100,70 @@ if __name__ == "__main__":
     except ValueError:
         sys.exit("Antamasi syöte ei ollut kokonaisluku!")
     print(fib(n))
-    </pre>
-    <p>
-        Ensimmäisen rivin <code>import sys</code> lause importtaa eli tuo 
-        fibonacci-moduulin sys-moduulin käytettäväksi. sys-moduulin exit-metodia
-        käytetään ohjelman loppupuolella päättämään ohjelman suoritus sopivalla 
-        virheviestillä, jos käyttäjän antama syöte ei ollut kokonaisluku.
-    </p>
-    <p>
-    	Varsinainen Fibonacci luvun laskeminen tapahtuu fib-funktiossa.
-    	fib-funktio asettaa ensiksi muuttujille a ja b Fibonaccin lukujonon 
-    	alkuarvot <code>a = 0</code> ja <code>b = 1</code>. Lukujonon lukuja 
-    	lasketaan while-silmukassa, kunnes viimeisin laskettu Fibonaccin luku
-    	<code>b = a+b</code> on syöttölukua suurempi. Lopuksi palautamme 
-    	halutun luvun. 
-    </p>
-    <p>
-        Koska Python ohjelmissa ei ole varsinaista "pääohjelmafunktiota", 
-        niin se yleensä merkitään näkyviin 
-        <code>if __name__ == "__main__":</code> lauseella. Tämä suorittaa 
-        pääohjelma-alueen vain kun moduuli suoritetaan pääohjelmana eikä 
-        importattuna jostain toisesta moduulista.
-    </p>
-    <p>
-        Käyttäjän syöte luetaan input-funktiolla. fib-funktiota varten 
-        halutaan kokonaislukusyöte. Syötteen tyyppi on 
-        riippuvainen käyttäjästä, joten se muutetaan kokonaisluvuksi ennen 
-        fib-funktion kutsua <code>int(x)</code>-kutsulla. Kokonaislukumuutos 
-        voi kuitenkin epäonnistua, jolloin <code>int(x)</code> nostaa 
-        <code>ValueError</code> poikkeuksen. Jotta käyttäjälle saadaan annettua 
-        sopiva virheviesti, niin käsittelemme poikkeuksen try-except-rakenteen 
-        avulla. Pääohjelman lopuksi kutsumme fib-funktiota syötteellä ja 
-        tulostamme sen palautusarvon.
-    </p>
     
-    <h2>2. Alkiorakenne – millaisista palikoista ohjelmat rakennetaan</h2>
-    <ul>
-        <li><a href="#tunnukset">tunnukset</a></li>
-        <li><a href="#varatut-sanat">varatut sanat, avainsanat</a></li>
-        <li><a href="#literaalivakiot">literaalivakiot</a></li>
-        <li><a href="#erottimet-yms">erottimet, sisennykset, rivinvaihdot</a></li>
-        <li>...</li>
-        <li>havainnollisia selostettuja pieniä esimerkkejä</li>
-        <li>arvio kieleen valittujen ratkaisujen eduista ja haitoista</li>
-    </ul>
-    <h3 id="tunnukset">Tunnukset</h3>
-    <p>Python 3:ssa tunnukset voidaan nimetä käyttäen merkkejä a-z, A-Z, 0-9 ja 
-    _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet ja iso kirjamiet 
-    tulkitaan eri kirjaimiksi. Tunnukset voivat olla rajoittamattoman pituisia. 
-    Lisäksi Python 3 tukee joitain ASCII-järjestelmän ulkpuolisia 
-    unicode-merkkejä. Tarkempi listaus tuetuista merkeistä löytyy osoitteesta: 
-    <a href="http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">
-    http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>. 
-    Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue, excluding 
-    ID_Start. Näiden merkkijoukkojen yhdiste sisältää kaikki unicode-merkit 
-    joita voi esiintyä python tunnuksen nimessä, siten että tunnuksen nimi voi 
-    alkaa vain ensimmäisen joukon merkillä.
-    <a href="#ref-tunnukset-py3-spec">Lähde</a>
-    </p>
-    <p>Seuraavassa lyhyt esimerkki joka demonstroi erikoisempien merkkien 
-    käyttöä Python 3 ohjelmassa:
-    <pre>
+</pre>
+
+  <p>Ensimmäisen rivin <code>import sys</code> lause importtaa eli tuo
+  fibonacci-moduulin sys-moduulin käytettäväksi. sys-moduulin exit-metodia
+  käytetään ohjelman loppupuolella päättämään ohjelman suoritus sopivalla
+  virheviestillä, jos käyttäjän antama syöte ei ollut kokonaisluku.</p>
+
+  <p>Varsinainen Fibonacci luvun laskeminen tapahtuu fib-funktiossa.
+  fib-funktio asettaa ensiksi muuttujille a ja b Fibonaccin lukujonon alkuarvot
+  <code>a = 0</code> ja <code>b = 1</code>. Lukujonon lukuja lasketaan
+  while-silmukassa, kunnes viimeisin laskettu Fibonaccin luku <code>b =
+  a+b</code> on syöttölukua suurempi. Lopuksi palautamme halutun luvun.</p>
+
+  <p>Koska Python ohjelmissa ei ole varsinaista "pääohjelmafunktiota", niin se
+  yleensä merkitään näkyviin <code>if __name__ == "__main__":</code> lauseella.
+  Tämä suorittaa pääohjelma-alueen vain kun moduuli suoritetaan pääohjelmana
+  eikä importattuna jostain toisesta moduulista.</p>
+
+  <p>Käyttäjän syöte luetaan input-funktiolla. fib-funktiota varten halutaan
+  kokonaislukusyöte. Syötteen tyyppi on riippuvainen käyttäjästä, joten se
+  muutetaan kokonaisluvuksi ennen fib-funktion kutsua
+  <code>int(x)</code>-kutsulla. Kokonaislukumuutos voi kuitenkin epäonnistua,
+  jolloin <code>int(x)</code> nostaa <code>ValueError</code> poikkeuksen. Jotta
+  käyttäjälle saadaan annettua sopiva virheviesti, niin käsittelemme
+  poikkeuksen try-except-rakenteen avulla. Pääohjelman lopuksi kutsumme
+  fib-funktiota syötteellä ja tulostamme sen palautusarvon.</p>
+
+  <h2>2. Alkiorakenne – millaisista palikoista ohjelmat rakennetaan</h2>
+
+  <ul>
+    <li><a href="#tunnukset">tunnukset</a></li>
+
+    <li><a href="#varatut-sanat">varatut sanat, avainsanat</a></li>
+
+    <li><a href="#literaalivakiot">literaalivakiot</a></li>
+
+    <li><a href="#erottimet-yms">erottimet, sisennykset, rivinvaihdot</a></li>
+
+    <li>...</li>
+
+    <li>havainnollisia selostettuja pieniä esimerkkejä</li>
+
+    <li>arvio kieleen valittujen ratkaisujen eduista ja haitoista</li>
+  </ul>
+
+  <h3 id="tunnukset">Tunnukset</h3>
+
+  <p>Python 3:ssa tunnukset voidaan nimetä käyttäen merkkejä a-z, A-Z, 0-9 ja
+  _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet ja iso kirjamiet
+  tulkitaan eri kirjaimiksi. Tunnukset voivat olla rajoittamattoman pituisia.
+  Lisäksi Python 3 tukee joitain ASCII-järjestelmän ulkpuolisia
+  unicode-merkkejä. Tarkempi listaus tuetuista merkeistä löytyy osoitteesta:
+  <a href=
+  "http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>.
+  Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue, excluding
+  ID_Start. Näiden merkkijoukkojen yhdiste sisältää kaikki unicode-merkit joita
+  voi esiintyä python tunnuksen nimessä, siten että tunnuksen nimi voi alkaa
+  vain ensimmäisen joukon merkillä. <a href=
+  "#ref-tunnukset-py3-spec">Lähde</a></p>
+
+  <p>Seuraavassa lyhyt esimerkki joka demonstroi erikoisempien merkkien käyttöä
+  Python 3 ohjelmassa:</p>
+  <pre>
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
 
@@ -161,39 +182,41 @@ def python_3_tukee_unicodemerkkejä_varsin_laajasti(ភាសាខ្មែរ=
 
 if __name__ == "__main__":
     python_3_tukee_unicodemerkkejä_varsin_laajasti()
-    </pre>
-    <a href="esimerkit/unicode_sample.py">Lataa esimerkki tästä</a>
-    </p>
     
-    <h3 id="varatut-sanat">Varatut sanat</h3>
-    <p>
-    Seuraavassa listattuna (Pyton 3.0.1:n mukainen, tässä on pieniä 
-    eroavaisuuksia 2.x -sarjan kanssa) varatut sanat sen tarkemmin niitä 
-    esittelemättä.
-        <pre>
+</pre>
+
+  <p><a href="esimerkit/unicode_sample.py">Lataa esimerkki tästä</a></p>
+
+  <h3 id="varatut-sanat">Varatut sanat</h3>
+
+  <p>Seuraavassa listattuna (Pyton 3.0.1:n mukainen, tässä on pieniä
+  eroavaisuuksia 2.x -sarjan kanssa) varatut sanat sen tarkemmin niitä
+  esittelemättä.</p>
+  <pre>
 False      class      finally    is         return
 None       continue   for        lambda     try
 True       def        from       nonlocal   while
 and        del        global     not        with
 as         elif       if         or         yield
 assert     else       import     pass
-break      except     in         raise</pre>
-<a href="#ref-varatut-sanat-py3-spec">Lähde</a>
-    </p>
-    
-    <h3 id="literaalivakiot">Literaalivakiot</h3>
-    <p>
-    
-    <h2>Lähteet</h2>
-    <ul>
-        <li id="ref-varatut-sanat-py3-spec"><a 
-        href="http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#keywords">
-        http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#keywords</a></li>
+break      except     in         raise
         
-        <li id="ref-tunnukset-py3-spec"><a 
-        href="http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords">
-        http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords</a></li>
-    </ul>
+</pre>
+
+  <p><a href="#ref-varatut-sanat-py3-spec">Lähde</a></p>
+
+  <h3 id="literaalivakiot">Literaalivakiot</h3>
+
+  <h2>Lähteet</h2>
+
+  <ul>
+    <li id="ref-varatut-sanat-py3-spec"><a href=
+    "http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#keywords">
+    http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#keywords</a></li>
+
+    <li id="ref-tunnukset-py3-spec"><a href=
+    "http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords">
+    http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords</a></li>
+  </ul>
 </body>
 </html>
-
