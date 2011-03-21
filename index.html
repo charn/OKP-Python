@@ -143,21 +143,21 @@ if __name__ == "__main__":
 
     <li>havainnollisia selostettuja pieniä esimerkkejä</li>
 
-    <li>arvio kieleen valittujen ratkaisujen eduista ja haitoista</li>
+    <li><a href="#edut-ja-haitat">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</a></li>
   </ul>
 
   <h3 id="tunnukset">Tunnukset</h3>
 
   <p>Python 3:ssa tunnukset voidaan nimetä käyttäen merkkejä a-z, A-Z, 0-9 ja
-  _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet ja iso kirjamiet
+  _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet ja iso kirjaimet
   tulkitaan eri kirjaimiksi. Tunnukset voivat olla rajoittamattoman pituisia.
-  Lisäksi Python 3 tukee joitain ASCII-järjestelmän ulkpuolisia
+  Lisäksi Python 3 tukee joitakin ASCII-järjestelmän ulkpuolisia
   unicode-merkkejä. Tarkempi listaus tuetuista merkeistä löytyy osoitteesta:
   <a href=
   "http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>.
   Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue, excluding
   ID_Start. Näiden merkkijoukkojen yhdiste sisältää kaikki unicode-merkit joita
-  voi esiintyä python tunnuksen nimessä, siten että tunnuksen nimi voi alkaa
+  voi esiintyä python-tunnuksen nimessä, siten että tunnuksen nimi voi alkaa
   vain ensimmäisen joukon merkillä. <a href=
   "#ref-tunnukset-py3-spec">Lähde</a></p>
 
@@ -184,6 +184,12 @@ if __name__ == "__main__":
     python_3_tukee_unicodemerkkejä_varsin_laajasti()
     
 </pre>
+	<p>Yllä oleva python ohjelma tulostaa konsoliin tekstin:</p>
+	<pre>
+Hei vaan ja hellurei! khemrin kieli khmeriksi
+€-merkki ei ollut sallittu muuttujan nimessä :'( invalid character in identifier (&lt;string&gt;, line 1)
+Hyvin pyyhkii. No problemo, kun €-merkit vaihdettiin e-kirjaimiksi
+	</pre>
 
   <p><a href="esimerkit/unicode_sample.py">Lataa esimerkki tästä</a></p>
 
@@ -201,11 +207,30 @@ as         elif       if         or         yield
 assert     else       import     pass
 break      except     in         raise
         
-</pre>
+  </pre>
 
   <p><a href="#ref-varatut-sanat-py3-spec">Lähde</a></p>
 
   <h3 id="literaalivakiot">Literaalivakiot</h3>
+  
+  <h3 id="edut-ja-haitat">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</h3>
+  <p>Unicode-tuki python 3:ssa tekee aidosti mahdolliseksi ohjelmoinnin ohjelmoijan
+  omalla äidinkielellä. Tämä on varmasti monessa mielessä hyvä asia ja sen hyödyntäminen
+  todennäköisesti parantaa koodin luettavuutta kehittäjäyhteisössä. Toisaalta tällä alalla
+  ei ole ollenkaan tavatonta, että ohjelmaa kehitetään ympäri maailmaa ja kehittäjien
+  äidinkielet vaihtelevat suuresti. Tällöin on käytettävä jotakin yhteistä kieltä eli siis
+  yleensä englantia ja tämä unicode-tuki ei juurikaan auta. Toinen tilanne jolloin koodia
+  ei varmaankaan haluta tehdä äidinkielellä on, jos tuotetaan avoimen lähdekoodin
+  ratkaisuja. Muutoin saatetaan varsin tehokkaasti eliminoida iso osa käyttäjäyhteisön
+  potentiaalista jatkokehittää tuotetta. Yleisestiottaen tuote joka on ohjelmoitu vaikkapa
+  suomeksi rajoittaa jatkokehitysmahdollisuuksia vaikka alkuperäisen kehitystyön kannalta
+  kielivalinnalla olisikin ollut positiivisia vaikutuksia. Kustannussyistä jatkokehitys
+  saatettaisiin joissain tilanteissa haluta tuottaa jossakin edullisemmassa maassa, mutta
+  tämä ei nyt olekaan mahdollista ilman huomattavaa käännöstyötä. Kun lisäksi otetaan
+  huomioon, että unicode-tuen sisällyttäminen tunnuksiin monimutkaistaa kielen
+  implementaatioiden toteuttamista, niin olen kyllä henkilökohtaisesti hieman skeptinen
+  koko ominaisuuden järkevyydestä. En kyllä itse ainakaan ikinä ohjelmoisi vakavissani
+  mitään millään muulla kielellä kuin englannilla.</p>
 
   <h2>Lähteet</h2>
 
@@ -218,5 +243,7 @@ break      except     in         raise
     "http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords">
     http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords</a></li>
   </ul>
+  
+  
 </body>
 </html>
