@@ -12,6 +12,9 @@
 
 <body>
   <h1>OKP: Python kevytspesifikaatio</h1>
+  
+  <p>Kurssi: <a href="http://www.cs.helsinki.fi/u/wikla/OKP/K11/">581362
+  Ohjelmointikielten periaatteet, kevät 2011 (4 op)</a></p>
 
   <h2>Työryhmä</h2>
 
@@ -26,6 +29,30 @@
   </ul>
 
   <h2>1. Kielen taustaa ja miniesimerkki</h2>
+
+  <h3>Historia</h3>
+  
+  <p>Pythonin historia alkaa 1980-luvulta. Ensimmäinen versio
+  ohjelmointikielestä kehitettiin 80-luvun loppupuolella Guido
+  van Rossumin toimesta. Python kehitettiin ABC kielen seuraajaksi, joka kykenee
+  mm. poikkeusten käsittelyyn ja yhteistyöhön Amoeba -käyttöjärjestelmän kanssa.
+  Kielen alun perin kehittänyt van Rossum on edelleen aktiivisesti mukana
+  kielen kehittämisessä</p>
+  
+  <p>Python 2.0, julkaistiin 16. lokakuuta 2000. Toinen versio sisälsi useita 
+  uusia ominaisuuksia, mukaan lukien täydellisen roskienkeruumekanismin ja
+  Unicode-tuen. Muutos tapahtui myös kielen kehitysprosessissa. Python
+  -yhteisölle annettiin vapaammat kädet osallistua mukaan kielen kehitykseen.</p>
+
+  <p>Joulukuussa 2008 ilmestyi 3.0, jolla haluttiin korjata
+  havaittuja ongelmia kielessä. Kielestä haluttiin poistaa duplikaatteja
+  ominaisuuksia poistamalla vanhat tavat tehdä asioita. 3.x ei ole taaksepäin
+  yhteensopiva versioiden 2.x ja vanhempien kanssa. Vanhoille versioille kirjoitetut ohjelmat
+  eivät toimi suoraan versiossa 3.0. Siirtymän helpottamiseksi on toteutettu
+  käännösohjelma (2to3), joka kääntää automaattisesti osan koodista kielen
+  uudempaan versioon. Lisäksi useita kolmosversion keskeisiä ominaisuuksia on
+  toteutettu rinnakkain kehitettyyn 2.6 versioon, mikä mahdollistaa niiden
+  hyödyntämisen ilman uudempaan syntaksiin siirtymistä. [<a href="#ref-history-of-python">3</a>]</p>
 
   <h3>Python perustietoa</h3>
 
@@ -161,7 +188,7 @@ if __name__ == "__main__":
   ID_Start. Näiden merkkijoukkojen yhdiste sisältää kaikki unicode-merkit joita
   voi esiintyä python-tunnuksen nimessä, siten että tunnuksen nimi voi alkaa
   vain ensimmäisen joukon merkillä. <a href=
-  "#ref-tunnukset-py3-spec">Lähde</a></p>
+  "#ref-tunnukset-py3-spec">[2]</a></p>
 
   <p>Seuraavassa lyhyt esimerkki joka demonstroi erikoisempien merkkien käyttöä
   Python 3 ohjelmassa:</p>
@@ -198,7 +225,7 @@ Hyvin pyyhkii. No problemo, kun €-merkit vaihdettiin e-kirjaimiksi
   <h3 id="varatut-sanat">Varatut sanat</h3>
 
   <p>Seuraavassa listattuna (Pyton 3.0.1:n mukainen, tässä on pieniä
-  eroavaisuuksia 2.x -sarjan kanssa) varatut sanat sen tarkemmin niitä
+  eroavaisuuksia 2.x -sarjan kanssa) varatut sanat <a href="#ref-varatut-sanat-py3-spec">[1]</a> sen tarkemmin niitä
   esittelemättä.</p>
   <pre>
 False      class      finally    is         return
@@ -210,8 +237,6 @@ assert     else       import     pass
 break      except     in         raise
         
   </pre>
-
-  <p><a href="#ref-varatut-sanat-py3-spec">Lähde</a></p>
 
   <h3 id="literaalivakiot">Literaalivakiot</h3>
   
@@ -260,7 +285,7 @@ if 1 == 1: print "spam"; print "ham"
 
   <h2>Lähteet</h2>
 
-  <ul>
+  <ol>
     <li id="ref-varatut-sanat-py3-spec"><a href=
     "http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#keywords">
     http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#keywords</a></li>
@@ -268,7 +293,10 @@ if 1 == 1: print "spam"; print "ham"
     <li id="ref-tunnukset-py3-spec"><a href=
     "http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords">
     http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords</a></li>
-  </ul>
+  
+    <li id="ref-history-of-python"><a href="http://en.wikipedia.org/wiki/History_of_Python">
+    http://en.wikipedia.org/wiki/History_of_Python</a></li>
+  </ol>
   
   
 </body>
