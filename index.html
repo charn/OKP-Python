@@ -97,6 +97,11 @@
     <li>Python nimi tulee tv-sarjasta <i>Monty Python's Flying Circus</i>.</li>
   </ul>
 
+  <p>Pythonista on tällä hetkellä olemassa kaksi vakaata haaraa. 2.x -haara saa
+  tällä hetkellä pelkkiä virheitä korjaavia päivityksiä. Uudet ominaisuudet
+  kehitetään vain 3.x -haaralle. Suurempi osa kolmansien osapuolien ohjelmistoista
+  käyttää vielä Ptyhonin 2.x -versiota.</p>
+
   <p>Yleisin Pythonin toteutus on CPython, joka on kirjoitettu C-kielellä.
   CPython kääntää Python ohjelmat. Se kääntää Python ohjelmat tavukoodiksi,
   joka suoritetaan virtuaalikoneessa. CPython on saatavilla useille eri
@@ -240,7 +245,42 @@ break      except     in         raise
 
   <h3 id="literaalivakiot">Literaalivakiot</h3>
   
-  <p>Pythonissa on kahdenlaisia literaalivakioita: numeroita ja merkkijonoja <i>(String)</i>. Esimerkkejä: 2, 1.23, 'Tämä on merkkijono'</p>
+  <p>Literaalivakioilla tarkoitetaan ohjelmatekstiin kirjoitettuja vakioita, esim. 1, 3.14, true, ..., joilla ei ole nimeä. Ne siis ymmärretään "kirjaimellisesti".</p>
+  
+  <p>Python tukee seuraavia literaaleja [<a href="#ref-literaalivakiot">4</a>]</p>
+  
+  <ul>
+    <li>Merkkijonoliteraalit<br />
+        <code>"hello"</code>, <code>'world'</code>,<br />
+        <code>"""Olen<br /> monella<br /> rivillä"""</code>
+    </li>
+    <li>Kokonaislukuliteraalit<br />
+        <code>7</code>,
+        <code>79228162514264337593543950336</code>,
+        <code>0b100110111</code>,
+        <code>0xdeadbeef</code>
+    </li>
+    <li>Liukulukuliteraalit<br />
+        <code>3.14</code>,
+        <code>10.</code>,
+        <code>.001</code>,
+        <code>1e100</code>,
+        <code>3.14e-10</code>,
+        <code>0e0</code>
+    </li>
+    <li>Imaginääriliteraalit<br />
+        <code>3.14j</code>,
+        <code>10.j</code>,
+        <code>10j</code>,
+        <code>.001j</code>,
+        <code>1e100j</code>,
+        <code>3.14e-10j</code>
+    </li>
+  </ul>
+  
+  <p>Numeerisista literaaleista on hyvä mainita vielä se, että ne eivät sisällä
+  etumerkkiä. Esimerkiksi merkintä <code>-1</code> koostuu yksipaikkaisesta
+  operaatiosta <code>-</code> ja literaalista <code>1</code>.</p>
   
   <h3>Erottimet, sisennykset, rivinvaihdot</h3>
   <p>Pythonissa käytetään sisennyksiä rajaamaan lohkoja. Sisennystä kasvatetaan tiettyjen lausekkeiden jälkeen ja vastaavasti sisennystä pienennetään lohkon päättymisen merkiksi. Sekä tabit että välilyönnit kelpaavat sisennysmerkeiksi pythonissa.</p>
@@ -296,6 +336,9 @@ if 1 == 1: print "spam"; print "ham"
   
     <li id="ref-history-of-python"><a href="http://en.wikipedia.org/wiki/History_of_Python">
     http://en.wikipedia.org/wiki/History_of_Python</a></li>
+    
+    <li id="ref-literaalivakiot"><a href="http://docs.python.org/py3k/reference/lexical_analysis.html#literals">
+    http://docs.python.org/py3k/reference/lexical_analysis.html#literals</a></li>
   </ol>
   
   
