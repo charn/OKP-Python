@@ -66,6 +66,8 @@
 
     <li>Upotettavissa sovelluksiin skriptausrajapintana <i>(esim.
     Blender)</i></li>
+    
+    <li>Python nimi tulee tv-sarjasta <i>Monty Python's Flying Circus</i>.</li>
   </ul>
 
   <p>Yleisin Pythonin toteutus on CPython, joka on kirjoitettu C-kielellä.
@@ -82,8 +84,6 @@
   <p>Erilaisten kirjastojen <i>(NumPy, SciPy, Matplotlib, ...)</i> avulla Pythonia voidaan käyttää tehokkasti tieteelliseen laskentaan.</p>
   
   <p>Monissa käyttöjärjestelmissä Python kuuluu peruskomponentteihin. Python löytyy muunmuassa useimmista Linux distribuutioista, OpenBSD:stä, ja Mac OS X:stä.</p>
-
-  <p>...</p>
 
   <h3>Fibonacci esimerkki</h3>
 
@@ -144,10 +144,6 @@ if __name__ == "__main__":
     <li><a href="#literaalivakiot">literaalivakiot</a></li>
 
     <li><a href="#erottimet-yms">erottimet, sisennykset, rivinvaihdot</a></li>
-
-    <li>...</li>
-
-    <li>havainnollisia selostettuja pieniä esimerkkejä</li>
 
     <li><a href="#edut-ja-haitat">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</a></li>
   </ul>
@@ -218,6 +214,26 @@ break      except     in         raise
   <p><a href="#ref-varatut-sanat-py3-spec">Lähde</a></p>
 
   <h3 id="literaalivakiot">Literaalivakiot</h3>
+  
+    <h3>Erottimet, sisennykset, rivinvaihdot</h3>
+  <p>Pythonissa käytetään sisennyksiä rajaamaan lohkoja. Sisennystä kasvatetaan tiettyjen lausekkeiden jälkeen ja vastaavasti sisennystä pienennetään lohkon päättymisen merkiksi. Sekä tabit että välilyönnit kelpaavat sisennysmerkeiksi pythonissa.</p>
+  <p>Sisennyksen määrällä ei ole väliä, sisennys voi olla yhden tabin tai vaikkapa kuuden välilyönnin pituinen <i>(<b>huom!</b> tabien ja välilyöntien sekaisin käyttäminen ei ole sallittua Pythonissa)</i>. Ainoastaan suhteellisella sisennyksen määrällä on väliä sisäkkäisissä lohkoissa.</p>
+  <p>Lauseet erotellaan toisistaan rivinvaihdoilla. Useita lauseita voidaan kirjoittaa samalle riville käyttämällä puolipistettä.</p>
+  
+  <p>Alla olevissa esimerkeissä kaikki kolme if-lausetta tekevät saman asian <i>(tulostavat sanat "spam" ja "ham")</i>:</p>
+  
+  <pre>
+if 1 == 1:
+    print "spam"
+    print "ham"
+  </pre>
+  <pre>
+if 1 == 1:
+    print "spam"; print "ham"
+  </pre>
+  <pre>
+if 1 == 1: print "spam"; print "ham"
+  </pre>
   
   <h3 id="edut-ja-haitat">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</h3>
   <p>Unicode-tuki python 3:ssa tekee aidosti mahdolliseksi ohjelmoinnin ohjelmoijan
