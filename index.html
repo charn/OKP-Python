@@ -7,15 +7,13 @@
   "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
 
   <title>OKP: Python kevytspesifikaatio</title>
-  <meta http-equiv="content-type" content=
-  "text/html; charset=utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
 </head>
 
 <body>
   <h1>OKP: Python kevytspesifikaatio</h1>
-
-  <p>Kurssi: <a href=
-  "http://www.cs.helsinki.fi/u/wikla/OKP/K11/">581362
+  
+  <p>Kurssi: <a href="http://www.cs.helsinki.fi/u/wikla/OKP/K11/">581362
   Ohjelmointikielten periaatteet, kevät 2011 (4 op)</a></p>
 
   <h2>Työryhmä</h2>
@@ -33,38 +31,33 @@
   <h2>1. Kielen taustaa ja miniesimerkki</h2>
 
   <h3>Historia</h3>
-
+  
   <p>Pythonin historia alkaa 1980-luvulta. Ensimmäinen versio
-  ohjelmointikielestä kehitettiin 80-luvun loppupuolella Guido van
-  Rossumin toimesta. Python kehitettiin ABC kielen seuraajaksi,
-  joka kykenee mm. poikkeusten käsittelyyn ja yhteistyöhön Amoeba
-  -käyttöjärjestelmän kanssa. Kielen alun perin kehittänyt van
-  Rossum on edelleen aktiivisesti mukana kielen kehittämisessä</p>
-
-  <p>Python 2.0, julkaistiin 16. lokakuuta 2000. Toinen versio
-  sisälsi useita uusia ominaisuuksia, mukaan lukien täydellisen
-  roskienkeruumekanismin ja Unicode-tuen. Muutos tapahtui myös
-  kielen kehitysprosessissa. Python -yhteisölle annettiin vapaammat
-  kädet osallistua mukaan kielen kehitykseen.</p>
+  ohjelmointikielestä kehitettiin 80-luvun loppupuolella Guido
+  van Rossumin toimesta. Python kehitettiin ABC kielen seuraajaksi, joka kykenee
+  mm. poikkeusten käsittelyyn ja yhteistyöhön Amoeba -käyttöjärjestelmän kanssa.
+  Kielen alun perin kehittänyt van Rossum on edelleen aktiivisesti mukana
+  kielen kehittämisessä</p>
+  
+  <p>Python 2.0, julkaistiin 16. lokakuuta 2000. Toinen versio sisälsi useita 
+  uusia ominaisuuksia, mukaan lukien täydellisen roskienkeruumekanismin ja
+  Unicode-tuen. Muutos tapahtui myös kielen kehitysprosessissa. Python
+  -yhteisölle annettiin vapaammat kädet osallistua mukaan kielen kehitykseen.</p>
 
   <p>Joulukuussa 2008 ilmestyi 3.0, jolla haluttiin korjata
-  havaittuja ongelmia kielessä. Kielestä haluttiin poistaa
-  duplikaatteja ominaisuuksia poistamalla vanhat tavat tehdä
-  asioita. 3.x ei ole taaksepäin yhteensopiva versioiden 2.x ja
-  vanhempien kanssa. Vanhoille versioille kirjoitetut ohjelmat
-  eivät toimi suoraan versiossa 3.0. Siirtymän helpottamiseksi on
-  toteutettu käännösohjelma (2to3), joka kääntää automaattisesti
-  osan koodista kielen uudempaan versioon. Lisäksi useita
-  kolmosversion keskeisiä ominaisuuksia on toteutettu rinnakkain
-  kehitettyyn 2.6 versioon, mikä mahdollistaa niiden hyödyntämisen
-  ilman uudempaan syntaksiin siirtymistä. [<a href=
-  "#ref-history-of-python">3</a>]</p>
+  havaittuja ongelmia kielessä. Kielestä haluttiin poistaa duplikaatteja
+  ominaisuuksia poistamalla vanhat tavat tehdä asioita. 3.x ei ole taaksepäin
+  yhteensopiva versioiden 2.x ja vanhempien kanssa. Vanhoille versioille kirjoitetut ohjelmat
+  eivät toimi suoraan versiossa 3.0. Siirtymän helpottamiseksi on toteutettu
+  käännösohjelma (2to3), joka kääntää automaattisesti osan koodista kielen
+  uudempaan versioon. Lisäksi useita kolmosversion keskeisiä ominaisuuksia on
+  toteutettu rinnakkain kehitettyyn 2.6 versioon, mikä mahdollistaa niiden
+  hyödyntämisen ilman uudempaan syntaksiin siirtymistä. [<a href="#ref-history-of-python">3</a>]</p>
 
   <h3>Python perustietoa</h3>
 
   <ul>
-    <li>Keskeinen suunnittelufilosofia: selkeä, luettava
-    syntaksi</li>
+    <li>Keskeinen suunnittelufilosofia: selkeä, luettava syntaksi</li>
 
     <li>Tulkattava</li>
 
@@ -72,14 +65,13 @@
 
     <li>Korkean tason dynaamiset datatyypit</li>
 
-    <li>Kattavat standardikirjastot ja saatavilla paljon kolmansien
-    osapuolien moduuleja eri tarkoituksiin</li>
+    <li>Kattavat standardikirjastot ja saatavilla paljon kolmansien osapuolien
+    moduuleja eri tarkoituksiin</li>
 
-    <li>Poikkeuksiin <i>(exception)</i> pohjautuva virheiden
-    hallinta</li>
+    <li>Poikkeuksiin <i>(exception)</i> pohjautuva virheiden hallinta</li>
 
-    <li>Tukee useita ohjelmointiparadigmoja <i>(esim.
-    oliopohjainen, proseduraalinen, funktionaalinen)</i></li>
+    <li>Tukee useita ohjelmointiparadigmoja <i>(esim. oliopohjainen,
+    proseduraalinen, funktionaalinen)</i></li>
 
     <li>Toimii useilla eri alustoilla, esim.
 
@@ -96,53 +88,40 @@
       </ul>
     </li>
 
-    <li>Avoin lähdekoodi, vapaasti käytettävissä ja jaettavissa
-    (myös kaupalliseen käyttöön)</li>
+    <li>Avoin lähdekoodi, vapaasti käytettävissä ja jaettavissa (myös
+    kaupalliseen käyttöön)</li>
 
     <li>Upotettavissa sovelluksiin skriptausrajapintana <i>(esim.
     Blender)</i></li>
-
-    <li>Python nimi tulee tv-sarjasta <i>Monty Python's Flying
-    Circus</i>.</li>
+    
+    <li>Python nimi tulee tv-sarjasta <i>Monty Python's Flying Circus</i>.</li>
   </ul>
 
-  <p>Pythonista on tällä hetkellä olemassa kaksi vakaata haaraa.
-  2.x -haara saa tällä hetkellä pelkkiä virheitä korjaavia
-  päivityksiä. Uudet ominaisuudet kehitetään vain 3.x -haaralle.
-  Suurempi osa kolmansien osapuolien ohjelmistoista käyttää vielä
-  Ptyhonin 2.x -versiota.</p>
+  <p>Pythonista on tällä hetkellä olemassa kaksi vakaata haaraa. 2.x -haara saa
+  tällä hetkellä pelkkiä virheitä korjaavia päivityksiä. Uudet ominaisuudet
+  kehitetään vain 3.x -haaralle. Suurempi osa kolmansien osapuolien ohjelmistoista
+  käyttää vielä Ptyhonin 2.x -versiota.</p>
 
-  <p>Yleisin Pythonin toteutus on CPython, joka on kirjoitettu
-  C-kielellä. CPython kääntää Python ohjelmat. Se kääntää Python
-  ohjelmat tavukoodiksi, joka suoritetaan virtuaalikoneessa.
-  CPython on saatavilla useille eri käyttöjärjestelmille ja sen
-  mukana tulee laaja peruskirjasto.</p>
+  <p>Yleisin Pythonin toteutus on CPython, joka on kirjoitettu C-kielellä.
+  CPython kääntää Python ohjelmat. Se kääntää Python ohjelmat tavukoodiksi,
+  joka suoritetaan virtuaalikoneessa. CPython on saatavilla useille eri
+  käyttöjärjestelmille ja sen mukana tulee laaja peruskirjasto.</p>
 
-  <p>Muita Python toteutuksia on esimerkiksi Jython, IronPython ja
-  PyPy.</p>
+  <p>Muita Python toteutuksia on esimerkiksi Jython, IronPython ja PyPy.</p>
 
   <h3>Käyttökohteet</h3>
-
-  <p>Yksi suosittu tapa hyödyntää Pythonia on sen käyttäminen
-  skriptikielenä erilaisissa sovelluksissa. Pythonia käyttävät
-  skriptikielenä esimerkiksi 3d-mallinnusohjelmistot Maya ja
-  Blender, kuvankäsittelyohjelma GIMP ja se on toinen valittavissa
-  oleva skriptikieli Google Docsissa</p>
-
-  <p>Erilaisten kirjastojen <i>(NumPy, SciPy, Matplotlib, ...)</i>
-  avulla Pythonia voidaan käyttää tehokkasti tieteelliseen
-  laskentaan.</p>
-
-  <p>Monissa käyttöjärjestelmissä Python kuuluu
-  peruskomponentteihin. Python löytyy muunmuassa useimmista Linux
-  distribuutioista, OpenBSD:stä, ja Mac OS X:stä.</p>
+  
+  <p>Yksi suosittu tapa hyödyntää Pythonia on sen käyttäminen skriptikielenä erilaisissa sovelluksissa. Pythonia käyttävät skriptikielenä esimerkiksi 3d-mallinnusohjelmistot Maya ja Blender, kuvankäsittelyohjelma GIMP ja se on toinen valittavissa oleva skriptikieli Google Docsissa</p>
+  
+  <p>Erilaisten kirjastojen <i>(NumPy, SciPy, Matplotlib, ...)</i> avulla Pythonia voidaan käyttää tehokkasti tieteelliseen laskentaan.</p>
+  
+  <p>Monissa käyttöjärjestelmissä Python kuuluu peruskomponentteihin. Python löytyy muunmuassa useimmista Linux distribuutioista, OpenBSD:stä, ja Mac OS X:stä.</p>
 
   <h3>Fibonacci esimerkki</h3>
 
-  <p>Seuraavassa esimerkki ohjelmasta, joka lukee yhden
-  syöttöluvun, laskee ensimmäisen Fibonaccin luvun, joka on
-  syöttölukua suurempi ja lopuksi tulostaa kyseisen Fibonaccin
-  luvun.</p>
+  <p>Seuraavassa esimerkki ohjelmasta, joka lukee yhden syöttöluvun, laskee
+  ensimmäisen Fibonaccin luvun, joka on syöttölukua suurempi ja lopuksi
+  tulostaa kyseisen Fibonaccin luvun.</p>
   <pre>
 import sys
 
@@ -162,38 +141,32 @@ if __name__ == "__main__":
     
 </pre>
 
-  <p>Ensimmäisen rivin <code>import sys</code> lause importtaa eli
-  tuo fibonacci-moduulin sys-moduulin käytettäväksi. sys-moduulin
-  exit-metodia käytetään ohjelman loppupuolella päättämään ohjelman
-  suoritus sopivalla virheviestillä, jos käyttäjän antama syöte ei
-  ollut kokonaisluku.</p>
+  <p>Ensimmäisen rivin <code>import sys</code> lause importtaa eli tuo
+  fibonacci-moduulin sys-moduulin käytettäväksi. sys-moduulin exit-metodia
+  käytetään ohjelman loppupuolella päättämään ohjelman suoritus sopivalla
+  virheviestillä, jos käyttäjän antama syöte ei ollut kokonaisluku.</p>
 
-  <p>Varsinainen Fibonacci luvun laskeminen tapahtuu
-  fib-funktiossa. fib-funktio asettaa ensiksi muuttujille a ja b
-  Fibonaccin lukujonon alkuarvot <code>a = 0</code> ja <code>b =
-  1</code>. Lukujonon lukuja lasketaan while-silmukassa, kunnes
-  viimeisin laskettu Fibonaccin luku <code>b = a+b</code> on
-  syöttölukua suurempi. Lopuksi palautamme halutun luvun.</p>
+  <p>Varsinainen Fibonacci luvun laskeminen tapahtuu fib-funktiossa.
+  fib-funktio asettaa ensiksi muuttujille a ja b Fibonaccin lukujonon alkuarvot
+  <code>a = 0</code> ja <code>b = 1</code>. Lukujonon lukuja lasketaan
+  while-silmukassa, kunnes viimeisin laskettu Fibonaccin luku <code>b =
+  a+b</code> on syöttölukua suurempi. Lopuksi palautamme halutun luvun.</p>
 
-  <p>Koska Python ohjelmissa ei ole varsinaista
-  "pääohjelmafunktiota", niin se yleensä merkitään näkyviin
-  <code>if __name__ == "__main__":</code> lauseella. Tämä suorittaa
-  pääohjelma-alueen vain kun moduuli suoritetaan pääohjelmana eikä
-  importattuna jostain toisesta moduulista.</p>
+  <p>Koska Python ohjelmissa ei ole varsinaista "pääohjelmafunktiota", niin se
+  yleensä merkitään näkyviin <code>if __name__ == "__main__":</code> lauseella.
+  Tämä suorittaa pääohjelma-alueen vain kun moduuli suoritetaan pääohjelmana
+  eikä importattuna jostain toisesta moduulista.</p>
 
-  <p>Käyttäjän syöte luetaan input-funktiolla. fib-funktiota varten
-  halutaan kokonaislukusyöte. Syötteen tyyppi on riippuvainen
-  käyttäjästä, joten se muutetaan kokonaisluvuksi ennen
-  fib-funktion kutsua <code>int(x)</code>-kutsulla.
-  Kokonaislukumuutos voi kuitenkin epäonnistua, jolloin
-  <code>int(x)</code> nostaa <code>ValueError</code> poikkeuksen.
-  Jotta käyttäjälle saadaan annettua sopiva virheviesti, niin
-  käsittelemme poikkeuksen try-except-rakenteen avulla. Pääohjelman
-  lopuksi kutsumme fib-funktiota syötteellä ja tulostamme sen
-  palautusarvon.</p>
+  <p>Käyttäjän syöte luetaan input-funktiolla. fib-funktiota varten halutaan
+  kokonaislukusyöte. Syötteen tyyppi on riippuvainen käyttäjästä, joten se
+  muutetaan kokonaisluvuksi ennen fib-funktion kutsua
+  <code>int(x)</code>-kutsulla. Kokonaislukumuutos voi kuitenkin epäonnistua,
+  jolloin <code>int(x)</code> nostaa <code>ValueError</code> poikkeuksen. Jotta
+  käyttäjälle saadaan annettua sopiva virheviesti, niin käsittelemme
+  poikkeuksen try-except-rakenteen avulla. Pääohjelman lopuksi kutsumme
+  fib-funktiota syötteellä ja tulostamme sen palautusarvon.</p>
 
-  <h2>2. Alkiorakenne – millaisista palikoista ohjelmat
-  rakennetaan</h2>
+  <h2>2. Alkiorakenne – millaisista palikoista ohjelmat rakennetaan</h2>
 
   <ul>
     <li><a href="#tunnukset">tunnukset</a></li>
@@ -202,30 +175,28 @@ if __name__ == "__main__":
 
     <li><a href="#literaalivakiot">literaalivakiot</a></li>
 
-    <li><a href="#erottimet-yms">erottimet, sisennykset,
-    rivinvaihdot</a></li>
+    <li><a href="#erottimet-yms">erottimet, sisennykset, rivinvaihdot</a></li>
 
-    <li><a href="#edut-ja-haitat">Arvio kieleen valittujen
-    ratkaisujen eduista ja haitoista</a></li>
+    <li><a href="#edut-ja-haitat">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</a></li>
   </ul>
 
   <h3 id="tunnukset">Tunnukset</h3>
 
-  <p>Python 3:ssa tunnukset voidaan nimetä käyttäen merkkejä a-z,
-  A-Z, 0-9 ja _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet
-  ja iso kirjaimet tulkitaan eri kirjaimiksi. Tunnukset voivat olla
-  rajoittamattoman pituisia. Lisäksi Python 3 tukee joitakin
-  ASCII-järjestelmän ulkpuolisia unicode-merkkejä. Tarkempi listaus
-  tuetuista merkeistä löytyy osoitteesta: <a href=
+  <p>Python 3:ssa tunnukset voidaan nimetä käyttäen merkkejä a-z, A-Z, 0-9 ja
+  _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet ja iso kirjaimet
+  tulkitaan eri kirjaimiksi. Tunnukset voivat olla rajoittamattoman pituisia.
+  Lisäksi Python 3 tukee joitakin ASCII-järjestelmän ulkpuolisia
+  unicode-merkkejä. Tarkempi listaus tuetuista merkeistä löytyy osoitteesta:
+  <a href=
   "http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>.
-  Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue,
-  excluding ID_Start. Näiden merkkijoukkojen yhdiste sisältää
-  kaikki unicode-merkit joita voi esiintyä python-tunnuksen
-  nimessä, siten että tunnuksen nimi voi alkaa vain ensimmäisen
-  joukon merkillä. <a href="#ref-tunnukset-py3-spec">[2]</a></p>
+  Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue, excluding
+  ID_Start. Näiden merkkijoukkojen yhdiste sisältää kaikki unicode-merkit joita
+  voi esiintyä python-tunnuksen nimessä, siten että tunnuksen nimi voi alkaa
+  vain ensimmäisen joukon merkillä. <a href=
+  "#ref-tunnukset-py3-spec">[2]</a></p>
 
-  <p>Seuraavassa lyhyt esimerkki joka demonstroi erikoisempien
-  merkkien käyttöä Python 3 ohjelmassa:</p>
+  <p>Seuraavassa lyhyt esimerkki joka demonstroi erikoisempien merkkien käyttöä
+  Python 3 ohjelmassa:</p>
   <pre>
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
@@ -247,23 +218,19 @@ if __name__ == "__main__":
     python_3_tukee_unicodemerkkejä_varsin_laajasti()
     
 </pre>
-
-  <p>Yllä oleva python ohjelma tulostaa konsoliin tekstin:</p>
-  <pre>
+	<p>Yllä oleva python ohjelma tulostaa konsoliin tekstin:</p>
+	<pre>
 Hei vaan ja hellurei! khemrin kieli khmeriksi
 €-merkki ei ollut sallittu muuttujan nimessä :'( invalid character in identifier (&lt;string&gt;, line 1)
 Hyvin pyyhkii. No problemo, kun €-merkit vaihdettiin e-kirjaimiksi
-        
-</pre>
+	</pre>
 
-  <p><a href="esimerkit/unicode_sample.py">Lataa esimerkki
-  tästä</a></p>
+  <p><a href="esimerkit/unicode_sample.py">Lataa esimerkki tästä</a></p>
 
   <h3 id="varatut-sanat">Varatut sanat</h3>
 
-  <p>Seuraavassa listattuna (Pyton 3.0.1:n mukainen, tässä on
-  pieniä eroavaisuuksia 2.x -sarjan kanssa) varatut sanat <a href=
-  "#ref-varatut-sanat-py3-spec">[1]</a> sen tarkemmin niitä
+  <p>Seuraavassa listattuna (Pyton 3.0.1:n mukainen, tässä on pieniä
+  eroavaisuuksia 2.x -sarjan kanssa) varatut sanat <a href="#ref-varatut-sanat-py3-spec">[1]</a> sen tarkemmin niitä
   esittelemättä.</p>
   <pre>
 False      class      finally    is         return
@@ -274,113 +241,85 @@ as         elif       if         or         yield
 assert     else       import     pass
 break      except     in         raise
         
-  
-</pre>
+  </pre>
 
   <h3 id="literaalivakiot">Literaalivakiot</h3>
-
-  <p>Python tukee seuraavia literaalivakioita [<a href=
-  "#ref-literaalivakiot">4</a>]:</p>
-
+  
+  <p>Python tukee seuraavia literaalivakioita [<a href="#ref-literaalivakiot">4</a>]:</p>
+  
   <ul>
-    <li>merkkijonot,<br>
-    <code>"hello"</code>, <code>'world'</code>,<br>
-    <code>"""Olen<br>
-    monella<br>
-    rivillä"""</code></li>
-
-    <li>kokonaisluvut,<br>
-    <code>7</code>, <code>79228162514264337593543950336</code>,
-    <code>0b100110111</code>, <code>0xdeadbeef</code></li>
-
-    <li>liukuluvut,<br>
-    <code>3.14</code>, <code>10.</code>, <code>.001</code>,
-    <code>1e100</code>, <code>3.14e-10</code>,
-    <code>0e0</code></li>
-
-    <li>imaginääriluvut<br>
-    <code>3.14j</code>, <code>10.j</code>, <code>10j</code>,
-    <code>.001j</code>, <code>1e100j</code>,
-    <code>3.14e-10j</code></li>
+    <li>merkkijonot,<br />
+        <code>"hello"</code>, <code>'world'</code>,<br />
+        <code>"""Olen<br /> monella<br /> rivillä"""</code>
+    </li>
+    <li>kokonaisluvut,<br />
+        <code>7</code>,
+        <code>79228162514264337593543950336</code>,
+        <code>0b100110111</code>,
+        <code>0xdeadbeef</code>
+    </li>
+    <li>liukuluvut,<br />
+        <code>3.14</code>,
+        <code>10.</code>,
+        <code>.001</code>,
+        <code>1e100</code>,
+        <code>3.14e-10</code>,
+        <code>0e0</code>
+    </li>
+    <li>imaginääriluvut<br />
+        <code>3.14j</code>,
+        <code>10.j</code>,
+        <code>10j</code>,
+        <code>.001j</code>,
+        <code>1e100j</code>,
+        <code>3.14e-10j</code>
+    </li>
   </ul>
-
-  <p>Numeerisista literaaleista on hyvä mainita vielä se, että ne
-  eivät sisällä etumerkkiä. Esimerkiksi merkintä <code>-1</code>
-  koostuu yksipaikkaisesta operaatiosta <code>-</code> ja
-  literaalista <code>1</code>.</p>
-
+  
+  <p>Numeerisista literaaleista on hyvä mainita vielä se, että ne eivät sisällä
+  etumerkkiä. Esimerkiksi merkintä <code>-1</code> koostuu yksipaikkaisesta
+  operaatiosta <code>-</code> ja literaalista <code>1</code>.</p>
+  
   <h3>Erottimet, sisennykset, rivinvaihdot</h3>
-
-  <p>Pythonissa käytetään sisennyksiä rajaamaan lohkoja. Sisennystä
-  kasvatetaan tiettyjen lausekkeiden jälkeen ja vastaavasti
-  sisennystä pienennetään lohkon päättymisen merkiksi. Sekä tabit
-  että välilyönnit kelpaavat sisennysmerkeiksi pythonissa.</p>
-
-  <p>Sisennyksen määrällä ei ole väliä, sisennys voi olla yhden
-  tabin tai vaikkapa kuuden välilyönnin pituinen <i>(<b>huom!</b>
-  tabien ja välilyöntien sekaisin käyttäminen ei ole sallittua
-  Pythonissa)</i>. Ainoastaan suhteellisella sisennyksen määrällä
-  on väliä sisäkkäisissä lohkoissa.</p>
-
-  <p>Lauseet erotellaan toisistaan rivinvaihdoilla. Useita lauseita
-  voidaan kirjoittaa samalle riville käyttämällä puolipistettä.
-  Kontrollirakenteissa totuusarvolausekkeita seuraa aina
-  kaksoispiste ja lausekkeessa ei ole pakko käyttää sulkuja.</p>
-
-  <p>Alla olevissa esimerkeissä kaikki kolme if-lausetta tekevät
-  saman asian <i>(tulostavat sanat "spam" ja "ham")</i>:</p>
+  <p>Pythonissa käytetään sisennyksiä rajaamaan lohkoja. Sisennystä kasvatetaan tiettyjen lausekkeiden jälkeen ja vastaavasti sisennystä pienennetään lohkon päättymisen merkiksi. Sekä tabit että välilyönnit kelpaavat sisennysmerkeiksi pythonissa.</p>
+  <p>Sisennyksen määrällä ei ole väliä, sisennys voi olla yhden tabin tai vaikkapa kuuden välilyönnin pituinen <i>(<b>huom!</b> tabien ja välilyöntien sekaisin käyttäminen ei ole sallittua Pythonissa)</i>. Ainoastaan suhteellisella sisennyksen määrällä on väliä sisäkkäisissä lohkoissa.</p>
+  <p>Lauseet erotellaan toisistaan rivinvaihdoilla. Useita lauseita voidaan kirjoittaa samalle riville käyttämällä puolipistettä. Kontrollirakenteissa totuusarvolausekkeita seuraa aina kaksoispiste ja lausekkeessa ei ole pakko käyttää sulkuja.</p>
+  
+  <p>Alla olevissa esimerkeissä kaikki kolme if-lausetta tekevät saman asian <i>(tulostavat sanat "spam" ja "ham")</i>:</p>
+  
   <pre>
 if 1 == 1:
     print "spam"
     print "ham"
-  
-</pre>
+  </pre>
   <pre>
 if 1 == 1:
     print "spam"; print "ham"
-  
-</pre>
+  </pre>
   <pre>
 if 1 == 1: print "spam"; print "ham"
+  </pre>
   
-</pre>
-
-  <h3 id="edut-ja-haitat">Arvio kieleen valittujen ratkaisujen
-  eduista ja haitoista</h3>
-
-  <p>Unicode-tuki python 3:ssa tekee aidosti mahdolliseksi
-  ohjelmoinnin ohjelmoijan omalla äidinkielellä. Tämä on varmasti
-  monessa mielessä hyvä asia ja sen hyödyntäminen todennäköisesti
-  parantaa koodin luettavuutta kehittäjäyhteisössä. Toisaalta tällä
-  alalla ei ole ollenkaan tavatonta, että ohjelmaa kehitetään
-  ympäri maailmaa ja kehittäjien äidinkielet vaihtelevat suuresti.
-  Tällöin on käytettävä jotakin yhteistä kieltä eli siis yleensä
-  englantia ja tämä unicode-tuki ei juurikaan auta. Toinen tilanne
-  jolloin koodia ei varmaankaan haluta tehdä äidinkielellä on, jos
-  tuotetaan avoimen lähdekoodin ratkaisuja. Muutoin saatetaan
-  varsin tehokkaasti eliminoida iso osa käyttäjäyhteisön
-  potentiaalista jatkokehittää tuotetta. Yleisestiottaen tuote joka
-  on ohjelmoitu vaikkapa suomeksi rajoittaa
-  jatkokehitysmahdollisuuksia vaikka alkuperäisen kehitystyön
-  kannalta kielivalinnalla olisikin ollut positiivisia vaikutuksia.
-  Kustannussyistä jatkokehitys saatettaisiin joissain tilanteissa
-  haluta tuottaa jossakin edullisemmassa maassa, mutta tämä ei nyt
-  olekaan mahdollista ilman huomattavaa käännöstyötä. Kun lisäksi
-  otetaan huomioon, että unicode-tuen sisällyttäminen tunnuksiin
-  monimutkaistaa kielen implementaatioiden toteuttamista, niin olen
-  kyllä henkilökohtaisesti hieman skeptinen koko ominaisuuden
-  järkevyydestä. En kyllä itse ainakaan ikinä ohjelmoisi
-  vakavissani mitään millään muulla kielellä kuin englannilla.</p>
-
-  <p>Pythonissa sisennystapa ei ole ohjelmoijan täysin vapaasti
-  valittavissa, vaan ohjelmoinnissa pakotetaan käyttämään
-  tietynlaista sisennystyyliä. Etu tästä on, että ohjelmoija ei voi
-  vahingossa kirjoittaa sekavasti sisennettyä koodia, koska se
-  rikkoo ohjelman suorituksen. Virheiden mahdollisuus pienenee, kun
-  ohjelma tekee, mitä se näyttääkin tekevän, kun virheellinen
-  sisentäminen ei pääse sekoittamaan lukijaa. Python koodin
-  luettavuutta parantaa se, että kaikki joutuvat käyttämään
-  yhtenäistä sisennystapaa.</p>
+  <h3 id="edut-ja-haitat">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</h3>
+  <p>Unicode-tuki python 3:ssa tekee aidosti mahdolliseksi ohjelmoinnin ohjelmoijan
+  omalla äidinkielellä. Tämä on varmasti monessa mielessä hyvä asia ja sen hyödyntäminen
+  todennäköisesti parantaa koodin luettavuutta kehittäjäyhteisössä. Toisaalta tällä alalla
+  ei ole ollenkaan tavatonta, että ohjelmaa kehitetään ympäri maailmaa ja kehittäjien
+  äidinkielet vaihtelevat suuresti. Tällöin on käytettävä jotakin yhteistä kieltä eli siis
+  yleensä englantia ja tämä unicode-tuki ei juurikaan auta. Toinen tilanne jolloin koodia
+  ei varmaankaan haluta tehdä äidinkielellä on, jos tuotetaan avoimen lähdekoodin
+  ratkaisuja. Muutoin saatetaan varsin tehokkaasti eliminoida iso osa käyttäjäyhteisön
+  potentiaalista jatkokehittää tuotetta. Yleisestiottaen tuote joka on ohjelmoitu vaikkapa
+  suomeksi rajoittaa jatkokehitysmahdollisuuksia vaikka alkuperäisen kehitystyön kannalta
+  kielivalinnalla olisikin ollut positiivisia vaikutuksia. Kustannussyistä jatkokehitys
+  saatettaisiin joissain tilanteissa haluta tuottaa jossakin edullisemmassa maassa, mutta
+  tämä ei nyt olekaan mahdollista ilman huomattavaa käännöstyötä. Kun lisäksi otetaan
+  huomioon, että unicode-tuen sisällyttäminen tunnuksiin monimutkaistaa kielen
+  implementaatioiden toteuttamista, niin olen kyllä henkilökohtaisesti hieman skeptinen
+  koko ominaisuuden järkevyydestä. En kyllä itse ainakaan ikinä ohjelmoisi vakavissani
+  mitään millään muulla kielellä kuin englannilla.</p>
+  
+  <p>Pythonissa sisennystapa ei ole ohjelmoijan täysin vapaasti valittavissa, vaan ohjelmoinnissa pakotetaan käyttämään tietynlaista sisennystyyliä. Etu tästä on, että ohjelmoija ei voi vahingossa kirjoittaa sekavasti sisennettyä koodia, koska se rikkoo ohjelman suorituksen. Virheiden mahdollisuus pienenee, kun ohjelma tekee, mitä se näyttääkin tekevän, kun virheellinen sisentäminen ei pääse sekoittamaan lukijaa. Python koodin luettavuutta parantaa se, että kaikki joutuvat käyttämään yhtenäistä sisennystapaa.</p>
 
   <h2>Lähteet</h2>
 
@@ -392,13 +331,14 @@ if 1 == 1: print "spam"; print "ham"
     <li id="ref-tunnukset-py3-spec"><a href=
     "http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords">
     http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords</a></li>
-
-    <li id="ref-history-of-python"><a href=
-    "http://en.wikipedia.org/wiki/History_of_Python">http://en.wikipedia.org/wiki/History_of_Python</a></li>
-
-    <li id="ref-literaalivakiot"><a href=
-    "http://docs.python.org/py3k/reference/lexical_analysis.html#literals">
+  
+    <li id="ref-history-of-python"><a href="http://en.wikipedia.org/wiki/History_of_Python">
+    http://en.wikipedia.org/wiki/History_of_Python</a></li>
+    
+    <li id="ref-literaalivakiot"><a href="http://docs.python.org/py3k/reference/lexical_analysis.html#literals">
     http://docs.python.org/py3k/reference/lexical_analysis.html#literals</a></li>
   </ol>
+  
+  
 </body>
 </html>
