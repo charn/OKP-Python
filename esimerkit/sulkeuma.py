@@ -1,8 +1,8 @@
 def eka(p):
     x = "olen ekan x"
     print("--- eka alkaa ---")
-    p() # tokan paikalliset eivät näy tänne, mutta sulkeuma
-        # käydään suorittamassa kutsukohdan ympäristössä
+    p() # tokan paikalliset eivät näy tänne.
+        # funktio p käydään suorittamassa määrittelykohdan ympäristössä
     print(x)
     print("--- eka päättyy ---")
 
@@ -16,7 +16,7 @@ def toka():
     	print(x)
     	x = "tokan x on muutettu!"
     
-    eka(fpar) # sulkeuma funktioparametrina
+    eka(fpar) # "nimetyn sulkeuman" välitys funktioparametrina
     print(x) # viittaus paikalliseen tunnukseen
     print("--- toka päättyy ---")
 

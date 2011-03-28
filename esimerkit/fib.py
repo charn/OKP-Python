@@ -7,7 +7,7 @@ def fib(n):
         a, b = b, a+b
     return b
 
-if __name__ == "__main__": # Pääaliohjelma
+if __name__ == "__main__": # Pääohjelma
     s = input("Anna fibonacci syöttöluku: ") # Lue syöte käyttäjältä
     
     # input palauttaa aina stringin, mutta haluamme kokonaisluvun

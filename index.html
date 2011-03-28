@@ -153,7 +153,7 @@ def fib(n):
         a, b = b, a+b
     return b
 
-if __name__ == "__main__": # Pääaliohjelma
+if __name__ == "__main__": # Pääohjelma
     s = input("Anna fibonacci syöttöluku: ") # Lue syöte käyttäjältä
     
     # input palauttaa aina stringin, mutta haluamme kokonaisluvun
@@ -387,6 +387,65 @@ if 1 == 1: print "spam"; print "ham"
   luettavuutta parantaa se, että kaikki joutuvat käyttämään
   yhtenäistä sisennystapaa.</p>
 
+  <h2>3. Tunnusten näkyvyysalueet</h2>
+  <!-- TODO: parempi ryhmittely ja otsikkojen nimet -->
+
+  <h3>Lohkorakenne</h3>
+
+  <h3>Sidonta</h3>
+
+  <h3>Sisäkkäiset nimiavaruudet</h3>
+
+  <p>Python tukee sisäkkäisiä nimiavaruuksia versiosta 2.2 lähtien
+  [<a href="#ref-sulkeumat-py22">5</a>]. Sitä ennen nimiavaruuksia
+  oli vain kolme: paikallinen nimiavaruus, moduulitason nimiavaruus
+  ja sisäänrakennettu nimiavaruus. Vaikka funktion määrittely oli
+  mahdollista toisen funktion sisällä, niin sisäkkäinen funktio ei
+  voinut viitata oman nimiavaruutensa ulkopuolisiin nimiin.</p>
+  <pre>
+def eka(p):
+    x = "olen ekan x"
+    print("--- eka alkaa ---")
+    p() # tokan paikalliset eivät näy tänne.
+        # funktio p käydään suorittamassa määrittelykohdan ympäristössä
+    print(x)
+    print("--- eka päättyy ---")
+
+def toka():
+    print("--- toka alkaa ---")
+    x = "olen tokan x"
+    
+    def fpar():
+        nonlocal x # muuttuja x viittaa nyt sulkeuman ulkopuoliseen viimeiseksi
+                   # sidottuun tunnukseen eli tokan muuttujaan x 
+        print(x)
+        x = "tokan x on muutettu!"
+    
+    eka(fpar) # "nimetyn sulkeuman" välitys funktioparametrina
+    print(x) # viittaus paikalliseen tunnukseen
+    print("--- toka päättyy ---")
+
+if __name__ == "__main__": # Pääohjelma
+    toka()
+</pre>
+
+  <p>Python tukee myös anonyymejä funktioita lambda-lausekkeiden
+  muodossa. Lambda-lausekkeella voi helposti luoda pieniä
+  anonyymejä funktioita. Lambda-lauseke on kuitenkin aina vain yksi
+  lauseke eikä lause, joten siihen ei voi sisällyttää esimerkiksi
+  toisto- tai ehtolauseita suoraan. Se ei siis vastaa useimpien
+  muiden kielten anonyymejä funktioita.</p>
+  <pre>
+def tee_kertoja(n):
+    return lambda x: x * n
+
+f = tee_kertoja(5)
+print(f(3)) # 15
+print(f(5)) # 25
+</pre>
+
+  <h3>ensimmäisen, toisen ja kolmannen luokan arvo</h3>
+
   <h2>Lähteet</h2>
 
   <ol>
@@ -404,6 +463,9 @@ if 1 == 1: print "spam"; print "ham"
     <li id="ref-literaalivakiot"><a href=
     "http://docs.python.org/py3k/reference/lexical_analysis.html#literals">
     http://docs.python.org/py3k/reference/lexical_analysis.html#literals</a></li>
+
+    <li id="ref-sulkeumat-py22"><a href=
+    "http://docs.python.org/release/2.2.3/whatsnew/node9.html">http://docs.python.org/release/2.2.3/whatsnew/node9.html</a></li>
   </ol>
 </body>
 </html>
