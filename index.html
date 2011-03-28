@@ -41,7 +41,14 @@
 
   <h2 id="chapter-1">1. Kielen taustaa ja miniesimerkki</h2>
 
-  <h3>Historia</h3>
+  <ul>
+    <li><a href="#chapter-1-historia">Historia</a></li>
+    <li><a href="#chapter-1-perustietoa">Python perustietoa</a></li>
+    <li><a href="#chapter-1-kayttokohteet">Käyttökohteet</a></li>
+    <li><a href="#chapter-1-fibonacci">Fibonacci esimerkki</a></li>
+  </ul>
+
+  <h3 id="chapter-1-historia">Historia</h3>
 
   <p>Pythonin historia alkaa 1980-luvulta. Ensimmäinen versio
   ohjelmointikielestä kehitettiin 80-luvun loppupuolella Guido van
@@ -69,7 +76,7 @@
   ilman uudempaan syntaksiin siirtymistä. [<a href=
   "#ref-history-of-python">3</a>]</p>
 
-  <h3>Python perustietoa</h3>
+  <h3 id="chapter-1-perustietoa">Python perustietoa</h3>
 
   <ul>
     <li>Keskeinen suunnittelufilosofia: selkeä, luettava
@@ -130,7 +137,7 @@
   <p>Muita Python toteutuksia on esimerkiksi Jython, IronPython ja
   PyPy.</p>
 
-  <h3>Käyttökohteet</h3>
+  <h3 id="chapter-1-kayttokohteet">Käyttökohteet</h3>
 
   <p>Yksi suosittu tapa hyödyntää Pythonia on sen käyttäminen
   skriptikielenä erilaisissa sovelluksissa. Pythonia käyttävät
@@ -146,7 +153,7 @@
   peruskomponentteihin. Python löytyy muunmuassa useimmista Linux
   distribuutioista, OpenBSD:stä, ja Mac OS X:stä.</p>
 
-  <h3>Fibonacci esimerkki</h3>
+  <h3 id="chapter-1-fibonacci">Fibonacci esimerkki</h3>
 
   <p>Seuraavassa esimerkki ohjelmasta, joka lukee yhden
   syöttöluvun, laskee ensimmäisen Fibonaccin luvun, joka on
@@ -210,20 +217,16 @@ if __name__ == "__main__": # Pääohjelma
   rakennetaan</h2>
 
   <ul>
-    <li><a href="#tunnukset">tunnukset</a></li>
-
-    <li><a href="#varatut-sanat">varatut sanat, avainsanat</a></li>
-
-    <li><a href="#literaalivakiot">literaalivakiot</a></li>
-
-    <li><a href="#erottimet-yms">erottimet, sisennykset,
+    <li><a href="#chapter-2-tunnukset">Tunnukset</a></li>
+    <li><a href="#chapter-2-varatut-sanat">Varatut sanat, avainsanat</a></li>
+    <li><a href="#chapter-2-literaalivakiot">Literaalivakiot</a></li>
+    <li><a href="#chapter-2-erottimet-yms">Erottimet, sisennykset,
     rivinvaihdot</a></li>
-
-    <li><a href="#edut-ja-haitat">Arvio kieleen valittujen
+    <li><a href="#chapter-2-edut-ja-haitat">Arvio kieleen valittujen
     ratkaisujen eduista ja haitoista</a></li>
   </ul>
 
-  <h3 id="tunnukset">Tunnukset</h3>
+  <h3 id="chapter-2-tunnukset">Tunnukset</h3>
 
   <p>Python 3:ssa tunnukset voidaan nimetä käyttäen merkkejä a-z,
   A-Z, 0-9 ja _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet
@@ -273,7 +276,7 @@ Hyvin pyyhkii. No problemo, kun €-merkit vaihdettiin e-kirjaimiksi
   <p><a href="esimerkit/unicode_sample.py">Lataa esimerkki
   tästä</a></p>
 
-  <h3 id="varatut-sanat">Varatut sanat</h3>
+  <h3 id="chapter-2-varatut-sanat">Varatut sanat</h3>
 
   <p>Seuraavassa listattuna (Pyton 3.0.1:n mukainen, tässä on
   pieniä eroavaisuuksia 2.x -sarjan kanssa) varatut sanat <a href=
@@ -291,7 +294,7 @@ break      except     in         raise
   
 </pre>
 
-  <h3 id="literaalivakiot">Literaalivakiot</h3>
+  <h3 id="chapter-2-literaalivakiot">Literaalivakiot</h3>
 
   <p>Python tukee seuraavia literaalivakioita [<a href=
   "#ref-literaalivakiot">4</a>]:</p>
@@ -323,7 +326,7 @@ break      except     in         raise
   koostuu yksipaikkaisesta operaatiosta <code>-</code> ja
   literaalista <code>1</code>.</p>
 
-  <h3>Erottimet, sisennykset, rivinvaihdot</h3>
+  <h3 id="chapter-2-erottimet-yms">Erottimet, sisennykset, rivinvaihdot</h3>
 
   <p>Pythonissa käytetään sisennyksiä rajaamaan lohkoja. Sisennystä
   kasvatetaan tiettyjen lausekkeiden jälkeen ja vastaavasti
@@ -359,7 +362,7 @@ if 1 == 1: print "spam"; print "ham"
   
 </pre>
 
-  <h3 id="edut-ja-haitat">Arvio kieleen valittujen ratkaisujen
+  <h3 id="chapter-2-edut-ja-haitat">Arvio kieleen valittujen ratkaisujen
   eduista ja haitoista</h3>
 
   <p>Unicode-tuki python 3:ssa tekee aidosti mahdolliseksi
@@ -398,12 +401,20 @@ if 1 == 1: print "spam"; print "ham"
 
   <h2 id="chapter-3">3. Tunnusten näkyvyysalueet</h2>
   <!-- TODO: parempi ryhmittely ja otsikkojen nimet -->
+  
+  <ul>
+    <li><a href="#chapter-3-lohkorakenne">Lohkorakenne</a></li>
+    <li><a href="#chapter-3-sidonta">Sidonta</a></li>
+    <li><a href="#chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">Sisäkkäiset nimiavaruudet ja funktiot</a></li>
+    <li><a href="#chapter-3-1-2-ja-3-luokan-arvo">Ensimmäisen, toisen ja kolmannen luokan arvo</a></li>
+    <li><a href="#chapter-3-edut-ja-haitat">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</a></li>
+  </ul>
+  
+  <h3 id="chapter-3-lohkorakenne">Lohkorakenne</h3>
 
-  <h3>Lohkorakenne</h3>
+  <h3 id="chapter-3-sidonta">Sidonta</h3>
 
-  <h3>Sidonta</h3>
-
-  <h3>Sisäkkäiset nimiavaruudet ja funktiot</h3>
+  <h3 id="chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">Sisäkkäiset nimiavaruudet ja funktiot</h3>
 
   <p>Python tukee sisäkkäisiä nimiavaruuksia versiosta 2.2 lähtien
   [<a href="#ref-sulkeumat-py22">5</a>]. Sitä ennen nimiavaruuksia
@@ -467,7 +478,9 @@ print(f(3)) # 15
 print(f(5)) # 25
 </pre>
 
-  <h3>ensimmäisen, toisen ja kolmannen luokan arvo</h3>
+  <h3 id="chapter-3-1-2-ja-3-luokan-arvo">Ensimmäisen, toisen ja kolmannen luokan arvo</h3>
+
+  <h3 id="chapter-3-edut-ja-haitat">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</h3>
 
   <h2>Lähteet</h2>
 
