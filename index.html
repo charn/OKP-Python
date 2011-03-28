@@ -394,7 +394,7 @@ if 1 == 1: print "spam"; print "ham"
 
   <h3>Sidonta</h3>
 
-  <h3>Sisäkkäiset nimiavaruudet</h3>
+  <h3>Sisäkkäiset nimiavaruudet ja funktiot</h3>
 
   <p>Python tukee sisäkkäisiä nimiavaruuksia versiosta 2.2 lähtien
   [<a href="#ref-sulkeumat-py22">5</a>]. Sitä ennen nimiavaruuksia
@@ -429,12 +429,26 @@ if __name__ == "__main__": # Pääohjelma
     toka()
 </pre>
 
+  <p>Ohjelma tulostaa:</p>
+  <pre>
+--- toka alkaa ---
+--- eka alkaa ---
+olen tokan x
+olen ekan x
+--- eka päättyy ---
+tokan x on muutettu!
+--- toka päättyy ---
+</pre>
+
   <p>Python tukee myös anonyymejä funktioita lambda-lausekkeiden
   muodossa. Lambda-lausekkeella voi helposti luoda pieniä
-  anonyymejä funktioita. Lambda-lauseke on kuitenkin aina vain yksi
-  lauseke eikä lause, joten siihen ei voi sisällyttää esimerkiksi
-  toisto- tai ehtolauseita suoraan. Se ei siis vastaa useimpien
-  muiden kielten anonyymejä funktioita.</p>
+  anonyymejä funktioita. Esimerkiksi funktio <code>lambda: a, b:
+  a*b</code> palauttaa kahden argumenttinsa kertolaskun.
+  Lambda-lauseke on kuitenkin aina vain yksi lauseke eikä lause,
+  joten siihen ei voi sisällyttää esimerkiksi toisto- tai
+  ehtolauseita suoraan. Se ei siis vastaa useimpien muiden kielten
+  anonyymejä funktioita. Lambda-lausekkeet voivat viitata
+  nimiavaruutensa ulkopuolisiin tunnuksiin kuten funktiot:</p>
   <pre>
 def tee_kertoja(n):
     return lambda x: x * n
