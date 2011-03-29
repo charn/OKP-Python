@@ -428,6 +428,17 @@ if 1 == 1: print "spam"; print "ham"
     </ul>
   [<a href="#ref-nimet-ja_sidonta-py3-spec">6</a>]
   </p>
+  
+  <p>Kuten on jo aiemmin mainittu Python käyttää sisennyksiä määrittelemään
+  lohkoja. Sisennys kasvaa tiettyjen ilmaisujen jälkeen ja puolestaan pienenee
+  lohkon loppumisen merkiksi. Samalla tasolla lohkossa sijaitsevat lauseet kirjoitetaan
+  jokainen omalle riville käyttäen samaa sisennystä (tai tietenkin vaihtoehtoisesti
+  kirjoittamalla kaikki samalle riville käyttäen <code>;</code> -merkkiä
+  erottimena).</p>
+  
+  <p>Lohkon määrittely voidaan aloittaa mm. seuraavilla sanoilla:
+  <code>if, else, elif, for, while, try, except, finally, class, def, with, pass</code>.</p>
+  
   <p>Jos lohkon sisällä määritellään lokaali muuttuja, on tämän muuttujan näkyvyysalue
   (scope) rajoitettu siihen lohkoon. Mikäli tunnus määritellään funktion vartalossa, niin
   näkyy se myös funktion vartalon sisäisille lohkoille (ellevät nämä sido tunnukselle
@@ -593,6 +604,8 @@ print(f(5)) # 25
   <p>Huomion arvoista on, että Pythonissa myös metodit ovat ensimmäisen luokan arvoja. [<a href="#ref-ensimmaisenluokan">7</a>]</p>
 
   <h3 id="chapter-3-edut-ja-haitat">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</h3>
+  
+  <p>Lohkojen paketettu sisentäminen on hyvä asia, koodin luettavuus lisääntyy ja se myös pakottaa kaikki kirjoittamaan koodia samalla tavalla eli sisentäen.</p>
 
   <h2>Lähteet</h2>
 
