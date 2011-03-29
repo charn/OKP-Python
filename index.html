@@ -171,15 +171,15 @@ def fib(n):
 
 if __name__ == "__main__": # Pääohjelma
     s = input("Anna fibonacci syöttöluku: ") # Lue syöte käyttäjältä
-    
+
     # input palauttaa aina stringin, mutta haluamme kokonaisluvun
     try:
         # Yritä muuttaa syöte kokonaislukutyypiksi
-        n = int(s) 
+        n = int(s)
     except ValueError:
         # Tyypin muutos epäonnistui, poistu ohjelmasta virheviestillä
         sys.exit("Antamasi syöte ei ollut kokonaisluku!")
-        
+
     print(fib(n))
 </pre>
 
@@ -249,20 +249,20 @@ if __name__ == "__main__": # Pääohjelma
 
 def python_3_tukee_unicodemerkkejä_varsin_laajasti(ភាសាខ្មែរ="khemrin kieli khmeriksi"):
     print("Hei vaan ja hellurei!", ភាសាខ្មែរ)
-    
+
     epävalidia_python_koodia='kuitenkin_esim_€_merkki_ei_ole_sallittu = "epic fai"'
     try:
         exec(epävalidia_python_koodia)
     except SyntaxError as se:
         print("€-merkki ei ollut sallittu muuttujan nimessä :'(", se)
-    
+
     validia_python_koodia = epävalidia_python_koodia.replace("€", "e")
     exec(validia_python_koodia)
     print("Hyvin pyyhkii. No problemo, kun €-merkit vaihdettiin e-kirjaimiksi")
 
 if __name__ == "__main__":
     python_3_tukee_unicodemerkkejä_varsin_laajasti()
-    
+
 </pre>
 
   <p>Yllä oleva python ohjelma tulostaa konsoliin tekstin:</p>
@@ -270,7 +270,7 @@ if __name__ == "__main__":
 Hei vaan ja hellurei! khemrin kieli khmeriksi
 €-merkki ei ollut sallittu muuttujan nimessä :'( invalid character in identifier (&lt;string&gt;, line 1)
 Hyvin pyyhkii. No problemo, kun €-merkit vaihdettiin e-kirjaimiksi
-        
+
 </pre>
 
   <p><a href="esimerkit/unicode_sample.py">Lataa esimerkki
@@ -290,8 +290,8 @@ and        del        global     not        with
 as         elif       if         or         yield
 assert     else       import     pass
 break      except     in         raise
-        
-  
+
+
 </pre>
 
   <h3 id="chapter-2-literaalivakiot">Literaalivakiot</h3>
@@ -350,16 +350,16 @@ break      except     in         raise
 if 1 == 1:
     print "spam"
     print "ham"
-  
+
 </pre>
   <pre>
 if 1 == 1:
     print "spam"; print "ham"
-  
+
 </pre>
   <pre>
 if 1 == 1: print "spam"; print "ham"
-  
+
 </pre>
 
   <h3 id="chapter-2-edut-ja-haitat">Arvio kieleen valittujen ratkaisujen
@@ -411,8 +411,107 @@ if 1 == 1: print "spam"; print "ham"
   </ul>
   
   <h3 id="chapter-3-lohkorakenne">Lohkorakenne</h3>
+  <p>Pythonissa lohkoksi kutsutaan koodinpätkää, joka suoritetaan yhtenä
+  yksikkönä. Seuraavia rakenteita kutsutaan lohkoiksi:
+    <ul>
+      <li>moduuli</li>
+      <li>funktion vartalo</li>
+      <li>luokan määrittely</li>
+      <li>jokainen interaktiivisesti kirjoitettu komento</li>
+      <li>skriptitiedosto (annettuna tulkille komentoriviparametrina)</li>
+      <li>skriptikomento (annettuna tulkille -c komentoriviparametrin arvona)</li>
+      <li>exec() tai eval() -funktioille merkkijonona annettu koodi</li>
+    </ul>
+  [<a href="#ref-nimet-ja_sidonta-py3-spec">6</a>]
+  </p>
+  <p>Jos lohkon sisällä määritellään lokaali muuttuja, on tämän muuttujan näkyvyysalue
+  (scope) rajoitettu siihen lohkoon. Mikäli tunnus määritellään funktion vartalossa, niin
+  näkyy se myös funktion vartalon sisäisille lohkoille (ellevät nämä sido tunnukselle
+  uutta merkitystä). Moduulitason tunnukset ovat globaaleja. Mikäli lohkon sisältä halutaan
+  (eksplisiittisesti) viitata lohkon ulkopuolisiin muuttujiin, niin voidaan käyttää varattuja
+  sanoja nonlocal ja global. Määreellä nonlocal vihjataan, että halutaan viitata
+  näkyvyysaluehierakriassa seuraavaan tasoon jolta tunnus löytyy. Vastaavasti global-määreellä
+  siirrytään suoraan etsimään tunnusta globaalilta näkyvyysalueelta.</p>
 
   <h3 id="chapter-3-sidonta">Sidonta</h3>
+  <p>Pythonissa sidonta tapahtuu osittain dynaamisesit ja osittain staattisesti.
+  Käytännössä siis näkyvyysalueet (scope) määritellään staattisesi, mutta niitä
+  käytetään dynaamisesti. Eli toisin sanoen eri näkyvyysalueilla olevat tunnukset
+  määritellään, mutta niihin ei liitetä arvoa. Ajonaikaisesti voidaan määritellä
+  uusia tunnuksia globaalille tasolle. On kuitenkin huomioitava, että Python-funktioille
+  ei vo määritellä uusia lokaaleja tunnuksia funktion parsimisen jälkeen. Pythoninsa
+  dokumentaatioissa myös vihjataan, että staattisuus staattisuutta tullaan jatkossa
+  lisäämään.
+  <!--TODO: Timo tarkistapa nämä nyt vielä jostain http://bugs.python.org/issue10043
+  Lähde: http://docs.python.org/py3k/tutorial/classes.html#python-scopes-and-namespaces -->
+  </p>
+
+  <h3>Esimerkki tunnusten näkyvyydestä, lohkorakenteista ja sidonnasta</h3>
+  <p>Seuraava esimerkki pyrkii demonstroimaan hieman kaikkea tunnusten
+  näkyvyyteen liittyvää. Siinä näytetään miten saadaan aikaan ajonaikainen
+  poikkeus sidonnasta ja toisaalta myös demonstroidaan muuttujien näkyvyyttä.</p>
+  <pre>
+#!/usr/bin/python3.1
+# -*- coding: UTF-8 -*-
+
+muuttuja="globaali"
+print("moduulitasolla", muuttuja)
+
+def main():
+    import sys
+    #muuttuja on selvästi edelleen globaalien nimien joukossa
+    if 'muuttuja' in globals(): print("muuttuja on määritelty globaalilla tasolla")
+
+    try:
+        #FAIL! UnboundLocalError: local variable 'muuttuja' referenced before assignmen!
+        print("fail", muuttuja)
+    except UnboundLocalError:
+        name, msg = sys.exc_info()[:2]
+
+    #Btw. alemmalla lohkotasolla määritellyt muuttujat näkyvät ylemmälle
+    print(name.__name__+":", msg)
+
+    #Ja syy on seuraavalla koodirivillä. Näin käy sillä kääntäjä merkitsee seuraavan
+    #lauseen takia nimen muuttuja olemaan tyypiltään lokaali viittaus tässä
+    #lohkossa. Siten suoritusaikana kun nimeen muuttuja viitataan yllä, sitä
+    #etsitäänkin vain lokaalien muuttujien joukosta. Koska tämä lause jossa lokaali
+    #nimi muuttuja sidotaan merkkijonoon "lokaali", on ensimmäisen nimeen tehdyn
+    #viittauksen jälkeen tässä lohkossa, on muuttuja tässä siis vielä
+    #sitomatta.
+    muuttuja = "lokaali"
+    print("main", muuttuja)
+
+    def fun():
+        global muuttuja
+        print("funktio", muuttuja)
+    fun()
+
+    lam = lambda: print("lambda", muuttuja)
+    lam()
+
+    #Seuraava if-lause saisi kuitenkin aikaan sen, että kaikkialla main-metodissa
+    #tunnus muuttuja viittaisi saman nimiseen moduulitason globaaliin muuttujaan.
+    #Tämä ei toki sinänsä liene kovin yllättävää, mutta toimii kuitenkin pienenä
+    #demonstraatio siitä, että if-lause ei ole lohko. Ei ainakaan Pythonissa :)
+    #if True:
+    #    global muuttuja
+    #    print("globaali", muuttuja)
+
+if __name__ == '__main__':
+    main()
+    print("moduulitasolla if-lohkossa", muuttuja)
+  </pre>
+
+<p>Skripti tekee seuraavan tulostuksen (<a href="esimerkit/unbound_excep_esim.py">lataa esimerkki</a>)</p>
+  <pre>
+moduulitasolla globaali
+muuttuja on määritelty globaalilla tasolla
+UnboundLocalError: local variable 'muuttuja' referenced before assignment
+main lokaali
+funktio globaali
+lambda lokaali
+moduulitasolla if-lohkossa globaali
+  </pre>
 
   <h3 id="chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">Sisäkkäiset nimiavaruudet ja funktiot</h3>
 
@@ -434,13 +533,13 @@ def eka(p):
 def toka():
     print("--- toka alkaa ---")
     x = "olen tokan x"
-    
+
     def fpar():
         nonlocal x # muuttuja x viittaa nyt sulkeuman ulkopuoliseen viimeiseksi
-                   # sidottuun tunnukseen eli tokan muuttujaan x 
+                   # sidottuun tunnukseen eli tokan muuttujaan x
         print(x)
         x = "tokan x on muutettu!"
-    
+
     eka(fpar) # "nimetyn sulkeuman" välitys funktioparametrina
     print(x) # viittaus paikalliseen tunnukseen
     print("--- toka päättyy ---")
@@ -502,6 +601,10 @@ print(f(5)) # 25
 
     <li id="ref-sulkeumat-py22"><a href=
     "http://docs.python.org/release/2.2.3/whatsnew/node9.html">http://docs.python.org/release/2.2.3/whatsnew/node9.html</a></li>
+
+    <li id="ref-nimet-ja_sidonta-py3-spec"><a href=
+    "http://docs.python.org/py3k/reference/executionmodel.html#naming-and-binding">
+    http://docs.python.org/py3k/reference/executionmodel.html#naming-and-binding</a></li>
   </ol>
 </body>
 </html>
