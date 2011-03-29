@@ -439,9 +439,9 @@ if 1 == 1: print "spam"; print "ham"
   käytetään dynaamisesti. Eli toisin sanoen eri näkyvyysalueilla olevat tunnukset
   määritellään, mutta niihin ei liitetä arvoa. Ajonaikaisesti voidaan määritellä
   uusia tunnuksia globaalille tasolle. On kuitenkin huomioitava, että Python-funktioille
-  ei vo määritellä uusia lokaaleja tunnuksia funktion parsimisen jälkeen. Pythoninsa
-  dokumentaatioissa myös vihjataan, että staattisuus staattisuutta tullaan jatkossa
-  lisäämään.
+  ei vo määritellä uusia lokaaleja tunnuksia funktion parsimisen jälkeen (eli lokaalit muuttujat määritellään staattisesti). Pythonin
+  dokumentaatioissa myös vihjataan, että staattisuutta tullaan jatkossa
+  lisäämään (ja näin ollen dynaamiseen sidontaan nojautumista kehoitetaan välttämään).
   <!--TODO: Timo tarkistapa nämä nyt vielä jostain http://bugs.python.org/issue10043
   Lähde: http://docs.python.org/py3k/tutorial/classes.html#python-scopes-and-namespaces -->
   </p>
