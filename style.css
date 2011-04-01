@@ -1,0 +1,19 @@
+html { background: #eee;}
+body { padding: 15px;
+       margin: 15px;
+       border: 1px solid #ccc;
+       background: #fff;
+}
+
+/* TYPESET */
+
+h1,h2,h3 { font-family: sans-serif;}
+p { font-family: serif;}
+
+/* ELEMENTS */
+
+pre  { background: #eee; border: 1px solid #ccc; padding: 5px;}
+ul.toc, ol.toc {background: #eef; border: 1px solid #ccf; padding-top: 5px; padding-bottom: 5px;}
+
+#logo { vertical-align: middle;}
+

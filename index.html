@@ -10,17 +10,13 @@
   <meta http-equiv="content-type" content=
   "text/html; charset=utf-8">
 
-  <style type="text/css" media="screen">
-    pre  { background: #eee; border: 1px solid #ccc; padding: 5px;}
-    ul.toc, ol.toc {background: #eef; border: 1px solid #ccf; padding-top: 5px; padding-bottom: 5px;}
-  </style>
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+
 </head>
 
 <body>
 
-  <img src="python_logo.png" alt="Python logo" />
-
-  <h1>OKP: Python kevytspesifikaatio</h1>
+  <h1><img src="python_logo.png" alt="Python" id="logo"> kevytspesifikaatio</h1>
 
   <p>Kurssi: <a href=
   "http://www.cs.helsinki.fi/u/wikla/OKP/K11/">581362
@@ -46,6 +42,7 @@
     <li><a href="#chapter-3">Tunnusten näkyvyysalueet</a></li>
     <li><a href="#chapter-4">Kontrollin ja/tai laskennan ohjaus</a></li>
     <li><a href="#chapter-5">Perustietotyypit</a></li>
+    <li><a href="#lahteet">Lähteet</a></li>
   </ol>
 
 
@@ -422,18 +419,17 @@ if 1 == 1: print "spam"; print "ham"
   
   <h3 id="chapter-3-lohkorakenne">Lohkorakenne</h3>
   <p>Pythonissa lohkoksi kutsutaan koodinpätkää, joka suoritetaan yhtenä
-  yksikkönä. Seuraavia rakenteita kutsutaan lohkoiksi:
-    <ul>
-      <li>moduuli</li>
-      <li>funktion vartalo</li>
-      <li>luokan määrittely</li>
-      <li>jokainen interaktiivisesti kirjoitettu komento</li>
-      <li>skriptitiedosto (annettuna tulkille komentoriviparametrina)</li>
-      <li>skriptikomento (annettuna tulkille -c komentoriviparametrin arvona)</li>
-      <li>exec() tai eval() -funktioille merkkijonona annettu koodi</li>
-    </ul>
-  [<a href="#ref-nimet-ja_sidonta-py3-spec">6</a>]
-  </p>
+  yksikkönä. Seuraavia rakenteita kutsutaan lohkoiksi:</p>
+  <ul>
+    <li>moduuli</li>
+    <li>funktion vartalo</li>
+    <li>luokan määrittely</li>
+    <li>jokainen interaktiivisesti kirjoitettu komento</li>
+    <li>skriptitiedosto (annettuna tulkille komentoriviparametrina)</li>
+    <li>skriptikomento (annettuna tulkille -c komentoriviparametrin arvona)</li>
+    <li>exec() tai eval() -funktioille merkkijonona annettu koodi</li>
+  </ul>
+  <p>[<a href="#ref-nimet-ja_sidonta-py3-spec">6</a>]</p>
   
   <p>Kuten on jo aiemmin mainittu Python käyttää sisennyksiä määrittelemään
   lohkoja. Sisennys kasvaa tiettyjen ilmaisujen jälkeen ja puolestaan pienenee
@@ -640,7 +636,7 @@ print(f(5)) # 25
     <li>arvio kieleen valittujen ratkaisujen eduista ja haitoista</li>
   </ul>
 
-  <h2>Lähteet</h2>
+  <h2 id="lahteet">Lähteet</h2>
 
   <ol>
     <li id="ref-varatut-sanat-py3-spec"><a href=
