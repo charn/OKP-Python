@@ -687,12 +687,10 @@ print(f(5)) # 25
     <li><a href="#chapter-4-rekursio">Rekursio ja
     häntärekursio</a></li>
 
-    <li>...</li>
+    <li><a href="#chapter-4-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</a></li>
 
-    <li>havainnollisia selostettuja pieniä ohjalmaesimerkkejä</li>
-
-    <li>arvio kieleen valittujen ratkaisujen eduista ja
-    haitoista</li>
+    <li><a href="#chapter-4-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
+    haitoista</a></li>
   </ul>
 
   <h3 id="chapter-4-valinta">Valinta</h3>
@@ -714,7 +712,7 @@ else:
     print('More')
 </pre>
 
-  <p>Koodi tulostaa esim.:</p>
+  <p>Edellinen koodi tulostaa esim.:</p>
   <pre>
 Please enter an integer: <strong>42</strong>
 More
@@ -746,7 +744,7 @@ for x in a:
     print(x, len(x))
 </pre>
 
-  <p>Koodi tulostaa:</p>
+  <p>Edellinen koodi tulostaa:</p>
   <pre>
 cat 3
 window 6
@@ -761,7 +759,7 @@ for i in range(5):
     print(i)
 </pre>
 
-  <p>Koodi tulostaa:</p>
+  <p>Edellinen koodi tulostaa:</p>
   <pre>
 0
 1
@@ -780,12 +778,22 @@ for i in range(5):
   oikein (esim. <code>while True:</code> ja sisällä tarkistus
   <code>if condition: break</code>)</p>
   <pre>
-while x &lt; 10:
+x = 3
+while x &lt; 3:
     print("Loopissa")
     x += 1
 else:
-    print("loopin else")
+    print("Loopin else")
 </pre>
+
+  <p>Edellinen koodi tulostaa:</p>
+  
+  <pre>
+Loopissa
+Loopissa
+Loopissa
+Loopin else
+</pre>  
 
   <h4><code>continue</code> &amp; <code>break</code> -lauseet</h4>
 
@@ -837,9 +845,29 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 </pre>
 
+  <h3 id="chapter-4-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</h3>
+
+  <h3 id="chapter-4-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
+    haitoista</h3>
+
   <h2 id="chapter-5">5. Perustietotyypit</h2>
 
-  <h3>Perustyypit ja arvoalueet</h3>
+  <p><em>millaisilla arvoilla tai "datalla" pelataan</em></p>
+
+  <ul>
+    <li><a href="#chapter-5-perustyypit">Perustyypit ja arvoalueet</a></li>
+
+    <li><a href="#chapter-5-vahva-heikko-tyypitys">vahva tyypitys ~ heikko tyypitys</a></li>
+
+    <li><a href="#chapter-5-stat-dyn-tyypitys">staattinen tyypitys ~ dynaaminen tyypitys</a></li>
+
+    <li><a href="#chapter-5-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</a></li>
+
+    <li><a href="#chapter-5-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
+    haitoista</a></li>
+  </ul>
+
+  <h3 id="chapter-5-perustyypit">Perustyypit ja arvoalueet</h3>
 
   <p>Pythoniin on sisäänrakennettu kattava kokoelma perustyyppejä. Pythonissa
   kaikki on olioita, joten varsinaisia primitiivityyppejä ei kuitenkaan ole.
@@ -1024,22 +1052,66 @@ def fib(n):
       <td><code>{"one": 1, "two": 2}</code></td>
     </tr>
   </table>
-
-  <p><em>millaisilla arvoilla tai "datalla" pelataan</em></p>
-
-  <ul>
-    <li>vahva tyypitys ~ heikko tyypitys</li>
-
-    <li>staattinen tyypitys ~ dynaaminen tyypitys</li>
-
-    <li>...</li>
-
-    <li>havainnollisia selostettuja pieniä ohjalmaesimerkkejä</li>
-
-    <li>arvio kieleen valittujen ratkaisujen eduista ja
-    haitoista</li>
-  </ul>
   
+  <h3 id="chapter-5-vahva-heikko-tyypitys">Vahva tyypitys ~ heikko tyypitys</h3>
+  <p>Python voidaan luokitella vahvasti tyypitetyksi kieliksi. Sen vahvoihin
+  tyyppiturvallisuusominaisuuksiin kuuluu muunmuassa, että implisiittisiä tyyppimuunnoksia
+  ei käytetä (lähes ollenkaan?) ja olioilla on aina tyyppi, eikä sitä voi
+  muuttaa. Vrt. Javassa <span class="code">"spam" + 1</span> tuottaa merkkijonon "spam1".
+  Pythonissa ei numeroa suostuta implisiittisesti konvertoimaan vaan tuloksena on
+  poikkeus. Vastaavasti C:ssä voidaan esimerkiks osoittmet konvertoida eksplisiittisesti
+  ja siten käytännössä tulkita mikä tahansa olio miksi tahansa olikosi.</p>
+  
+  <h3 id="chapter-5-tyypitys">Staattinen tyypitys ~ dynaaminen tyypitys</h3>
+  <p>Python on dynaamisesti tyypitetty kieli. Vaikka olioiden tyyppi onkin aina tiedossa,
+  niin Pythonilla ohjelmoitaessa tämä yritään jättää mahdollisimman pitkälti huomiotta.
+  Funktoiden paramterien tyyppiä ei normaalisti tarkisteta vaan noudatetaan ns.
+  "duck typing" -paradigmaa, jonka ajatus on, että jos se vaakkuu kuin ankka ja
+  kävelee kuin ankka, niin sen täytyy olla ankka. Jos se olikin ihminen joka esittää ankaa, niin
+  sillä ei ole väliä. Seuraavassa esimerkki "duck typing" -paradigman käytöstä:</p>
+<pre>
+class Duck:
+    def quack(self):
+        print("Quaaaaaack!")
+    def duck_walk(self):
+        print("Walks.")
+ 
+class Person:
+    def quack(self):
+        print("The person quacks like a duck.")
+    def duck_walk(self):
+        print("The person walks like a duck.")
+    def name(self):
+        print("John Smith")
+ 
+def in_the_forest(duck):
+    duck.quack()
+    duck.duck_walk()
+ 
+def game():
+    donald = Duck()
+    john = Person()
+    in_the_forest(donald)
+    in_the_forest(john)
+ 
+game()
+</pre>
+  <!-- Merkkaa lähteet Timo
+  http://en.wikipedia.org/wiki/Type_safety
+  http://en.wikipedia.org/wiki/Strong_typing
+  http://en.wikipedia.org/wiki/Duck_typing
+  http://wiki.python.org/moin/Why%20is%20Python%20a%20dynamic%20language%20and%20also%20a%20strongly%20typed%20language
+  -->
+
+  <li><a href="#chapter-5-vahva-heikko-tyypitys">vahva tyypitys ~ heikko tyypitys</a></li>
+
+    <li><a href="#chapter-5-stat-dyn-tyypitys">staattinen tyypitys ~ dynaaminen tyypitys</a></li>
+
+  <h3 id="chapter-5-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</h3>
+
+  <h3 id="chapter-5-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
+    haitoista</h3>
+
   <h2 id="lahteet">Lähteet</h2>
 
   <ol>
