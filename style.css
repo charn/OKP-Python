@@ -7,7 +7,7 @@ body { padding: 15px;
 
 /* TYPESET */
 
-h1,h2,h3 { font-family: sans-serif;}
+h1,h2,h3, h4 { font-family: sans-serif;}
 p { font-family: serif;}
 
 /* ELEMENTS */
