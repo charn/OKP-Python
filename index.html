@@ -752,6 +752,25 @@ window 6
 defenestrate 12
 </pre>
 
+Seuraavassa <code>for</code> -lauseessa puretaan listassa olevat monikot ja käytetään <code>string</code> -luokasta löytyvää korvausoperaatiota, joka muuttaa <code>{}</code> -merkkien välistä löytyvä kohdat halutuiksi. 
+
+<pre>
+animals = [ ('Cat', 'Meow'),
+            ('Cow', 'Moo'),
+            ('Dog', 'Woof')]
+
+for animal, sound in animals:
+    print("{0} says {1}!".format(animal, sound))
+</pre>
+
+  <p>Edellinen koodi tulostaa:</p>
+
+<pre>
+Cat says Meow!
+Cow says Moo!
+Dog says Woof!
+</pre>
+
   <p>Haluttaessa toistaa tietty koodi useampaan kertaan voidaan
   käyttää hyväksi esim. <code>range()</code> -funktiota, joka
   tuottaa halutun kokoisen kokonaislukuiteraattorin.</p>
@@ -863,9 +882,9 @@ def fib(n):
   <ul>
     <li><a href="#chapter-5-perustyypit">Perustyypit ja arvoalueet</a></li>
 
-    <li><a href="#chapter-5-vahva-heikko-tyypitys">vahva tyypitys ~ heikko tyypitys</a></li>
+    <li><a href="#chapter-5-vahva-heikko-tyypitys">Vahva tyypitys ~ heikko tyypitys</a></li>
 
-    <li><a href="#chapter-5-stat-dyn-tyypitys">staattinen tyypitys ~ dynaaminen tyypitys</a></li>
+    <li><a href="#chapter-5-stat-dyn-tyypitys">Staattinen tyypitys ~ dynaaminen tyypitys</a></li>
 
     <li><a href="#chapter-5-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</a></li>
 
@@ -1108,10 +1127,6 @@ game()
   http://en.wikipedia.org/wiki/Duck_typing
   http://wiki.python.org/moin/Why%20is%20Python%20a%20dynamic%20language%20and%20also%20a%20strongly%20typed%20language
   -->
-
-  <li><a href="#chapter-5-vahva-heikko-tyypitys">vahva tyypitys ~ heikko tyypitys</a></li>
-
-    <li><a href="#chapter-5-stat-dyn-tyypitys">staattinen tyypitys ~ dynaaminen tyypitys</a></li>
 
   <h3 id="chapter-5-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</h3>
 
