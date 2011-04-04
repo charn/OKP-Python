@@ -616,7 +616,7 @@ print(f(5)) # 25
   <ul>
     <li><a href="#chapter-4-valinta">Valinta</a></li>
     <li><a href="#chapter-4-toisto">Toisto eli iteraatio</a></li>
-    <li>rekursio ja häntärekursio</li>
+    <li><a href="#chapter-4-rekursio">Rekursio ja häntärekursio</a></li>
     <li>...</li>
     <li>havainnollisia selostettuja pieniä ohjalmaesimerkkejä</li>
     <li>arvio kieleen valittujen ratkaisujen eduista ja haitoista</li>
@@ -692,12 +692,31 @@ else:
     print("loopin else")</pre>
     
   <h4><code>continue</code> & <code>break</code> -lauseet</h4>
-  <code>continue</code> -lause hyppää toistorakenteessa suoraan toistorakenteen
+  <p><code>continue</code> -lause hyppää toistorakenteessa suoraan toistorakenteen
   seuraavalle iteraatiokierrokselle. Tätä voidaan käyttää siis, kun halutaan
   ohittaa osa toistorakenteen koodista juuri tällä suorituskerralla.
   <code>break</code> -lause lopettaa toistorakenteen suorittamisen ilman ns.
-  pysäytysehdon täyttymistä [<a href="#ref-compoundstatement">9</a>].
+  pysäytysehdon täyttymistä [<a href="#ref-compoundstatement">9</a>].</p>
     
+  <h3 id="chapter-4-rekursio">Rekursio ja häntärekursio</h3>  
+  
+  <p>Rekursiivisissa ohjelmarutiineissa idea on sama kuin matemaattisesti määritellyissä rekursiivisissa funktioissa, ja rekursiivisesti lasketut välitulokset tallennetaan useimmiten pinoon. Viimeisellä rekursiokierroksella pinosta kerätään vastaukset käänteisessä järjestyksessä. Python tukee rekursiota eli sallii funktion kutsua itse itseään.</p>
+  
+  <p>Python ei tee eroa normaalin rekursion tai häntärekursion välillä [<a href="#ref-tail-recursion">11</a>]. Toisin sanoen
+  se ei siis toteuta ominaisuuksia (tunnetaan mm. nimillä <em>tail call elimination</em> tai <em>tail call optimization</em>), joilla voitaisiin optimoida tilankäyttöä tallettamalla
+  häntärekursiossa kutsuttavan funktion aktivaatiotietue kutsujan aktivaatiotietueen tilalle pinoon eli muuntamalla rekursio vastaamaan tavallista silmukkaal.</p>
+  
+  <p>Rekursion syvyys on rajoitettu Pythonissa. Raja estää ikuista silmukkaa aiheuttamasta ylivuotoa C:n pinossa ja kaatamasta Pythonia [<a href="#ref-library-sys">10</a>]. <code>sys</code> -moduulista löytyy kaksi komentoa, jolla voi selvittää maksimaalisen rekursiosyvyyden (<code>sys.getrecursionlimit()</code>) tai asettaa sen (<code>sys.setrecursionlimit(int)</code>) ohjelmat eivät cpmutta sitä voidaan kasvattaa. Rekursiosyvyyden oletusarvo riippuu implementaatiosta, kun taas suurin mahdollinen arvo on laitteistoriippuvainen. </p> 
+
+  <p>Fibonaccin luvun laskeminen rekursiivisesti. Laskee luvun, jonka järjestys on n.</p>
+<pre>def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)</pre>
+
   <h2 id="chapter-5">5. Perustietotyypit</h2>
 
   <p><em>millaisilla arvoilla tai "datalla" pelataan</em></p>
@@ -742,6 +761,8 @@ else:
     
     <li id="ref-controlflow"><a href="http://docs.python.org/py3k/tutorial/controlflow.html">Python v3.2 documentation &mdash; 4. More Control Flow Tools</a></li>
     <li id="ref-compoundstatement"><a href="http://docs.python.org/py3k/reference/compound_stmts.html">Python v3.2 documentation &mdash; 7. Compound statements</a></li>
+    <li id="ref-library-sys"><a href="http://docs.python.org/py3k/library/sys.html">Python v3.2 documentation &mdash; 27.1. sys — System-specific parameters and functions</a></li>
+    <li id="ref-tail-recursion"><a href="http://neopythonic.blogspot.com/2009/04/tail-recursion-elimination.html">Neopythonic &mdash; Tail Recursion Elimination</a></li>
   </ol>
 </body>
 </html>
