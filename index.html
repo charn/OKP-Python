@@ -9,14 +9,13 @@
   <title>OKP: Python kevytspesifikaatio</title>
   <meta http-equiv="content-type" content=
   "text/html; charset=utf-8">
-
-  <link rel="stylesheet" href="style.css" type="text/css" media="screen">
-
+  <link rel="stylesheet" href="style.css" type="text/css" media=
+  "screen">
 </head>
 
 <body>
-
-  <h1><img src="python_logo.png" alt="Python" id="logo"> kevytspesifikaatio</h1>
+  <h1><img src="python_logo.png" alt="Python" id="logo" name=
+  "logo"> kevytspesifikaatio</h1>
 
   <p>Kurssi: <a href=
   "http://www.cs.helsinki.fi/u/wikla/OKP/K11/">581362
@@ -35,23 +34,34 @@
   </ul>
 
   <h2>Sisältö</h2>
+
   <ol class="toc">
-    <li><a href="#chapter-1">Kielen taustaa ja miniesimerkki</a></li>
-    <li><a href="#chapter-2">Alkiorakenne – millaisista palikoista ohjelmat
-        rakennetaan</a></li>
+    <li><a href="#chapter-1">Kielen taustaa ja
+    miniesimerkki</a></li>
+
+    <li><a href="#chapter-2">Alkiorakenne – millaisista palikoista
+    ohjelmat rakennetaan</a></li>
+
     <li><a href="#chapter-3">Tunnusten näkyvyysalueet</a></li>
-    <li><a href="#chapter-4">Kontrollin ja/tai laskennan ohjaus</a></li>
+
+    <li><a href="#chapter-4">Kontrollin ja/tai laskennan
+    ohjaus</a></li>
+
     <li><a href="#chapter-5">Perustietotyypit</a></li>
+
     <li><a href="#lahteet">Lähteet</a></li>
   </ol>
-
 
   <h2 id="chapter-1">1. Kielen taustaa ja miniesimerkki</h2>
 
   <ul>
     <li><a href="#chapter-1-historia">Historia</a></li>
-    <li><a href="#chapter-1-perustietoa">Python perustietoa</a></li>
+
+    <li><a href="#chapter-1-perustietoa">Python
+    perustietoa</a></li>
+
     <li><a href="#chapter-1-kayttokohteet">Käyttökohteet</a></li>
+
     <li><a href="#chapter-1-fibonacci">Fibonacci esimerkki</a></li>
   </ul>
 
@@ -141,8 +151,10 @@
   CPython on saatavilla useille eri käyttöjärjestelmille ja sen
   mukana tulee laaja peruskirjasto.</p>
 
-  <p>Muita Python toteutuksia on esimerkiksi <a href="http://www.jython.org/">Jython</a> (JVM), <a href="http://ironpython.net/">IronPython</a> (.NET) ja
-  <a href="http://pypy.org/">PyPy</a>.</p>
+  <p>Muita Python toteutuksia on esimerkiksi <a href=
+  "http://www.jython.org/">Jython</a> (JVM), <a href=
+  "http://ironpython.net/">IronPython</a> (.NET) ja <a href=
+  "http://pypy.org/">PyPy</a>.</p>
 
   <h3 id="chapter-1-kayttokohteet">Käyttökohteet</h3>
 
@@ -220,17 +232,23 @@ if __name__ == "__main__": # Pääohjelma
   lopuksi kutsumme fib-funktiota syötteellä ja tulostamme sen
   palautusarvon.</p>
 
-  <h2 id="chapter-2">2. Alkiorakenne – millaisista palikoista ohjelmat
-  rakennetaan</h2>
+  <h2 id="chapter-2">2. Alkiorakenne – millaisista palikoista
+  ohjelmat rakennetaan</h2>
 
   <ul>
     <li><a href="#chapter-2-tunnukset">Tunnukset</a></li>
-    <li><a href="#chapter-2-varatut-sanat">Varatut sanat, avainsanat</a></li>
-    <li><a href="#chapter-2-literaalivakiot">Literaalivakiot</a></li>
+
+    <li><a href="#chapter-2-varatut-sanat">Varatut sanat,
+    avainsanat</a></li>
+
+    <li><a href=
+    "#chapter-2-literaalivakiot">Literaalivakiot</a></li>
+
     <li><a href="#chapter-2-erottimet-yms">Erottimet, sisennykset,
     rivinvaihdot</a></li>
-    <li><a href="#chapter-2-edut-ja-haitat">Arvio kieleen valittujen
-    ratkaisujen eduista ja haitoista</a></li>
+
+    <li><a href="#chapter-2-edut-ja-haitat">Arvio kieleen
+    valittujen ratkaisujen eduista ja haitoista</a></li>
   </ul>
 
   <h3 id="chapter-2-tunnukset">Tunnukset</h3>
@@ -333,7 +351,8 @@ break      except     in         raise
   koostuu yksipaikkaisesta operaatiosta <code>-</code> ja
   literaalista <code>1</code>.</p>
 
-  <h3 id="chapter-2-erottimet-yms">Erottimet, sisennykset, rivinvaihdot</h3>
+  <h3 id="chapter-2-erottimet-yms">Erottimet, sisennykset,
+  rivinvaihdot</h3>
 
   <p>Pythonissa käytetään sisennyksiä rajaamaan lohkoja. Sisennystä
   kasvatetaan tiettyjen lausekkeiden jälkeen ja vastaavasti
@@ -369,8 +388,8 @@ if 1 == 1: print "spam"; print "ham"
 
 </pre>
 
-  <h3 id="chapter-2-edut-ja-haitat">Arvio kieleen valittujen ratkaisujen
-  eduista ja haitoista</h3>
+  <h3 id="chapter-2-edut-ja-haitat">Arvio kieleen valittujen
+  ratkaisujen eduista ja haitoista</h3>
 
   <p>Unicode-tuki python 3:ssa tekee aidosti mahdolliseksi
   ohjelmoinnin ohjelmoijan omalla äidinkielellä. Tämä on varmasti
@@ -408,65 +427,97 @@ if 1 == 1: print "spam"; print "ham"
 
   <h2 id="chapter-3">3. Tunnusten näkyvyysalueet</h2>
   <!-- TODO: parempi ryhmittely ja otsikkojen nimet -->
-  
+
   <ul>
     <li><a href="#chapter-3-lohkorakenne">Lohkorakenne</a></li>
+
     <li><a href="#chapter-3-sidonta">Sidonta</a></li>
-    <li><a href="#chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">Sisäkkäiset nimiavaruudet ja funktiot</a></li>
-    <li><a href="#chapter-3-1-2-ja-3-luokan-arvo">Ensimmäisen, toisen ja kolmannen luokan arvo</a></li>
-    <li><a href="#chapter-3-edut-ja-haitat">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</a></li>
+
+    <li><a href=
+    "#chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">Sisäkkäiset
+    nimiavaruudet ja funktiot</a></li>
+
+    <li><a href="#chapter-3-1-2-ja-3-luokan-arvo">Ensimmäisen,
+    toisen ja kolmannen luokan arvo</a></li>
+
+    <li><a href="#chapter-3-edut-ja-haitat">Arvio kieleen
+    valittujen ratkaisujen eduista ja haitoista</a></li>
   </ul>
-  
+
   <h3 id="chapter-3-lohkorakenne">Lohkorakenne</h3>
-  <p>Pythonissa lohkoksi kutsutaan koodinpätkää, joka suoritetaan yhtenä
-  yksikkönä. Seuraavia rakenteita kutsutaan lohkoiksi:</p>
+
+  <p>Pythonissa lohkoksi kutsutaan koodinpätkää, joka suoritetaan
+  yhtenä yksikkönä. Seuraavia rakenteita kutsutaan lohkoiksi:</p>
+
   <ul>
     <li>moduuli</li>
+
     <li>funktion vartalo</li>
+
     <li>luokan määrittely</li>
+
     <li>jokainen interaktiivisesti kirjoitettu komento</li>
-    <li>skriptitiedosto (annettuna tulkille komentoriviparametrina)</li>
-    <li>skriptikomento (annettuna tulkille -c komentoriviparametrin arvona)</li>
-    <li>exec() tai eval() -funktioille merkkijonona annettu koodi</li>
+
+    <li>skriptitiedosto (annettuna tulkille
+    komentoriviparametrina)</li>
+
+    <li>skriptikomento (annettuna tulkille -c komentoriviparametrin
+    arvona)</li>
+
+    <li>exec() tai eval() -funktioille merkkijonona annettu
+    koodi</li>
   </ul>
+
   <p>[<a href="#ref-nimet-ja_sidonta-py3-spec">6</a>]</p>
-  
-  <p>Kuten on jo aiemmin mainittu Python käyttää sisennyksiä määrittelemään
-  lohkoja. Sisennys kasvaa tiettyjen ilmaisujen jälkeen ja puolestaan pienenee
-  lohkon loppumisen merkiksi. Samalla tasolla lohkossa sijaitsevat lauseet kirjoitetaan
-  jokainen omalle riville käyttäen samaa sisennystä (tai tietenkin vaihtoehtoisesti
-  kirjoittamalla kaikki samalle riville käyttäen <code>;</code> -merkkiä
-  erottimena).</p>
-  
+
+  <p>Kuten on jo aiemmin mainittu Python käyttää sisennyksiä
+  määrittelemään lohkoja. Sisennys kasvaa tiettyjen ilmaisujen
+  jälkeen ja puolestaan pienenee lohkon loppumisen merkiksi.
+  Samalla tasolla lohkossa sijaitsevat lauseet kirjoitetaan
+  jokainen omalle riville käyttäen samaa sisennystä (tai tietenkin
+  vaihtoehtoisesti kirjoittamalla kaikki samalle riville käyttäen
+  <code>;</code> -merkkiä erottimena).</p>
+
   <p>Lohkon määrittely voidaan aloittaa mm. seuraavilla sanoilla:
-  <code>if, else, elif, for, while, try, except, finally, class, def, with, pass</code>.</p>
-  
-  <p>Jos lohkon sisällä määritellään lokaali muuttuja, on tämän muuttujan näkyvyysalue
-  (scope) rajoitettu siihen lohkoon. Mikäli tunnus määritellään funktion vartalossa, niin
-  näkyy se myös funktion vartalon sisäisille lohkoille (ellevät nämä sido tunnukselle
-  uutta merkitystä). Moduulitason tunnukset ovat globaaleja. Mikäli lohkon sisältä halutaan
-  (eksplisiittisesti) viitata lohkon ulkopuolisiin muuttujiin, niin voidaan käyttää varattuja
-  sanoja nonlocal ja global. Määreellä nonlocal vihjataan, että halutaan viitata
-  näkyvyysaluehierakriassa seuraavaan tasoon jolta tunnus löytyy. Vastaavasti global-määreellä
-  siirrytään suoraan etsimään tunnusta globaalilta näkyvyysalueelta.</p>
+  <code>if, else, elif, for, while, try, except, finally, class,
+  def, with, pass</code>.</p>
+
+  <p>Jos lohkon sisällä määritellään lokaali muuttuja, on tämän
+  muuttujan näkyvyysalue (scope) rajoitettu siihen lohkoon. Mikäli
+  tunnus määritellään funktion vartalossa, niin näkyy se myös
+  funktion vartalon sisäisille lohkoille (ellevät nämä sido
+  tunnukselle uutta merkitystä). Moduulitason tunnukset ovat
+  globaaleja. Mikäli lohkon sisältä halutaan (eksplisiittisesti)
+  viitata lohkon ulkopuolisiin muuttujiin, niin voidaan käyttää
+  varattuja sanoja nonlocal ja global. Määreellä nonlocal
+  vihjataan, että halutaan viitata näkyvyysaluehierakriassa
+  seuraavaan tasoon jolta tunnus löytyy. Vastaavasti
+  global-määreellä siirrytään suoraan etsimään tunnusta globaalilta
+  näkyvyysalueelta.</p>
 
   <h3 id="chapter-3-sidonta">Sidonta</h3>
-  <p>Pythonissa sidonta tapahtuu osittain dynaamisesit ja osittain staattisesti.
-  Käytännössä siis näkyvyysalueet (scope) määritellään staattisesi, mutta niitä
-  käytetään dynaamisesti. Eli toisin sanoen eri näkyvyysalueilla olevat tunnukset
-  määritellään, mutta niihin ei liitetä arvoa. Ajonaikaisesti voidaan määritellä
-  uusia tunnuksia globaalille tasolle. On kuitenkin huomioitava, että Python-funktioille
-  ei vo määritellä uusia lokaaleja tunnuksia funktion parsimisen jälkeen (eli lokaalit muuttujat määritellään staattisesti). Pythonin
-  dokumentaatioissa myös vihjataan, että staattisuutta tullaan jatkossa
-  lisäämään (ja näin ollen dynaamiseen sidontaan nojautumista kehoitetaan välttämään).
-  <!--TODO: Timo tarkistapa nämä nyt vielä jostain http://bugs.python.org/issue10043
-  Lähde: http://docs.python.org/py3k/tutorial/classes.html#python-scopes-and-namespaces -->
-  </p>
 
-  <h3>Esimerkki tunnusten näkyvyydestä, lohkorakenteista ja sidonnasta</h3>
-  <p>Seuraava esimerkki pyrkii demonstroimaan hieman kaikkea tunnusten
-  näkyvyyteen liittyvää. Siinä näytetään miten saadaan aikaan ajonaikainen
-  poikkeus sidonnasta ja toisaalta myös demonstroidaan muuttujien näkyvyyttä.</p>
+  <p>Pythonissa sidonta tapahtuu osittain dynaamisesit ja osittain
+  staattisesti. Käytännössä siis näkyvyysalueet (scope)
+  määritellään staattisesi, mutta niitä käytetään dynaamisesti. Eli
+  toisin sanoen eri näkyvyysalueilla olevat tunnukset määritellään,
+  mutta niihin ei liitetä arvoa. Ajonaikaisesti voidaan määritellä
+  uusia tunnuksia globaalille tasolle. On kuitenkin huomioitava,
+  että Python-funktioille ei vo määritellä uusia lokaaleja
+  tunnuksia funktion parsimisen jälkeen (eli lokaalit muuttujat
+  määritellään staattisesti). Pythonin dokumentaatioissa myös
+  vihjataan, että staattisuutta tullaan jatkossa lisäämään (ja näin
+  ollen dynaamiseen sidontaan nojautumista kehoitetaan välttämään).
+  <!--TODO: Timo tarkistapa nämä nyt vielä jostain http://bugs.python.org/issue10043
+  Lähde: http://docs.python.org/py3k/tutorial/classes.html#python-scopes-and-namespaces --></p>
+
+  <h3>Esimerkki tunnusten näkyvyydestä, lohkorakenteista ja
+  sidonnasta</h3>
+
+  <p>Seuraava esimerkki pyrkii demonstroimaan hieman kaikkea
+  tunnusten näkyvyyteen liittyvää. Siinä näytetään miten saadaan
+  aikaan ajonaikainen poikkeus sidonnasta ja toisaalta myös
+  demonstroidaan muuttujien näkyvyyttä.</p>
   <pre>
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
@@ -517,9 +568,11 @@ def main():
 if __name__ == '__main__':
     main()
     print("moduulitasolla if-lohkossa", muuttuja)
-  </pre>
+  
+</pre>
 
-<p>Skripti tekee seuraavan tulostuksen (<a href="esimerkit/unbound_excep_esim.py">lataa esimerkki</a>)</p>
+  <p>Skripti tekee seuraavan tulostuksen (<a href=
+  "esimerkit/unbound_excep_esim.py">lataa esimerkki</a>)</p>
   <pre>
 moduulitasolla globaali
 muuttuja on määritelty globaalilla tasolla
@@ -528,9 +581,11 @@ main lokaali
 funktio globaali
 lambda lokaali
 moduulitasolla if-lohkossa globaali
-  </pre>
+  
+</pre>
 
-  <h3 id="chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">Sisäkkäiset nimiavaruudet ja funktiot</h3>
+  <h3 id="chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">
+  Sisäkkäiset nimiavaruudet ja funktiot</h3>
 
   <p>Python tukee sisäkkäisiä nimiavaruuksia versiosta 2.2 lähtien
   [<a href="#ref-sulkeumat-py22">5</a>]. Sitä ennen nimiavaruuksia
@@ -594,20 +649,31 @@ print(f(3)) # 15
 print(f(5)) # 25
 </pre>
 
-  <h3 id="chapter-3-1-2-ja-3-luokan-arvo">Ensimmäisen, toisen ja kolmannen luokan arvo</h3>
-  
-  <p>Pythonissa yksi tavotteista on ollut tehdä kaikista objekteista ensimmäisen luokan arvoja, eli sellaisia, joita voidaan:</p>
+  <h3 id="chapter-3-1-2-ja-3-luokan-arvo">Ensimmäisen, toisen ja
+  kolmannen luokan arvo</h3>
+
+  <p>Pythonissa yksi tavotteista on ollut tehdä kaikista
+  objekteista ensimmäisen luokan arvoja, eli sellaisia, joita
+  voidaan:</p>
+
   <ul>
-    <li>sijoittaa muuttujaan</li> 
+    <li>sijoittaa muuttujaan</li>
+
     <li>välittää parametrina</li>
+
     <li>palauttaa funktion arvona</li>
   </ul>
 
-  <p>Huomion arvoista on, että Pythonissa myös metodit ovat ensimmäisen luokan arvoja. [<a href="#ref-ensimmaisenluokan">7</a>]</p>
+  <p>Huomion arvoista on, että Pythonissa myös metodit ovat
+  ensimmäisen luokan arvoja. [<a href=
+  "#ref-ensimmaisenluokan">7</a>]</p>
 
-  <h3 id="chapter-3-edut-ja-haitat">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</h3>
-  
-  <p>Lohkojen paketettu sisentäminen on hyvä asia, koodin luettavuus lisääntyy ja se myös pakottaa kaikki kirjoittamaan koodia samalla tavalla eli sisentäen.</p>
+  <h3 id="chapter-3-edut-ja-haitat">Arvio kieleen valittujen
+  ratkaisujen eduista ja haitoista</h3>
+
+  <p>Lohkojen paketettu sisentäminen on hyvä asia, koodin
+  luettavuus lisääntyy ja se myös pakottaa kaikki kirjoittamaan
+  koodia samalla tavalla eli sisentäen.</p>
 
   <h2 id="chapter-4">4. Kontrollin ja/tai laskennan ohjaus</h2>
 
@@ -615,21 +681,29 @@ print(f(5)) # 25
 
   <ul>
     <li><a href="#chapter-4-valinta">Valinta</a></li>
+
     <li><a href="#chapter-4-toisto">Toisto eli iteraatio</a></li>
-    <li>rekursio ja häntärekursio</li>
+
+    <li><a href="#chapter-4-rekursio">Rekursio ja
+    häntärekursio</a></li>
+
     <li>...</li>
+
     <li>havainnollisia selostettuja pieniä ohjalmaesimerkkejä</li>
-    <li>arvio kieleen valittujen ratkaisujen eduista ja haitoista</li>
+
+    <li>arvio kieleen valittujen ratkaisujen eduista ja
+    haitoista</li>
   </ul>
 
   <h3 id="chapter-4-valinta">Valinta</h3>
-  
+
   <h4><code>if</code> -lause</h4>
-  
-  <p><code>if</code> -lause koostuu kolmesta eri osasta <code>if</code>, <code>elif</code>, <code>else</code>.</p>
-  
-  <pre>x = int(input("Please enter an integer: "))
-if x < 0:
+
+  <p><code>if</code> -lause koostuu kolmesta eri osasta
+  <code>if</code>, <code>elif</code>, <code>else</code>.</p>
+  <pre>
+x = int(input("Please enter an integer: "))
+if x &lt; 0:
     x = 0
     print('Negative changed to zero')
 elif x == 0:
@@ -637,199 +711,325 @@ elif x == 0:
 elif x == 1:
     print('Single')
 else:
-    print('More')</pre>
+    print('More')
+</pre>
 
   <p>Koodi tulostaa esim.:</p>
+  <pre>
+Please enter an integer: <strong>42</strong>
+More
+</pre>
 
-  <pre>Please enter an integer: <strong>42</strong>
-More</pre>
+  <p><code>elif</code> -osioita voi yhdessä lauseessa olla
+  mielivaltainen määrä tai ei yhtään. Myös <code>else</code> -osan
+  käyttö on vapaaehtoista. Python ei tue monista muista kielistä
+  tuttua switch/case -rakennetta vaan tämä tulee toteuttaa
+  if-lauseella [<a href="#ref-controlflow">8</a>].</p>
 
-  <p><code>elif</code> -osioita voi yhdessä lauseessa olla mielivaltainen määrä tai ei yhtään. Myös <code>else</code> -osan käyttö on vapaaehtoista. Python ei tue monista muista kielistä tuttua switch/case -rakennetta vaan tämä tulee toteuttaa if-lauseella [<a href="#ref-controlflow">8</a>].</p>
-  
   <h3 id="chapter-4-toisto">Toisto</h3>
 
-  <p>Toistolausekkeilla else -statement [<a href="#ref-controlflow">8</a>], joka suoritetaan jos <code>for</code> -lauseessa lista loppuu tai jos <code>while</code> -lause saa arvon <code>False</code>. <code>else</code> -lohkoa ei suoriteta jos Kontrollirakenteesta tullaan ulos <code>break</code> -lauseella.</p>
-  
+  <p>Toistolausekkeilla else -statement [<a href=
+  "#ref-controlflow">8</a>], joka suoritetaan jos <code>for</code>
+  -lauseessa lista loppuu tai jos <code>while</code> -lause saa
+  arvon <code>False</code>. <code>else</code> -lohkoa ei suoriteta
+  jos Kontrollirakenteesta tullaan ulos <code>break</code>
+  -lauseella.</p>
+
   <h4><code>for</code> -lause</h4>
-  
-  <p>for -lausetta käytetään listojen iteroimisessa. Muista kielistä poiketen tässä rakenteessa ei voi erikseen määritellä iteraatioaskelta tai pysäytysehtoa.</p>
-  
-  <pre>a = ['cat', 'window', 'defenestrate']
+
+  <p>for -lausetta käytetään listojen iteroimisessa. Muista
+  kielistä poiketen tässä rakenteessa ei voi erikseen määritellä
+  iteraatioaskelta tai pysäytysehtoa.</p>
+  <pre>
+a = ['cat', 'window', 'defenestrate']
 for x in a:
-    print(x, len(x))</pre>
-    
+    print(x, len(x))
+</pre>
+
   <p>Koodi tulostaa:</p>
-  
-  <pre>cat 3
+  <pre>
+cat 3
 window 6
-defenestrate 12</pre>
+defenestrate 12
+</pre>
 
-  <p>Haluttaessa toistaa tietty koodi useampaan kertaan voidaan käyttää hyväksi esim. <code>range()</code> -funktiota, joka tuottaa halutun kokoisen kokonaislukuiteraattorin.</p>
+  <p>Haluttaessa toistaa tietty koodi useampaan kertaan voidaan
+  käyttää hyväksi esim. <code>range()</code> -funktiota, joka
+  tuottaa halutun kokoisen kokonaislukuiteraattorin.</p>
+  <pre>
+for i in range(5):
+    print(i)
+</pre>
 
-  <pre>for i in range(5):
-    print(i)</pre>
-  
   <p>Koodi tulostaa:</p>
-  
-  <pre>0
+  <pre>
+0
 1
 2
 3
-4</pre>
-  
+4
+</pre>
+
   <h4><code>while</code> -lause</h4>
-  
-  <p><code>while</code> -lausetta käytetään suorittamaan lauseessa olevaa koodia
-   niin pitkään kun jatkamisehto pysyy totena [<a href="#ref-compoundstatement">9</a>]. Pythonissa ei ole erillistä
-   loppuehtoista do/while -lausetta. Sama tulos voidaan kuitenkin saavuttaa
-   muotoilemalla <code>while</code> -lause oikein (esim. <code>while True:</code>
-   ja sisällä tarkistus <code>if condition: break</code>)</p>
-  
-  <pre>while x < 10:
+
+  <p><code>while</code> -lausetta käytetään suorittamaan lauseessa
+  olevaa koodia niin pitkään kun jatkamisehto pysyy totena
+  [<a href="#ref-compoundstatement">9</a>]. Pythonissa ei ole
+  erillistä loppuehtoista do/while -lausetta. Sama tulos voidaan
+  kuitenkin saavuttaa muotoilemalla <code>while</code> -lause
+  oikein (esim. <code>while True:</code> ja sisällä tarkistus
+  <code>if condition: break</code>)</p>
+  <pre>
+while x &lt; 10:
     print("Loopissa")
     x += 1
 else:
-    print("loopin else")</pre>
-    
-  <h4><code>continue</code> & <code>break</code> -lauseet</h4>
-  <code>continue</code> -lause hyppää toistorakenteessa suoraan toistorakenteen
-  seuraavalle iteraatiokierrokselle. Tätä voidaan käyttää siis, kun halutaan
-  ohittaa osa toistorakenteen koodista juuri tällä suorituskerralla.
-  <code>break</code> -lause lopettaa toistorakenteen suorittamisen ilman ns.
-  pysäytysehdon täyttymistä [<a href="#ref-compoundstatement">9</a>].
-    
+    print("loopin else")
+</pre>
+
+  <h4><code>continue</code> &amp; <code>break</code> -lauseet</h4>
+
+  <p><code>continue</code> -lause hyppää toistorakenteessa suoraan
+  toistorakenteen seuraavalle iteraatiokierrokselle. Tätä voidaan
+  käyttää siis, kun halutaan ohittaa osa toistorakenteen koodista
+  juuri tällä suorituskerralla. <code>break</code> -lause lopettaa
+  toistorakenteen suorittamisen ilman ns. pysäytysehdon täyttymistä
+  [<a href="#ref-compoundstatement">9</a>].</p>
+
+  <h3 id="chapter-4-rekursio">Rekursio ja häntärekursio</h3>
+
+  <p>Rekursiivisissa ohjelmarutiineissa idea on sama kuin
+  matemaattisesti määritellyissä rekursiivisissa funktioissa, ja
+  rekursiivisesti lasketut välitulokset tallennetaan useimmiten
+  pinoon. Viimeisellä rekursiokierroksella pinosta kerätään
+  vastaukset käänteisessä järjestyksessä. Python tukee rekursiota
+  eli sallii funktion kutsua itse itseään.</p>
+
+  <p>Python ei tee eroa normaalin rekursion tai häntärekursion
+  välillä [<a href="#ref-tail-recursion">11</a>]. Toisin sanoen se
+  ei siis toteuta ominaisuuksia (tunnetaan mm. nimillä <em>tail
+  call elimination</em> tai <em>tail call optimization</em>),
+  joilla voitaisiin optimoida tilankäyttöä tallettamalla
+  häntärekursiossa kutsuttavan funktion aktivaatiotietue kutsujan
+  aktivaatiotietueen tilalle pinoon eli muuntamalla rekursio
+  vastaamaan tavallista silmukkaa.</p>
+
+  <p>Rekursion syvyys on rajoitettu Pythonissa. Raja estää ikuista
+  silmukkaa aiheuttamasta ylivuotoa C:n pinossa ja kaatamasta
+  Pythonia [<a href="#ref-library-sys">10</a>]. <code>sys</code>
+  -moduulista löytyy kaksi komentoa, jolla voi selvittää
+  maksimaalisen rekursiosyvyyden
+  (<code>sys.getrecursionlimit()</code>) tai asettaa sen
+  (<code>sys.setrecursionlimit(int)</code>) ohjelmat eivät cpmutta
+  sitä voidaan kasvattaa. Rekursiosyvyyden oletusarvo riippuu
+  implementaatiosta, kun taas suurin mahdollinen arvo on
+  laitteistoriippuvainen.</p>
+
+  <p>Fibonaccin luvun laskeminen rekursiivisesti. Laskee luvun,
+  jonka järjestys on n.</p>
+  <pre>
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+</pre>
+
   <h2 id="chapter-5">5. Perustietotyypit</h2>
 
-
   <h3>Perustyypit ja arvoalueet</h3>
-  <p>
-    Pythoniin on sisäänrakennettu kattava kokoelma perustyyppejä.
-    Seuraavassa on listattu niistä useimmin käytettävät tyypit.
-    Tämä luku perustuu CPythonin tyyppejä käsittelevään dokumentaatioon [<a href="#ref-stdtypes">10</a>][<a href="#ref-datamodel">11</a>].
-  </p>  
+
+  <p>Pythoniin on sisäänrakennettu kattava kokoelma perustyyppejä.
+  Seuraavassa on listattu niistä useimmin käytettävät tyypit. Tämä
+  luku perustuu CPythonin tyyppejä käsittelevään dokumentaatioon
+  [<a href="#ref-stdtypes">12</a>][<a href=
+  "#ref-datamodel">13</a>].</p>
+
   <p>Numeeriset tyypit:</p>
-  <p>
-    <table border="1">
-      <tr>
-        <th>Tyyppi</th>
-        <th>Tarkoitus</th>
-        <th>Arvoalue</th>
-        <th>Esimerkki</th>
-      </tr>
-      <tr>
-        <td><code>None</code></td>
-        <td>NULL-arvot</td>
-        <td>None</td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>bool</code></td>
-        <td>totuusarvot</td>
-        <td>False, True</td>
-        <td><code>False</code></td>
-      </tr>
-      <tr>
-        <td><code>int</code></td>
-        <td>kokonaisluvut</td>
-        <td>−∞ - ∞ (*)</td>
-        <td><code>-45353</code></td>
-      </tr>
-      <tr>
-        <td><code>float</code></td>
-        <td>liukuluvut</td>
-        <td>(**)</td>
-        <td><code>3.141592653589793</code></td>
-      </tr>
-      <tr>
-        <td><code>complex</code></td>
-        <td>kompleksiluvut</td>
-        <td>(**)</td>
-        <td><code>(9+3j)</code></td>
-      </tr>
-    </table>
-  </p>
-  <p>* Periaatteessa arvoalue on rajoittamaton. Käytännössä käytettävissä oleva (virtuaali) muisti määrä arvoalueen.</p>
-  <p>** Arvoalue riippuu alla olevasta toteutuksesta/laitteistosta.</p>
+
+  <table border="1" summary="Numeeriset tyypit">
+    <tr>
+      <th>Tyyppi</th>
+
+      <th>Tarkoitus</th>
+
+      <th>Arvoalue</th>
+
+      <th>Esimerkki</th>
+    </tr>
+
+    <tr>
+      <td><code>None</code></td>
+
+      <td>NULL-arvot</td>
+
+      <td>None</td>
+
+      <td><code>None</code></td>
+    </tr>
+
+    <tr>
+      <td><code>bool</code></td>
+
+      <td>totuusarvot</td>
+
+      <td>False, True</td>
+
+      <td><code>False</code></td>
+    </tr>
+
+    <tr>
+      <td><code>int</code></td>
+
+      <td>kokonaisluvut</td>
+
+      <td>−∞ - ∞ (*)</td>
+
+      <td><code>-45353</code></td>
+    </tr>
+
+    <tr>
+      <td><code>float</code></td>
+
+      <td>liukuluvut</td>
+
+      <td>(**)</td>
+
+      <td><code>3.141592653589793</code></td>
+    </tr>
+
+    <tr>
+      <td><code>complex</code></td>
+
+      <td>kompleksiluvut</td>
+
+      <td>(**)</td>
+
+      <td><code>(9+3j)</code></td>
+    </tr>
+  </table>
+
+  <p>* Periaatteessa arvoalue on rajoittamaton. Käytännössä
+  käytettävissä oleva (virtuaali) muisti määrä arvoalueen.</p>
+
+  <p>** Arvoalue riippuu alla olevasta
+  toteutuksesta/laitteistosta.</p>
+
   <p>Jonotyypit:</p>
-  <p>
-    <table border="1">
-		<tr>
-		    <th>Tyyppi</th>
-		    <th>Tarkoitus</th>
-		    <th>Esimerkki</th>
-		  </tr>
-		  <tr>
-		    <td><code>str</code></td>
-		    <td>Unicode-merkkijonot</td>
-		    <td><code>'xyzzy'</code>, <code>"Hello, 世界"</code></td>
-		  </tr>
-		  <tr>
-		    <td><code>bytes</code></td>
-		    <td>immutaabelit tavumerkkijonot</td>
-		    <td><code>b'xyzzy'</code></td>
-		  </tr>
-		  <tr>
-		    <td><code>bytearray</code></td>
-		    <td>tavumerkkijonot</td>
-		    <td><code>b'xyzzy'</code></td>
-		  </tr>
-		  <tr>
-		    <td><code>list</code></td>
-		    <td>listat</td>
-		    <td><code>[1, 2, 3]</code></td>
-		  </tr>
-		  <tr>
-		    <td><code>tuple</code></td>
-		    <td>monikot</td>
-		    <td><code>(1, 2, 3)</code></td>
-		  </tr>
-    </table>
-  </p>
+
+  <table border="1" summary="Jonotyypit">
+    <tr>
+      <th>Tyyppi</th>
+
+      <th>Tarkoitus</th>
+
+      <th>Esimerkki</th>
+    </tr>
+
+    <tr>
+      <td><code>str</code></td>
+
+      <td>Unicode-merkkijonot</td>
+
+      <td><code>'xyzzy'</code>, <code>"Hello, 世界"</code></td>
+    </tr>
+
+    <tr>
+      <td><code>bytes</code></td>
+
+      <td>immutaabelit tavumerkkijonot</td>
+
+      <td><code>b'xyzzy'</code></td>
+    </tr>
+
+    <tr>
+      <td><code>bytearray</code></td>
+
+      <td>tavumerkkijonot</td>
+
+      <td><code>b'xyzzy'</code></td>
+    </tr>
+
+    <tr>
+      <td><code>list</code></td>
+
+      <td>listat</td>
+
+      <td><code>[1, 2, 3]</code></td>
+    </tr>
+
+    <tr>
+      <td><code>tuple</code></td>
+
+      <td>monikot</td>
+
+      <td><code>(1, 2, 3)</code></td>
+    </tr>
+  </table>
+
   <p>Joukkotyypit:</p>
-  <p>
-    <table border="1">
-		<tr>
-		    <th>Tyyppi</th>
-		    <th>Tarkoitus</th>
-		    <th>Esimerkki</th>
-		  </tr>
-		  <tr>
-		    <td><code>set</code></td>
-		    <td>joukot</td>
-		    <td><code>set([32, 26, 12, 54])</code></td>
-		  </tr>
-		  <tr>
-		    <td><code>frozenset</code></td>
-		    <td>immutaabelit joukot</td>
-		    <td><code>set([32, 26, 12, 54])</code></td>
-		  </tr>
-    </table>
-  </p>
-  
+
+  <table border="1" summary="Joukkotyypit">
+    <tr>
+      <th>Tyyppi</th>
+
+      <th>Tarkoitus</th>
+
+      <th>Esimerkki</th>
+    </tr>
+
+    <tr>
+      <td><code>set</code></td>
+
+      <td>joukot</td>
+
+      <td><code>set([32, 26, 12, 54])</code></td>
+    </tr>
+
+    <tr>
+      <td><code>frozenset</code></td>
+
+      <td>immutaabelit joukot</td>
+
+      <td><code>set([32, 26, 12, 54])</code></td>
+    </tr>
+  </table>
+
   <p>Kuvaustyypit:</p>
-  <p>
-    <table border="1">
-		<tr>
-		    <th>Tyyppi</th>
-		    <th>Tarkoitus</th>
-		    <th>Esimerkki</th>
-		  </tr>
-		  <tr>
-		    <td><code>dict</code></td>
-		    <td>avain: arvo -parit</td>
-		    <td><code>{"one": 1, "two": 2}</code></td>
-		  </tr>
-    </table>
-  </p>
-  
+
+  <table border="1" summary="Kuvaustyypit">
+    <tr>
+      <th>Tyyppi</th>
+
+      <th>Tarkoitus</th>
+
+      <th>Esimerkki</th>
+    </tr>
+
+    <tr>
+      <td><code>dict</code></td>
+
+      <td>avain: arvo -parit</td>
+
+      <td><code>{"one": 1, "two": 2}</code></td>
+    </tr>
+  </table>
+
   <p><em>millaisilla arvoilla tai "datalla" pelataan</em></p>
 
   <ul>
     <li>vahva tyypitys ~ heikko tyypitys</li>
+
     <li>staattinen tyypitys ~ dynaaminen tyypitys</li>
+
     <li>...</li>
+
     <li>havainnollisia selostettuja pieniä ohjalmaesimerkkejä</li>
-    <li>arvio kieleen valittujen ratkaisujen eduista ja haitoista</li>
+
+    <li>arvio kieleen valittujen ratkaisujen eduista ja
+    haitoista</li>
   </ul>
 
   <h2 id="lahteet">Lähteet</h2>
@@ -856,15 +1056,35 @@ else:
     <li id="ref-nimet-ja_sidonta-py3-spec"><a href=
     "http://docs.python.org/py3k/reference/executionmodel.html#naming-and-binding">
     http://docs.python.org/py3k/reference/executionmodel.html#naming-and-binding</a></li>
-    
+
     <li id="ref-ensimmaisenluokan"><a href=
-    "http://python-history.blogspot.com/2009/02/first-class-everything.html">http://python-history.blogspot.com/2009/02/first-class-everything.html</a></li>
-    
-    <li id="ref-controlflow"><a href="http://docs.python.org/py3k/tutorial/controlflow.html">Python v3.2 documentation &mdash; 4. More Control Flow Tools</a></li>
-    <li id="ref-compoundstatement"><a href="http://docs.python.org/py3k/reference/compound_stmts.html">Python v3.2 documentation &mdash; 7. Compound statements</a></li>
-    
-    <li id="ref-stdtypes"><a href="http://docs.python.org/release/3.1.3/library/stdtypes.html">Python v3.2 documentation &mdash; 5. Built-in Types</a></li>
-    <li id="ref-datamodel"><a href="http://docs.python.org/release/3.1.3/reference/datamodel.html">Python v3.2 documentation &mdash; 3. Data model</a></li>
+    "http://python-history.blogspot.com/2009/02/first-class-everything.html">
+    http://python-history.blogspot.com/2009/02/first-class-everything.html</a></li>
+
+    <li id="ref-controlflow"><a href=
+    "http://docs.python.org/py3k/tutorial/controlflow.html">Python
+    v3.2 documentation — 4. More Control Flow Tools</a></li>
+
+    <li id="ref-compoundstatement"><a href=
+    "http://docs.python.org/py3k/reference/compound_stmts.html">Python
+    v3.2 documentation — 7. Compound statements</a></li>
+
+    <li id="ref-library-sys"><a href=
+    "http://docs.python.org/py3k/library/sys.html">Python v3.2
+    documentation — 27.1. sys — System-specific parameters and
+    functions</a></li>
+
+    <li id="ref-tail-recursion"><a href=
+    "http://neopythonic.blogspot.com/2009/04/tail-recursion-elimination.html">
+    Neopythonic — Tail Recursion Elimination</a></li>
+
+    <li id="ref-stdtypes"><a href=
+    "http://docs.python.org/release/3.1.3/library/stdtypes.html">Python
+    v3.2 documentation — 5. Built-in Types</a></li>
+
+    <li id="ref-datamodel"><a href=
+    "http://docs.python.org/release/3.1.3/reference/datamodel.html">
+    Python v3.2 documentation — 3. Data model</a></li>
   </ol>
 </body>
 </html>
