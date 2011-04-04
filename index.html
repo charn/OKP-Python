@@ -841,14 +841,17 @@ def fib(n):
 
   <h3>Perustyypit ja arvoalueet</h3>
 
-  <p>Pythoniin on sisäänrakennettu kattava kokoelma perustyyppejä.
-  Seuraavassa on listattu niistä useimmin käytettävät tyypit. Tämä
-  luku perustuu CPythonin tyyppejä käsittelevään dokumentaatioon
-  [<a href="#ref-stdtypes">12</a>][<a href=
+  <p>Pythoniin on sisäänrakennettu kattava kokoelma perustyyppejä. Pythonissa
+  kaikki on olioita, joten varsinaisia primitiivityyppejä ei kuitenkaan ole.
+  Toisaalta ohut oliokääre vaikkapa liukulukujen päällä ei ei käytännössä eroa
+  alla olevasta implementaatiosta mitenkään. Vastaavasti rajoittamattoman suuret
+  kokanisluvut ovat ääriesimerkki päinvastaisesta tilanteesta. Seuraavassa on
+  listattu useimmin käytetyt tyypit. Tämä luku perustuu CPythonin tyyppejä
+  käsittelevään dokumentaatioon [<a href="#ref-stdtypes">12</a>][<a href=
   "#ref-datamodel">13</a>].</p>
 
   <p>Numeeriset tyypit:</p>
-
+  
   <table border="1" summary="Numeeriset tyypit">
     <tr>
       <th>Tyyppi</th>
@@ -893,7 +896,7 @@ def fib(n):
     <tr>
       <td><code>float</code></td>
 
-      <td>liukuluvut</td>
+      <td>kaksoistarkkuuden liukuluvut</td>
 
       <td>(**)</td>
 
@@ -931,7 +934,7 @@ def fib(n):
     <tr>
       <td><code>str</code></td>
 
-      <td>Unicode-merkkijonot</td>
+      <td>Unicode-merkkijonot ***</td>
 
       <td><code>'xyzzy'</code>, <code>"Hello, 世界"</code></td>
     </tr>
@@ -968,6 +971,11 @@ def fib(n):
       <td><code>(1, 2, 3)</code></td>
     </tr>
   </table>
+  
+  <p>*** Unicode merkkijonot koostuvat 16 tai 32-bittisisitä unicode
+  merkeistä. Koko riippuu siitä käytetäänkö implementaatiossa/ympäristössä
+  UCS-2 vai UCS-4. Suurimman tuetun unicodemerkin arvon voi kysyä näin: <br />
+  sys.maxunicode.</p>
 
   <p>Joukkotyypit:</p>
 
@@ -1031,7 +1039,7 @@ def fib(n):
     <li>arvio kieleen valittujen ratkaisujen eduista ja
     haitoista</li>
   </ul>
-
+  
   <h2 id="lahteet">Lähteet</h2>
 
   <ol>
