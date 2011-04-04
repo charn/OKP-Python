@@ -700,11 +700,131 @@ else:
     
   <h2 id="chapter-5">5. Perustietotyypit</h2>
 
+
+  <h3>Perustyypit ja arvoalueet</h3>
+  <p>
+    Pythoniin on sisäänrakennettu kattava kokoelma perustyyppejä.
+    Seuraavassa on listattu niistä useimmin käytettävät tyypit.
+    Tämä luku perustuu CPythonin tyyppejä käsittelevään dokumentaatioon [<a href="#ref-stdtypes">10</a>][<a href="#ref-datamodel">11</a>].
+  </p>  
+  <p>Numeeriset tyypit:</p>
+  <p>
+    <table border="1">
+      <tr>
+        <th>Tyyppi</th>
+        <th>Tarkoitus</th>
+        <th>Arvoalue</th>
+        <th>Esimerkki</th>
+      </tr>
+      <tr>
+        <td><code>None</code></td>
+        <td>NULL-arvot</td>
+        <td>None</td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>bool</code></td>
+        <td>totuusarvot</td>
+        <td>False, True</td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>int</code></td>
+        <td>kokonaisluvut</td>
+        <td>−∞ - ∞ (*)</td>
+        <td><code>-45353</code></td>
+      </tr>
+      <tr>
+        <td><code>float</code></td>
+        <td>liukuluvut</td>
+        <td>(**)</td>
+        <td><code>3.141592653589793</code></td>
+      </tr>
+      <tr>
+        <td><code>complex</code></td>
+        <td>kompleksiluvut</td>
+        <td>(**)</td>
+        <td><code>(9+3j)</code></td>
+      </tr>
+    </table>
+  </p>
+  <p>* Periaatteessa arvoalue on rajoittamaton. Käytännössä käytettävissä oleva (virtuaali) muisti määrä arvoalueen.</p>
+  <p>** Arvoalue riippuu alla olevasta toteutuksesta/laitteistosta.</p>
+  <p>Jonotyypit:</p>
+  <p>
+    <table border="1">
+		<tr>
+		    <th>Tyyppi</th>
+		    <th>Tarkoitus</th>
+		    <th>Esimerkki</th>
+		  </tr>
+		  <tr>
+		    <td><code>str</code></td>
+		    <td>Unicode-merkkijonot</td>
+		    <td><code>'xyzzy'</code>, <code>"Hello, 世界"</code></td>
+		  </tr>
+		  <tr>
+		    <td><code>bytes</code></td>
+		    <td>immutaabelit tavumerkkijonot</td>
+		    <td><code>b'xyzzy'</code></td>
+		  </tr>
+		  <tr>
+		    <td><code>bytearray</code></td>
+		    <td>tavumerkkijonot</td>
+		    <td><code>b'xyzzy'</code></td>
+		  </tr>
+		  <tr>
+		    <td><code>list</code></td>
+		    <td>listat</td>
+		    <td><code>[1, 2, 3]</code></td>
+		  </tr>
+		  <tr>
+		    <td><code>tuple</code></td>
+		    <td>monikot</td>
+		    <td><code>(1, 2, 3)</code></td>
+		  </tr>
+    </table>
+  </p>
+  <p>Joukkotyypit:</p>
+  <p>
+    <table border="1">
+		<tr>
+		    <th>Tyyppi</th>
+		    <th>Tarkoitus</th>
+		    <th>Esimerkki</th>
+		  </tr>
+		  <tr>
+		    <td><code>set</code></td>
+		    <td>joukot</td>
+		    <td><code>set([32, 26, 12, 54])</code></td>
+		  </tr>
+		  <tr>
+		    <td><code>frozenset</code></td>
+		    <td>immutaabelit joukot</td>
+		    <td><code>set([32, 26, 12, 54])</code></td>
+		  </tr>
+    </table>
+  </p>
+  
+  <p>Kuvaustyypit:</p>
+  <p>
+    <table border="1">
+		<tr>
+		    <th>Tyyppi</th>
+		    <th>Tarkoitus</th>
+		    <th>Esimerkki</th>
+		  </tr>
+		  <tr>
+		    <td><code>dict</code></td>
+		    <td>avain: arvo -parit</td>
+		    <td><code>{"one": 1, "two": 2}</code></td>
+		  </tr>
+    </table>
+  </p>
+  
   <p><em>millaisilla arvoilla tai "datalla" pelataan</em></p>
 
   <ul>
-    <li>alkeis-/perustyypit</li>
-    <li>arvoalueet, standardoidut vai implementaatiokohtaiset, ...</li>
     <li>vahva tyypitys ~ heikko tyypitys</li>
     <li>staattinen tyypitys ~ dynaaminen tyypitys</li>
     <li>...</li>
@@ -742,6 +862,9 @@ else:
     
     <li id="ref-controlflow"><a href="http://docs.python.org/py3k/tutorial/controlflow.html">Python v3.2 documentation &mdash; 4. More Control Flow Tools</a></li>
     <li id="ref-compoundstatement"><a href="http://docs.python.org/py3k/reference/compound_stmts.html">Python v3.2 documentation &mdash; 7. Compound statements</a></li>
+    
+    <li id="ref-stdtypes"><a href="http://docs.python.org/release/3.1.3/library/stdtypes.html">Python v3.2 documentation &mdash; 5. Built-in Types</a></li>
+    <li id="ref-datamodel"><a href="http://docs.python.org/release/3.1.3/reference/datamodel.html">Python v3.2 documentation &mdash; 3. Data model</a></li>
   </ol>
 </body>
 </html>
