@@ -704,7 +704,7 @@ else:
   
   <p>Python ei tee eroa normaalin rekursion tai häntärekursion välillä [<a href="#ref-tail-recursion">11</a>]. Toisin sanoen
   se ei siis toteuta ominaisuuksia (tunnetaan mm. nimillä <em>tail call elimination</em> tai <em>tail call optimization</em>), joilla voitaisiin optimoida tilankäyttöä tallettamalla
-  häntärekursiossa kutsuttavan funktion aktivaatiotietue kutsujan aktivaatiotietueen tilalle pinoon eli muuntamalla rekursio vastaamaan tavallista silmukkaal.</p>
+  häntärekursiossa kutsuttavan funktion aktivaatiotietue kutsujan aktivaatiotietueen tilalle pinoon eli muuntamalla rekursio vastaamaan tavallista silmukkaa.</p>
   
   <p>Rekursion syvyys on rajoitettu Pythonissa. Raja estää ikuista silmukkaa aiheuttamasta ylivuotoa C:n pinossa ja kaatamasta Pythonia [<a href="#ref-library-sys">10</a>]. <code>sys</code> -moduulista löytyy kaksi komentoa, jolla voi selvittää maksimaalisen rekursiosyvyyden (<code>sys.getrecursionlimit()</code>) tai asettaa sen (<code>sys.setrecursionlimit(int)</code>) ohjelmat eivät cpmutta sitä voidaan kasvattaa. Rekursiosyvyyden oletusarvo riippuu implementaatiosta, kun taas suurin mahdollinen arvo on laitteistoriippuvainen. </p> 
 
