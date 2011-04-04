@@ -687,12 +687,10 @@ print(f(5)) # 25
     <li><a href="#chapter-4-rekursio">Rekursio ja
     häntärekursio</a></li>
 
-    <li>...</li>
+    <li><a href="#chapter-4-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</a></li>
 
-    <li>havainnollisia selostettuja pieniä ohjalmaesimerkkejä</li>
-
-    <li>arvio kieleen valittujen ratkaisujen eduista ja
-    haitoista</li>
+    <li><a href="#chapter-4-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
+    haitoista</a></li>
   </ul>
 
   <h3 id="chapter-4-valinta">Valinta</h3>
@@ -714,7 +712,7 @@ else:
     print('More')
 </pre>
 
-  <p>Koodi tulostaa esim.:</p>
+  <p>Edellinen koodi tulostaa esim.:</p>
   <pre>
 Please enter an integer: <strong>42</strong>
 More
@@ -746,7 +744,7 @@ for x in a:
     print(x, len(x))
 </pre>
 
-  <p>Koodi tulostaa:</p>
+  <p>Edellinen koodi tulostaa:</p>
   <pre>
 cat 3
 window 6
@@ -761,7 +759,7 @@ for i in range(5):
     print(i)
 </pre>
 
-  <p>Koodi tulostaa:</p>
+  <p>Edellinen koodi tulostaa:</p>
   <pre>
 0
 1
@@ -780,12 +778,22 @@ for i in range(5):
   oikein (esim. <code>while True:</code> ja sisällä tarkistus
   <code>if condition: break</code>)</p>
   <pre>
-while x &lt; 10:
+x = 3
+while x &lt; 3:
     print("Loopissa")
     x += 1
 else:
-    print("loopin else")
+    print("Loopin else")
 </pre>
+
+  <p>Edellinen koodi tulostaa:</p>
+  
+  <pre>
+Loopissa
+Loopissa
+Loopissa
+Loopin else
+</pre>  
 
   <h4><code>continue</code> &amp; <code>break</code> -lauseet</h4>
 
@@ -837,9 +845,31 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 </pre>
 
+  <h3 id="chapter-4-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</h3>
+
+  <h3 id="chapter-4-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
+    haitoista</h3>
+
   <h2 id="chapter-5">5. Perustietotyypit</h2>
 
-  <h3>Perustyypit ja arvoalueet</h3>
+  <p><em>millaisilla arvoilla tai "datalla" pelataan</em></p>
+
+  <ul>
+    <li><a href="#chapter-5-perustyypit">Perustyypit ja arvoalueet</a></li>
+
+    <li>vahva tyypitys ~ heikko tyypitys</li>
+
+    <li>staattinen tyypitys ~ dynaaminen tyypitys</li>
+
+    <li>...</li>
+
+    <li><a href="#chapter-5-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</a></li>
+
+    <li><a href="#chapter-5-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
+    haitoista</a></li>
+  </ul>
+
+  <h3 id="chapter-5-perustyypit">Perustyypit ja arvoalueet</h3>
 
   <p>Pythoniin on sisäänrakennettu kattava kokoelma perustyyppejä.
   Seuraavassa on listattu niistä useimmin käytettävät tyypit. Tämä
@@ -1017,20 +1047,10 @@ def fib(n):
     </tr>
   </table>
 
-  <p><em>millaisilla arvoilla tai "datalla" pelataan</em></p>
+  <h3 id="chapter-5-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</h3>
 
-  <ul>
-    <li>vahva tyypitys ~ heikko tyypitys</li>
-
-    <li>staattinen tyypitys ~ dynaaminen tyypitys</li>
-
-    <li>...</li>
-
-    <li>havainnollisia selostettuja pieniä ohjalmaesimerkkejä</li>
-
-    <li>arvio kieleen valittujen ratkaisujen eduista ja
-    haitoista</li>
-  </ul>
+  <h3 id="chapter-5-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
+    haitoista</h3>
 
   <h2 id="lahteet">Lähteet</h2>
 
