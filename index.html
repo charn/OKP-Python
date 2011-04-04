@@ -726,16 +726,17 @@ More
 
   <h3 id="chapter-4-toisto">Toisto</h3>
 
-  <p>Toistolausekkeilla else -statement [<a href=
+  <p>Myös toistolausekkeilla on Pythonissa else -lause [<a href=
   "#ref-controlflow">8</a>], joka suoritetaan jos <code>for</code>
   -lauseessa lista loppuu tai jos <code>while</code> -lause saa
   arvon <code>False</code>. <code>else</code> -lohkoa ei suoriteta
-  jos Kontrollirakenteesta tullaan ulos <code>break</code>
+  jos toistolauseesta poistutaan <code>break</code>
   -lauseella.</p>
 
   <h4><code>for</code> -lause</h4>
 
-  <p>for -lausetta käytetään listojen iteroimisessa. Muista
+  <p>for -lausetta käytetään iterointiin. Lause käyttää hyväkseen annetun objektin
+  iteraattoria, jota se käy järjestyksessä läpi kunnes viimeinen arvo on saavutettu. Muista
   kielistä poiketen tässä rakenteessa ei voi erikseen määritellä
   iteraatioaskelta tai pysäytysehtoa.</p>
   <pre>
@@ -849,6 +850,11 @@ def fib(n):
 
   <h3 id="chapter-4-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
     haitoista</h3>
+
+  <p>Muista ohjelmointikielistä tutut <code>do/while</code>- ja <code>switch/case</code> -lauseet on jätetty pois ja niitä ei ole toteutettu perustellusta syystä. Samat toiminnallisuudet pystytään toteuttamaan jo olemassa olevalla syntaksilla. Toisaalta esimerkiksi Javasta tuttu <code>switch-case-break</code>, jossa myös ehdon täyttävän kohdan jälkeen tulevat kohdat suoritetaan ellei <code>switch</code> -lauseesta poistuta erikseen <code>break</code> -lauseella, saattaa olla hiukan työläämpää toteuttaa Pythonilla.</p>
+  
+  <p>Rekursio toimii Pythonissa, mutta esimerkiksi kielen alkuperäinen kehittäjä ei henkilökohtaisesti ole sitä mieltä, että se olisi jokapäiväinen työkalu vaan pikemminkin teoreettinen lähestymistapa matematiikkaan. Häntärekursiosta on olemassa jonkinasteisia toteutuksia ja virityksiä, mutta
+  ainakaan virallisesti se ei ole Pythonin ominaisuus.</p>
 
   <h2 id="chapter-5">5. Perustietotyypit</h2>
 
