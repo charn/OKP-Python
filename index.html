@@ -1082,18 +1082,19 @@ def fib(n):
   <p>Python voidaan luokitella vahvasti tyypitetyksi kieliksi. Sen vahvoihin
   tyyppiturvallisuusominaisuuksiin kuuluu muunmuassa, että implisiittisiä tyyppimuunnoksia
   ei käytetä (lähes ollenkaan?) ja olioilla on aina tyyppi, eikä sitä voi
-  muuttaa. Vrt. Javassa <code>spam" + 1</code> tuottaa merkkijonon "spam1".
+  muuttaa (muuttujilla ei ole tyyppiä). Vrt. Javassa <code>spam" + 1</code> tuottaa merkkijonon "spam1".
   Pythonissa ei numeroa suostuta implisiittisesti konvertoimaan vaan tuloksena on
   poikkeus. Vastaavasti C:ssä voidaan esimerkiks osoittmet konvertoida eksplisiittisesti
   ja siten käytännössä tulkita mikä tahansa olio miksi tahansa olikosi.</p>
   
+  <p>Objektien tyyppiä ei tarkisteta käännösaikana, vaan ajon aikana jotkut operaatiot voivat epäonnistua (jolloin syntyy poikkeus), mikä osoittaa, että objekti ei ole sopivaa tyyppiä.</p>
+  
   <h3 id="chapter-5-tyypitys">Staattinen tyypitys ~ dynaaminen tyypitys</h3>
   <p>Python on dynaamisesti tyypitetty kieli. Vaikka olioiden tyyppi onkin aina tiedossa,
-  niin Pythonilla ohjelmoitaessa tämä yritään jättää mahdollisimman pitkälti huomiotta.
+  niin Pythonilla ohjelmoitaessa tämä yritään jättää mahdollisimman pitkälti huomiotta. Muuttujilla ei ole tyyppiä.
   Funktoiden paramterien tyyppiä ei normaalisti tarkisteta vaan noudatetaan ns.
-  "duck typing" -paradigmaa, jonka ajatus on, että jos se vaakkuu kuin ankka ja
-  kävelee kuin ankka, niin sen täytyy olla ankka. Jos se olikin ihminen joka esittää ankaa, niin
-  sillä ei ole väliä. Seuraavassa esimerkki "duck typing" -paradigman käytöstä:</p>
+  "duck typing" -paradigmaa, jonka ajatus on, että "Jos se vaakkuu kuin ankka ja
+  kävelee kuin ankka, niin sen täytyy olla ankka." Olion(Pythonissa kaikki ovat olioita) tyyppi määritellään tutkimalla sen metodeita ja attribuutteja. Tyypillisesti käytetään EAFP (Easier to Ask Forgiveness than Permission) tyyliä. Kun jotakin metodia yritetään käyttää, ei olion tyyppiä tarkisteta etukäteen, vaan käytetään mielummin poikkeuksia. Lyhyesti ideana on siis se, että ei välitetä siitä, mistä olio on periytynyt, vaan siitä, pystyykö se suorittamaan halutun tehtävän. Seuraavassa esimerkki "duck typing" -paradigman käytöstä:</p>
 <pre>
 class Duck:
     def quack(self):
