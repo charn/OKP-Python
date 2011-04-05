@@ -165,11 +165,11 @@
   oleva skriptikieli Google Docsissa</p>
 
   <p>Erilaisten kirjastojen <i>(NumPy, SciPy, Matplotlib, ...)</i>
-  avulla Pythonia voidaan käyttää tehokkasti tieteelliseen
+  avulla Pythonia voidaan käyttää tehokkaasti tieteelliseen
   laskentaan.</p>
 
   <p>Monissa käyttöjärjestelmissä Python kuuluu
-  peruskomponentteihin. Python löytyy muunmuassa useimmista Linux
+  peruskomponentteihin. Python löytyy muun muassa useimmista Linux
   distribuutioista, OpenBSD:stä, ja Mac OS X:stä.</p>
 
   <h3 id="chapter-1-fibonacci">Fibonacci esimerkki</h3>
@@ -257,7 +257,7 @@ if __name__ == "__main__": # Pääohjelma
   A-Z, 0-9 ja _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet
   ja iso kirjaimet tulkitaan eri kirjaimiksi. Tunnukset voivat olla
   rajoittamattoman pituisia. Lisäksi Python 3 tukee joitakin
-  ASCII-järjestelmän ulkpuolisia unicode-merkkejä. Tarkempi listaus
+  ASCII-järjestelmän ulkopuolisia unicode-merkkejä. Tarkempi listaus
   tuetuista merkeistä löytyy osoitteesta: <a href=
   "http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>.
   Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue,
@@ -402,7 +402,7 @@ if 1 == 1: print "spam"; print "ham"
   jolloin koodia ei varmaankaan haluta tehdä äidinkielellä on, jos
   tuotetaan avoimen lähdekoodin ratkaisuja. Muutoin saatetaan
   varsin tehokkaasti eliminoida iso osa käyttäjäyhteisön
-  potentiaalista jatkokehittää tuotetta. Yleisestiottaen tuote joka
+  potentiaalista jatkokehittää tuotetta. Yleisesti ottaen tuote joka
   on ohjelmoitu vaikkapa suomeksi rajoittaa
   jatkokehitysmahdollisuuksia vaikka alkuperäisen kehitystyön
   kannalta kielivalinnalla olisikin ollut positiivisia vaikutuksia.
@@ -485,29 +485,29 @@ if 1 == 1: print "spam"; print "ham"
   <p>Jos lohkon sisällä määritellään lokaali muuttuja, on tämän
   muuttujan näkyvyysalue (scope) rajoitettu siihen lohkoon. Mikäli
   tunnus määritellään funktion vartalossa, niin näkyy se myös
-  funktion vartalon sisäisille lohkoille (ellevät nämä sido
+  funktion vartalon sisäisille lohkoille (elleivät nämä sido
   tunnukselle uutta merkitystä). Moduulitason tunnukset ovat
   globaaleja. Mikäli lohkon sisältä halutaan (eksplisiittisesti)
   viitata lohkon ulkopuolisiin muuttujiin, niin voidaan käyttää
   varattuja sanoja nonlocal ja global. Määreellä nonlocal
-  vihjataan, että halutaan viitata näkyvyysaluehierakriassa
+  vihjataan, että halutaan viitata näkyvyysaluehierarkiassa
   seuraavaan tasoon jolta tunnus löytyy. Vastaavasti
   global-määreellä siirrytään suoraan etsimään tunnusta globaalilta
   näkyvyysalueelta.</p>
 
   <h3 id="chapter-3-sidonta">Sidonta</h3>
 
-  <p>Pythonissa sidonta tapahtuu osittain dynaamisesit ja osittain
+  <p>Pythonissa sidonta tapahtuu osittain dynaamisesti ja osittain
   staattisesti. Käytännössä siis näkyvyysalueet (scope)
-  määritellään staattisesi, mutta niitä käytetään dynaamisesti. Eli
+  määritellään staattisesti, mutta niitä käytetään dynaamisesti. Eli
   toisin sanoen eri näkyvyysalueilla olevat tunnukset määritellään,
   mutta niihin ei liitetä arvoa. Ajonaikaisesti voidaan määritellä
   uusia tunnuksia globaalille tasolle. On kuitenkin huomioitava,
-  että Python-funktioille ei vo määritellä uusia lokaaleja
+  että Python-funktioille ei voi määritellä uusia lokaaleja
   tunnuksia funktion parsimisen jälkeen (eli lokaalit muuttujat
   määritellään staattisesti). Pythonin dokumentaatioissa myös
   vihjataan, että staattisuutta tullaan jatkossa lisäämään (ja näin
-  ollen dynaamiseen sidontaan nojautumista kehoitetaan välttämään).
+  ollen dynaamiseen sidontaan nojautumista kehotetaan välttämään).
   <!--TODO: Timo tarkistapa nämä nyt vielä jostain http://bugs.python.org/issue10043
   Lähde: http://docs.python.org/py3k/tutorial/classes.html#python-scopes-and-namespaces --></p>
 
@@ -652,7 +652,7 @@ print(f(5)) # 25
   <h3 id="chapter-3-1-2-ja-3-luokan-arvo">Ensimmäisen, toisen ja
   kolmannen luokan arvo</h3>
 
-  <p>Pythonissa yksi tavotteista on ollut tehdä kaikista
+  <p>Pythonissa yksi tavoitteista on ollut tehdä kaikista
   objekteista ensimmäisen luokan arvoja, eli sellaisia, joita
   voidaan:</p>
 
@@ -671,7 +671,7 @@ print(f(5)) # 25
   <h3 id="chapter-3-edut-ja-haitat">Arvio kieleen valittujen
   ratkaisujen eduista ja haitoista</h3>
 
-  <p>Lohkojen paketettu sisentäminen on hyvä asia, koodin
+  <p>Lohkojen pakotettu sisentäminen on hyvä asia, koodin
   luettavuus lisääntyy ja se myös pakottaa kaikki kirjoittamaan
   koodia samalla tavalla eli sisentäen.</p>
 
@@ -844,11 +844,10 @@ Loopin else
   <p>Rekursion syvyys on rajoitettu Pythonissa. Raja estää ikuista
   silmukkaa aiheuttamasta ylivuotoa C:n pinossa ja kaatamasta
   Pythonia [<a href="#ref-library-sys">10</a>]. <code>sys</code>
-  -moduulista löytyy kaksi komentoa, jolla voi selvittää
-  maksimaalisen rekursiosyvyyden
-  (<code>sys.getrecursionlimit()</code>) tai asettaa sen
-  (<code>sys.setrecursionlimit(int)</code>) ohjelmat eivät cpmutta
-  sitä voidaan kasvattaa. Rekursiosyvyyden oletusarvo riippuu
+  -moduulista löytyvät mekanismit, joilla voidaan selvittää
+  maksimaalinen rekursiosyvyys
+  (<code>sys.getrecursionlimit()</code>) tai asettaa se
+  (<code>sys.setrecursionlimit(int)</code>). Rekursiosyvyyden oletusarvo riippuu
   implementaatiosta, kun taas suurin mahdollinen arvo on
   laitteistoriippuvainen.</p>
 
@@ -909,7 +908,7 @@ def fib(n):
   primitiivityyppejä ei kuitenkaan ole. Toisaalta ohut oliokääre
   vaikkapa liukulukujen päällä ei ei käytännössä eroa alla olevasta
   implementaatiosta mitenkään. Vastaavasti rajoittamattoman suuret
-  kokanisluvut ovat ääriesimerkki päinvastaisesta tilanteesta.
+  kokonaisluvut ovat ääriesimerkki päinvastaisesta tilanteesta.
   Seuraavassa on listattu useimmin käytetyt tyypit. Tämä luku
   perustuu CPythonin tyyppejä käsittelevään dokumentaatioon
   [<a href="#ref-stdtypes">12</a>][<a href=
@@ -980,7 +979,7 @@ def fib(n):
   </table>
 
   <p>* Periaatteessa arvoalue on rajoittamaton. Käytännössä
-  käytettävissä oleva (virtuaali) muisti määrä arvoalueen.</p>
+  käytettävissä oleva (virtuaali)muisti määrä arvoalueen.</p>
 
   <p>** Arvoalue riippuu alla olevasta
   toteutuksesta/laitteistosta.</p>
@@ -1095,15 +1094,15 @@ def fib(n):
   tyypitys</h3>
 
   <p>Python voidaan luokitella vahvasti tyypitetyksi kieliksi. Sen
-  vahvoihin tyyppiturvallisuusominaisuuksiin kuuluu muunmuassa,
+  vahvoihin tyyppiturvallisuusominaisuuksiin kuuluu muun muassa,
   että implisiittisiä tyyppimuunnoksia ei käytetä (lähes
   ollenkaan?) ja olioilla on aina tyyppi, eikä sitä voi muuttaa
-  (muuttujilla ei ole tyyppiä). Vrt. Javassa <code>spam" + 1</code>
-  tuottaa merkkijonon "spam1". Pythonissa ei numeroa suostuta
+  (muuttujilla ei ole tyyppiä). Vrt. Javassa <code>"spam" + 1</code>
+  tuottaa merkkijonon <code>"spam1"</code>. Pythonissa ei numeroa suostuta
   implisiittisesti konvertoimaan vaan tuloksena on poikkeus.
-  Vastaavasti C:ssä voidaan esimerkiks osoittmet konvertoida
+  Vastaavasti C:ssä voidaan esimerkiksi osoittimet konvertoida
   eksplisiittisesti ja siten käytännössä tulkita mikä tahansa olio
-  miksi tahansa olikosi.</p>
+  miksi tahansa olioksi.</p>
 
   <p>Objektien tyyppiä ei tarkisteta käännösaikana, vaan ajon
   aikana jotkut operaatiot voivat epäonnistua (jolloin syntyy
@@ -1115,14 +1114,14 @@ def fib(n):
 
   <p>Python on dynaamisesti tyypitetty kieli. Vaikka olioiden
   tyyppi onkin aina tiedossa, niin Pythonilla ohjelmoitaessa tämä
-  yritään jättää mahdollisimman pitkälti huomiotta. Muuttujalla ei
-  ole ennaltamäärättyä tyyppiä. Funktoiden parameterien tyyppiä ei
+  yritetään jättää mahdollisimman pitkälti huomiotta. Muuttujalla ei
+  ole ennalta määrättyä tyyppiä. Funktioiden parametrien tyyppiä ei
   normaalisti tarkisteta vaan noudatetaan ns. "duck typing"
   -paradigmaa, jonka ajatus on, että "Jos se vaakkuu kuin ankka ja
   kävelee kuin ankka, niin sen täytyy olla ankka." Olion(Pythonissa
   kaikki ovat olioita) tyyppi määritellään tutkimalla sen metodeita
   ja attribuutteja. Tyypillisesti käytetään EAFP (Easier to Ask
-  Forgiveness than Permission) tyyliä. Kun jotakin metodia
+  Forgiveness than Permission) -tyyliä. Kun jotakin metodia
   yritetään käyttää, ei olion tyyppiä tarkisteta etukäteen, vaan
   käytetään mielummin poikkeuksia. Lyhyesti ideana on siis se, että
   ei välitetä siitä, mistä olio on periytynyt, vaan siitä, pystyykö
@@ -1162,10 +1161,10 @@ game()
   -->
 
   <p>Muuttujan tyypin voi tarvittaessa tarkistaa
-  <code>isinstance</code>-funktiolla. <code>isinstance</code>
+  <code>isinstance</code> -funktiolla. <code>isinstance</code>
   tarkistaa onko sille parametrina annettu muuttuja parametrina
   annetun tyypin tai luokan instanssi. Seuraavassa esimerkkejä sen
-  käytöstä Python-konsolissa:</p>
+  käytöstä Python -konsolissa:</p>
   <pre>
 &gt;&gt;&gt; isinstance(42, str)
 False
