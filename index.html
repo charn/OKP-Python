@@ -946,6 +946,28 @@ def fib(n):
 
       <td><code>(9+3j)</code></td>
     </tr>
+    
+    <tr><th colspan="4">Standardi kirjaston laajennokset numeroille</th></tr>
+    
+    <tr>
+      <td><code>fractional.Fractional</code></td>
+      
+      <td>rationaaliluvut</td>
+      
+      <td>ilmeisesti "int/int" (***)</td>
+      
+      <td><code>Fraction('14/4')</code><br /><code>Fraction(14, 4)</code></td>
+    </tr>
+    
+    <tr>
+      <td><code>decimal.Decimal</code></td>
+      
+      <td>tarkat desimaaliluvut</td>
+      
+      <td>käyttäjän määrittelee tarkkuuden</td>
+      
+      <td><code>Decimal('1.12456765432345')</code></td>
+    </tr>
   </table>
 
   <p>* Periaatteessa arvoalue on rajoittamaton. Käytännössä
@@ -953,6 +975,10 @@ def fib(n):
 
   <p>** Arvoalue riippuu alla olevasta
   toteutuksesta/laitteistosta.</p>
+  
+  <p>*** Fractional on abstraktin luokan <code>numbers.Rational</code> aliluokka
+  ja ilmeisesti toteutettu kahdella kokonaisluvulla (ja siten tarjoaa
+  "rajattoman" tarkkuuden).</p>
 
   <p>Jonotyypit:</p>
 
@@ -968,7 +994,7 @@ def fib(n):
     <tr>
       <td><code>str</code></td>
 
-      <td>Unicode-merkkijonot ***</td>
+      <td>Unicode-merkkijonot (****)</td>
 
       <td><code>'xyzzy'</code>, <code>"Hello, 世界"</code></td>
     </tr>
@@ -1006,7 +1032,7 @@ def fib(n):
     </tr>
   </table>
   
-  <p>*** Unicode merkkijonot koostuvat 16 tai 32-bittisisitä unicode
+  <p>**** Unicode merkkijonot koostuvat 16 tai 32-bittisisitä unicode
   merkeistä. Koko riippuu siitä käytetäänkö implementaatiossa/ympäristössä
   UCS-2 vai UCS-4. Suurimman tuetun unicodemerkin arvon voi kysyä näin: <br />
   sys.maxunicode.</p>
