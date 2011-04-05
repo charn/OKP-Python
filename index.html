@@ -11,9 +11,15 @@
   "text/html; charset=utf-8">
   <link rel="stylesheet" href="style.css" type="text/css" media=
   "screen">
+
+  <!-- Syntaxhiglight -->
+  <script type="text/javascript" src="script/sh_main.js"></script>
+  <script type="text/javascript" src="script/sh_python.js"></script>
+  <link type="text/css" rel="stylesheet" href="script/sh_typical.css">
+
 </head>
 
-<body>
+<body onload="sh_highlightDocument();">
   <h1><img src="python_logo.png" alt="Python" id="logo" name=
   "logo"> kevytspesifikaatio</h1>
 
@@ -182,7 +188,7 @@
   syöttöluvun, laskee ensimmäisen Fibonaccin luvun, joka on
   syöttölukua suurempi ja lopuksi tulostaa kyseisen Fibonaccin
   luvun.</p>
-  <pre>
+  <pre class="sh_python">
 import sys
 
 def fib(n):
@@ -272,7 +278,7 @@ if __name__ == "__main__": # Pääohjelma
 
   <p>Seuraavassa lyhyt esimerkki joka demonstroi erikoisempien
   merkkien käyttöä Python 3 ohjelmassa:</p>
-  <pre>
+  <pre class="sh_python">
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
 
@@ -376,19 +382,19 @@ break      except     in         raise
 
   <p>Alla olevissa esimerkeissä kaikki kolme if-lausetta tekevät
   saman asian <i>(tulostavat sanat "spam" ja "ham")</i>:</p>
-  <pre>
+  <pre class="sh_python">
 if 1 == 1:
-    print "spam"
-    print "ham"
+    print("spam")
+    print("ham")
 
 </pre>
-  <pre>
+  <pre class="sh_python">
 if 1 == 1:
-    print "spam"; print "ham"
+    print("spam"); print("ham")
 
 </pre>
-  <pre>
-if 1 == 1: print "spam"; print "ham"
+  <pre class="sh_python">
+if 1 == 1: print("spam"); print("ham")
 
 </pre>
 
@@ -522,7 +528,7 @@ if 1 == 1: print "spam"; print "ham"
   tunnusten näkyvyyteen liittyvää. Siinä näytetään miten saadaan
   aikaan ajonaikainen poikkeus sidonnasta ja toisaalta myös
   demonstroidaan muuttujien näkyvyyttä.</p>
-  <pre>
+  <pre class="sh_python">
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
 
@@ -597,7 +603,7 @@ moduulitasolla if-lohkossa globaali
   ja sisäänrakennettu nimiavaruus. Vaikka funktion määrittely oli
   mahdollista toisen funktion sisällä, niin sisäkkäinen funktio ei
   voinut viitata oman nimiavaruutensa ulkopuolisiin nimiin.</p>
-  <pre>
+  <pre class="sh_python">
 def eka(p):
     x = "olen ekan x"
     print("--- eka alkaa ---")
@@ -644,7 +650,7 @@ tokan x on muutettu!
   ehtolauseita suoraan. Se ei siis vastaa useimpien muiden kielten
   anonyymejä funktioita. Lambda-lausekkeet voivat viitata
   nimiavaruutensa ulkopuolisiin tunnuksiin kuten funktiot:</p>
-  <pre>
+  <pre class="sh_python">
 def tee_kertoja(n):
     return lambda x: x * n
 
@@ -703,7 +709,7 @@ print(f(5)) # 25
 
   <p><code>if</code> -lause koostuu kolmesta eri osasta
   <code>if</code>, <code>elif</code>, <code>else</code>.</p>
-  <pre>
+  <pre class="sh_python">
 x = int(input("Please enter an integer: "))
 if x &lt; 0:
     x = 0
@@ -743,7 +749,7 @@ More
   kunnes viimeinen arvo on saavutettu. Muista kielistä poiketen
   tässä rakenteessa ei voi erikseen määritellä iteraatioaskelta tai
   pysäytysehtoa.</p>
-  <pre>
+  <pre class="sh_python">
 a = ['cat', 'window', 'defenestrate']
 for x in a:
     print(x, len(x))
@@ -758,7 +764,7 @@ defenestrate 12
 olevat monikot ja käytetään <code>string</code> -luokasta löytyvää
 korvausoperaatiota, joka muuttaa <code>{}</code> -merkkien välistä
 löytyvä kohdat halutuiksi.
-  <pre>
+  <pre class="sh_python">
 animals = [ ('Cat', 'Meow'),
             ('Cow', 'Moo'),
             ('Dog', 'Woof')]
@@ -777,7 +783,7 @@ Dog says Woof!
   <p>Haluttaessa toistaa tietty koodi useampaan kertaan voidaan
   käyttää hyväksi esim. <code>range()</code> -funktiota, joka
   tuottaa halutun kokoisen kokonaislukuiteraattorin.</p>
-  <pre>
+  <pre class="sh_python">
 for i in range(5):
     print(i)
 </pre>
@@ -800,7 +806,7 @@ for i in range(5):
   kuitenkin saavuttaa muotoilemalla <code>while</code> -lause
   oikein (esim. <code>while True:</code> ja sisällä tarkistus
   <code>if condition: break</code>)</p>
-  <pre>
+  <pre class="sh_python">
 x = 3
 while x &lt; 3:
     print("Loopissa")
@@ -856,7 +862,7 @@ Loopin else
 
   <p>Fibonaccin luvun laskeminen rekursiivisesti. Laskee luvun,
   jonka järjestys on n.</p>
-  <pre>
+  <pre class="sh_python">
 def fib(n):
     if n == 0:
         return 0
@@ -1156,7 +1162,7 @@ def fib(n):
   ei välitetä siitä, mistä olio on periytynyt, vaan siitä, pystyykö
   se suorittamaan halutun tehtävän. Seuraavassa esimerkki "duck
   typing" -paradigman käytöstä:</p>
-  <pre>
+  <pre class="sh_python">
 class Duck:
     def quack(self):
         print("Quaaaaaack!")
