@@ -1,5 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 <head>
@@ -49,6 +49,8 @@
 
     <li><a href="#chapter-5">Perustietotyypit</a></li>
 
+    <li><a href="#chapter-6">Laskennan kapselointi</a></li>
+
     <li><a href="#lahteet">Lähteet</a></li>
   </ol>
 
@@ -86,7 +88,7 @@
   asioita. 3.x ei ole taaksepäin yhteensopiva versioiden 2.x ja
   vanhempien kanssa. Vanhoille versioille kirjoitetut ohjelmat
   eivät toimi suoraan versiossa 3.0. Siirtymän helpottamiseksi on
-  toteutettu käännösohjelma (2to3), joka kääntää automaattisesti
+  toteutettu käännösohjelma (<code>2to3</code>), joka kääntää automaattisesti
   osan koodista kielen uudempaan versioon. Lisäksi useita
   kolmosversion keskeisiä ominaisuuksia on toteutettu rinnakkain
   kehitettyyn 2.6 versioon, mikä mahdollistaa niiden hyödyntämisen
@@ -135,6 +137,8 @@
     <li>Upotettavissa sovelluksiin skriptausrajapintana <i>(esim.
     Blender)</i></li>
 
+    <li>Käytössä myös muun muassa <a href="http://www.djangoproject.com/">Django</a> -frameworkissa.</li>
+
     <li>Python nimi tulee tv-sarjasta <i>Monty Python's Flying
     Circus</i>.</li>
   </ul>
@@ -165,11 +169,11 @@
   oleva skriptikieli Google Docsissa</p>
 
   <p>Erilaisten kirjastojen <i>(NumPy, SciPy, Matplotlib, ...)</i>
-  avulla Pythonia voidaan käyttää tehokkasti tieteelliseen
+  avulla Pythonia voidaan käyttää tehokkaasti tieteelliseen
   laskentaan.</p>
 
   <p>Monissa käyttöjärjestelmissä Python kuuluu
-  peruskomponentteihin. Python löytyy muunmuassa useimmista Linux
+  peruskomponentteihin. Python löytyy muun muassa useimmista Linux
   distribuutioista, OpenBSD:stä, ja Mac OS X:stä.</p>
 
   <h3 id="chapter-1-fibonacci">Fibonacci esimerkki</h3>
@@ -257,7 +261,7 @@ if __name__ == "__main__": # Pääohjelma
   A-Z, 0-9 ja _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet
   ja iso kirjaimet tulkitaan eri kirjaimiksi. Tunnukset voivat olla
   rajoittamattoman pituisia. Lisäksi Python 3 tukee joitakin
-  ASCII-järjestelmän ulkpuolisia unicode-merkkejä. Tarkempi listaus
+  ASCII-järjestelmän ulkopuolisia unicode-merkkejä. Tarkempi listaus
   tuetuista merkeistä löytyy osoitteesta: <a href=
   "http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>.
   Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue,
@@ -402,7 +406,7 @@ if 1 == 1: print "spam"; print "ham"
   jolloin koodia ei varmaankaan haluta tehdä äidinkielellä on, jos
   tuotetaan avoimen lähdekoodin ratkaisuja. Muutoin saatetaan
   varsin tehokkaasti eliminoida iso osa käyttäjäyhteisön
-  potentiaalista jatkokehittää tuotetta. Yleisestiottaen tuote joka
+  potentiaalista jatkokehittää tuotetta. Yleisesti ottaen tuote joka
   on ohjelmoitu vaikkapa suomeksi rajoittaa
   jatkokehitysmahdollisuuksia vaikka alkuperäisen kehitystyön
   kannalta kielivalinnalla olisikin ollut positiivisia vaikutuksia.
@@ -485,29 +489,29 @@ if 1 == 1: print "spam"; print "ham"
   <p>Jos lohkon sisällä määritellään lokaali muuttuja, on tämän
   muuttujan näkyvyysalue (scope) rajoitettu siihen lohkoon. Mikäli
   tunnus määritellään funktion vartalossa, niin näkyy se myös
-  funktion vartalon sisäisille lohkoille (ellevät nämä sido
+  funktion vartalon sisäisille lohkoille (elleivät nämä sido
   tunnukselle uutta merkitystä). Moduulitason tunnukset ovat
   globaaleja. Mikäli lohkon sisältä halutaan (eksplisiittisesti)
   viitata lohkon ulkopuolisiin muuttujiin, niin voidaan käyttää
   varattuja sanoja nonlocal ja global. Määreellä nonlocal
-  vihjataan, että halutaan viitata näkyvyysaluehierakriassa
+  vihjataan, että halutaan viitata näkyvyysaluehierarkiassa
   seuraavaan tasoon jolta tunnus löytyy. Vastaavasti
   global-määreellä siirrytään suoraan etsimään tunnusta globaalilta
   näkyvyysalueelta.</p>
 
   <h3 id="chapter-3-sidonta">Sidonta</h3>
 
-  <p>Pythonissa sidonta tapahtuu osittain dynaamisesit ja osittain
+  <p>Pythonissa sidonta tapahtuu osittain dynaamisesti ja osittain
   staattisesti. Käytännössä siis näkyvyysalueet (scope)
-  määritellään staattisesi, mutta niitä käytetään dynaamisesti. Eli
+  määritellään staattisesti, mutta niitä käytetään dynaamisesti. Eli
   toisin sanoen eri näkyvyysalueilla olevat tunnukset määritellään,
   mutta niihin ei liitetä arvoa. Ajonaikaisesti voidaan määritellä
   uusia tunnuksia globaalille tasolle. On kuitenkin huomioitava,
-  että Python-funktioille ei vo määritellä uusia lokaaleja
+  että Python-funktioille ei voi määritellä uusia lokaaleja
   tunnuksia funktion parsimisen jälkeen (eli lokaalit muuttujat
   määritellään staattisesti). Pythonin dokumentaatioissa myös
   vihjataan, että staattisuutta tullaan jatkossa lisäämään (ja näin
-  ollen dynaamiseen sidontaan nojautumista kehoitetaan välttämään).
+  ollen dynaamiseen sidontaan nojautumista kehotetaan välttämään).
   <!--TODO: Timo tarkistapa nämä nyt vielä jostain http://bugs.python.org/issue10043
   Lähde: http://docs.python.org/py3k/tutorial/classes.html#python-scopes-and-namespaces --></p>
 
@@ -652,7 +656,7 @@ print(f(5)) # 25
   <h3 id="chapter-3-1-2-ja-3-luokan-arvo">Ensimmäisen, toisen ja
   kolmannen luokan arvo</h3>
 
-  <p>Pythonissa yksi tavotteista on ollut tehdä kaikista
+  <p>Pythonissa yksi tavoitteista on ollut tehdä kaikista
   objekteista ensimmäisen luokan arvoja, eli sellaisia, joita
   voidaan:</p>
 
@@ -671,7 +675,7 @@ print(f(5)) # 25
   <h3 id="chapter-3-edut-ja-haitat">Arvio kieleen valittujen
   ratkaisujen eduista ja haitoista</h3>
 
-  <p>Lohkojen paketettu sisentäminen on hyvä asia, koodin
+  <p>Lohkojen pakotettu sisentäminen on hyvä asia, koodin
   luettavuus lisääntyy ja se myös pakottaa kaikki kirjoittamaan
   koodia samalla tavalla eli sisentäen.</p>
 
@@ -684,13 +688,13 @@ print(f(5)) # 25
 
     <li><a href="#chapter-4-toisto">Toisto eli iteraatio</a></li>
 
-    <li><a href="#chapter-4-rekursio">Rekursio ja
-    häntärekursio</a></li>
+    <li><a href="#chapter-4-rekursio">Rekursio</a></li>
 
-    <li><a href="#chapter-4-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</a></li>
+    <li><a href="#chapter-4-esimerkkeja">Havainnollisia
+    selostettuja pieniä ohjalmaesimerkkejä</a></li>
 
-    <li><a href="#chapter-4-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
-    haitoista</a></li>
+    <li><a href="#chapter-4-arvio">Arvio kieleen valittujen
+    ratkaisujen eduista ja haitoista</a></li>
   </ul>
 
   <h3 id="chapter-4-valinta">Valinta</h3>
@@ -730,15 +734,15 @@ More
   "#ref-controlflow">8</a>], joka suoritetaan jos <code>for</code>
   -lauseessa lista loppuu tai jos <code>while</code> -lause saa
   arvon <code>False</code>. <code>else</code> -lohkoa ei suoriteta
-  jos toistolauseesta poistutaan <code>break</code>
-  -lauseella.</p>
+  jos toistolauseesta poistutaan <code>break</code> -lauseella.</p>
 
   <h4><code>for</code> -lause</h4>
 
-  <p>for -lausetta käytetään iterointiin. Lause käyttää hyväkseen annetun objektin
-  iteraattoria, jota se käy järjestyksessä läpi kunnes viimeinen arvo on saavutettu. Muista
-  kielistä poiketen tässä rakenteessa ei voi erikseen määritellä
-  iteraatioaskelta tai pysäytysehtoa.</p>
+  <p>for -lausetta käytetään iterointiin. Lause käyttää hyväkseen
+  annetun objektin iteraattoria, jota se käy järjestyksessä läpi
+  kunnes viimeinen arvo on saavutettu. Muista kielistä poiketen
+  tässä rakenteessa ei voi erikseen määritellä iteraatioaskelta tai
+  pysäytysehtoa.</p>
   <pre>
 a = ['cat', 'window', 'defenestrate']
 for x in a:
@@ -750,6 +754,24 @@ for x in a:
 cat 3
 window 6
 defenestrate 12
+</pre>Seuraavassa <code>for</code> -lauseessa puretaan listassa
+olevat monikot ja käytetään <code>string</code> -luokasta löytyvää
+korvausoperaatiota, joka muuttaa <code>{}</code> -merkkien välistä
+löytyvä kohdat halutuiksi.
+  <pre>
+animals = [ ('Cat', 'Meow'),
+            ('Cow', 'Moo'),
+            ('Dog', 'Woof')]
+
+for animal, sound in animals:
+    print("{0} says {1}!".format(animal, sound))
+</pre>
+
+  <p>Edellinen koodi tulostaa:</p>
+  <pre>
+Cat says Meow!
+Cow says Moo!
+Dog says Woof!
 </pre>
 
   <p>Haluttaessa toistaa tietty koodi useampaan kertaan voidaan
@@ -788,13 +810,12 @@ else:
 </pre>
 
   <p>Edellinen koodi tulostaa:</p>
-  
   <pre>
 Loopissa
 Loopissa
 Loopissa
 Loopin else
-</pre>  
+</pre>
 
   <h4><code>continue</code> &amp; <code>break</code> -lauseet</h4>
 
@@ -805,7 +826,7 @@ Loopin else
   toistorakenteen suorittamisen ilman ns. pysäytysehdon täyttymistä
   [<a href="#ref-compoundstatement">9</a>].</p>
 
-  <h3 id="chapter-4-rekursio">Rekursio ja häntärekursio</h3>
+  <h3 id="chapter-4-rekursio">Rekursio</h3>
 
   <p>Rekursiivisissa ohjelmarutiineissa idea on sama kuin
   matemaattisesti määritellyissä rekursiivisissa funktioissa, ja
@@ -823,14 +844,13 @@ Loopin else
   aktivaatiotietueen tilalle pinoon eli muuntamalla rekursio
   vastaamaan tavallista silmukkaa.</p>
 
-  <p>Rekursion syvyys on rajoitettu Pythonissa. Raja estää ikuista
+  <p>Rekursion syvyys on rajoitettu Pythonissa. Tyypillisessä Pythonin implementaatiossa raja-arvo on 1000. Raja estää ikuista
   silmukkaa aiheuttamasta ylivuotoa C:n pinossa ja kaatamasta
   Pythonia [<a href="#ref-library-sys">10</a>]. <code>sys</code>
-  -moduulista löytyy kaksi komentoa, jolla voi selvittää
-  maksimaalisen rekursiosyvyyden
-  (<code>sys.getrecursionlimit()</code>) tai asettaa sen
-  (<code>sys.setrecursionlimit(int)</code>) ohjelmat eivät cpmutta
-  sitä voidaan kasvattaa. Rekursiosyvyyden oletusarvo riippuu
+  -moduulista löytyvät mekanismit, joilla voidaan selvittää
+  maksimaalinen rekursiosyvyys
+  (<code>sys.getrecursionlimit()</code>) tai asettaa se
+  (<code>sys.setrecursionlimit(int)</code>). Rekursiosyvyyden oletusarvo riippuu
   implementaatiosta, kun taas suurin mahdollinen arvo on
   laitteistoriippuvainen.</p>
 
@@ -846,46 +866,59 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 </pre>
 
-  <h3 id="chapter-4-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</h3>
+  <h3 id="chapter-4-esimerkkeja">Havainnollisia selostettuja pieniä
+  ohjalmaesimerkkejä</h3>
 
-  <h3 id="chapter-4-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
-    haitoista</h3>
+  <h3 id="chapter-4-arvio">Arvio kieleen valittujen ratkaisujen
+  eduista ja haitoista</h3>
 
-  <p>Muista ohjelmointikielistä tutut <code>do/while</code>- ja <code>switch/case</code> -lauseet on jätetty pois ja niitä ei ole toteutettu perustellusta syystä. Samat toiminnallisuudet pystytään toteuttamaan jo olemassa olevalla syntaksilla. Toisaalta esimerkiksi Javasta tuttu <code>switch-case-break</code>, jossa myös ehdon täyttävän kohdan jälkeen tulevat kohdat suoritetaan ellei <code>switch</code> -lauseesta poistuta erikseen <code>break</code> -lauseella, saattaa olla hiukan työläämpää toteuttaa Pythonilla.</p>
-  
-  <p>Rekursio toimii Pythonissa, mutta esimerkiksi kielen alkuperäinen kehittäjä ei henkilökohtaisesti ole sitä mieltä, että se olisi jokapäiväinen työkalu vaan pikemminkin teoreettinen lähestymistapa matematiikkaan. Häntärekursiosta on olemassa jonkinasteisia toteutuksia ja virityksiä, mutta
-  ainakaan virallisesti se ei ole Pythonin ominaisuus.</p>
+  <p>Muista ohjelmointikielistä tutut <code>do/while</code>- ja
+  <code>switch/case</code> -lauseet on jätetty pois ja niitä ei ole
+  toteutettu perustellusta syystä. Samat toiminnallisuudet
+  pystytään toteuttamaan jo olemassa olevalla syntaksilla.
+  Toisaalta esimerkiksi Javasta tuttu
+  <code>switch-case-break</code>, jossa myös ehdon täyttävän kohdan
+  jälkeen tulevat kohdat suoritetaan ellei <code>switch</code>
+  -lauseesta poistuta erikseen <code>break</code> -lauseella,
+  saattaa olla hiukan työläämpää toteuttaa Pythonilla.</p>
+
+  <p>Rekursio toimii Pythonissa, mutta esimerkiksi kielen
+  alkuperäinen kehittäjä ei henkilökohtaisesti ole sitä mieltä,
+  että se olisi jokapäiväinen työkalu vaan pikemminkin teoreettinen
+  lähestymistapa matematiikkaan. Häntärekursiosta on olemassa
+  jonkinasteisia toteutuksia ja virityksiä, mutta ainakaan
+  virallisesti se ei ole Pythonin ominaisuus.</p>
 
   <h2 id="chapter-5">5. Perustietotyypit</h2>
 
   <p><em>millaisilla arvoilla tai "datalla" pelataan</em></p>
 
   <ul>
-    <li><a href="#chapter-5-perustyypit">Perustyypit ja arvoalueet</a></li>
+    <li><a href="#chapter-5-perustyypit">Perustyypit ja
+    arvoalueet</a></li>
 
-    <li><a href="#chapter-5-vahva-heikko-tyypitys">vahva tyypitys ~ heikko tyypitys</a></li>
+    <li><a href="#chapter-5-vahva-heikko-tyypitys">Vahva tyypitys ~
+    heikko tyypitys</a></li>
 
-    <li><a href="#chapter-5-stat-dyn-tyypitys">staattinen tyypitys ~ dynaaminen tyypitys</a></li>
-
-    <li><a href="#chapter-5-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</a></li>
-
-    <li><a href="#chapter-5-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
-    haitoista</a></li>
+    <li><a href="#chapter-5-stat-dyn-tyypitys">Staattinen tyypitys
+    ~ dynaaminen tyypitys</a></li>
   </ul>
 
   <h3 id="chapter-5-perustyypit">Perustyypit ja arvoalueet</h3>
 
-  <p>Pythoniin on sisäänrakennettu kattava kokoelma perustyyppejä. Pythonissa
-  kaikki on olioita, joten varsinaisia primitiivityyppejä ei kuitenkaan ole.
-  Toisaalta ohut oliokääre vaikkapa liukulukujen päällä ei ei käytännössä eroa
-  alla olevasta implementaatiosta mitenkään. Vastaavasti rajoittamattoman suuret
-  kokanisluvut ovat ääriesimerkki päinvastaisesta tilanteesta. Seuraavassa on
-  listattu useimmin käytetyt tyypit. Tämä luku perustuu CPythonin tyyppejä
-  käsittelevään dokumentaatioon [<a href="#ref-stdtypes">12</a>][<a href=
+  <p>Pythoniin on sisäänrakennettu kattava kokoelma perustyyppejä.
+  Pythonissa kaikki on olioita, joten varsinaisia
+  primitiivityyppejä ei kuitenkaan ole. Toisaalta ohut oliokääre
+  vaikkapa liukulukujen päällä ei ei käytännössä eroa alla olevasta
+  implementaatiosta mitenkään. Vastaavasti rajoittamattoman suuret
+  kokonaisluvut ovat ääriesimerkki päinvastaisesta tilanteesta.
+  Seuraavassa on listattu useimmin käytetyt tyypit. Tämä luku
+  perustuu CPythonin tyyppejä käsittelevään dokumentaatioon
+  [<a href="#ref-stdtypes">12</a>][<a href=
   "#ref-datamodel">13</a>].</p>
 
   <p>Numeeriset tyypit:</p>
-  
+
   <table border="1" summary="Numeeriset tyypit">
     <tr>
       <th>Tyyppi</th>
@@ -971,7 +1004,7 @@ def fib(n):
   </table>
 
   <p>* Periaatteessa arvoalue on rajoittamaton. Käytännössä
-  käytettävissä oleva (virtuaali) muisti määrä arvoalueen.</p>
+  käytettävissä oleva (virtuaali)muisti määrä arvoalueen.</p>
 
   <p>** Arvoalue riippuu alla olevasta
   toteutuksesta/laitteistosta.</p>
@@ -1031,10 +1064,11 @@ def fib(n):
       <td><code>(1, 2, 3)</code></td>
     </tr>
   </table>
-  
-  <p>**** Unicode merkkijonot koostuvat 16 tai 32-bittisisitä unicode
-  merkeistä. Koko riippuu siitä käytetäänkö implementaatiossa/ympäristössä
-  UCS-2 vai UCS-4. Suurimman tuetun unicodemerkin arvon voi kysyä näin: <br />
+
+  <p>**** Unicode merkkijonot koostuvat 16 tai 32-bittisisitä
+  unicode merkeistä. Koko riippuu siitä käytetäänkö
+  implementaatiossa/ympäristössä UCS-2 vai UCS-4. Suurimman tuetun
+  unicodemerkin arvon voi kysyä näin:<br>
   sys.maxunicode.</p>
 
   <p>Joukkotyypit:</p>
@@ -1084,24 +1118,45 @@ def fib(n):
       <td><code>{"one": 1, "two": 2}</code></td>
     </tr>
   </table>
-  
-  <h3 id="chapter-5-vahva-heikko-tyypitys">Vahva tyypitys ~ heikko tyypitys</h3>
-  <p>Python voidaan luokitella vahvasti tyypitetyksi kieliksi. Sen vahvoihin
-  tyyppiturvallisuusominaisuuksiin kuuluu muunmuassa, että implisiittisiä tyyppimuunnoksia
-  ei käytetä (lähes ollenkaan?) ja olioilla on aina tyyppi, eikä sitä voi
-  muuttaa. Vrt. Javassa <code>spam" + 1</code> tuottaa merkkijonon "spam1".
-  Pythonissa ei numeroa suostuta implisiittisesti konvertoimaan vaan tuloksena on
-  poikkeus. Vastaavasti C:ssä voidaan esimerkiks osoittmet konvertoida eksplisiittisesti
-  ja siten käytännössä tulkita mikä tahansa olio miksi tahansa olikosi.</p>
-  
-  <h3 id="chapter-5-tyypitys">Staattinen tyypitys ~ dynaaminen tyypitys</h3>
-  <p>Python on dynaamisesti tyypitetty kieli. Vaikka olioiden tyyppi onkin aina tiedossa,
-  niin Pythonilla ohjelmoitaessa tämä yritään jättää mahdollisimman pitkälti huomiotta.
-  Funktoiden paramterien tyyppiä ei normaalisti tarkisteta vaan noudatetaan ns.
-  "duck typing" -paradigmaa, jonka ajatus on, että jos se vaakkuu kuin ankka ja
-  kävelee kuin ankka, niin sen täytyy olla ankka. Jos se olikin ihminen joka esittää ankaa, niin
-  sillä ei ole väliä. Seuraavassa esimerkki "duck typing" -paradigman käytöstä:</p>
-<pre>
+
+  <h3 id="chapter-5-vahva-heikko-tyypitys">Vahva tyypitys ~ heikko
+  tyypitys</h3>
+
+  <p>Python voidaan luokitella vahvasti tyypitetyksi kieliksi. Sen
+  vahvoihin tyyppiturvallisuusominaisuuksiin kuuluu muun muassa,
+  että implisiittisiä tyyppimuunnoksia ei käytetä (lähes
+  ollenkaan?) ja olioilla on aina tyyppi, eikä sitä voi muuttaa
+  (muuttujilla ei ole tyyppiä). Vrt. Javassa <code>"spam" + 1</code>
+  tuottaa merkkijonon <code>"spam1"</code>. Pythonissa ei numeroa suostuta
+  implisiittisesti konvertoimaan vaan tuloksena on poikkeus.
+  Vastaavasti C:ssä voidaan esimerkiksi osoittimet konvertoida
+  eksplisiittisesti ja siten käytännössä tulkita mikä tahansa olio
+  miksi tahansa olioksi.</p>
+
+  <p>Objektien tyyppiä ei tarkisteta käännösaikana, vaan ajon
+  aikana jotkut operaatiot voivat epäonnistua (jolloin syntyy
+  poikkeus), mikä osoittaa, että objekti ei ole sopivaa
+  tyyppiä.</p>
+
+  <h3 id="chapter-5-tyypitys">Staattinen tyypitys ~ dynaaminen
+  tyypitys</h3>
+
+  <p>Python on dynaamisesti tyypitetty kieli. Vaikka olioiden
+  tyyppi onkin aina tiedossa, niin Pythonilla ohjelmoitaessa tämä
+  yritetään jättää mahdollisimman pitkälti huomiotta. Muuttujalla ei
+  ole ennalta määrättyä tyyppiä. Funktioiden parametrien tyyppiä ei
+  normaalisti tarkisteta vaan noudatetaan ns. "duck typing"
+  -paradigmaa, jonka ajatus on, että "Jos se vaakkuu kuin ankka ja
+  kävelee kuin ankka, niin sen täytyy olla ankka." Olion(Pythonissa
+  kaikki ovat olioita) tyyppi määritellään tutkimalla sen metodeita
+  ja attribuutteja. Tyypillisesti käytetään EAFP (Easier to Ask
+  Forgiveness than Permission) -tyyliä. Kun jotakin metodia
+  yritetään käyttää, ei olion tyyppiä tarkisteta etukäteen, vaan
+  käytetään mielummin poikkeuksia. Lyhyesti ideana on siis se, että
+  ei välitetä siitä, mistä olio on periytynyt, vaan siitä, pystyykö
+  se suorittamaan halutun tehtävän. Seuraavassa esimerkki "duck
+  typing" -paradigman käytöstä:</p>
+  <pre>
 class Duck:
     def quack(self):
         print("Quaaaaaack!")
@@ -1127,22 +1182,50 @@ def game():
     in_the_forest(john)
  
 game()
-</pre>
-  <!-- Merkkaa lähteet Timo
+</pre><!-- Merkkaa lähteet Timo
   http://en.wikipedia.org/wiki/Type_safety
   http://en.wikipedia.org/wiki/Strong_typing
   http://en.wikipedia.org/wiki/Duck_typing
   http://wiki.python.org/moin/Why%20is%20Python%20a%20dynamic%20language%20and%20also%20a%20strongly%20typed%20language
   -->
 
-  <li><a href="#chapter-5-vahva-heikko-tyypitys">vahva tyypitys ~ heikko tyypitys</a></li>
+  <p>Muuttujan tyypin voi tarvittaessa tarkistaa
+  <code>isinstance</code> -funktiolla. <code>isinstance</code>
+  tarkistaa onko sille parametrina annettu muuttuja parametrina
+  annetun tyypin tai luokan instanssi. Seuraavassa esimerkkejä sen
+  käytöstä Python -konsolissa:</p>
+  <pre>
+&gt;&gt;&gt; isinstance(42, str)
+False
+&gt;&gt;&gt; isinstance('stringi', int)
+False
+&gt;&gt;&gt; isinstance(42, int)
+True
+&gt;&gt;&gt; isinstance('stringi', str)
+True
+</pre>
 
-    <li><a href="#chapter-5-stat-dyn-tyypitys">staattinen tyypitys ~ dynaaminen tyypitys</a></li>
+  <h2 id="chapter-6">6. Laskennan kapselointi</h2>
 
-  <h3 id="chapter-5-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</h3>
+  <p><em>miten toiminnallisuuksia abstrahoidaan ja niistä rakennetaan uusia toiminnallisuuksia?</em></p>
+  <ul>
+    <li><a href="#chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai alifunktiot</a></li>
+    <li><a href="#chapter-6-parametrivalitys">Parametrivälitys</a></li>
+    <li><a href="#chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä ohjelma-arkkitehtuureja</a></li>
+    <li>...</li>
+    <li><a href="#chapter-6-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</a></li>
+    <li><a href="#chapter-6-arvio">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</a></li>
+  </ul>
 
-  <h3 id="chapter-5-arvio">Arvio kieleen valittujen ratkaisujen eduista ja
-    haitoista</h3>
+  <h3 id="chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai alifunktiot</h3>
+
+  <h3 id="chapter-6-parametrivalitys">Parametrivälitys</h3>
+
+  <h3 id="chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä ohjelma-arkkitehtuureja</h3>
+
+  <h3 id="chapter-6-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</h3>
+
+  <h3 id="chapter-6-arvio">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</h3>
 
   <h2 id="lahteet">Lähteet</h2>
 
