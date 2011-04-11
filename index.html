@@ -10,13 +10,14 @@
   <meta http-equiv="content-type" content=
   "text/html; charset=utf-8">
   <link rel="stylesheet" href="style.css" type="text/css" media=
-  "screen">
+  "screen"><!-- Syntaxhiglight -->
 
-  <!-- Syntaxhiglight -->
-  <script type="text/javascript" src="script/sh_main.js"></script>
-  <script type="text/javascript" src="script/sh_python.js"></script>
-  <link type="text/css" rel="stylesheet" href="script/sh_typical.css">
-
+  <script type="text/javascript" src="script/sh_main.js">
+</script>
+  <script type="text/javascript" src="script/sh_python.js">
+</script>
+  <link type="text/css" rel="stylesheet" href=
+  "script/sh_typical.css">
 </head>
 
 <body onload="sh_highlightDocument();">
@@ -94,11 +95,11 @@
   asioita. 3.x ei ole taaksepäin yhteensopiva versioiden 2.x ja
   vanhempien kanssa. Vanhoille versioille kirjoitetut ohjelmat
   eivät toimi suoraan versiossa 3.0. Siirtymän helpottamiseksi on
-  toteutettu käännösohjelma (<code>2to3</code>), joka kääntää automaattisesti
-  osan koodista kielen uudempaan versioon. Lisäksi useita
-  kolmosversion keskeisiä ominaisuuksia on toteutettu rinnakkain
-  kehitettyyn 2.6 versioon, mikä mahdollistaa niiden hyödyntämisen
-  ilman uudempaan syntaksiin siirtymistä. [<a href=
+  toteutettu käännösohjelma (<code>2to3</code>), joka kääntää
+  automaattisesti osan koodista kielen uudempaan versioon. Lisäksi
+  useita kolmosversion keskeisiä ominaisuuksia on toteutettu
+  rinnakkain kehitettyyn 2.6 versioon, mikä mahdollistaa niiden
+  hyödyntämisen ilman uudempaan syntaksiin siirtymistä. [<a href=
   "#ref-history-of-python">3</a>]</p>
 
   <h3 id="chapter-1-perustietoa">Python perustietoa</h3>
@@ -143,7 +144,8 @@
     <li>Upotettavissa sovelluksiin skriptausrajapintana <i>(esim.
     Blender)</i></li>
 
-    <li>Käytössä myös muun muassa <a href="http://www.djangoproject.com/">Django</a> -frameworkissa.</li>
+    <li>Käytössä myös muun muassa <a href=
+    "http://www.djangoproject.com/">Django</a> -frameworkissa.</li>
 
     <li>Python nimi tulee tv-sarjasta <i>Monty Python's Flying
     Circus</i>.</li>
@@ -267,8 +269,8 @@ if __name__ == "__main__": # Pääohjelma
   A-Z, 0-9 ja _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet
   ja iso kirjaimet tulkitaan eri kirjaimiksi. Tunnukset voivat olla
   rajoittamattoman pituisia. Lisäksi Python 3 tukee joitakin
-  ASCII-järjestelmän ulkopuolisia unicode-merkkejä. Tarkempi listaus
-  tuetuista merkeistä löytyy osoitteesta: <a href=
+  ASCII-järjestelmän ulkopuolisia unicode-merkkejä. Tarkempi
+  listaus tuetuista merkeistä löytyy osoitteesta: <a href=
   "http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>.
   Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue,
   excluding ID_Start. Näiden merkkijoukkojen yhdiste sisältää
@@ -412,8 +414,8 @@ if 1 == 1: print("spam"); print("ham")
   jolloin koodia ei varmaankaan haluta tehdä äidinkielellä on, jos
   tuotetaan avoimen lähdekoodin ratkaisuja. Muutoin saatetaan
   varsin tehokkaasti eliminoida iso osa käyttäjäyhteisön
-  potentiaalista jatkokehittää tuotetta. Yleisesti ottaen tuote joka
-  on ohjelmoitu vaikkapa suomeksi rajoittaa
+  potentiaalista jatkokehittää tuotetta. Yleisesti ottaen tuote
+  joka on ohjelmoitu vaikkapa suomeksi rajoittaa
   jatkokehitysmahdollisuuksia vaikka alkuperäisen kehitystyön
   kannalta kielivalinnalla olisikin ollut positiivisia vaikutuksia.
   Kustannussyistä jatkokehitys saatettaisiin joissain tilanteissa
@@ -509,15 +511,16 @@ if 1 == 1: print("spam"); print("ham")
 
   <p>Pythonissa sidonta tapahtuu osittain dynaamisesti ja osittain
   staattisesti. Käytännössä siis näkyvyysalueet (scope)
-  määritellään staattisesti, mutta niitä käytetään dynaamisesti. Eli
-  toisin sanoen eri näkyvyysalueilla olevat tunnukset määritellään,
-  mutta niihin ei liitetä arvoa. Ajonaikaisesti voidaan määritellä
-  uusia tunnuksia globaalille tasolle. On kuitenkin huomioitava,
-  että Python-funktioille ei voi määritellä uusia lokaaleja
-  tunnuksia funktion parsimisen jälkeen (eli lokaalit muuttujat
-  määritellään staattisesti). Pythonin dokumentaatioissa myös
-  vihjataan, että staattisuutta tullaan jatkossa lisäämään (ja näin
-  ollen dynaamiseen sidontaan nojautumista kehotetaan välttämään).
+  määritellään staattisesti, mutta niitä käytetään dynaamisesti.
+  Eli toisin sanoen eri näkyvyysalueilla olevat tunnukset
+  määritellään, mutta niihin ei liitetä arvoa. Ajonaikaisesti
+  voidaan määritellä uusia tunnuksia globaalille tasolle. On
+  kuitenkin huomioitava, että Python-funktioille ei voi määritellä
+  uusia lokaaleja tunnuksia funktion parsimisen jälkeen (eli
+  lokaalit muuttujat määritellään staattisesti). Pythonin
+  dokumentaatioissa myös vihjataan, että staattisuutta tullaan
+  jatkossa lisäämään (ja näin ollen dynaamiseen sidontaan
+  nojautumista kehotetaan välttämään). 
   <!--TODO: Timo tarkistapa nämä nyt vielä jostain http://bugs.python.org/issue10043
   Lähde: http://docs.python.org/py3k/tutorial/classes.html#python-scopes-and-namespaces --></p>
 
@@ -850,15 +853,16 @@ Loopin else
   aktivaatiotietueen tilalle pinoon eli muuntamalla rekursio
   vastaamaan tavallista silmukkaa.</p>
 
-  <p>Rekursion syvyys on rajoitettu Pythonissa. Tyypillisessä Pythonin implementaatiossa raja-arvo on 1000. Raja estää ikuista
+  <p>Rekursion syvyys on rajoitettu Pythonissa. Tyypillisessä
+  Pythonin implementaatiossa raja-arvo on 1000. Raja estää ikuista
   silmukkaa aiheuttamasta ylivuotoa C:n pinossa ja kaatamasta
   Pythonia [<a href="#ref-library-sys">10</a>]. <code>sys</code>
   -moduulista löytyvät mekanismit, joilla voidaan selvittää
   maksimaalinen rekursiosyvyys
   (<code>sys.getrecursionlimit()</code>) tai asettaa se
-  (<code>sys.setrecursionlimit(int)</code>). Rekursiosyvyyden oletusarvo riippuu
-  implementaatiosta, kun taas suurin mahdollinen arvo on
-  laitteistoriippuvainen.</p>
+  (<code>sys.setrecursionlimit(int)</code>). Rekursiosyvyyden
+  oletusarvo riippuu implementaatiosta, kun taas suurin mahdollinen
+  arvo on laitteistoriippuvainen.</p>
 
   <p>Fibonaccin luvun laskeminen rekursiivisesti. Laskee luvun,
   jonka järjestys on n.</p>
@@ -985,26 +989,30 @@ def fib(n):
 
       <td><code>(9+3j)</code></td>
     </tr>
-    
-    <tr><th colspan="4">Standardi kirjaston laajennokset numeroille</th></tr>
-    
+
+    <tr>
+      <th colspan="4">Standardi kirjaston laajennokset
+      numeroille</th>
+    </tr>
+
     <tr>
       <td><code>fractional.Fractional</code></td>
-      
+
       <td>rationaaliluvut</td>
-      
+
       <td>ilmeisesti "int/int" (***)</td>
-      
-      <td><code>Fraction('14/4')</code><br /><code>Fraction(14, 4)</code></td>
+
+      <td><code>Fraction('14/4')</code><br>
+      <code>Fraction(14, 4)</code></td>
     </tr>
-    
+
     <tr>
       <td><code>decimal.Decimal</code></td>
-      
+
       <td>tarkat desimaaliluvut</td>
-      
+
       <td>käyttäjän määrittelee tarkkuuden</td>
-      
+
       <td><code>Decimal('1.12456765432345')</code></td>
     </tr>
   </table>
@@ -1014,10 +1022,11 @@ def fib(n):
 
   <p>** Arvoalue riippuu alla olevasta
   toteutuksesta/laitteistosta.</p>
-  
-  <p>*** Fractional on abstraktin luokan <code>numbers.Rational</code> aliluokka
-  ja ilmeisesti toteutettu kahdella kokonaisluvulla (ja siten tarjoaa
-  "rajattoman" tarkkuuden).</p>
+
+  <p>*** Fractional on abstraktin luokan
+  <code>numbers.Rational</code> aliluokka ja ilmeisesti toteutettu
+  kahdella kokonaisluvulla (ja siten tarjoaa "rajattoman"
+  tarkkuuden).</p>
 
   <p>Jonotyypit:</p>
 
@@ -1132,12 +1141,12 @@ def fib(n):
   vahvoihin tyyppiturvallisuusominaisuuksiin kuuluu muun muassa,
   että implisiittisiä tyyppimuunnoksia ei käytetä (lähes
   ollenkaan?) ja olioilla on aina tyyppi, eikä sitä voi muuttaa
-  (muuttujilla ei ole tyyppiä). Vrt. Javassa <code>"spam" + 1</code>
-  tuottaa merkkijonon <code>"spam1"</code>. Pythonissa ei numeroa suostuta
-  implisiittisesti konvertoimaan vaan tuloksena on poikkeus.
-  Vastaavasti C:ssä voidaan esimerkiksi osoittimet konvertoida
-  eksplisiittisesti ja siten käytännössä tulkita mikä tahansa olio
-  miksi tahansa olioksi.</p>
+  (muuttujilla ei ole tyyppiä). Vrt. Javassa <code>"spam" +
+  1</code> tuottaa merkkijonon <code>"spam1"</code>. Pythonissa ei
+  numeroa suostuta implisiittisesti konvertoimaan vaan tuloksena on
+  poikkeus. Vastaavasti C:ssä voidaan esimerkiksi osoittimet
+  konvertoida eksplisiittisesti ja siten käytännössä tulkita mikä
+  tahansa olio miksi tahansa olioksi.</p>
 
   <p>Objektien tyyppiä ei tarkisteta käännösaikana, vaan ajon
   aikana jotkut operaatiot voivat epäonnistua (jolloin syntyy
@@ -1149,9 +1158,9 @@ def fib(n):
 
   <p>Python on dynaamisesti tyypitetty kieli. Vaikka olioiden
   tyyppi onkin aina tiedossa, niin Pythonilla ohjelmoitaessa tämä
-  yritetään jättää mahdollisimman pitkälti huomiotta. Muuttujalla ei
-  ole ennalta määrättyä tyyppiä. Funktioiden parametrien tyyppiä ei
-  normaalisti tarkisteta vaan noudatetaan ns. "duck typing"
+  yritetään jättää mahdollisimman pitkälti huomiotta. Muuttujalla
+  ei ole ennalta määrättyä tyyppiä. Funktioiden parametrien tyyppiä
+  ei normaalisti tarkisteta vaan noudatetaan ns. "duck typing"
   -paradigmaa, jonka ajatus on, että "Jos se vaakkuu kuin ankka ja
   kävelee kuin ankka, niin sen täytyy olla ankka." Olion(Pythonissa
   kaikki ovat olioita) tyyppi määritellään tutkimalla sen metodeita
@@ -1213,31 +1222,66 @@ True
 
   <h2 id="chapter-6">6. Laskennan kapselointi</h2>
 
-  <p><em>miten toiminnallisuuksia abstrahoidaan ja niistä rakennetaan uusia toiminnallisuuksia?</em></p>
+  <p><em>miten toiminnallisuuksia abstrahoidaan ja niistä
+  rakennetaan uusia toiminnallisuuksia?</em></p>
+
   <ul>
-    <li><a href="#chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai alifunktiot</a></li>
-    <li><a href="#chapter-6-parametrivalitys">Parametrivälitys</a></li>
-    <li><a href="#chapter-6-poikkeukset">Suoritusaikaisiin virheisiin varautumisen välineet – poikkeukset</a></li>
-    <li><a href="#chapter-6-rinnakkaislaskenta">Miten kieli tukee rinnakkaista laskentaa</a></li>
-    <li><a href="#chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä ohjelma-arkkitehtuureja</a></li>
+    <li><a href="#chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai
+    alifunktiot</a></li>
+
+    <li><a href=
+    "#chapter-6-parametrivalitys">Parametrivälitys</a></li>
+
+    <li><a href="#chapter-6-poikkeukset">Suoritusaikaisiin
+    virheisiin varautumisen välineet – poikkeukset</a></li>
+
+    <li><a href="#chapter-6-rinnakkaislaskenta">Miten kieli tukee
+    rinnakkaista laskentaa</a></li>
+
+    <li><a href="#chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä
+    ohjelma-arkkitehtuureja</a></li>
+
     <li>...</li>
-    <li><a href="#chapter-6-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</a></li>
-    <li><a href="#chapter-6-arvio">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</a></li>
+
+    <li><a href="#chapter-6-esimerkkeja">Havainnollisia
+    selostettuja pieniä ohjalmaesimerkkejä</a></li>
+
+    <li><a href="#chapter-6-arvio">Arvio kieleen valittujen
+    ratkaisujen eduista ja haitoista</a></li>
   </ul>
 
-  <h3 id="chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai alifunktiot</h3>
+  <h3 id="chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai
+  alifunktiot</h3>
 
   <h3 id="chapter-6-parametrivalitys">Parametrivälitys</h3>
 
-  <h3 id="chapter-6-poikkeukset">Suoritusaikaisiin virheisiin varautumisen välineet – poikkeukset</h3>
+  <p>Pythonissa parametrinvälitys on toteutettu olioviitteillä,
+  jotka välitetään arvoparametreinä. Joidenkin olioiden arvo voi
+  muuttua. Oliota, jonka arvo voi muuttua, kutsutaan
+  <em>mutaabeliksi</em> olioksi, vastaavasti muuttumatotonta oliota
+  kutsutaan <em>immutaabeliksi</em> olioksi. Olion muuttumattomuus
+  määräytyy sen tyypin mukaan. Esimerkiksi numeeriset tyypit,
+  stringit ja monikot ovat muuttumattomia, mutta dict- ja
+  list-rakenteet ovat muuttuvia.</p>
 
-  <h3 id="chapter-6-rinnakkaislaskenta">Miten kieli tukee rinnakkaista laskentaa</h3>
+  <p>esim1</p>
 
-  <h3 id="chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä ohjelma-arkkitehtuureja</h3>
+  <p>esim2</p>
 
-  <h3 id="chapter-6-esimerkkeja">Havainnollisia selostettuja pieniä ohjalmaesimerkkejä</h3>
+  <h3 id="chapter-6-poikkeukset">Suoritusaikaisiin virheisiin
+  varautumisen välineet – poikkeukset</h3>
 
-  <h3 id="chapter-6-arvio">Arvio kieleen valittujen ratkaisujen eduista ja haitoista</h3>
+  <h3 id="chapter-6-rinnakkaislaskenta">Miten kieli tukee
+  rinnakkaista laskentaa</h3>
+
+  <h3 id="chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä
+  ohjelma-arkkitehtuureja</h3>
+
+  <h3 id="chapter-6-esimerkkeja">Havainnollisia selostettuja pieniä
+  ohjalmaesimerkkejä</h3>
+
+  <h3 id="chapter-6-arvio">Arvio kieleen valittujen ratkaisujen
+  eduista ja haitoista</h3>
 
   <h2 id="lahteet">Lähteet</h2>
 
