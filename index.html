@@ -1264,7 +1264,7 @@ True
   stringit ja monikot ovat muuttumattomia, mutta dict- ja
   list-rakenteet ovat muuttuvia.</p>
 
-  <p>Seuraavassa esimerkki parametrinvälityksestä.</p>
+  <p>Seuraavassa esimerkki parametrinvälityksestä:</p>
   <pre>
 def muuta1(y):
     print('muuta1 sai', y)
@@ -1327,21 +1327,69 @@ muuta3 jälkeen x arvo on spam spam spam
   tyylinen stringin uudelleensijoitus parametriin ei myöskään
   toimi.</p>
 
+  <p>Python tukee tavallisen parametrien lisäksi vaihtuvan
+  mittaisia parametrilistoja ja nimettyjä parametrejä.
+  Parametrilista otetaan käyttöön erikoissyntaksilla
+  <code>*args</code>, jossa <code>args</code> on parametrit
+  sisältävä listamuuttuja. Vastaavasti nimetyt parametrit otetaan
+  käyttöön <code>**kwargs</code> syntaksilla, jossa
+  <code>kwargs</code> sisältää nimetyt parametrit
+  <code>dict</code>-avainarvorakenteessa. Seuraavassa esimerkki niiden
+  käytöstä:</p>
+  <pre>
+def tulosta_kaikki(a, b, *c, **d):
+    print('tavalliset parametrit: ', a, b)
+    print('listaparametrit: ')
+    for arg in c:
+        print(arg)
+    print('nimiparametrit: ')
+    for kwarg in d.items():
+        print(kwarg)
+
+# pääohjelma
+c = [1, 2, 3, 4]
+d = {'pi': 3.14, 'e': 2.72}
+
+tulosta_kaikki('eka', 'toka', *c, **d)
+# sama kuin: 
+# tulosta_kaikki('eka', 'toka', c[0], c[1], c[2], c[3], pi=3.14, e=2.72)
+
+# ohjelman tulostus 
+'''
+tavalliset parametrit:  eka toka
+listaparametrit: 
+1
+2
+3
+4
+nimiparametrit: 
+('pi', 3.14)
+('e', 2.72)
+'''
+</pre>
+
   <h3 id="chapter-6-poikkeukset">Suoritusaikaisiin virheisiin
   varautumisen välineet – poikkeukset</h3>
 
   <h3 id="chapter-6-rinnakkaislaskenta">Miten kieli tukee
   rinnakkaista laskentaa</h3>
-  <p>Python ei juurikaan tue rinnkkaisuutta. Pythonissa (ainakin CPython implementaatiossa) on
-  käytössä GIL eli Global Interpreter Lock. GIL:in tarkoitus on yksinkertaisesti estää Pythonin
-  bytecoden rinnakkainen suorittaminen. Ratkaisuun on päädytty siksi, että CPython implementaatiosta
-  on näin saatu paljon tehokkaampi ja myös yksinkertaisempi. Aikaisemmin CPythonista kokeiltiin
-  versiota, joka jossa GIL oli poistettu, mutta se osoittautuio vain vaivoin nopeammaksi mikäli,
-  sillä käytössä oli kaksi prosessoria verrattuna GIL:iä käyttäävään versioon yhdellä prosessorilla.
-  Toistaiseki tähän ei ole odotettavissa mitään muutosta. Tämä ei toki tarkoita, etteikö Pythonilla
-  voitaisi saavuttaa aitoa rinnakkaisuutta. Rinnakkaisuuteen on vain käytettävä prosesseja tai C/C++
-  laajennoksia joissa GIL-vapautetaan. Myös esimerkiksi IO-operaatioiden yhteydessä GIL vapautetaan,
-  joten tiedostoja voi lukea eri säikeissä aidosti rinnakkain.</p>
+
+  <p>Python ei juurikaan tue rinnkkaisuutta. Pythonissa (ainakin
+  CPython implementaatiossa) on käytössä GIL eli Global Interpreter
+  Lock. GIL:in tarkoitus on yksinkertaisesti estää Pythonin
+  bytecoden rinnakkainen suorittaminen. Ratkaisuun on päädytty
+  siksi, että CPython implementaatiosta on näin saatu paljon
+  tehokkaampi ja myös yksinkertaisempi. Aikaisemmin CPythonista
+  kokeiltiin versiota, joka jossa GIL oli poistettu, mutta se
+  osoittautuio vain vaivoin nopeammaksi mikäli, sillä käytössä oli
+  kaksi prosessoria verrattuna GIL:iä käyttäävään versioon yhdellä
+  prosessorilla. Toistaiseki tähän ei ole odotettavissa mitään
+  muutosta. Tämä ei toki tarkoita, etteikö Pythonilla voitaisi
+  saavuttaa aitoa rinnakkaisuutta. Rinnakkaisuuteen on vain
+  käytettävä prosesseja tai C/C++ laajennoksia joissa
+  GIL-vapautetaan. Myös esimerkiksi IO-operaatioiden yhteydessä GIL
+  vapautetaan, joten tiedostoja voi lukea eri säikeissä aidosti
+  rinnakkain.</p>
 
   <h3 id="chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä
   ohjelma-arkkitehtuureja</h3>
