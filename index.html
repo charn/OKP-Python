@@ -1336,12 +1336,14 @@ muuta3 jälkeen x arvo on spam spam spam
   käytössä GIL eli Global Interpreter Lock. GIL:in tarkoitus on yksinkertaisesti estää Pythonin
   bytecoden rinnakkainen suorittaminen. Ratkaisuun on päädytty siksi, että CPython implementaatiosta
   on näin saatu paljon tehokkaampi ja myös yksinkertaisempi. Aikaisemmin CPythonista kokeiltiin
-  versiota, joka jossa GIL oli poistettu, mutta se osoittautuio vain vaivoin nopeammaksi mikäli,
-  sillä käytössä oli kaksi prosessoria verrattuna GIL:iä käyttäävään versioon yhdellä prosessorilla.
-  Toistaiseki tähän ei ole odotettavissa mitään muutosta. Tämä ei toki tarkoita, etteikö Pythonilla
-  voitaisi saavuttaa aitoa rinnakkaisuutta. Rinnakkaisuuteen on vain käytettävä prosesseja tai C/C++
-  laajennoksia joissa GIL-vapautetaan. Myös esimerkiksi IO-operaatioiden yhteydessä GIL vapautetaan,
-  joten tiedostoja voi lukea eri säikeissä aidosti rinnakkain.</p>
+  versiota, joka jossa GIL oli poistettu, mutta sen katsottiin heikentävän aivan liikaa Pythonin
+  tehokkuutta yksiytimisillä järjestelmillä (n. 30% tehottomampi). Toistaiseki tähän ei ole
+  odotettavissa mitään muutosta. Tämä ei toki tarkoita, etteikö Pythonilla voitaisi saavuttaa aitoa
+  rinnakkaisuutta. Rinnakkaisuuteen on vain käytettävä prosesseja tai C/C++ laajennoksia joissa
+  GIL-vapautetaan. Myös esimerkiksi IO-operaatioiden yhteydessä GIL vapautetaan, joten tiedostoja voi
+  lukea eri säikeissä aidosti rinnakkain. Mielenkiintoinen kysymys on kuinka pitkälle nykyinen kanta
+  pitää, kun yksiytimiset prosessorit tulevat yhä harvinaisemmiksi ja lopulta katoavat historian
+  kokonaan. <a href="#ref-gil-ref">[14]</a><a href="#ref-gil-faq">[15]</a></p>
 
   <h3 id="chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä
   ohjelma-arkkitehtuureja</h3>
