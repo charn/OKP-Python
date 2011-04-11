@@ -1370,6 +1370,114 @@ nimiparametrit:
 
   <h3 id="chapter-6-poikkeukset">Suoritusaikaisiin virheisiin
   varautumisen välineet – poikkeukset</h3>
+  <p>Python 3:n poikkeuksien käsittely toimii niin tavanomaisesti, että
+  ainoastaan Python 2 -ohjelmoija voi pitää sitä jotenkin odottamattomana.
+  Python 2:sta stacktrace tallennettiin globaaliin muuttujaan ja tästä
+  seurasi, että mikäli poikkeus syntyi ja poikkeuksen käsittelyn aikana
+  syntyi toinen poikkeus, niin ensimmäisen poikkeuksen stacktrace katosi,
+  jollei ohjelmoija ollut itse laittanut sitä jonnekin talteen. Näin kävi
+  myös jos poikkeuskäsittelijässä paketoi käsitellyn poikkeuksen toiseen
+  poikkeukseen. Tämä Python 2:den ominaisuus ei periytynyt Python 3:een.
+  Siispä poikkeukset käyttäytyvät Python 3:ssa hyvin Javamaiseen tapaan.
+  Suurimmat erot muihin kieliin lienevät syntaktisia tai toteutuksen
+  yksityskohtia.</p>
+
+  <pre>
+#!/usr/bin/python3.1
+# -*- coding: UTF-8 -*-
+
+class NegativeNumberError(Exception):
+    pass    #Meille riittää tässä yksinkertaisen tavallisen poikkeuksen toteutus, joten jätetään tämä määrittely tyhjäksi
+
+def main():
+    try:
+        print("Anna positiivinen luku:")
+        jakaja = int(input())
+        if jakaja &lt; 0:
+            raise NegativeNumberError("Negatiivinen numero ei ole tässä sallittu")
+        1/jakaja
+    except ZeroDivisionError as e:  #Tässä käsitellään vain ZeroDivisionErrorit ja poikkeus-olio välitetään käsittelevään lohkoon as-avainsanan avulla muuttujassa e
+        #Seuraavassa muutamia tapoja päästä poikkeuksen tietoihin käsiksi
+        import sys, traceback
+        print(e.__class__.__name__)
+        print(e)
+        print(e.__cause__)
+        print(e.__context__)
+        print(e.__traceback__)
+        print(sys.exc_info())
+        traceback.print_tb(e.__traceback__)
+    except (ValueError, NegativeNumberError): #Käsittelijä voidaan määrittää käsittelemään useamman tyyppisiä poikkeuksia.
+        print("ValueError tai NegativeNumberError")
+        raise
+    except ZeroDivisionError:   #Tätä käsittelijää ei suoriteta koskaan, sillä käsittelijöistä valitaan aina vain yksi ja se on ensimmäinen
+        #ylhäältä alas katsottuna, joka kelpaa poikkeuksen käsittelyyn.
+        print("Tänne ei päädytä koskaan")
+    except: #Oletus "catch"-haara. Tänne päästään ainakin ajamalla ohjelma ja jos syötteen annon sijasta painetaan ctrl + c tai ctrl + d
+        print("Jokin muu meni pieleen")
+    #except Exception:   #Tämä ei menisi kääntäjästä läpi, sillä oletuskäsittelijän (pelkkä except:) jälkeen ei saa määritellä enää käsittelijöitä.
+    #    print("Tänne ei ole laillista")
+    finally:    #Tämän haaran koodi kaikissa tapauksissa.
+        print("Tämä printataan aina")
+
+if __name__ == "__main__":
+    main()
+    
+  </pre>
+  <a href="esimerkit/poikkeukset.py">Lataa esimerkki tästä.</a>
+  <p>Ohjelman tulosteet eri syötteillä:</p>
+<dl>
+
+  <dt>0</dt>
+  <dd><pre>
+Anna positiivinen luku:
+0
+ZeroDivisionError
+int division or modulo by zero
+None
+None
+&lt;traceback object at 0x920ff2c&gt;
+(&lt;class 'ZeroDivisionError'&gt;, ZeroDivisionError('int division or modulo by zero',), &lt;traceback object at 0x920ff2c&gt;)
+  File "./esimerkit/poikkeukset.py", line 13, in main
+    1/jakaja
+Tämä printataan aina
+  </pre></dd>
+  
+  <dt>-1</dt>
+  <dd><pre>
+Anna positiivinen luku:
+-1
+ValueError tai NegativeNumberError
+Tämä printataan aina
+Traceback (most recent call last):
+  File "./esimerkit/poikkeukset.py", line 38, in <module>
+    main()
+  File "./esimerkit/poikkeukset.py", line 12, in main
+    raise NegativeNumberError("Negatiivinen numero ei ole tässä sallittu")
+__main__.NegativeNumberError: Negatiivinen numero ei ole tässä sallittu
+  </pre></dd>
+  
+  <dt>yks</dt>
+  <dd><pre>
+Anna positiivinen luku:
+yks
+ValueError tai NegativeNumberError
+Tämä printataan aina
+Traceback (most recent call last):
+  File "./esimerkit/poikkeukset.py", line 38, in <module>
+    main()
+  File "./esimerkit/poikkeukset.py", line 10, in main
+    jakaja = int(input())
+ValueError: invalid literal for int() with base 10: 'yks'
+  </pre></dd>
+  
+  <dt>ctrl + c</dt>
+  <dd><pre>
+Anna positiivinen luku:
+^CJokin muu meni pieleen
+Tämä printataan aina
+  </pre></dd>
+  
+</dl>
 
   <h3 id="chapter-6-rinnakkaislaskenta">Miten kieli tukee
   rinnakkaista laskentaa</h3>
