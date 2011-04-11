@@ -1258,15 +1258,74 @@ True
   <p>Pythonissa parametrinvälitys on toteutettu olioviitteillä,
   jotka välitetään arvoparametreinä. Joidenkin olioiden arvo voi
   muuttua. Oliota, jonka arvo voi muuttua, kutsutaan
-  <em>mutaabeliksi</em> olioksi, vastaavasti muuttumatotonta oliota
+  <em>mutaabeliksi</em> olioksi, vastaavasti muuttumatonta oliota
   kutsutaan <em>immutaabeliksi</em> olioksi. Olion muuttumattomuus
   määräytyy sen tyypin mukaan. Esimerkiksi numeeriset tyypit,
   stringit ja monikot ovat muuttumattomia, mutta dict- ja
   list-rakenteet ovat muuttuvia.</p>
 
-  <p>esim1</p>
+  <p>Seuraavassa esimerkki parametrinvälityksestä.</p>
+  <pre>
+def muuta1(y):
+    print('muuta1 sai', y)
+    y = [1, 2, 3]
+    print('muuta1 muutti y arvoksi', y)
+    
+def muuta2(y):
+    print('muuta2 sai', y)
+    y.append(3)
+    print('muuta2 muutti y arvoksi', y)
+        
+def muuta3(y):
+    print('muuta3 sai', y)
+    y = "egg and bacon"
+    print('muuta3 muutti y arvoksi', y)    
 
-  <p>esim2</p>
+# pääohjelma
+x = [1, 2]
+print('ennen muuta1 x arvo on', x)
+muuta1(x)
+print('muuta1 jälkeen x arvo on', x)
+
+x = [1, 2]
+print('ennen muuta2 x arvo on', x)
+muuta2(x)
+print('muuta2 jälkeen x arvo on', x)
+
+x = "spam spam spam"
+print('ennen muuta3 x arvo on', x)
+muuta3(x)
+print('muuta3 jälkeen x arvo on', x)
+
+# ohjelman tulostus 
+'''
+ennen muuta1 x arvo on [1, 2]
+muuta1 sai [1, 2]
+muuta1 muutti y arvoksi [1, 2, 3]
+muuta1 jälkeen x arvo on [1, 2]
+ennen muuta2 x arvo on [1, 2]
+muuta2 sai [1, 2]
+muuta2 muutti y arvoksi [1, 2, 3]
+muuta2 jälkeen x arvo on [1, 2, 3]
+ennen muuta3 x arvo on spam spam spam
+muuta3 sai spam spam spam
+muuta3 muutti y arvoksi egg and bacon
+muuta3 jälkeen x arvo on spam spam spam
+'''
+</pre>
+
+  <p>Funktio muuta1 yrittää muuttaa saamansa listaparametrin
+  arvoksi <code>[1, 2, 3]</code> sijoittamalla siihen uuden
+  listainstanssin, mutta tämä ei toimi vaikka listarakenne onkin
+  mutaabeli, koska <code>y = [1, 2, 3]</code> korvaa vain
+  parametrimuuttujan paikallisen kopion arvon.
+  <code>muuta2</code>-funktio muuttaa onnistuneesti listaparametrin
+  arvoksi <code>[1, 2, 3]</code> käyttämällä listaolion
+  append-metodia.</p>
+
+  <p>String-tyyppi on Pythonissa muuttumaton, joten muuta3-funktion
+  tyylinen stringin uudelleensijoitus parametriin ei myöskään
+  toimi.</p>
 
   <h3 id="chapter-6-poikkeukset">Suoritusaikaisiin virheisiin
   varautumisen välineet – poikkeukset</h3>
