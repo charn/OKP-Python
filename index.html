@@ -1254,7 +1254,7 @@ True
   
   <p>Funktion ensimmäinen lause voi olla string-literaali, jolloin se toimii funktion dokumentaatiomerkkijonona eli <i>docstringinä</i>.</p>
   
-  <pre>
+  <pre class="sh_python">
 def funktio(viesti):
     """Funktion docstring"""
     print(viesti)
@@ -1274,7 +1274,7 @@ def funktio(viesti):
   list-rakenteet ovat muuttuvia.</p>
 
   <p>Seuraavassa esimerkki parametrinvälityksestä:</p>
-  <pre>
+  <pre class="sh_python">
 def muuta1(y):
     print('muuta1 sai', y)
     y = [1, 2, 3]
@@ -1345,7 +1345,7 @@ muuta3 jälkeen x arvo on spam spam spam
   <code>kwargs</code> sisältää nimetyt parametrit
   <code>dict</code>-avainarvorakenteessa. Seuraavassa esimerkki niiden
   käytöstä:</p>
-  <pre>
+  <pre class="sh_python">
 def tulosta_kaikki(a, b, *c, **d):
     print('tavalliset parametrit: ', a, b)
     print('listaparametrit: ')
@@ -1377,6 +1377,75 @@ nimiparametrit:
 '''
 </pre>
 
+  <p>Pythonissa voidaan käyttää myös oletusparametreja [<a href="#ref-funktiot">16</a>], jolloin funktiota voidaan kutsua pienemmällä määrällä parametreja kuin mitä on mainittu sen määrittelyssä.</p>
+  
+<pre class="sh_python">
+def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no', 'nop', 'nope'):
+            return False
+        retries = retries - 1
+        if retries < 0:
+            raise IOError('refusenik user')
+        print(complaint)
+        
+# Edellä mainittua koodia olisi mahdollista kutsua esimerkiksi seuraavilla tavoilla:
+#
+# ask_ok('Do you really want to quit?')
+# ask_ok('OK to overwrite the file?', 2)
+# ask_ok('OK to overwrite the file?', 2, 'Come on, only yes or no!')
+</pre>
+
+  <p>Oletusarvot evaluoidaan määrittelykohdassaan omalla näkyvyysalueellaan.</p>
+  
+<pre class="sh_python">
+i = 5
+
+def f(arg=i):
+    print(arg)
+
+i = 16
+f() # Tulostaa arvon 5
+</pre>
+
+  <p>Oletusarvot sidotaan vain kerran. Tällä on väliä varsinkin jos oletusarvona käytetään mutaabelia oliota kuten esim. listaa tai sanakirjaa.</p>
+
+<pre class="sh_python">
+  def f(a, L=[]):
+    L.append(a)
+    return L
+
+print(f(1))
+print(f(2))
+print(f(3))
+
+# Koodi tulostaa:
+#
+# [1]
+# [1, 2]
+# [1, 2, 3]
+</pre>
+
+  <p>Funktioita voidaan myös kutsua käyttämällä nimettyjä parametreja [<a href="#ref-funktiot">16</a>] esim. <code>parametrin_nimi = arvo</code>, jolloin arvot voidaan järjestellä kutsujan haluamaan järjestykseen.</p>
+  
+<pre class="sh_python">
+def foo(bar,fuu):
+    print("BAR: {}".format(bar))
+    print("FUU: {}".format(fuu))
+
+foo("Eka", "Toka")
+foo(fuu = "Toka", bar = "Eka")
+foo("Eka", fuu = "Toka")
+
+# Kaikki tulostavat saman eli:
+#
+# BAR: Eka
+# FUU: Toka
+</pre>
+
   <h3 id="chapter-6-poikkeukset">Suoritusaikaisiin virheisiin
   varautumisen välineet – poikkeukset</h3>
   <p>Python 3:n poikkeuksien käsittely toimii niin tavanomaisesti, että
@@ -1391,7 +1460,7 @@ nimiparametrit:
   Suurimmat erot muihin kieliin lienevät syntaktisia tai toteutuksen
   yksityskohtia.</p>
 
-  <pre>
+  <pre class="sh_python">
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
 
