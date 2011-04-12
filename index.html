@@ -1252,6 +1252,20 @@ True
 
   <h3 id="chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai
   alifunktiot</h3>
+  
+  <p>Funktio määritellään avainsanalla <i>def</i>, jota tulee seurata funktion nimi ja muodolliset parametrit. Funktio on siis muotoa <i>def</i> [nimi] <i>(</i>[parametrit]<i>)</i>, ja normaaliin Python tapaan lohkon merkiksi tulee kaksoispiste. Funktion rungon muodostavat lausekkeet alkavat seuraavalta riviltä ja niiden tulee olla sisennettyinä.</p>
+  
+  <p>Pythonissa on sallittu sisäkkäiset funktiomäärittelyt. Funktion <i>f1</i> sisällä määritelty funktio <i>f2</i> pääsee käsiksi f1:n muuttujiin. Jos f2 määrittelee päällekkäisiä nimiä f1:n kanssa, ympäröivän funktion nimet peittyvät. Näkyvyyksistä on kerrottu tarkemmin <a href="">luvussa 3</a></p>
+  
+  <p>Funktion ensimmäinen lause voi olla string-literaali, jolloin se toimii funktion dokumentaatiomerkkijonona eli <i>docstringinä</i>.</p>
+  
+  <pre>
+def funktio(viesti):
+    """Funktion docstring"""
+    print(viesti)
+  </pre>
+  
+  <p>Pythonissa kaikki funktiot palauttavat arvon, myös sellaisissa tapauksissa, kun funktiolla ei ole <i>return</i> lausetta. Ilman return-lausetta funktiot palauttavat arvon <i>None</i>. [<a href="#ref-funktiot">16</a>]</p>
 
   <h3 id="chapter-6-parametrivalitys">Parametrivälitys</h3>
 
@@ -1566,6 +1580,10 @@ Tämä printataan aina
     <li id="ref-gil-faq"><a href=
     "http://docs.python.org/py3k/faq/library.html?highlight=gil#can-t-we-get-rid-of-the-global-interpreter-lock">
     Can't we get rid of the Global Identifier Lock?</a></li>
+    
+    <li id="ref-funktiot"><a href=
+    "http://docs.python.org/release/3.1.3/tutorial/controlflow.html#defining-functions">
+    http://docs.python.org/release/3.1.3/tutorial/controlflow.html#defining-functions</a></li>
   </ol>
 </body>
 </html>
