@@ -1768,6 +1768,28 @@ moniprosessitesti 2.04168510437
 
   <h3 id="chapter-7-oliotluokat">Oliot ja luokat</h3>
 
+  <h4>Periytyminen</h4>
+
+  <p>Pythonissa luokkaperiytyminen on toteutettu seuraavanlaisella
+  syntaksilla:</p>
+  <pre>
+class Luokka(Yliluokka):
+    &lt;lause-1&gt;
+    .
+    .
+    .
+    &lt;lause-N&gt;
+</pre>
+
+  <p>Luokka <code>Luokkaa</code> perii yliluokan
+  <code>Yliluokka</code> jäsenet ja sen yliluokan jäsenet kunnes
+  saavutaan <code>object</code> kantaluokkaan. Peritty luokka voi
+  korvata yliluokan metodeita yksinkertaisesti määrittelemällä ne
+  uudelleen. Yliluokan metodeihin voi viitata
+  <code>Yliluokka.metodi(self, parametrit)</code> tyylisellä
+  syntaksilla tai java-tyylisesti
+  <code>super()</code>-funktiolla.</p>
+
   <h4>Moniperiytyminen</h4>
 
   <p>Pythonissa on mahdollista periyttää luokka monesta luokasta.
@@ -1792,7 +1814,16 @@ moniprosessitesti 2.04168510437
   supistuu muotoon <code>[D, B, A, A]</code>, kun kaksoiskappaleet
   poistetaan.</p>
   <pre>
-  class D(B, C):
+
+# Kuvio luokkamallista
+#
+#    A
+#   / \
+#  B   C
+#   \ /
+#    D
+
+class D(B, C):
     &lt;lause-1&gt;
     .
     .
