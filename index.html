@@ -1765,6 +1765,120 @@ moniprosessitesti 2.04168510437
 
   <h3 id="chapter-7-raktyypit">Rakenteiset ja kapseloidut
   tyypit</h3>
+  <p>Moduulit ja paketit.</p>
+  <p>Pythonissa lähdekooditiedosto muodostaa moduulin. Moduulin nimi
+  on tiedostonmi ilman tiedostopäätettä .py. Ajettavan moduulin nimeä
+  voi moduulissa kysyä __name__-metodilla. Moduulin tarkoitus on koota
+  yhteen määrittelyitä (funktioia, luokkia, muuttujia). Moduuli voidaan
+  sitten jostakin toisaalta (esimerkikis toisesta moduulista) pyytää
+  käytettäväksi. Moduuli voidaan pyytää käyttöön avainsanan <code>import
+  </code> avulla.</p>
+  <p>Esimerkiksi näin</p>
+  <pre>
+  import moduuli
+  
+  #kutsutaan
+  moduuli.moduulissa_määritelty_funktio()
+  </pre>
+  <p>Kuten tuosta esimerkistäkin nähdään, niin moduulissa määriteltyjä
+  asioita ei tuoda suoraan osaksi sen hetkistä symbolitaulua, vaan
+  ainoastaan moduulin nimi tuodaan sinne ja sen sisältöön viitataan sitä
+  kautta. Toisenlaista käytöstä saadaan aikaan, jos yksinkeraisesti
+  määritellään nimi myös sellaisenaan symbolitauluun. Eli vaikkapa näin:</p>
+  <pre>
+  import moduuli
+  
+  #määritellään nimi moduulissa_määritelty_funktio viittaamaan
+  #moduulin moduuli sisällä määriteltyyn funktioon moduulissa_määritelty_funktio
+  moduulissa_määritelty_funktio = moduuli.moduulissa_määritelty_funktio
+  #ja nyt voimme viitata funktioon suoraan ilman moduulia
+  moduulissa_määritelty_funktio()
+  </pre>
+  <p>Yllä esitettyä tapaa elegantimpi tapa tuoda nimiä lokaaliin
+  nimiavaruuteen on käyttää import lauseen erityismuotoa. Voidaan sanoa
+  <code>from module import moduulissa_määritelty_funktio</code>. Tämä ei
+  toki ole aivan sama kuin yllä, sillä tässä tapauksessa vain ja ainoastaan
+  tämä yksi funktio liitetään moduulista osaksi tätä moduulia ja siten siis
+  mitkään muut moduulin nimet eivät ole edes moduulin nimen kautta
+  viitattavissa tässä nimiavaruudessa.</p>
+  <p>Jos kuitenkin kaikki moduulin nimet halutaan tuoda toisen moduulin
+  lokaaliin nimiavaruuteen sellaisenaan, niin tämäkin on mahdollista. Tällöin
+  käytetään edellisen import-lauseen variantin erikoismuotoa. Eli sanomme:
+  <code>from moduuli import *</code>.</p>
+  
+  <p>Python ei ilmeisesti tue traitsejä (TODO suomennos). Kuitenkin näyttäisi
+  siltä, että Pythonillakin tätä tekniikkaa voidaan jossain määrin matkia
+  moduulien avulla. Esimerkiksi luokan funktiot voidaan määritellä erillisessä
+  moduulissa ja sitten sisällyttää luokan määrittelyssä ne toisesta moduulista
+  osaksi lokaalia nimiavaruutta. Seuraavassa yksinkertainen esimerkki:</p>
+  <pre>
+#!/usr/bin/python3.1
+# -*- coding: UTF-8 -*-
+# moduuli1.py
+
+class Luokka:
+    from moduuli2 import tee_jotain
+    def tee_jotain_muuta(self):
+        print("Moduulissa 1 määritelty")
+    
+def main():
+    l = Luokka()
+    l.tee_jotain()
+    l.tee_jotain_muuta()
+    
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/python3.1
+# -*- coding: UTF-8 -*-
+# moduuli2.py
+
+def tee_jotain(self):
+    print("Moduulissa 2 määritelty")
+
+  </pre>
+<p>Suorittamalla moduuli1.py-moduulin skriptinä konsolissa, tulostuu konsoliin:</p>
+<pre>
+Moduulissa 2 määritelty
+Moduulissa 1 määritelty
+</pre>
+
+<p>Paketit (Packages) ja alimoduulit (submodules)</p>
+<p>Monista moduulien muodostaman kokonaisuuden voi koota paketiksi. Paketit
+ovat erityistä tiedostorakennetta noudattavia hakemistoja. Pakein nimi on
+sen juurihakemiston nimi. Juurikansion tulee sisältää __init__.py -tiedosto
+sen merkiksi, että kyseessä on paketti. Samoin myös kaikkien alikansoiden
+(joiden halutaan olevan osa pakettia) tulee sisältää tämä tiedosto. __init__.py
+voi kuitenkin olla tyhjä. Esimerkki paketin hakemistorakenteesta:</p>
+<pre>
+paketin_juuri/
+paketin_juuri/__init__.py
+paketin_juuri/alipaketti/__init__.py
+paketin_juuri/alipaketti/alimoduuli.py
+</pre>
+<p>Nyt alimoduuliin voidaan viitata vaikkapa näin:
+<br />
+<code>import paketin_juuri.alipaketti.alimoduuli</code><br />
+Mikäli paketeista halutaan tyypillisesti ottaa kerrallaan käytöön kokonainen
+alipaketti tai koko paketti itsessään, olisi luontevaa käyttää tehdä se
+jotenkin näin:<br />
+<code>from paketin_juuri.alipaketti import *</code><br />
+Ja näin se tehdäänkin. Pakttien etsimnen ja kaikkien tuominen voiso olla
+potentiaalisesti paitsi raska ja hidas operaatio myös aiheuttaa yllättäviä
+ja vaarallisa sivuvaikutuksia. Ongelma on ratkaistu siten, että mikäli
+paketin ylläpitäjä haluaa mahdollistaa tällaisen massasisällyttämisen (mass include), niin
+hänen tulee määritellä kunkin tason __inti__.py-tiedostossa muuttujan
+<code>__all__</code> arvoksi lista niistä alimoduuleista, jotka tulisi
+tällöin sisällyttää.
+</p>
+
+<!-- TODO: Listat, dictit, tuplet yms..? -->
+
+<!-- TODO: Vois jauhasta sanasen tostakin... <p>
+  from collections import namedtuple
+  Student = namedtuple('Student', 'name serialnum school gradelevel')
+  </p>
+  -->
 
   <h3 id="chapter-7-oliotluokat">Oliot ja luokat</h3>
 
@@ -1831,6 +1945,8 @@ class D(B, C):
     &lt;lause-N&gt;
 </pre>
 
+<!-- TODO: Lähteet kuntoon -->
+Lähteenä: http://docs.python.org/tutorial/modules.html
   <h3 id="chapter-7-arvosem">Arvo- ja viitesemantiikka</h3>
 
   <h2 id="chapter-8">8. Yhteenveto</h2>
