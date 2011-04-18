@@ -1779,10 +1779,26 @@ moniprosessitesti 2.04168510437
   epäselvää kumman luokan, B vai C, metodeilla korvataan isäluokan
   aliluokissa, B ja C, korvatut jäsenet. Pythonissa tämä ongelma on
   ratkaistu periyttämällä kaikki luokat yhteisestä
-  <code>object</code> luokasta ja asettamalla periytymiselle tietty
-  periytymisjärjestys. Luokkien periytymisjärjestys on hiukan
-  yksinkertaistaen syvyyshaku vasemmalta oikealle poislukien jo
-  periytetyt luokat.</p>
+  <code>object</code> luokasta ja muodostamalla periytymiselle
+  tietty periytymisjärjestyslista. Luokkien
+  periytymisjärjestyslista muodostetaan hiukan yksinkertaistaen
+  läpikäymällä luokat syvyyshaulla vasemmalta oikealle, jonka
+  jälkeen listasta poistetaan jo kerran läpikäydyt luokat.</p>
+
+  <p>Seuraavassa esimerkki moniperiytymisestä. Esimerkissä on
+  edellä kuvatun kaltainen moniperintätilanne luokista A, B, C ja
+  D. Luokka D periytetään luokista B ja C. Peritymishakujärjestys
+  on tässä tapauksessa lista <code>[D, B, A, C, A]</code>, joka
+  supistuu muotoon <code>[D, B, A, A]</code>, kun kaksoiskappaleet
+  poistetaan.</p>
+  <pre>
+  class D(B, C):
+    &lt;lause-1&gt;
+    .
+    .
+    .
+    &lt;lause-N&gt;
+</pre>
 
   <h3 id="chapter-7-arvosem">Arvo- ja viitesemantiikka</h3>
 
