@@ -58,6 +58,10 @@
 
     <li><a href="#chapter-6">Laskennan kapselointi</a></li>
 
+    <li><a href="#chapter-7">Datan kapselointi</a></li>
+
+    <li><a href="#chapter-8">Yhteenveto</a></li>
+
     <li><a href="#lahteet">Lähteet</a></li>
   </ol>
 
@@ -1247,20 +1251,34 @@ True
 
   <h3 id="chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai
   alifunktiot</h3>
-  
-  <p>Funktio määritellään avainsanalla <i>def</i>, jota tulee seurata funktion nimi ja muodolliset parametrit. Funktio on siis muotoa <i>def</i> [nimi] <i>(</i>[parametrit]<i>)</i>, ja normaaliin Python tapaan lohkon merkiksi tulee kaksoispiste. Funktion rungon muodostavat lausekkeet alkavat seuraavalta riviltä ja niiden tulee olla sisennettyinä.</p>
-  
-  <p>Pythonissa on sallittu sisäkkäiset funktiomäärittelyt. Funktion <i>f1</i> sisällä määritelty funktio <i>f2</i> pääsee käsiksi f1:n muuttujiin. Jos f2 määrittelee päällekkäisiä nimiä f1:n kanssa, ympäröivän funktion nimet peittyvät. Näkyvyyksistä on kerrottu tarkemmin <a href="">luvussa 3</a></p>
-  
-  <p>Funktion ensimmäinen lause voi olla string-literaali, jolloin se toimii funktion dokumentaatiomerkkijonona eli <i>docstringinä</i>.</p>
-  
+
+  <p>Funktio määritellään avainsanalla <i>def</i>, jota tulee
+  seurata funktion nimi ja muodolliset parametrit. Funktio on siis
+  muotoa <i>def</i> [nimi] <i>(</i>[parametrit]<i>)</i>, ja
+  normaaliin Python tapaan lohkon merkiksi tulee kaksoispiste.
+  Funktion rungon muodostavat lausekkeet alkavat seuraavalta
+  riviltä ja niiden tulee olla sisennettyinä.</p>
+
+  <p>Pythonissa on sallittu sisäkkäiset funktiomäärittelyt.
+  Funktion <i>f1</i> sisällä määritelty funktio <i>f2</i> pääsee
+  käsiksi f1:n muuttujiin. Jos f2 määrittelee päällekkäisiä nimiä
+  f1:n kanssa, ympäröivän funktion nimet peittyvät. Näkyvyyksistä
+  on kerrottu tarkemmin <a href="#chapter-3">luvussa 3</a></p>
+
+  <p>Funktion ensimmäinen lause voi olla string-literaali, jolloin
+  se toimii funktion dokumentaatiomerkkijonona eli
+  <i>docstringinä</i>.</p>
   <pre class="sh_python">
 def funktio(viesti):
     """Funktion docstring"""
     print(viesti)
-  </pre>
   
-  <p>Pythonissa kaikki funktiot palauttavat arvon, myös sellaisissa tapauksissa, kun funktiolla ei ole <i>return</i> lausetta. Ilman return-lausetta funktiot palauttavat arvon <i>None</i>. [<a href="#ref-funktiot">16</a>]</p>
+</pre>
+
+  <p>Pythonissa kaikki funktiot palauttavat arvon, myös sellaisissa
+  tapauksissa, kun funktiolla ei ole <i>return</i> lausetta. Ilman
+  return-lausetta funktiot palauttavat arvon <i>None</i>. [<a href=
+  "#ref-funktiot">16</a>]</p>
 
   <h3 id="chapter-6-parametrivalitys">Parametrivälitys</h3>
 
@@ -1343,8 +1361,8 @@ muuta3 jälkeen x arvo on spam spam spam
   sisältävä listamuuttuja. Vastaavasti nimetyt parametrit otetaan
   käyttöön <code>**kwargs</code> syntaksilla, jossa
   <code>kwargs</code> sisältää nimetyt parametrit
-  <code>dict</code>-avainarvorakenteessa. Seuraavassa esimerkki niiden
-  käytöstä:</p>
+  <code>dict</code>-avainarvorakenteessa. Seuraavassa esimerkki
+  niiden käytöstä:</p>
   <pre class="sh_python">
 def tulosta_kaikki(a, b, *c, **d):
     print('tavalliset parametrit: ', a, b)
@@ -1377,9 +1395,11 @@ nimiparametrit:
 '''
 </pre>
 
-  <p>Pythonissa voidaan käyttää myös oletusparametreja [<a href="#ref-funktiot">16</a>], jolloin funktiota voidaan kutsua pienemmällä määrällä parametreja kuin mitä on mainittu sen määrittelyssä.</p>
-  
-<pre class="sh_python">
+  <p>Pythonissa voidaan käyttää myös oletusparametreja [<a href=
+  "#ref-funktiot">16</a>], jolloin funktiota voidaan kutsua
+  pienemmällä määrällä parametreja kuin mitä on mainittu sen
+  määrittelyssä.</p>
+  <pre class="sh_python">
 def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
     while True:
         ok = input(prompt)
@@ -1388,7 +1408,7 @@ def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
         if ok in ('n', 'no', 'nop', 'nope'):
             return False
         retries = retries - 1
-        if retries < 0:
+        if retries &lt; 0:
             raise IOError('refusenik user')
         print(complaint)
         
@@ -1399,9 +1419,9 @@ def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
 # ask_ok('OK to overwrite the file?', 2, 'Come on, only yes or no!')
 </pre>
 
-  <p>Oletusarvot evaluoidaan määrittelykohdassaan omalla näkyvyysalueellaan.</p>
-  
-<pre class="sh_python">
+  <p>Oletusarvot evaluoidaan määrittelykohdassaan omalla
+  näkyvyysalueellaan.</p>
+  <pre class="sh_python">
 i = 5
 
 def f(arg=i):
@@ -1411,9 +1431,10 @@ i = 16
 f() # Tulostaa arvon 5
 </pre>
 
-  <p>Oletusarvot sidotaan vain kerran. Tällä on väliä varsinkin jos oletusarvona käytetään mutaabelia oliota kuten esim. listaa tai sanakirjaa.</p>
-
-<pre class="sh_python">
+  <p>Oletusarvot sidotaan vain kerran. Tällä on väliä varsinkin jos
+  oletusarvona käytetään mutaabelia oliota kuten esim. listaa tai
+  sanakirjaa.</p>
+  <pre class="sh_python">
   def f(a, L=[]):
     L.append(a)
     return L
@@ -1429,9 +1450,11 @@ print(f(3))
 # [1, 2, 3]
 </pre>
 
-  <p>Funktioita voidaan myös kutsua käyttämällä nimettyjä parametreja [<a href="#ref-funktiot">16</a>] esim. <code>parametrin_nimi = arvo</code>, jolloin arvot voidaan järjestellä kutsujan haluamaan järjestykseen.</p>
-  
-<pre class="sh_python">
+  <p>Funktioita voidaan myös kutsua käyttämällä nimettyjä
+  parametreja [<a href="#ref-funktiot">16</a>] esim.
+  <code>parametrin_nimi = arvo</code>, jolloin arvot voidaan
+  järjestellä kutsujan haluamaan järjestykseen.</p>
+  <pre class="sh_python">
 def foo(bar,fuu):
     print("BAR: {}".format(bar))
     print("FUU: {}".format(fuu))
@@ -1448,18 +1471,19 @@ foo("Eka", fuu = "Toka")
 
   <h3 id="chapter-6-poikkeukset">Suoritusaikaisiin virheisiin
   varautumisen välineet – poikkeukset</h3>
-  <p>Python 3:n poikkeuksien käsittely toimii niin tavanomaisesti, että
-  ainoastaan Python 2 -ohjelmoija voi pitää sitä jotenkin odottamattomana.
-  Python 2:sta stacktrace tallennettiin globaaliin muuttujaan ja tästä
-  seurasi, että mikäli poikkeus syntyi ja poikkeuksen käsittelyn aikana
-  syntyi toinen poikkeus, niin ensimmäisen poikkeuksen stacktrace katosi,
-  jollei ohjelmoija ollut itse laittanut sitä jonnekin talteen. Näin kävi
-  myös jos poikkeuskäsittelijässä paketoi käsitellyn poikkeuksen toiseen
-  poikkeukseen. Tämä Python 2:den ominaisuus ei periytynyt Python 3:een.
-  Siispä poikkeukset käyttäytyvät Python 3:ssa hyvin Javamaiseen tapaan.
-  Suurimmat erot muihin kieliin lienevät syntaktisia tai toteutuksen
-  yksityskohtia.</p>
 
+  <p>Python 3:n poikkeuksien käsittely toimii niin tavanomaisesti,
+  että ainoastaan Python 2 -ohjelmoija voi pitää sitä jotenkin
+  odottamattomana. Python 2:sta stacktrace tallennettiin globaaliin
+  muuttujaan ja tästä seurasi, että mikäli poikkeus syntyi ja
+  poikkeuksen käsittelyn aikana syntyi toinen poikkeus, niin
+  ensimmäisen poikkeuksen stacktrace katosi, jollei ohjelmoija
+  ollut itse laittanut sitä jonnekin talteen. Näin kävi myös jos
+  poikkeuskäsittelijässä paketoi käsitellyn poikkeuksen toiseen
+  poikkeukseen. Tämä Python 2:den ominaisuus ei periytynyt Python
+  3:een. Siispä poikkeukset käyttäytyvät Python 3:ssa hyvin
+  Javamaiseen tapaan. Suurimmat erot muihin kieliin lienevät
+  syntaktisia tai toteutuksen yksityskohtia.</p>
   <pre class="sh_python">
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
@@ -1500,13 +1524,16 @@ def main():
 if __name__ == "__main__":
     main()
     
-  </pre>
-  <a href="esimerkit/poikkeukset.py">Lataa esimerkki tästä.</a>
-  <p>Ohjelman tulosteet eri syötteillä:</p>
-<dl>
+  
+</pre><a href="esimerkit/poikkeukset.py">Lataa esimerkki tästä.</a>
 
-  <dt>0</dt>
-  <dd><pre>
+  <p>Ohjelman tulosteet eri syötteillä:</p>
+
+  <dl>
+    <dt>0</dt>
+
+    <dd>
+      <pre>
 Anna positiivinen luku:
 0
 ZeroDivisionError
@@ -1518,10 +1545,14 @@ None
   File "./esimerkit/poikkeukset.py", line 13, in main
     1/jakaja
 Tämä printataan aina
-  </pre></dd>
   
-  <dt>-1</dt>
-  <dd><pre>
+</pre>
+    </dd>
+
+    <dt>-1</dt>
+
+    <dd>
+      <pre>
 Anna positiivinen luku:
 -1
 ValueError tai NegativeNumberError
@@ -1532,10 +1563,14 @@ Traceback (most recent call last):
   File "./esimerkit/poikkeukset.py", line 12, in main
     raise NegativeNumberError("Negatiivinen numero ei ole tässä sallittu")
 __main__.NegativeNumberError: Negatiivinen numero ei ole tässä sallittu
-  </pre></dd>
   
-  <dt>yks</dt>
-  <dd><pre>
+</pre>
+    </dd>
+
+    <dt>yks</dt>
+
+    <dd>
+      <pre>
 Anna positiivinen luku:
 yks
 ValueError tai NegativeNumberError
@@ -1546,37 +1581,52 @@ Traceback (most recent call last):
   File "./esimerkit/poikkeukset.py", line 10, in main
     jakaja = int(input())
 ValueError: invalid literal for int() with base 10: 'yks'
-  </pre></dd>
   
-  <dt>ctrl + c</dt>
-  <dd><pre>
+</pre>
+    </dd>
+
+    <dt>ctrl + c</dt>
+
+    <dd>
+      <pre>
 Anna positiivinen luku:
 ^CJokin muu meni pieleen
 Tämä printataan aina
-  </pre></dd>
   
-</dl>
+</pre>
+    </dd>
+  </dl>
 
   <h3 id="chapter-6-rinnakkaislaskenta">Miten kieli tukee
   rinnakkaista laskentaa</h3>
 
-  <p>Python ei erityisemmin tue rinnakkaisuutta. Pythonissa (ainakin CPython implementaatiossa) on
-  käytössä GIL eli Global Interpreter Lock. GIL:in tarkoitus on yksinkertaisesti estää Pythonin
-  bytecoden rinnakkainen suorittaminen. Tämä tarkoittaa sitä, että riippumatta siitä montako
-  ydintä/prosessoria on käytettävissä ja moneenko säikeeseen Python-ohjelman suoritus on jaettu,
-  samanaikaisesti voi kuitenkin yleensä suorittaa vain yksi säie. Ratkaisuun on päädytty siksi, että
-  CPython implementaatiosta on näin saatu paljon tehokkaampi ja myös yksinkertaisempi. Aikaisemmin
-  CPythonista kokeiltiin versiota, joka jossa GIL oli poistettu, mutta sen katsottiin heikentävän aivan
-  liikaa Pythonin tehokkuutta yksiytimisillä järjestelmillä (ainakin 30% tehottomampi). Toistaiseki
-  tähän ei ole odotettavissa mitään muutosta. Tämä ei toki tarkoita, etteikö Pythonilla voitaisi
-  saavuttaa aitoa rinnakkaisuutta. Rinnakkaisuuteen on vain käytettävä prosesseja tai C/C++ laajennoksia
-  joissa GIL-vapautetaan. Myös esimerkiksi IO-operaatioiden yhteydessä GIL vapautetaan, joten tiedostoja
-  voi lukea eri säikeissäkin aidosti rinnakkain. Mielenkiintoinen kysymys on kuinka pitkälle nykyinen
-  kanta pitää, kun yksiytimiset prosessorit tulevat yhä harvinaisemmiksi ja lopulta katoavat kokonaan
-  historiaan. <a href="#ref-gil-ref">[14]</a><a href="#ref-gil-faq">[15]</a></p>
-  
-  <p>Seuraavassa vielä pieni demonstraatio siitä mitä tämä tarkoittaa.</p>
-<pre>
+  <p>Python ei erityisemmin tue rinnakkaisuutta. Pythonissa
+  (ainakin CPython implementaatiossa) on käytössä GIL eli Global
+  Interpreter Lock. GIL:in tarkoitus on yksinkertaisesti estää
+  Pythonin bytecoden rinnakkainen suorittaminen. Tämä tarkoittaa
+  sitä, että riippumatta siitä montako ydintä/prosessoria on
+  käytettävissä ja moneenko säikeeseen Python-ohjelman suoritus on
+  jaettu, samanaikaisesti voi kuitenkin yleensä suorittaa vain yksi
+  säie. Ratkaisuun on päädytty siksi, että CPython
+  implementaatiosta on näin saatu paljon tehokkaampi ja myös
+  yksinkertaisempi. Aikaisemmin CPythonista kokeiltiin versiota,
+  joka jossa GIL oli poistettu, mutta sen katsottiin heikentävän
+  aivan liikaa Pythonin tehokkuutta yksiytimisillä järjestelmillä
+  (ainakin 30% tehottomampi). Toistaiseki tähän ei ole
+  odotettavissa mitään muutosta. Tämä ei toki tarkoita, etteikö
+  Pythonilla voitaisi saavuttaa aitoa rinnakkaisuutta.
+  Rinnakkaisuuteen on vain käytettävä prosesseja tai C/C++
+  laajennoksia joissa GIL-vapautetaan. Myös esimerkiksi
+  IO-operaatioiden yhteydessä GIL vapautetaan, joten tiedostoja voi
+  lukea eri säikeissäkin aidosti rinnakkain. Mielenkiintoinen
+  kysymys on kuinka pitkälle nykyinen kanta pitää, kun yksiytimiset
+  prosessorit tulevat yhä harvinaisemmiksi ja lopulta katoavat
+  kokonaan historiaan. <a href="#ref-gil-ref">[14]</a><a href=
+  "#ref-gil-faq">[15]</a></p>
+
+  <p>Seuraavassa vielä pieni demonstraatio siitä mitä tämä
+  tarkoittaa.</p>
+  <pre>
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
 
@@ -1595,7 +1645,7 @@ def tee_jotain(name):
         #tokihan moni säije voi nukkua samaan aikaan ja lisäksi säikeet ovat (jaettu muisti) paljon
         #prosesseja kevyempiä.
         for j in range(1, 1000000):
-            if j > 0:
+            if j &gt; 0:
                 continue;
             break
         print(i, name)
@@ -1627,9 +1677,11 @@ def main():
 
 if __name__ == "__main__":
     main()
-</pre>
-  <a href="esimerkit/rinnakkaisuus.py">Voit ladata esimerkin tästä.</a>
-  <p>Testin tuloksena omalla Linux-kannettavallani konsoliin ilmestyy jotakin tällaista:</p>
+</pre><a href="esimerkit/rinnakkaisuus.py">Voit ladata esimerkin
+tästä.</a>
+
+  <p>Testin tuloksena omalla Linux-kannettavallani konsoliin
+  ilmestyy jotakin tällaista:</p>
   <pre>
 Konessa on 2 prosessoria.
 
@@ -1689,21 +1741,39 @@ yksiprosessitesti 3.42161202431
 säijetesti 3.89715909958
 moniprosessitesti 2.04168510437
 </pre>
-<p>Tuloksista nähdään selvästi, että säikeet toimivat kaikkein hitaiten. Pelkästään kahdella ytimellä varustettu
-kannettavani toimi prosesseilla lähes 50% nopeammin verrattuna säikeisiin. Säikeet toimivat jopa huomattavasti
-hitaammin kuin yksiporsessitesti. Säijealtaan allokointi on toki ylimääräistä työtä, mutta kyseessä ei voi olla
-niin raskas operaatio, että säijetesti voisi mitenkään päästä lähes puoli sekuntia nopeampaan aikaan ja edes samalle
-viivalle yksiporsessitestin tuloksen kanssa. Kysymys on vain siitä, että säikeet eivät tuo mitään aitoa rinnakkaisuutta
-laskentaan vaan ainoastaan lisäävät synkronointitarvetta. GIL:in ansiosta synkronointi on toki yksinkertaista, mutta
-prosessoriaikaa pitää silti tasapuolisesti jakaa säikeiden välillä ja suoritusvuoroja vaihdella. Kuten kommenteistakin
-ilmeneen, niin mikäli olisimme tulostusten välillä nukkkuneet silmukassa pyörimisen sijasta olisi säijetesti noussutkin
-nopeimmaksi. Tämä johtuu tietenkin siitä, että säikeet ovat kevyempiä kuin prosessit ja voivat toki kaikki nukkua samaan
-aikaan siinä missä prosessitkin.</p>
-  <h3 id="chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä
-  ohjelma-arkkitehtuureja</h3>
 
-  <h3 id="chapter-6-arvio">Arvio kieleen valittujen ratkaisujen
-  eduista ja haitoista</h3>
+  <p>Tuloksista nähdään selvästi, että säikeet toimivat kaikkein
+  hitaiten. Pelkästään kahdella ytimellä varustettu kannettavani
+  toimi prosesseilla lähes 50% nopeammin verrattuna säikeisiin.
+  Säikeet toimivat jopa huomattavasti hitaammin kuin
+  yksiporsessitesti. Säijealtaan allokointi on toki ylimääräistä
+  työtä, mutta kyseessä ei voi olla niin raskas operaatio, että
+  säijetesti voisi mitenkään päästä lähes puoli sekuntia nopeampaan
+  aikaan ja edes samalle viivalle yksiporsessitestin tuloksen
+  kanssa. Kysymys on vain siitä, että säikeet eivät tuo mitään
+  aitoa rinnakkaisuutta laskentaan vaan ainoastaan lisäävät
+  synkronointitarvetta. GIL:in ansiosta synkronointi on toki
+  yksinkertaista, mutta prosessoriaikaa pitää silti tasapuolisesti
+  jakaa säikeiden välillä ja suoritusvuoroja vaihdella. Kuten
+  kommenteistakin ilmeneen, niin mikäli olisimme tulostusten
+  välillä nukkkuneet silmukassa pyörimisen sijasta olisi säijetesti
+  noussutkin nopeimmaksi. Tämä johtuu tietenkin siitä, että säikeet
+  ovat kevyempiä kuin prosessit ja voivat toki kaikki nukkua samaan
+  aikaan siinä missä prosessitkin.</p>
+
+  <h2 id="chapter-7">7. Datan kapselointi</h2>
+
+  <h3 id="chapter-7-raktyypit">Rakenteiset ja kapseloidut
+  tyypit</h3>
+
+  <h3 id="chapter-7-oliotluokat">Oliot ja luokat</h3>
+
+  <h3 id="chapter-7-arvosem">Arvo- ja viitesemantiikka</h3>
+
+  <h2 id="chapter-8">8. Yhteenveto</h2>
+
+  <p>Yhteenveto: kielen vahvuudet ja heikkoudet, suositellut ja
+  varottavat käyttökohteet</p>
 
   <h2 id="lahteet">Lähteet</h2>
 
@@ -1758,15 +1828,15 @@ aikaan siinä missä prosessitkin.</p>
     <li id="ref-datamodel"><a href=
     "http://docs.python.org/release/3.1.3/reference/datamodel.html">
     Python v3.2 documentation — 3. Data model</a></li>
-    
+
     <li id="ref-gil-def"><a href=
     "http://docs.python.org/py3k/glossary.html#term-global-interpreter-lock">
     GIL - Global Interpeter Lock</a></li>
-    
+
     <li id="ref-gil-faq"><a href=
     "http://docs.python.org/py3k/faq/library.html?highlight=gil#can-t-we-get-rid-of-the-global-interpreter-lock">
     Can't we get rid of the Global Identifier Lock?</a></li>
-    
+
     <li id="ref-funktiot"><a href=
     "http://docs.python.org/release/3.1.3/tutorial/controlflow.html#defining-functions">
     http://docs.python.org/release/3.1.3/tutorial/controlflow.html#defining-functions</a></li>
