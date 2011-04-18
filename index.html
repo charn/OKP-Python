@@ -1768,6 +1768,22 @@ moniprosessitesti 2.04168510437
 
   <h3 id="chapter-7-oliotluokat">Oliot ja luokat</h3>
 
+  <h4>Moniperiytyminen</h4>
+
+  <p>Pythonissa on mahdollista periyttää luokka monesta luokasta.
+  Yleinen syntaksi tähän on sama kuin yhden luokan periytymisessä
+  paitsi että periytetyt luokat erotellaan pilkuilla.</p>
+
+  <p>Moniperiytymisen "timanttiongelma" on se, että periytyttäessä
+  luokka D luokista B ja C, joilla on sama isäluokka A, on
+  epäselvää kumman luokan, B vai C, metodeilla korvataan isäluokan
+  aliluokissa, B ja C, korvatut jäsenet. Pythonissa tämä ongelma on
+  ratkaistu periyttämällä kaikki luokat yhteisestä
+  <code>object</code> luokasta ja asettamalla periytymiselle tietty
+  periytymisjärjestys. Luokkien periytymisjärjestys on hiukan
+  yksinkertaistaen syvyyshaku vasemmalta oikealle poislukien jo
+  periytetyt luokat.</p>
+
   <h3 id="chapter-7-arvosem">Arvo- ja viitesemantiikka</h3>
 
   <h2 id="chapter-8">8. Yhteenveto</h2>
