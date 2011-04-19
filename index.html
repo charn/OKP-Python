@@ -1774,26 +1774,31 @@ moniprosessitesti 2.04168510437
   käytettäväksi. Moduuli voidaan pyytää käyttöön avainsanan <code>import
   </code> avulla.</p>
   <p>Esimerkiksi näin</p>
+
   <pre>
-  import moduuli
+import moduuli
   
-  #kutsutaan
-  moduuli.moduulissa_määritelty_funktio()
-  </pre>
+#kutsutaan
+moduuli.moduulissa_määritelty_funktio()
+</pre>
+
   <p>Kuten tuosta esimerkistäkin nähdään, niin moduulissa määriteltyjä
   asioita ei tuoda suoraan osaksi sen hetkistä symbolitaulua, vaan
   ainoastaan moduulin nimi tuodaan sinne ja sen sisältöön viitataan sitä
   kautta. Toisenlaista käytöstä saadaan aikaan, jos yksinkeraisesti
   määritellään nimi myös sellaisenaan symbolitauluun. Eli vaikkapa näin:</p>
+
   <pre>
-  import moduuli
+import moduuli
   
-  #määritellään nimi moduulissa_määritelty_funktio viittaamaan
-  #moduulin moduuli sisällä määriteltyyn funktioon moduulissa_määritelty_funktio
-  moduulissa_määritelty_funktio = moduuli.moduulissa_määritelty_funktio
-  #ja nyt voimme viitata funktioon suoraan ilman moduulia
-  moduulissa_määritelty_funktio()
-  </pre>
+#määritellään nimi moduulissa_määritelty_funktio viittaamaan
+#moduulin moduuli sisällä määriteltyyn funktioon moduulissa_määritelty_funktio
+moduulissa_määritelty_funktio = moduuli.moduulissa_määritelty_funktio
+
+#ja nyt voimme viitata funktioon suoraan ilman moduulia
+moduulissa_määritelty_funktio()
+</pre>
+
   <p>Yllä esitettyä tapaa elegantimpi tapa tuoda nimiä lokaaliin
   nimiavaruuteen on käyttää import lauseen erityismuotoa. Voidaan sanoa
   <code>from module import moduulissa_määritelty_funktio</code>. Tämä ei
@@ -1843,19 +1848,22 @@ Moduulissa 2 määritelty
 Moduulissa 1 määritelty
 </pre>
 
-<p>Paketit (Packages) ja alimoduulit (submodules)</p>
+<h4>Paketit (<em>Packages</em>) ja alimoduulit (<em>submodules</em>)</h4>
+
 <p>Monista moduulien muodostaman kokonaisuuden voi koota paketiksi. Paketit
 ovat erityistä tiedostorakennetta noudattavia hakemistoja. Pakein nimi on
 sen juurihakemiston nimi. Juurikansion tulee sisältää __init__.py -tiedosto
 sen merkiksi, että kyseessä on paketti. Samoin myös kaikkien alikansoiden
 (joiden halutaan olevan osa pakettia) tulee sisältää tämä tiedosto. __init__.py
 voi kuitenkin olla tyhjä. Esimerkki paketin hakemistorakenteesta:</p>
+
 <pre>
 paketin_juuri/
 paketin_juuri/__init__.py
 paketin_juuri/alipaketti/__init__.py
 paketin_juuri/alipaketti/alimoduuli.py
 </pre>
+
 <p>Nyt alimoduuliin voidaan viitata vaikkapa näin:
 <br />
 <code>import paketin_juuri.alipaketti.alimoduuli</code><br />
@@ -1892,17 +1900,17 @@ tällöin sisällyttää.
     .
     .
     &lt;lause-N&gt;
-  </pre>
+</pre>
   
   <p>Luokkamäärittelyihin pätee sama kuin funktioidenkin määrittelyihin: ne tulee suorittaa, ennenkuin niitä voidaan käyttää ohjelmassa. (Jos luokkamäärittely on laitettu if-lauseen sisään, sitä ei voida käyttää ennenkuin if lause on suoritettu) Kun luokkamäärittelystä poistutaan normaalisti, syntyy luokka-olio.</p>
   
   <p>Pythonissa self vastaa Javan this-käskyä. Selfillä siis viitataan luokan nykyiseen ilmentymään. Se tulee antaa jokaisessa metodimäärittelyssä metodin ensimmäiseksi parametriksi, vaikka kutsuattessa metodia self-parametrille ei anneta arvoa (Python hoitaa itse tämän). Self ei ole varattu sana, mutta sitä suositellaan käytettäväksi.</p>
   
   <pre>
-  class Luokka:
+class Luokka:
     def metodi(self, parametri1, parametri2):
         ...
-  </pre>
+</pre>
   
   <h4>Luokkaoliot</h4>
   
@@ -1911,30 +1919,29 @@ tällöin sisällyttää.
   <p>Attribuuttiviittauksessa syntaksi on <i>olio.nimi</i>. Esimerkkinä olevan luokkamäärittelyn tapauksessa Luokka.i palauttaisi kokonaisluvun ja Luokka.f palauttaisi funktio-olion.</p>
   
   <pre>
-  class Luokka:
+class Luokka:
     i = 1
     def metodi(self):
         return 'spam'
-  </pre>
+</pre>
   
   <p>Ilmentymien luominen toimii kuin luokka-olio olisi parametriton funktio, joka palauttaa luokan uuden ilmentymän.</p>
   
   <pre>
   x = Luokka()
-  </pre>
+</pre>
   
-  <p>Luokkaan voidaan määritellä erikoismetodi __init__(), jota kutsutaan automaattisesti, kun olio on luotu. __init__():n avulla ilmentymä voidaan alustaa johonkin haluttuun tilaan.</p>
+  <p>Luokkaan voidaan määritellä erikoismetodi <code>__init__()</code>, jota kutsutaan automaattisesti, kun olio on luotu. <code>__init__()</code>:n avulla ilmentymä voidaan alustaa johonkin haluttuun tilaan.</p>
   
   <pre>
-  >>> class Luvut:
-...     def __init__(self, luku1, luku2):
-...         self.r = luku1
-...         self.i = luku2
-...
->>> x = Luvut(3, 4)
->>> x.r, x.i
-(3, 4)
-  </pre>
+class Luvut:
+    def __init__(self, luku1, luku2):
+        self.r = luku1
+        self.i = luku2
+
+x = Luvut(3, 4)
+x.r, x.i #(3, 4)
+</pre>
 
   <h4>Periytyminen</h4>
 
@@ -1979,10 +1986,10 @@ class Luokka(Yliluokka):
   edellä kuvatun kaltainen moniperintätilanne luokista A, B, C ja
   D. Luokka D periytetään luokista B ja C. Peritymishakujärjestys
   on tässä tapauksessa lista <code>[D, B, A, C, A]</code>, joka
-  supistuu muotoon <code>[D, B, A, A]</code>, kun kaksoiskappaleet
-  poistetaan.</p>
-  <pre>
+  supistuu muotoon <code>[D, B, C, A]</code>, kun kaksoiskappaleet
+  poistetaan niin että vain viimeinen viittaus jää jäljelle.</p>
 
+  <pre>
 # Kuvio luokkamallista
 #
 #    A
@@ -2002,6 +2009,8 @@ class D(B, C):
 <!-- TODO: Lähteet kuntoon -->
 Lähteenä: http://docs.python.org/tutorial/modules.html
   <h3 id="chapter-7-arvosem">Arvo- ja viitesemantiikka</h3>
+  
+  <p>copy.copy() copy.deepcopy()</p>
 
   <h2 id="chapter-8">8. Yhteenveto</h2>
 
