@@ -1881,6 +1881,60 @@ tällöin sisällyttää.
   -->
 
   <h3 id="chapter-7-oliotluokat">Oliot ja luokat</h3>
+  
+  <p>Pythonissa luokat ovat olioita, kuten kaikki muutkin tietotyypit. Luokat ovat myös dynaamisia: ne luodaan ajoaikaisesti, ja niitä voidaan muokata luomisen jälkeenkin. Luokkien jäsenmuuttujat ovat normaalisti julkisia. Privaattien muuttujien luomiseen on rajallinen tuki: kirjoittamalla muuttujan nimen eteen kaksi alaviivaa saadaan muuttuja käyttäytymään, ikään kuin se olisi privaatti ( esim: <i>__spam</i>). Jos data-attribuutilla ja metodilla on sama nimi, metodin nimi peittyy.</p>
+  
+  <p>Luokkamäärittely yksinkertaisimillaan:</p>
+  
+  <pre>class ClassName:
+    &lt;lause-1&gt;
+    .
+    .
+    .
+    &lt;lause-N&gt;
+  </pre>
+  
+  <p>Luokkamäärittelyihin pätee sama kuin funktioidenkin määrittelyihin: ne tulee suorittaa, ennenkuin niitä voidaan käyttää ohjelmassa. (Jos luokkamäärittely on laitettu if-lauseen sisään, sitä ei voida käyttää ennenkuin if lause on suoritettu) Kun luokkamäärittelystä poistutaan normaalisti, syntyy luokka-olio.</p>
+  
+  <p>Pythonissa self vastaa Javan this-käskyä. Selfillä siis viitataan luokan nykyiseen ilmentymään. Se tulee antaa jokaisessa metodimäärittelyssä metodin ensimmäiseksi parametriksi, vaikka kutsuattessa metodia self-parametrille ei anneta arvoa (Python hoitaa itse tämän). Self ei ole varattu sana, mutta sitä suositellaan käytettäväksi.</p>
+  
+  <pre>
+  class Luokka:
+    def metodi(self, parametri1, parametri2):
+        ...
+  </pre>
+  
+  <h4>Luokkaoliot</h4>
+  
+  <p>Luokkaoliot tukevat kahdenlaisia operaatioita: <i>attribuuttiviittauksia</i> ja <i>ilmentymien luomista</i>.
+  
+  <p>Attribuuttiviittauksessa syntaksi on <i>olio.nimi</i>. Esimerkkinä olevan luokkamäärittelyn tapauksessa Luokka.i palauttaisi kokonaisluvun ja Luokka.f palauttaisi funktio-olion.</p>
+  
+  <pre>
+  class Luokka:
+    i = 1
+    def metodi(self):
+        return 'spam'
+  </pre>
+  
+  <p>Ilmentymien luominen toimii kuin luokka-olio olisi parametriton funktio, joka palauttaa luokan uuden ilmentymän.</p>
+  
+  <pre>
+  x = Luokka()
+  </pre>
+  
+  <p>Luokkaan voidaan määritellä erikoismetodi __init__(), jota kutsutaan automaattisesti, kun olio on luotu. __init__():n avulla ilmentymä voidaan alustaa johonkin haluttuun tilaan.</p>
+  
+  <pre>
+  >>> class Luvut:
+...     def __init__(self, luku1, luku2):
+...         self.r = luku1
+...         self.i = luku2
+...
+>>> x = Luvut(3, 4)
+>>> x.r, x.i
+(3, 4)
+  </pre>
 
   <h4>Periytyminen</h4>
 
