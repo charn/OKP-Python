@@ -1762,6 +1762,12 @@ moniprosessitesti 2.04168510437
   aikaan siinä missä prosessitkin.</p>
 
   <h2 id="chapter-7">7. Datan kapselointi</h2>
+  
+  <ul>
+    <li><a href="#chapter-7-raktyypit">Rakenteiset ja kapseloidut tyypit</a></li>
+    <li><a href="#chapter-7-oliotluokat">Oliot ja luokat</a></li>
+    <li><a href="#chapter-7-arvosem">Arvo- ja viitesemantiikka</a></li>
+  </ul>
 
   <h3 id="chapter-7-raktyypit">Rakenteiset ja kapseloidut
   tyypit</h3>
@@ -1895,7 +1901,7 @@ tällöin sisällyttää.
   
   <p>Luokkamäärittely yksinkertaisimillaan:</p>
   
-  <pre>class ClassName:
+  <pre class="sh_python">class ClassName:
     &lt;lause-1&gt;
     .
     .
@@ -1907,7 +1913,7 @@ tällöin sisällyttää.
   
   <p>Pythonissa self vastaa Javan this-käskyä. Selfillä siis viitataan luokan nykyiseen ilmentymään. Se tulee antaa jokaisessa metodimäärittelyssä metodin ensimmäiseksi parametriksi, vaikka kutsuattessa metodia self-parametrille ei anneta arvoa (Python hoitaa itse tämän). Self ei ole varattu sana, mutta sitä suositellaan käytettäväksi.</p>
   
-  <pre>
+  <pre class="sh_python">
 class Luokka:
     def metodi(self, parametri1, parametri2):
         ...
@@ -1919,7 +1925,7 @@ class Luokka:
   
   <p>Attribuuttiviittauksessa syntaksi on <i>olio.nimi</i>. Esimerkkinä olevan luokkamäärittelyn tapauksessa Luokka.i palauttaisi kokonaisluvun ja Luokka.f palauttaisi funktio-olion.</p>
   
-  <pre>
+  <pre class="sh_python">
 class Luokka:
     i = 1
     def metodi(self):
@@ -1948,7 +1954,7 @@ x.r, x.i #(3, 4)
 
   <p>Pythonissa luokkaperiytyminen on toteutettu seuraavanlaisella
   syntaksilla:</p>
-  <pre>
+  <pre class="sh_python">
 class Luokka(Yliluokka):
     &lt;lause-1&gt;
     .
@@ -1972,10 +1978,10 @@ class Luokka(Yliluokka):
   Yleinen syntaksi tähän on sama kuin yhden luokan periytymisessä
   paitsi että periytetyt luokat erotellaan pilkuilla.</p>
 
-  <p>Moniperiytymisen "timanttiongelma" on se, että periytyttäessä
+  <p>Moniperiytymisen niin kutsuttu <em>timanttiongelma</em> on se, että periytyttäessä
   luokka D luokista B ja C, joilla on sama isäluokka A, on
   epäselvää kumman luokan, B vai C, metodeilla korvataan isäluokan
-  aliluokissa, B ja C, korvatut jäsenet. Pythonissa tämä ongelma on
+  aliluokissa, B ja C, korvatut jäsenet [<a href="#ref-diamond-rule">18</a>]. Pythonissa tämä ongelma on
   ratkaistu periyttämällä kaikki luokat yhteisestä
   <code>object</code> luokasta ja muodostamalla periytymiselle
   tietty periytymisjärjestyslista. Luokkien
@@ -1988,7 +1994,7 @@ class Luokka(Yliluokka):
   D. Luokka D periytetään luokista B ja C. Peritymishakujärjestys
   on tässä tapauksessa lista <code>[D, B, A, C, A]</code>, joka
   supistuu muotoon <code>[D, B, C, A]</code>, kun kaksoiskappaleet
-  poistetaan niin että vain viimeinen viittaus jää jäljelle.</p>
+  poistetaan niin että vain viimeinen viittaus luokkaan jää jäljelle listaan.</p>
 
   <pre class="sh_python">
 # Kuvio luokkamallista
@@ -2034,6 +2040,14 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
   <!-- <p>copy.copy() copy.deepcopy()</p> -->
 
   <h2 id="chapter-8">8. Yhteenveto</h2>
+  
+  <!-- Luennon aikana annetut kommentit 
+  
+  Ei mitään erityisiä kommentteja
+  traitit = piirreluokat
+  Viitteet kuntoon eli viittauksia lisää.
+  
+  -->
 
   <p>Yhteenveto: kielen vahvuudet ja heikkoudet, suositellut ja
   varottavat käyttökohteet</p>
@@ -2103,7 +2117,15 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
     <li id="ref-funktiot"><a href=
     "http://docs.python.org/release/3.1.3/tutorial/controlflow.html#defining-functions">
     http://docs.python.org/release/3.1.3/tutorial/controlflow.html#defining-functions</a></li>
-    <li id=ref-call-by-ref><a href="http://docs.python.org/faq/programming.html#how-do-i-write-a-function-with-output-parameters-call-by-reference">Python v3.2 documentation » Python Frequently Asked Questions » How do I write a function with output parameters (call by reference)?</a></li>
+    
+    <li id=ref-call-by-ref><a href="http://docs.python.org/faq/programming.html#how-do-i-write-a-function-with-output-parameters-call-by-reference">
+    Python v3.2 documentation » Python Frequently Asked Questions » How do I write a function with output parameters (call by reference)?</a></li>
+    
+    <li id="ref-diamond-rule"><a href="http://docs.python.org/py3k/whatsnew/2.2.html#multiple-inheritance-the-diamond-rule">
+    Python v3.2 documentation » What’s New in Python » Multiple Inheritance: The Diamond Rule</a></li>
   </ol>
+
+  <p><small>Copyright &copy; 2011 Juhani Åhman, Juha Louhiranta, Matti Nauha, Timo Lehto</small></p>
+  <p><small><code>import antigravity</code> ;)</small></p>
 </body>
 </html>
