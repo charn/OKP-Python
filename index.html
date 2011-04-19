@@ -1483,7 +1483,7 @@ foo("Eka", fuu = "Toka")
   poikkeukseen. Tämä Python 2:den ominaisuus ei periytynyt Python
   3:een. Siispä poikkeukset käyttäytyvät Python 3:ssa hyvin
   Javamaiseen tapaan. Suurimmat erot muihin kieliin lienevät
-  syntaktisia tai toteutuksen yksityskohtia.</p>
+  syntaktisia tai toteutuksen yksityiskohtia.</p>
   <pre class="sh_python">
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
@@ -1612,11 +1612,11 @@ Tämä printataan aina
   yksinkertaisempi. Aikaisemmin CPythonista kokeiltiin versiota,
   joka jossa GIL oli poistettu, mutta sen katsottiin heikentävän
   aivan liikaa Pythonin tehokkuutta yksiytimisillä järjestelmillä
-  (ainakin 30% tehottomampi). Toistaiseki tähän ei ole
+  (ainakin 30% tehottomampi). Toistaiseksi tähän ei ole
   odotettavissa mitään muutosta. Tämä ei toki tarkoita, etteikö
   Pythonilla voitaisi saavuttaa aitoa rinnakkaisuutta.
   Rinnakkaisuuteen on vain käytettävä prosesseja tai C/C++
-  laajennoksia joissa GIL-vapautetaan. Myös esimerkiksi
+  laajennoksia joissa GIL vapautetaan. Myös esimerkiksi
   IO-operaatioiden yhteydessä GIL vapautetaan, joten tiedostoja voi
   lukea eri säikeissäkin aidosti rinnakkain. Mielenkiintoinen
   kysymys on kuinka pitkälle nykyinen kanta pitää, kun yksiytimiset
@@ -1642,7 +1642,7 @@ def tee_jotain(name):
     for i in range(1,4):
         #Mikäli tässä olisi vain nukuttu sen sijaan, että tuhlataan hieman prosessoriaikaa, niin tulos
         #olisikin ollut se, että säikeet olisivat olleet nopeimpia. Ja niinhän sen täytyy olla, sillä
-        #tokihan moni säije voi nukkua samaan aikaan ja lisäksi säikeet ovat (jaettu muisti) paljon
+        #tokihan moni säie voi nukkua samaan aikaan ja lisäksi säikeet ovat (jaettu muisti) paljon
         #prosesseja kevyempiä.
         for j in range(1, 1000000):
             if j &gt; 0:
@@ -1658,14 +1658,14 @@ def yksiprosessitesti():
     for juippi in tyypit:
         tee_jotain(juippi)
     
-def säijetesti():
-    säijeallas = ThreadPool(5)
-    säijeallas.map(tee_jotain, tyypit, 1)
+def säietesti():
+    säieallas = ThreadPool(5)
+    säieallas.map(tee_jotain, tyypit, 1)
 
 def main():
     print("Konessa on", multiprocessing.cpu_count(), "prosessoria.")
     
-    for testi in [moniprosessitesti, yksiprosessitesti, säijetesti]:
+    for testi in [moniprosessitesti, yksiprosessitesti, säietesti]:
         print("\n", testi.__name__)
         aloitus = time.time()
         testi()
@@ -1719,7 +1719,7 @@ Konessa on 2 prosessoria.
 2 Gilbert Gottfried
 3 Gilbert Gottfried
 
- säijetesti
+ säietesti
 1 Greg Ricardo
 1 Gilbert Gottfried
 1 Bob Sagget
@@ -1738,25 +1738,25 @@ Konessa on 2 prosessoria.
 
 tulokset:
 yksiprosessitesti 3.42161202431
-säijetesti 3.89715909958
+säietesti 3.89715909958
 moniprosessitesti 2.04168510437
 </pre>
 
-  <p>Tuloksista nähdään selvästi, että säikeet toimivat kaikkein
-  hitaiten. Pelkästään kahdella ytimellä varustettu kannettavani
+  <p>Tuloksista nähdään selvästi, että säikeet toimivat kaikkista
+  hitaimmin. Pelkästään kahdella ytimellä varustettu kannettavani
   toimi prosesseilla lähes 50% nopeammin verrattuna säikeisiin.
-  Säikeet toimivat jopa huomattavasti hitaammin kuin
-  yksiporsessitesti. Säijealtaan allokointi on toki ylimääräistä
+  Säikeet toimivat jopa hitaammin kuin
+  yksiprosessitesti. Säiealtaan allokointi on toki ylimääräistä
   työtä, mutta kyseessä ei voi olla niin raskas operaatio, että
-  säijetesti voisi mitenkään päästä lähes puoli sekuntia nopeampaan
-  aikaan ja edes samalle viivalle yksiporsessitestin tuloksen
+  säietesti voisi mitenkään päästä lähes puoli sekuntia nopeampaan
+  aikaan ja edes samalle viivalle yksiprosessitestin tuloksen
   kanssa. Kysymys on vain siitä, että säikeet eivät tuo mitään
   aitoa rinnakkaisuutta laskentaan vaan ainoastaan lisäävät
   synkronointitarvetta. GIL:in ansiosta synkronointi on toki
   yksinkertaista, mutta prosessoriaikaa pitää silti tasapuolisesti
   jakaa säikeiden välillä ja suoritusvuoroja vaihdella. Kuten
-  kommenteistakin ilmeneen, niin mikäli olisimme tulostusten
-  välillä nukkkuneet silmukassa pyörimisen sijasta olisi säijetesti
+  kommenteistakin ilmenneen, niin mikäli olisimme tulostusten
+  välillä nukkuneet silmukassa pyörimisen sijasta olisi säietesti
   noussutkin nopeimmaksi. Tämä johtuu tietenkin siitä, että säikeet
   ovat kevyempiä kuin prosessit ja voivat toki kaikki nukkua samaan
   aikaan siinä missä prosessitkin.</p>
@@ -1771,15 +1771,16 @@ moniprosessitesti 2.04168510437
 
   <h3 id="chapter-7-raktyypit">Rakenteiset ja kapseloidut
   tyypit</h3>
-  <p>Moduulit ja paketit.</p>
+
+  <h4>Moduulit ja paketit</h4>
+
   <p>Pythonissa lähdekooditiedosto muodostaa moduulin. Moduulin nimi
-  on tiedostonmi ilman tiedostopäätettä .py. Ajettavan moduulin nimeä
-  voi moduulissa kysyä __name__-metodilla. Moduulin tarkoitus on koota
-  yhteen määrittelyitä (funktioia, luokkia, muuttujia). Moduuli voidaan
-  sitten jostakin toisaalta (esimerkikis toisesta moduulista) pyytää
+  on tiedostonimi ilman tiedostopäätettä <code>.py</code>. Ajettavan moduulin nimeä
+  voi moduulissa kysyä <code>__name__</code> -metodilla. Moduulin tarkoitus on koota
+  yhteen määrittelyitä (funktioita, luokkia, muuttujia). Moduuli voidaan
+  sitten jostakin toisaalta (esimerkiksi toisesta moduulista) pyytää
   käytettäväksi. Moduuli voidaan pyytää käyttöön avainsanan <code>import
-  </code> avulla.</p>
-  <p>Esimerkiksi näin</p>
+  </code> avulla. Tämä voidaan tehdä esimerkiksi näin:</p>
 
   <pre class="sh_python">
 import moduuli
@@ -1791,7 +1792,7 @@ moduuli.moduulissa_määritelty_funktio()
   <p>Kuten tuosta esimerkistäkin nähdään, niin moduulissa määriteltyjä
   asioita ei tuoda suoraan osaksi sen hetkistä symbolitaulua, vaan
   ainoastaan moduulin nimi tuodaan sinne ja sen sisältöön viitataan sitä
-  kautta. Toisenlaista käytöstä saadaan aikaan, jos yksinkeraisesti
+  kautta. Toisenlaista käytöstä saadaan aikaan, jos yksinkertaisesti
   määritellään nimi myös sellaisenaan symbolitauluun. Eli vaikkapa näin:</p>
 
   <pre class="sh_python">
@@ -1806,7 +1807,7 @@ moduulissa_määritelty_funktio()
 </pre>
 
   <p>Yllä esitettyä tapaa elegantimpi tapa tuoda nimiä lokaaliin
-  nimiavaruuteen on käyttää import lauseen erityismuotoa. Voidaan sanoa
+  nimiavaruuteen on käyttää <code>import</code> -lauseen erityismuotoa. Voidaan sanoa
   <code>from module import moduulissa_määritelty_funktio</code>. Tämä ei
   toki ole aivan sama kuin yllä, sillä tässä tapauksessa vain ja ainoastaan
   tämä yksi funktio liitetään moduulista osaksi tätä moduulia ja siten siis
@@ -1814,10 +1815,10 @@ moduulissa_määritelty_funktio()
   viitattavissa tässä nimiavaruudessa.</p>
   <p>Jos kuitenkin kaikki moduulin nimet halutaan tuoda toisen moduulin
   lokaaliin nimiavaruuteen sellaisenaan, niin tämäkin on mahdollista. Tällöin
-  käytetään edellisen import-lauseen variantin erikoismuotoa. Eli sanomme:
+  käytetään edellisen <code>import</code> -lauseen variantin erikoismuotoa. Eli sanomme:
   <code>from moduuli import *</code>.</p>
   
-  <p>Python ei ilmeisesti tue traitsejä (TODO suomennos). Kuitenkin näyttäisi
+  <p>Python ei ilmeisesti tue piirreluokkia (<em>eng. trait</em>). Kuitenkin näyttäisi
   siltä, että Pythonillakin tätä tekniikkaa voidaan jossain määrin matkia
   moduulien avulla. Esimerkiksi luokan funktiot voidaan määritellä erillisessä
   moduulissa ja sitten sisällyttää luokan määrittelyssä ne toisesta moduulista
@@ -1860,7 +1861,7 @@ Moduulissa 1 määritelty
 <p>Monista moduulien muodostaman kokonaisuuden voi koota paketiksi. Paketit
 ovat erityistä tiedostorakennetta noudattavia hakemistoja. Pakein nimi on
 sen juurihakemiston nimi. Juurikansion tulee sisältää __init__.py -tiedosto
-sen merkiksi, että kyseessä on paketti. Samoin myös kaikkien alikansoiden
+sen merkiksi, että kyseessä on paketti. Samoin myös kaikkien alikansioiden
 (joiden halutaan olevan osa pakettia) tulee sisältää tämä tiedosto. __init__.py
 voi kuitenkin olla tyhjä. Esimerkki paketin hakemistorakenteesta:</p>
 
@@ -1874,13 +1875,13 @@ paketin_juuri/alipaketti/alimoduuli.py
 <p>Nyt alimoduuliin voidaan viitata vaikkapa näin:
 <br />
 <code>import paketin_juuri.alipaketti.alimoduuli</code><br />
-Mikäli paketeista halutaan tyypillisesti ottaa kerrallaan käytöön kokonainen
+Mikäli paketeista halutaan tyypillisesti ottaa kerrallaan käyttöön kokonainen
 alipaketti tai koko paketti itsessään, olisi luontevaa käyttää tehdä se
 jotenkin näin:<br />
 <code>from paketin_juuri.alipaketti import *</code><br />
-Ja näin se tehdäänkin. Pakttien etsimnen ja kaikkien tuominen voiso olla
-potentiaalisesti paitsi raska ja hidas operaatio myös aiheuttaa yllättäviä
-ja vaarallisa sivuvaikutuksia. Ongelma on ratkaistu siten, että mikäli
+Ja näin se tehdäänkin. Pakettien etsiminen ja kaikkien tuominen voisi olla
+potentiaalisesti paitsi raskas ja hidas operaatio myös aiheuttaa yllättäviä
+ja vaarallisia sivuvaikutuksia. Ongelma on ratkaistu siten, että mikäli
 paketin ylläpitäjä haluaa mahdollistaa tällaisen massasisällyttämisen (mass include), niin
 hänen tulee määritellä kunkin tason __inti__.py-tiedostossa muuttujan
 <code>__all__</code> arvoksi lista niistä alimoduuleista, jotka tulisi
@@ -1899,7 +1900,7 @@ tällöin sisällyttää.
   
   <p>Pythonissa luokat ovat olioita, kuten kaikki muutkin tietotyypit. Luokat ovat myös dynaamisia: ne luodaan ajoaikaisesti, ja niitä voidaan muokata luomisen jälkeenkin. Luokkien jäsenmuuttujat ovat normaalisti julkisia. Privaattien muuttujien luomiseen on rajallinen tuki: kirjoittamalla muuttujan nimen eteen kaksi alaviivaa saadaan muuttuja käyttäytymään, ikään kuin se olisi privaatti ( esim: <i>__spam</i>). Jos data-attribuutilla ja metodilla on sama nimi, metodin nimi peittyy.</p>
   
-  <p>Luokkamäärittely yksinkertaisimillaan:</p>
+  <p>Luokkamäärittely yksinkertaisimmillaan:</p>
   
   <pre class="sh_python">class ClassName:
     &lt;lause-1&gt;
@@ -1909,9 +1910,9 @@ tällöin sisällyttää.
     &lt;lause-N&gt;
 </pre>
   
-  <p>Luokkamäärittelyihin pätee sama kuin funktioidenkin määrittelyihin: ne tulee suorittaa, ennenkuin niitä voidaan käyttää ohjelmassa. (Jos luokkamäärittely on laitettu if-lauseen sisään, sitä ei voida käyttää ennenkuin if lause on suoritettu) Kun luokkamäärittelystä poistutaan normaalisti, syntyy luokka-olio.</p>
+  <p>Luokkamäärittelyihin pätee sama kuin funktioidenkin määrittelyihin: ne tulee suorittaa, ennen kuin niitä voidaan käyttää ohjelmassa. (Jos luokkamäärittely on laitettu <code>if</code> -lauseen sisään, sitä ei voida käyttää ennenkuin <code>if</code> -lause on suoritettu) Kun luokkamäärittelystä poistutaan normaalisti, syntyy luokka-olio.</p>
   
-  <p>Pythonissa self vastaa Javan this-käskyä. Selfillä siis viitataan luokan nykyiseen ilmentymään. Se tulee antaa jokaisessa metodimäärittelyssä metodin ensimmäiseksi parametriksi, vaikka kutsuattessa metodia self-parametrille ei anneta arvoa (Python hoitaa itse tämän). Self ei ole varattu sana, mutta sitä suositellaan käytettäväksi.</p>
+  <p>Pythonissa <code>self</code> vastaa Javan <code>this</code>-käskyä. Sillä viitataan luokan nykyiseen ilmentymään. Se tulee antaa jokaisessa metodimäärittelyssä metodin ensimmäiseksi parametriksi, vaikka kutsuattessa metodia <code>self</code> -parametrille ei anneta arvoa (Python hoitaa itse tämän). <code>self</code> ei ole varattu sana, joten sen tilalla voitaisiin käyttää muutakin, mutta koodin luettavuuden vuoksi sen käyttöä suositellaan.</p>
   
   <pre class="sh_python">
 class Luokka:
@@ -1923,7 +1924,7 @@ class Luokka:
   
   <p>Luokkaoliot tukevat kahdenlaisia operaatioita: <i>attribuuttiviittauksia</i> ja <i>ilmentymien luomista</i>.
   
-  <p>Attribuuttiviittauksessa syntaksi on <i>olio.nimi</i>. Esimerkkinä olevan luokkamäärittelyn tapauksessa Luokka.i palauttaisi kokonaisluvun ja Luokka.f palauttaisi funktio-olion.</p>
+  <p>Attribuuttiviittauksessa syntaksi on <i>olio.nimi</i>. Esimerkkinä olevan luokkamäärittelyn tapauksessa Luokka.i palauttaisi kokonaisluvun ja Luokka.metodi palauttaisi funktio-olion.</p>
   
   <pre class="sh_python">
 class Luokka:
@@ -1963,7 +1964,7 @@ class Luokka(Yliluokka):
     &lt;lause-N&gt;
 </pre>
 
-  <p>Luokka <code>Luokkaa</code> perii yliluokan
+  <p>Luokka <code>Luokka</code> perii yliluokan
   <code>Yliluokka</code> jäsenet ja sen yliluokan jäsenet kunnes
   saavutaan <code>object</code> kantaluokkaan. Peritty luokka voi
   korvata yliluokan metodeita yksinkertaisesti määrittelemällä ne
@@ -1978,7 +1979,7 @@ class Luokka(Yliluokka):
   Yleinen syntaksi tähän on sama kuin yhden luokan periytymisessä
   paitsi että periytetyt luokat erotellaan pilkuilla.</p>
 
-  <p>Moniperiytymisen niin kutsuttu <em>timanttiongelma</em> on se, että periytyttäessä
+  <p>Moniperiytymisen niin kutsuttu <em>timanttiongelma</em> on se, että periytettäessä
   luokka D luokista B ja C, joilla on sama isäluokka A, on
   epäselvää kumman luokan, B vai C, metodeilla korvataan isäluokan
   aliluokissa, B ja C, korvatut jäsenet [<a href="#ref-diamond-rule">18</a>]. Pythonissa tämä ongelma on
@@ -1991,7 +1992,7 @@ class Luokka(Yliluokka):
 
   <p>Seuraavassa esimerkki moniperiytymisestä. Esimerkissä on
   edellä kuvatun kaltainen moniperintätilanne luokista A, B, C ja
-  D. Luokka D periytetään luokista B ja C. Peritymishakujärjestys
+  D. Luokka D periytetään luokista B ja C. Periytymishakujärjestys
   on tässä tapauksessa lista <code>[D, B, A, C, A]</code>, joka
   supistuu muotoon <code>[D, B, C, A]</code>, kun kaksoiskappaleet
   poistetaan niin että vain viimeinen viittaus luokkaan jää jäljelle listaan.</p>
