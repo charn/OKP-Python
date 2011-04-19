@@ -1626,7 +1626,7 @@ Tämä printataan aina
 
   <p>Seuraavassa vielä pieni demonstraatio siitä mitä tämä
   tarkoittaa.</p>
-  <pre>
+  <pre class="sh_python">
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
 
@@ -1775,7 +1775,7 @@ moniprosessitesti 2.04168510437
   </code> avulla.</p>
   <p>Esimerkiksi näin</p>
 
-  <pre>
+  <pre class="sh_python">
 import moduuli
   
 #kutsutaan
@@ -1788,7 +1788,7 @@ moduuli.moduulissa_määritelty_funktio()
   kautta. Toisenlaista käytöstä saadaan aikaan, jos yksinkeraisesti
   määritellään nimi myös sellaisenaan symbolitauluun. Eli vaikkapa näin:</p>
 
-  <pre>
+  <pre class="sh_python">
 import moduuli
   
 #määritellään nimi moduulissa_määritelty_funktio viittaamaan
@@ -1816,7 +1816,8 @@ moduulissa_määritelty_funktio()
   moduulien avulla. Esimerkiksi luokan funktiot voidaan määritellä erillisessä
   moduulissa ja sitten sisällyttää luokan määrittelyssä ne toisesta moduulista
   osaksi lokaalia nimiavaruutta. Seuraavassa yksinkertainen esimerkki:</p>
-  <pre>
+
+  <pre class="sh_python">
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
 # moduuli1.py
@@ -1928,12 +1929,12 @@ class Luokka:
   <p>Ilmentymien luominen toimii kuin luokka-olio olisi parametriton funktio, joka palauttaa luokan uuden ilmentymän.</p>
   
   <pre>
-  x = Luokka()
+x = Luokka()
 </pre>
   
   <p>Luokkaan voidaan määritellä erikoismetodi <code>__init__()</code>, jota kutsutaan automaattisesti, kun olio on luotu. <code>__init__()</code>:n avulla ilmentymä voidaan alustaa johonkin haluttuun tilaan.</p>
   
-  <pre>
+  <pre class="sh_python">
 class Luvut:
     def __init__(self, luku1, luku2):
         self.r = luku1
@@ -1989,7 +1990,7 @@ class Luokka(Yliluokka):
   supistuu muotoon <code>[D, B, C, A]</code>, kun kaksoiskappaleet
   poistetaan niin että vain viimeinen viittaus jää jäljelle.</p>
 
-  <pre>
+  <pre class="sh_python">
 # Kuvio luokkamallista
 #
 #    A
@@ -2010,7 +2011,27 @@ class D(B, C):
 Lähteenä: http://docs.python.org/tutorial/modules.html
   <h3 id="chapter-7-arvosem">Arvo- ja viitesemantiikka</h3>
   
-  <p>copy.copy() copy.deepcopy()</p>
+  <p>Muuttujat Pythonissa sisältävät pelkästään viittauksen olioon [<a href="#ref-call-by-ref">17</a>]. Viittauksen kohteena olevat oliot sisältävät myös tyyppitietonsa eli minkä luokan olion ilmentymä on kyseessä. Esimerkiksi funktiokutsussa annettu parametri on siis vain viittaus johonkin olioon, joka kuten aiemmin on jo mainittu, on joko immutaabeli tai ei. Kutsuttu funktio ei voi muuttaa kutsujansa olioviitettä, eli esimerkiksi seuraavanlainen funktio ei pystyisi muuttamaan alkuperäistä stringiä ollenkaan, vaan sen tulisi palauttaa viite uuteen string -olioon.</p>
+  
+  <pre class="sh_python">
+def muuta_str(s):
+    s = "Uusi stringi" # funktion paikallinen muuttuja viittaamaan uuteen olioon
+
+a = "asdf"
+muuta_str(a)
+</pre>
+
+  <p>Muuttujaan sijoittaminen (esimerkiksi <code>a = b</code>) asettaa muuttujan osoittamaan, tyypistä riippumatta, johonkin olioon. Mutaabeleja olioita voidaan muuttaa muutosoperaatioilla kutsutussa metodissa.</p>
+  
+  <pre class="sh_python">
+def add_bananas(l):
+    l.append("bananas")
+
+a = ["apples", "tomatoes"]
+add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
+</pre>
+  
+  <!-- <p>copy.copy() copy.deepcopy()</p> -->
 
   <h2 id="chapter-8">8. Yhteenveto</h2>
 
@@ -2082,6 +2103,7 @@ Lähteenä: http://docs.python.org/tutorial/modules.html
     <li id="ref-funktiot"><a href=
     "http://docs.python.org/release/3.1.3/tutorial/controlflow.html#defining-functions">
     http://docs.python.org/release/3.1.3/tutorial/controlflow.html#defining-functions</a></li>
+    <li id=ref-call-by-ref><a href="http://docs.python.org/faq/programming.html#how-do-i-write-a-function-with-output-parameters-call-by-reference">Python v3.2 documentation » Python Frequently Asked Questions » How do I write a function with output parameters (call by reference)?</a></li>
   </ol>
 </body>
 </html>
