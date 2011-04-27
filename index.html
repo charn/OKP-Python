@@ -159,7 +159,7 @@
   2.x -haara saa tällä hetkellä pelkkiä virheitä korjaavia
   päivityksiä. Uudet ominaisuudet kehitetään vain 3.x -haaralle.
   Suurempi osa kolmansien osapuolien ohjelmistoista käyttää vielä
-  Ptyhonin 2.x -versiota.</p>
+  Pythonin 2.x -versiota.</p>
 
   <p>Yleisin Pythonin toteutus on CPython, joka on kirjoitettu
   C-kielellä. CPython kääntää Python ohjelmat. Se kääntää Python
@@ -308,7 +308,7 @@ if __name__ == "__main__":
 
   <p>Yllä oleva python ohjelma tulostaa konsoliin tekstin:</p>
   <pre>
-Hei vaan ja hellurei! khemrin kieli khmeriksi
+Hei vaan ja hellurei! khmerin kieli khmeriksi
 €-merkki ei ollut sallittu muuttujan nimessä :'( invalid character in identifier (&lt;string&gt;, line 1)
 Hyvin pyyhkii. No problemo, kun €-merkit vaihdettiin e-kirjaimiksi
 
@@ -372,21 +372,23 @@ break      except     in         raise
 
   <p>Pythonissa käytetään sisennyksiä rajaamaan lohkoja. Sisennystä
   kasvatetaan tiettyjen lausekkeiden jälkeen ja vastaavasti
-  sisennystä pienennetään lohkon päättymisen merkiksi. Sekä tabit
-  että välilyönnit kelpaavat sisennysmerkeiksi pythonissa.</p>
+  sisennystä pienennetään lohkon päättymisen merkiksi. Sekä
+  tabulaattorit että välilyönnit kelpaavat sisennysmerkeiksi
+  Pythonissa.</p>
 
   <p>Sisennyksen määrällä ei ole väliä, sisennys voi olla yhden
-  tabin tai vaikkapa kuuden välilyönnin pituinen <i>(<b>huom!</b>
-  tabien ja välilyöntien sekaisin käyttäminen ei ole sallittua
-  Pythonissa)</i>. Ainoastaan suhteellisella sisennyksen määrällä
-  on väliä sisäkkäisissä lohkoissa.</p>
+  tabulaattorin tai vaikkapa kuuden välilyönnin pituinen
+  <i>(<b>huom!</b> tabulaattorin ja välilyöntien sekaisin
+  käyttäminen ei ole sallittua Pythonissa)</i>. Ainoastaan
+  suhteellisella sisennyksen määrällä on väliä sisäkkäisissä
+  lohkoissa.</p>
 
   <p>Lauseet erotellaan toisistaan rivinvaihdoilla. Useita lauseita
   voidaan kirjoittaa samalle riville käyttämällä puolipistettä.
   Kontrollirakenteissa totuusarvolausekkeita seuraa aina
   kaksoispiste ja lausekkeessa ei ole pakko käyttää sulkuja.</p>
 
-  <p>Alla olevissa esimerkeissä kaikki kolme if-lausetta tekevät
+  <p>Alla olevissa esimerkeissä kaikki kolme if-rakennetta tekevät
   saman asian <i>(tulostavat sanat "spam" ja "ham")</i>:</p>
   <pre class="sh_python">
 if 1 == 1:
@@ -574,10 +576,10 @@ def main():
     lam = lambda: print("lambda", muuttuja)
     lam()
 
-    #Seuraava if-lause saisi kuitenkin aikaan sen, että kaikkialla main-metodissa
+    #Seuraava if-rakenne saisi kuitenkin aikaan sen, että kaikkialla main-metodissa
     #tunnus muuttuja viittaisi saman nimiseen moduulitason globaaliin muuttujaan.
     #Tämä ei toki sinänsä liene kovin yllättävää, mutta toimii kuitenkin pienenä
-    #demonstraatio siitä, että if-lause ei ole lohko. Ei ainakaan Pythonissa :)
+    #demonstraatio siitä, että if-rakenne ei ole lohko. Ei ainakaan Pythonissa :)
     #if True:
     #    global muuttuja
     #    print("globaali", muuttuja)
@@ -597,7 +599,7 @@ UnboundLocalError: local variable 'muuttuja' referenced before assignment
 main lokaali
 funktio globaali
 lambda lokaali
-moduulitasolla if-lohkossa globaali
+moduulitasolla if-rakenteessa globaali
   
 </pre>
 
@@ -739,7 +741,7 @@ More
   mielivaltainen määrä tai ei yhtään. Myös <code>else</code> -osan
   käyttö on vapaaehtoista. Python ei tue monista muista kielistä
   tuttua switch/case -rakennetta vaan tämä tulee toteuttaa
-  if-lauseella [<a href="#ref-controlflow">8</a>].</p>
+  if-rakenneella [<a href="#ref-controlflow">8</a>].</p>
 
   <h3 id="chapter-4-toisto">Toisto</h3>
 
@@ -1742,7 +1744,7 @@ säietesti 3.89715909958
 moniprosessitesti 2.04168510437
 </pre>
 
-  <p>Tuloksista nähdään selvästi, että säikeet toimivat kaikkista
+  <p>Tuloksista nähdään selvästi, että säikeet toimivat kaikista
   hitaimmin. Pelkästään kahdella ytimellä varustettu kannettavani
   toimi prosesseilla lähes 50% nopeammin verrattuna säikeisiin.
   Säikeet toimivat jopa hitaammin kuin yksiprosessitesti.
@@ -1794,11 +1796,11 @@ import moduuli
 moduuli.moduulissa_määritelty_funktio()
 </pre>
 
-  <p>Kuten tuosta esimerkistäkin nähdään, niin moduulissa
-  määriteltyjä asioita ei tuoda suoraan osaksi sen hetkistä
-  symbolitaulua, vaan ainoastaan moduulin nimi tuodaan sinne ja sen
-  sisältöön viitataan sitä kautta. Toisenlaista käytöstä saadaan
-  aikaan, jos yksinkertaisesti määritellään nimi myös sellaisenaan
+  <p>Kuten esimerkistä nähdään, niin moduulissa määriteltyjä
+  asioita ei tuoda suoraan osaksi sen hetkistä symbolitaulua, vaan
+  ainoastaan moduulin nimi tuodaan sinne ja sen sisältöön viitataan
+  sitä kautta. Toisenlaista käytöstä saadaan aikaan, jos
+  yksinkertaisesti määritellään nimi myös sellaisenaan
   symbolitauluun. Eli vaikkapa näin:</p>
   <pre class="sh_python">
 import moduuli
@@ -1930,7 +1932,7 @@ class ClassName:
   <p>Luokkamäärittelyihin pätee sama kuin funktioidenkin
   määrittelyihin: ne tulee suorittaa, ennen kuin niitä voidaan
   käyttää ohjelmassa. (Jos luokkamäärittely on laitettu
-  <code>if</code> -lauseen sisään, sitä ei voida käyttää ennenkuin
+  <code>if</code> -lauseen sisään, sitä ei voida käyttää ennen kuin
   <code>if</code> -lause on suoritettu) Kun luokkamäärittelystä
   poistutaan normaalisti, syntyy luokkaolio.</p>
 
@@ -1939,7 +1941,7 @@ class ClassName:
   <p>Pythonissa <code>self</code> vastaa Javan
   <code>this</code>-käskyä. Sillä viitataan luokan nykyiseen
   ilmentymään. Se tulee antaa jokaisessa metodimäärittelyssä
-  metodin ensimmäiseksi parametriksi, vaikka kutsuattessa metodia
+  metodin ensimmäiseksi parametriksi, vaikka kutsuttaessa metodia
   <code>self</code> -parametrille ei anneta arvoa (Python hoitaa
   itse tämän). <code>self</code> ei ole varattu sana, joten sen
   tilalla voitaisiin käyttää muutakin, mutta koodin luettavuuden
@@ -2009,7 +2011,7 @@ class Luokka(Yliluokka):
   korvata yliluokan metodeita yksinkertaisesti määrittelemällä ne
   uudelleen. Yliluokan metodeihin voi viitata
   <code>Yliluokka.metodi(self, parametrit)</code> tyylisellä
-  syntaksilla tai java-tyylisesti
+  syntaksilla tai Java-tyylisesti
   <code>super()</code>-funktiolla.</p>
 
   <h4>Moniperiytyminen</h4>
@@ -2131,7 +2133,7 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
 
   <p>Pythonin dynaamisen tyypitysjärjestelmän kääntöpuoli on että
   mahdolliset virheet koodissa huomataan vasta suoritusaikana,
-  syntaksivirheitä lukuunottamatta, eikä käännösaikana kuten
+  syntaksivirheitä lukuun ottamatta, eikä käännösaikana kuten
   monissa muissa kielissä. Python on nopea kieli tulkattavaksi
   kieleksi, mutta joskus suoritusnopeuskriittinen koodi täytyy
   toteuttaa C/C++-laajennoksilla, jotta se olisi kelvollista. Tämä
