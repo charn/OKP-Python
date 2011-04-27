@@ -1898,7 +1898,9 @@ tällöin sisällyttää.
 
   <h3 id="chapter-7-oliotluokat">Oliot ja luokat</h3>
   
-  <p>Pythonissa luokat ovat olioita, kuten kaikki muutkin tietotyypit. Luokat ovat myös dynaamisia: ne luodaan ajoaikaisesti, ja niitä voidaan muokata luomisen jälkeenkin. Luokkien jäsenmuuttujat ovat normaalisti julkisia. Privaattien muuttujien luomiseen on rajallinen tuki: kirjoittamalla muuttujan nimen eteen kaksi alaviivaa saadaan muuttuja käyttäytymään, ikään kuin se olisi privaatti ( esim: <i>__spam</i>). Jos data-attribuutilla ja metodilla on sama nimi, metodin nimi peittyy.</p>
+  <p>Pythonissa luokat ovat olioita, kuten kaikki muutkin tietotyypit. Luokat ovat myös dynaamisia: ne luodaan ajoaikaisesti, ja niitä voidaan muokata luomisen jälkeenkin. Luokkien jäsenmuuttujat ovat normaalisti julkisia. Privaattien muuttujien luomiseen on rajallinen tuki: kirjoittamalla muuttujan nimen eteen kaksi alaviivaa saadaan muuttuja käyttäytymään, ikään kuin se olisi privaatti ( esim: <code>__spam</code>).</p>
+  
+  <p>Jos data-attribuutilla ja metodilla on sama nimi, metodin nimi peittyy. Nimiongelmien välttämiseksi suositellaan käyttämään jonkinlaista nimeämiskäytäntöä, esimerkiksi nimeämällä metodit niin, että nimi alkaa isolla kirjaimella.</p>
   
   <p>Luokkamäärittely yksinkertaisimmillaan:</p>
   
@@ -1910,7 +1912,9 @@ tällöin sisällyttää.
     &lt;lause-N&gt;
 </pre>
   
-  <p>Luokkamäärittelyihin pätee sama kuin funktioidenkin määrittelyihin: ne tulee suorittaa, ennen kuin niitä voidaan käyttää ohjelmassa. (Jos luokkamäärittely on laitettu <code>if</code> -lauseen sisään, sitä ei voida käyttää ennenkuin <code>if</code> -lause on suoritettu) Kun luokkamäärittelystä poistutaan normaalisti, syntyy luokka-olio.</p>
+  <p>Luokkamäärittelyihin pätee sama kuin funktioidenkin määrittelyihin: ne tulee suorittaa, ennen kuin niitä voidaan käyttää ohjelmassa. (Jos luokkamäärittely on laitettu <code>if</code> -lauseen sisään, sitä ei voida käyttää ennenkuin <code>if</code> -lause on suoritettu) Kun luokkamäärittelystä poistutaan normaalisti, syntyy luokkaolio.</p>
+  
+  <h4>Self</h4>
   
   <p>Pythonissa <code>self</code> vastaa Javan <code>this</code>-käskyä. Sillä viitataan luokan nykyiseen ilmentymään. Se tulee antaa jokaisessa metodimäärittelyssä metodin ensimmäiseksi parametriksi, vaikka kutsuattessa metodia <code>self</code> -parametrille ei anneta arvoa (Python hoitaa itse tämän). <code>self</code> ei ole varattu sana, joten sen tilalla voitaisiin käyttää muutakin, mutta koodin luettavuuden vuoksi sen käyttöä suositellaan.</p>
   
@@ -1924,7 +1928,7 @@ class Luokka:
   
   <p>Luokkaoliot tukevat kahdenlaisia operaatioita: <i>attribuuttiviittauksia</i> ja <i>ilmentymien luomista</i>.
   
-  <p>Attribuuttiviittauksessa syntaksi on <i>olio.nimi</i>. Esimerkkinä olevan luokkamäärittelyn tapauksessa Luokka.i palauttaisi kokonaisluvun ja Luokka.metodi palauttaisi funktio-olion.</p>
+  <p>Attribuuttiviittauksessa syntaksi on <code>olio.nimi</code>. Esimerkkinä olevan luokkamäärittelyn tapauksessa <code>Luokka.i</code> palauttaisi kokonaisluvun ja <code>Luokka.metodi</code> palauttaisi funktio-olion.</p>
   
   <pre class="sh_python">
 class Luokka:
@@ -1933,7 +1937,7 @@ class Luokka:
         return 'spam'
 </pre>
   
-  <p>Ilmentymien luominen toimii kuin luokka-olio olisi parametriton funktio, joka palauttaa luokan uuden ilmentymän.</p>
+  <p>Ilmentymien luominen toimii kuin luokkaolio olisi parametriton funktio, joka palauttaa luokan uuden ilmentymän.</p>
   
   <pre>
 x = Luokka()
