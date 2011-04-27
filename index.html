@@ -1,177 +1,236 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-<meta name="generator" content=
-"HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
-<title>OKP: Python kevytspesifikaatio</title>
-<meta http-equiv="content-type" content=
-"text/html; charset=us-ascii">
-<link rel="stylesheet" href="style.css" type="text/css" media=
-"screen"><!-- Syntaxhiglight -->
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
 
-<script type="text/javascript" src="script/sh_main.js">
+  <title>OKP: Python kevytspesifikaatio</title>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=us-ascii">
+  <link rel="stylesheet" href="style.css" type="text/css" media=
+  "screen"><!-- Syntaxhiglight -->
+
+  <script type="text/javascript" src="script/sh_main.js">
 </script>
-<script type="text/javascript" src="script/sh_python.js">
+  <script type="text/javascript" src="script/sh_python.js">
 </script>
-<link type="text/css" rel="stylesheet" href=
-"script/sh_typical.css">
+  <link type="text/css" rel="stylesheet" href=
+  "script/sh_typical.css">
 </head>
+
 <body onload="sh_highlightDocument();">
-<h1><img src="python_logo.png" alt="Python" id="logo" name="logo">
-kevytspesifikaatio</h1>
-<p>Kurssi: <a href=
-"http://www.cs.helsinki.fi/u/wikla/OKP/K11/">581362
-Ohjelmointikielten periaatteet, kev&Atilde;&curren;t 2011 (4
-op)</a></p>
-<h2>Ty&Atilde;&para;ryhm&Atilde;&curren;</h2>
-<ul>
-<li>Juhani &Atilde;&hellip;hman
-&lt;juhani.ahman@cs.helsinki.fi&gt;</li>
-<li>Juha Louhiranta &lt;juha.louhiranta@helsinki.fi&gt;</li>
-<li>Matti Nauha &lt;mtnauha@cs.helsinki.fi&gt;</li>
-<li>Timo Lehto &lt;timo.lehto@cs.helsinki.fi&gt;</li>
-</ul>
-<h2>Sis&Atilde;&curren;lt&Atilde;&para;</h2>
-<ol class="toc">
-<li><a href="#chapter-1">Kielen taustaa ja miniesimerkki</a></li>
-<li><a href="#chapter-2">Alkiorakenne &acirc;&euro;&ldquo;
-millaisista palikoista ohjelmat rakennetaan</a></li>
-<li><a href="#chapter-3">Tunnusten
-n&Atilde;&curren;kyvyysalueet</a></li>
-<li><a href="#chapter-4">Kontrollin ja/tai laskennan
-ohjaus</a></li>
-<li><a href="#chapter-5">Perustietotyypit</a></li>
-<li><a href="#chapter-6">Laskennan kapselointi</a></li>
-<li><a href="#chapter-7">Datan kapselointi</a></li>
-<li><a href="#chapter-8">Yhteenveto</a></li>
-<li><a href="#lahteet">L&Atilde;&curren;hteet</a></li>
-</ol>
-<h2 id="chapter-1">1. Kielen taustaa ja miniesimerkki</h2>
-<ul>
-<li><a href="#chapter-1-historia">Historia</a></li>
-<li><a href="#chapter-1-perustietoa">Python perustietoa</a></li>
-<li><a href=
-"#chapter-1-kayttokohteet">K&Atilde;&curren;ytt&Atilde;&para;kohteet</a></li>
-<li><a href="#chapter-1-fibonacci">Fibonacci esimerkki</a></li>
-</ul>
-<h3 id="chapter-1-historia">Historia</h3>
-<p>Pythonin historia alkaa 1980-luvulta. Ensimm&Atilde;&curren;inen
-versio ohjelmointikielest&Atilde;&curren; kehitettiin 80-luvun
-loppupuolella Guido van Rossumin toimesta. Python kehitettiin ABC
-kielen seuraajaksi, joka kykenee mm. poikkeusten
-k&Atilde;&curren;sittelyyn ja
-yhteisty&Atilde;&para;h&Atilde;&para;n Amoeba
--k&Atilde;&curren;ytt&Atilde;&para;j&Atilde;&curren;rjestelm&Atilde;&curren;n
-kanssa. Kielen alun perin kehitt&Atilde;&curren;nyt van Rossum on
-edelleen aktiivisesti mukana kielen
-kehitt&Atilde;&curren;misess&Atilde;&curren;</p>
-<p>Python 2.0, julkaistiin 16. lokakuuta 2000. Toinen versio
-sis&Atilde;&curren;lsi useita uusia ominaisuuksia, mukaan lukien
-t&Atilde;&curren;ydellisen roskienkeruumekanismin ja Unicode-tuen.
-Muutos tapahtui my&Atilde;&para;s kielen kehitysprosessissa. Python
--yhteis&Atilde;&para;lle annettiin vapaammat k&Atilde;&curren;det
-osallistua mukaan kielen kehitykseen.</p>
-<p>Joulukuussa 2008 ilmestyi 3.0, jolla haluttiin korjata
-havaittuja ongelmia kieless&Atilde;&curren;.
-Kielest&Atilde;&curren; haluttiin poistaa duplikaatteja
-ominaisuuksia poistamalla vanhat tavat tehd&Atilde;&curren;
-asioita. 3.x ei ole taaksep&Atilde;&curren;in yhteensopiva
-versioiden 2.x ja vanhempien kanssa. Vanhoille versioille
-kirjoitetut ohjelmat eiv&Atilde;&curren;t toimi suoraan versiossa
-3.0. Siirtym&Atilde;&curren;n helpottamiseksi on toteutettu
-k&Atilde;&curren;&Atilde;&curren;nn&Atilde;&para;sohjelma
-(<code>2to3</code>), joka
-k&Atilde;&curren;&Atilde;&curren;nt&Atilde;&curren;&Atilde;&curren;
-automaattisesti osan koodista kielen uudempaan versioon.
-Lis&Atilde;&curren;ksi useita kolmosversion
-keskeisi&Atilde;&curren; ominaisuuksia on toteutettu rinnakkain
-kehitettyyn 2.6 versioon, mik&Atilde;&curren; mahdollistaa niiden
-hy&Atilde;&para;dynt&Atilde;&curren;misen ilman uudempaan
-syntaksiin siirtymist&Atilde;&curren;. [<a href=
-"#ref-history-of-python">3</a>]</p>
-<h3 id="chapter-1-perustietoa">Python perustietoa</h3>
-<ul>
-<li>Keskeinen suunnittelufilosofia: selke&Atilde;&curren;, luettava
-syntaksi</li>
-<li>Tulkattava</li>
-<li>Oliosuuntautunut ohjelmointikieli</li>
-<li>Korkean tason dynaamiset datatyypit</li>
-<li>Kattavat standardikirjastot ja saatavilla paljon kolmansien
-osapuolien moduuleja eri tarkoituksiin</li>
-<li>Poikkeuksiin <i>(exception)</i> pohjautuva virheiden
-hallinta</li>
-<li>Tukee useita ohjelmointiparadigmoja <i>(esim. oliopohjainen,
-proseduraalinen, funktionaalinen)</i></li>
-<li>Toimii useilla eri alustoilla, esim.
-<ul>
-<li>Windows</li>
-<li>Mac</li>
-<li>Linux</li>
-<li>Amiga</li>
-<li>Nokia series 60</li>
-</ul>
-</li>
-<li>Avoin l&Atilde;&curren;hdekoodi, vapaasti
-k&Atilde;&curren;ytett&Atilde;&curren;viss&Atilde;&curren; ja
-jaettavissa (my&Atilde;&para;s kaupalliseen
-k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&para;n)</li>
-<li>Upotettavissa sovelluksiin skriptausrajapintana <i>(esim.
-Blender)</i></li>
-<li>K&Atilde;&curren;yt&Atilde;&para;ss&Atilde;&curren;
-my&Atilde;&para;s muun muassa <a href=
-"http://www.djangoproject.com/">Django</a> -frameworkissa.</li>
-<li>Python nimi tulee tv-sarjasta <i>Monty Python's Flying
-Circus</i>.</li>
-</ul>
-<p>Pythonista on t&Atilde;&curren;ll&Atilde;&curren;
-hetkell&Atilde;&curren; olemassa kaksi vakaata haaraa. 2.x -haara
-saa t&Atilde;&curren;ll&Atilde;&curren; hetkell&Atilde;&curren;
-pelkki&Atilde;&curren; virheit&Atilde;&curren; korjaavia
-p&Atilde;&curren;ivityksi&Atilde;&curren;. Uudet ominaisuudet
-kehitet&Atilde;&curren;&Atilde;&curren;n vain 3.x -haaralle.
-Suurempi osa kolmansien osapuolien ohjelmistoista
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
-viel&Atilde;&curren; Ptyhonin 2.x -versiota.</p>
-<p>Yleisin Pythonin toteutus on CPython, joka on kirjoitettu
-C-kielell&Atilde;&curren;. CPython
-k&Atilde;&curren;&Atilde;&curren;nt&Atilde;&curren;&Atilde;&curren;
-Python ohjelmat. Se
-k&Atilde;&curren;&Atilde;&curren;nt&Atilde;&curren;&Atilde;&curren;
-Python ohjelmat tavukoodiksi, joka suoritetaan virtuaalikoneessa.
-CPython on saatavilla useille eri
-k&Atilde;&curren;ytt&Atilde;&para;j&Atilde;&curren;rjestelmille ja
-sen mukana tulee laaja peruskirjasto.</p>
-<p>Muita Python toteutuksia on esimerkiksi <a href=
-"http://www.jython.org/">Jython</a> (JVM), <a href=
-"http://ironpython.net/">IronPython</a> (.NET) ja <a href=
-"http://pypy.org/">PyPy</a>.</p>
-<h3 id="chapter-1-kayttokohteet">
-K&Atilde;&curren;ytt&Atilde;&para;kohteet</h3>
-<p>Yksi suosittu tapa
-hy&Atilde;&para;dynt&Atilde;&curren;&Atilde;&curren; Pythonia on
-sen k&Atilde;&curren;ytt&Atilde;&curren;minen
-skriptikielen&Atilde;&curren; erilaisissa sovelluksissa. Pythonia
-k&Atilde;&curren;ytt&Atilde;&curren;v&Atilde;&curren;t
-skriptikielen&Atilde;&curren; esimerkiksi 3d-mallinnusohjelmistot
-Maya ja Blender, kuvank&Atilde;&curren;sittelyohjelma GIMP ja se on
-toinen valittavissa oleva skriptikieli Google Docsissa</p>
-<p>Erilaisten kirjastojen <i>(NumPy, SciPy, Matplotlib, ...)</i>
-avulla Pythonia voidaan
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren; tehokkaasti
-tieteelliseen laskentaan.</p>
-<p>Monissa
-k&Atilde;&curren;ytt&Atilde;&para;j&Atilde;&curren;rjestelmiss&Atilde;&curren;
-Python kuuluu peruskomponentteihin. Python l&Atilde;&para;ytyy muun
-muassa useimmista Linux distribuutioista,
-OpenBSD:st&Atilde;&curren;, ja Mac OS X:st&Atilde;&curren;.</p>
-<h3 id="chapter-1-fibonacci">Fibonacci esimerkki</h3>
-<p>Seuraavassa esimerkki ohjelmasta, joka lukee yhden
-sy&Atilde;&para;tt&Atilde;&para;luvun, laskee
-ensimm&Atilde;&curren;isen Fibonaccin luvun, joka on
-sy&Atilde;&para;tt&Atilde;&para;lukua suurempi ja lopuksi tulostaa
-kyseisen Fibonaccin luvun.</p>
-<pre class="sh_python">
+  <h1><img src="python_logo.png" alt="Python" id="logo" name=
+  "logo"> kevytspesifikaatio</h1>
+
+  <p>Kurssi: <a href=
+  "http://www.cs.helsinki.fi/u/wikla/OKP/K11/">581362
+  Ohjelmointikielten periaatteet, kev&Atilde;&curren;t 2011 (4
+  op)</a></p>
+
+  <h2>Ty&Atilde;&para;ryhm&Atilde;&curren;</h2>
+
+  <ul>
+    <li>Juhani &Atilde;&hellip;hman
+    &lt;juhani.ahman@cs.helsinki.fi&gt;</li>
+
+    <li>Juha Louhiranta &lt;juha.louhiranta@helsinki.fi&gt;</li>
+
+    <li>Matti Nauha &lt;mtnauha@cs.helsinki.fi&gt;</li>
+
+    <li>Timo Lehto &lt;timo.lehto@cs.helsinki.fi&gt;</li>
+  </ul>
+
+  <h2>Sis&Atilde;&curren;lt&Atilde;&para;</h2>
+
+  <ol class="toc">
+    <li><a href="#chapter-1">Kielen taustaa ja
+    miniesimerkki</a></li>
+
+    <li><a href="#chapter-2">Alkiorakenne &acirc;&euro;&ldquo;
+    millaisista palikoista ohjelmat rakennetaan</a></li>
+
+    <li><a href="#chapter-3">Tunnusten
+    n&Atilde;&curren;kyvyysalueet</a></li>
+
+    <li><a href="#chapter-4">Kontrollin ja/tai laskennan
+    ohjaus</a></li>
+
+    <li><a href="#chapter-5">Perustietotyypit</a></li>
+
+    <li><a href="#chapter-6">Laskennan kapselointi</a></li>
+
+    <li><a href="#chapter-7">Datan kapselointi</a></li>
+
+    <li><a href="#chapter-8">Yhteenveto</a></li>
+
+    <li><a href="#lahteet">L&Atilde;&curren;hteet</a></li>
+  </ol>
+
+  <h2 id="chapter-1">1. Kielen taustaa ja miniesimerkki</h2>
+
+  <ul>
+    <li><a href="#chapter-1-historia">Historia</a></li>
+
+    <li><a href="#chapter-1-perustietoa">Python
+    perustietoa</a></li>
+
+    <li><a href=
+    "#chapter-1-kayttokohteet">K&Atilde;&curren;ytt&Atilde;&para;kohteet</a></li>
+
+    <li><a href="#chapter-1-fibonacci">Fibonacci esimerkki</a></li>
+  </ul>
+
+  <h3 id="chapter-1-historia">Historia</h3>
+
+  <p>Pythonin historia alkaa 1980-luvulta.
+  Ensimm&Atilde;&curren;inen versio
+  ohjelmointikielest&Atilde;&curren; kehitettiin 80-luvun
+  loppupuolella Guido van Rossumin toimesta. Python kehitettiin ABC
+  kielen seuraajaksi, joka kykenee mm. poikkeusten
+  k&Atilde;&curren;sittelyyn ja
+  yhteisty&Atilde;&para;h&Atilde;&para;n Amoeba
+  -k&Atilde;&curren;ytt&Atilde;&para;j&Atilde;&curren;rjestelm&Atilde;&curren;n
+  kanssa. Kielen alun perin kehitt&Atilde;&curren;nyt van Rossum on
+  edelleen aktiivisesti mukana kielen
+  kehitt&Atilde;&curren;misess&Atilde;&curren;</p>
+
+  <p>Python 2.0, julkaistiin 16. lokakuuta 2000. Toinen versio
+  sis&Atilde;&curren;lsi useita uusia ominaisuuksia, mukaan lukien
+  t&Atilde;&curren;ydellisen roskienkeruumekanismin ja
+  Unicode-tuen. Muutos tapahtui my&Atilde;&para;s kielen
+  kehitysprosessissa. Python -yhteis&Atilde;&para;lle annettiin
+  vapaammat k&Atilde;&curren;det osallistua mukaan kielen
+  kehitykseen.</p>
+
+  <p>Joulukuussa 2008 ilmestyi 3.0, jolla haluttiin korjata
+  havaittuja ongelmia kieless&Atilde;&curren;.
+  Kielest&Atilde;&curren; haluttiin poistaa duplikaatteja
+  ominaisuuksia poistamalla vanhat tavat tehd&Atilde;&curren;
+  asioita. 3.x ei ole taaksep&Atilde;&curren;in yhteensopiva
+  versioiden 2.x ja vanhempien kanssa. Vanhoille versioille
+  kirjoitetut ohjelmat eiv&Atilde;&curren;t toimi suoraan versiossa
+  3.0. Siirtym&Atilde;&curren;n helpottamiseksi on toteutettu
+  k&Atilde;&curren;&Atilde;&curren;nn&Atilde;&para;sohjelma
+  (<code>2to3</code>), joka
+  k&Atilde;&curren;&Atilde;&curren;nt&Atilde;&curren;&Atilde;&curren;
+  automaattisesti osan koodista kielen uudempaan versioon.
+  Lis&Atilde;&curren;ksi useita kolmosversion
+  keskeisi&Atilde;&curren; ominaisuuksia on toteutettu rinnakkain
+  kehitettyyn 2.6 versioon, mik&Atilde;&curren; mahdollistaa niiden
+  hy&Atilde;&para;dynt&Atilde;&curren;misen ilman uudempaan
+  syntaksiin siirtymist&Atilde;&curren;. [<a href=
+  "#ref-history-of-python">3</a>]</p>
+
+  <h3 id="chapter-1-perustietoa">Python perustietoa</h3>
+
+  <ul>
+    <li>Keskeinen suunnittelufilosofia: selke&Atilde;&curren;,
+    luettava syntaksi</li>
+
+    <li>Tulkattava</li>
+
+    <li>Oliosuuntautunut ohjelmointikieli</li>
+
+    <li>Korkean tason dynaamiset datatyypit</li>
+
+    <li>Kattavat standardikirjastot ja saatavilla paljon kolmansien
+    osapuolien moduuleja eri tarkoituksiin</li>
+
+    <li>Poikkeuksiin <i>(exception)</i> pohjautuva virheiden
+    hallinta</li>
+
+    <li>Tukee useita ohjelmointiparadigmoja <i>(esim.
+    oliopohjainen, proseduraalinen, funktionaalinen)</i></li>
+
+    <li>Toimii useilla eri alustoilla, esim.
+
+      <ul>
+        <li>Windows</li>
+
+        <li>Mac</li>
+
+        <li>Linux</li>
+
+        <li>Amiga</li>
+
+        <li>Nokia series 60</li>
+      </ul>
+    </li>
+
+    <li>Avoin l&Atilde;&curren;hdekoodi, vapaasti
+    k&Atilde;&curren;ytett&Atilde;&curren;viss&Atilde;&curren; ja
+    jaettavissa (my&Atilde;&para;s kaupalliseen
+    k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&para;n)</li>
+
+    <li>Upotettavissa sovelluksiin skriptausrajapintana <i>(esim.
+    Blender)</i></li>
+
+    <li>K&Atilde;&curren;yt&Atilde;&para;ss&Atilde;&curren;
+    my&Atilde;&para;s muun muassa <a href=
+    "http://www.djangoproject.com/">Django</a> -frameworkissa.</li>
+
+    <li>Python nimi tulee tv-sarjasta <i>Monty Python's Flying
+    Circus</i>.</li>
+  </ul>
+
+  <p>Pythonista on t&Atilde;&curren;ll&Atilde;&curren;
+  hetkell&Atilde;&curren; olemassa kaksi vakaata haaraa. 2.x -haara
+  saa t&Atilde;&curren;ll&Atilde;&curren; hetkell&Atilde;&curren;
+  pelkki&Atilde;&curren; virheit&Atilde;&curren; korjaavia
+  p&Atilde;&curren;ivityksi&Atilde;&curren;. Uudet ominaisuudet
+  kehitet&Atilde;&curren;&Atilde;&curren;n vain 3.x -haaralle.
+  Suurempi osa kolmansien osapuolien ohjelmistoista
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
+  viel&Atilde;&curren; Ptyhonin 2.x -versiota.</p>
+
+  <p>Yleisin Pythonin toteutus on CPython, joka on kirjoitettu
+  C-kielell&Atilde;&curren;. CPython
+  k&Atilde;&curren;&Atilde;&curren;nt&Atilde;&curren;&Atilde;&curren;
+  Python ohjelmat. Se
+  k&Atilde;&curren;&Atilde;&curren;nt&Atilde;&curren;&Atilde;&curren;
+  Python ohjelmat tavukoodiksi, joka suoritetaan virtuaalikoneessa.
+  CPython on saatavilla useille eri
+  k&Atilde;&curren;ytt&Atilde;&para;j&Atilde;&curren;rjestelmille
+  ja sen mukana tulee laaja peruskirjasto.</p>
+
+  <p>Muita Python toteutuksia on esimerkiksi <a href=
+  "http://www.jython.org/">Jython</a> (JVM), <a href=
+  "http://ironpython.net/">IronPython</a> (.NET) ja <a href=
+  "http://pypy.org/">PyPy</a>.</p>
+
+  <h3 id="chapter-1-kayttokohteet">
+  K&Atilde;&curren;ytt&Atilde;&para;kohteet</h3>
+
+  <p>Yksi suosittu tapa
+  hy&Atilde;&para;dynt&Atilde;&curren;&Atilde;&curren; Pythonia on
+  sen k&Atilde;&curren;ytt&Atilde;&curren;minen
+  skriptikielen&Atilde;&curren; erilaisissa sovelluksissa. Pythonia
+  k&Atilde;&curren;ytt&Atilde;&curren;v&Atilde;&curren;t
+  skriptikielen&Atilde;&curren; esimerkiksi 3d-mallinnusohjelmistot
+  Maya ja Blender, kuvank&Atilde;&curren;sittelyohjelma GIMP ja se
+  on toinen valittavissa oleva skriptikieli Google Docsissa</p>
+
+  <p>Erilaisten kirjastojen <i>(NumPy, SciPy, Matplotlib, ...)</i>
+  avulla Pythonia voidaan
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren; tehokkaasti
+  tieteelliseen laskentaan.</p>
+
+  <p>Monissa
+  k&Atilde;&curren;ytt&Atilde;&para;j&Atilde;&curren;rjestelmiss&Atilde;&curren;
+  Python kuuluu peruskomponentteihin. Python l&Atilde;&para;ytyy
+  muun muassa useimmista Linux distribuutioista,
+  OpenBSD:st&Atilde;&curren;, ja Mac OS X:st&Atilde;&curren;.</p>
+
+  <h3 id="chapter-1-fibonacci">Fibonacci esimerkki</h3>
+
+  <p>Seuraavassa esimerkki ohjelmasta, joka lukee yhden
+  sy&Atilde;&para;tt&Atilde;&para;luvun, laskee
+  ensimm&Atilde;&curren;isen Fibonaccin luvun, joka on
+  sy&Atilde;&para;tt&Atilde;&para;lukua suurempi ja lopuksi
+  tulostaa kyseisen Fibonaccin luvun.</p>
+  <pre class="sh_python">
 import sys
 
 def fib(n):
@@ -194,81 +253,96 @@ if __name__ == "__main__": # P&Atilde;&curren;&Atilde;&curren;ohjelma
 
     print(fib(n))
 </pre>
-<p>Ensimm&Atilde;&curren;isen rivin <code>import sys</code> lause
-importtaa eli tuo fibonacci-moduulin sys-moduulin
-k&Atilde;&curren;ytett&Atilde;&curren;v&Atilde;&curren;ksi.
-sys-moduulin exit-metodia
-k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n ohjelman
-loppupuolella
-p&Atilde;&curren;&Atilde;&curren;tt&Atilde;&curren;m&Atilde;&curren;&Atilde;&curren;n
-ohjelman suoritus sopivalla virheviestill&Atilde;&curren;, jos
-k&Atilde;&curren;ytt&Atilde;&curren;j&Atilde;&curren;n antama
-sy&Atilde;&para;te ei ollut kokonaisluku.</p>
-<p>Varsinainen Fibonacci luvun laskeminen tapahtuu fib-funktiossa.
-fib-funktio asettaa ensiksi muuttujille a ja b Fibonaccin lukujonon
-alkuarvot <code>a = 0</code> ja <code>b = 1</code>. Lukujonon
-lukuja lasketaan while-silmukassa, kunnes viimeisin laskettu
-Fibonaccin luku <code>b = a+b</code> on
-sy&Atilde;&para;tt&Atilde;&para;lukua suurempi. Lopuksi palautamme
-halutun luvun.</p>
-<p>Koska Python ohjelmissa ei ole varsinaista
-"p&Atilde;&curren;&Atilde;&curren;ohjelmafunktiota", niin se
-yleens&Atilde;&curren; merkit&Atilde;&curren;&Atilde;&curren;n
-n&Atilde;&curren;kyviin <code>if __name__ == "__main__":</code>
-lauseella. T&Atilde;&curren;m&Atilde;&curren; suorittaa
-p&Atilde;&curren;&Atilde;&curren;ohjelma-alueen vain kun moduuli
-suoritetaan p&Atilde;&curren;&Atilde;&curren;ohjelmana
-eik&Atilde;&curren; importattuna jostain toisesta moduulista.</p>
-<p>K&Atilde;&curren;ytt&Atilde;&curren;j&Atilde;&curren;n
-sy&Atilde;&para;te luetaan input-funktiolla. fib-funktiota varten
-halutaan kokonaislukusy&Atilde;&para;te. Sy&Atilde;&para;tteen
-tyyppi on riippuvainen
-k&Atilde;&curren;ytt&Atilde;&curren;j&Atilde;&curren;st&Atilde;&curren;,
-joten se muutetaan kokonaisluvuksi ennen fib-funktion kutsua
-<code>int(x)</code>-kutsulla. Kokonaislukumuutos voi kuitenkin
-ep&Atilde;&curren;onnistua, jolloin <code>int(x)</code> nostaa
-<code>ValueError</code> poikkeuksen. Jotta
-k&Atilde;&curren;ytt&Atilde;&curren;j&Atilde;&curren;lle saadaan
-annettua sopiva virheviesti, niin k&Atilde;&curren;sittelemme
-poikkeuksen try-except-rakenteen avulla.
-P&Atilde;&curren;&Atilde;&curren;ohjelman lopuksi kutsumme
-fib-funktiota sy&Atilde;&para;tteell&Atilde;&curren; ja tulostamme
-sen palautusarvon.</p>
-<h2 id="chapter-2">2. Alkiorakenne &acirc;&euro;&ldquo; millaisista
-palikoista ohjelmat rakennetaan</h2>
-<ul>
-<li><a href="#chapter-2-tunnukset">Tunnukset</a></li>
-<li><a href="#chapter-2-varatut-sanat">Varatut sanat,
-avainsanat</a></li>
-<li><a href="#chapter-2-literaalivakiot">Literaalivakiot</a></li>
-<li><a href="#chapter-2-erottimet-yms">Erottimet, sisennykset,
-rivinvaihdot</a></li>
-<li><a href="#chapter-2-edut-ja-haitat">Arvio kieleen valittujen
-ratkaisujen eduista ja haitoista</a></li>
-</ul>
-<h3 id="chapter-2-tunnukset">Tunnukset</h3>
-<p>Python 3:ssa tunnukset voidaan nimet&Atilde;&curren;
-k&Atilde;&curren;ytt&Atilde;&curren;en merkkej&Atilde;&curren; a-z,
-A-Z, 0-9 ja _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet ja
-iso kirjaimet tulkitaan eri kirjaimiksi. Tunnukset voivat olla
-rajoittamattoman pituisia. Lis&Atilde;&curren;ksi Python 3 tukee
-joitakin ASCII-j&Atilde;&curren;rjestelm&Atilde;&curren;n
-ulkopuolisia unicode-merkkej&Atilde;&curren;. Tarkempi listaus
-tuetuista merkeist&Atilde;&curren; l&Atilde;&para;ytyy osoitteesta:
-<a href=
-"http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>.
-Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue,
-excluding ID_Start. N&Atilde;&curren;iden merkkijoukkojen yhdiste
-sis&Atilde;&curren;lt&Atilde;&curren;&Atilde;&curren; kaikki
-unicode-merkit joita voi esiinty&Atilde;&curren; python-tunnuksen
-nimess&Atilde;&curren;, siten ett&Atilde;&curren; tunnuksen nimi
-voi alkaa vain ensimm&Atilde;&curren;isen joukon
-merkill&Atilde;&curren;. <a href=
-"#ref-tunnukset-py3-spec">[2]</a></p>
-<p>Seuraavassa lyhyt esimerkki joka demonstroi erikoisempien
-merkkien k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&curren; Python
-3 ohjelmassa:</p>
-<pre class="sh_python">
+
+  <p>Ensimm&Atilde;&curren;isen rivin <code>import sys</code> lause
+  importtaa eli tuo fibonacci-moduulin sys-moduulin
+  k&Atilde;&curren;ytett&Atilde;&curren;v&Atilde;&curren;ksi.
+  sys-moduulin exit-metodia
+  k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n ohjelman
+  loppupuolella
+  p&Atilde;&curren;&Atilde;&curren;tt&Atilde;&curren;m&Atilde;&curren;&Atilde;&curren;n
+  ohjelman suoritus sopivalla virheviestill&Atilde;&curren;, jos
+  k&Atilde;&curren;ytt&Atilde;&curren;j&Atilde;&curren;n antama
+  sy&Atilde;&para;te ei ollut kokonaisluku.</p>
+
+  <p>Varsinainen Fibonacci luvun laskeminen tapahtuu
+  fib-funktiossa. fib-funktio asettaa ensiksi muuttujille a ja b
+  Fibonaccin lukujonon alkuarvot <code>a = 0</code> ja <code>b =
+  1</code>. Lukujonon lukuja lasketaan while-silmukassa, kunnes
+  viimeisin laskettu Fibonaccin luku <code>b = a+b</code> on
+  sy&Atilde;&para;tt&Atilde;&para;lukua suurempi. Lopuksi
+  palautamme halutun luvun.</p>
+
+  <p>Koska Python ohjelmissa ei ole varsinaista
+  "p&Atilde;&curren;&Atilde;&curren;ohjelmafunktiota", niin se
+  yleens&Atilde;&curren; merkit&Atilde;&curren;&Atilde;&curren;n
+  n&Atilde;&curren;kyviin <code>if __name__ == "__main__":</code>
+  lauseella. T&Atilde;&curren;m&Atilde;&curren; suorittaa
+  p&Atilde;&curren;&Atilde;&curren;ohjelma-alueen vain kun moduuli
+  suoritetaan p&Atilde;&curren;&Atilde;&curren;ohjelmana
+  eik&Atilde;&curren; importattuna jostain toisesta moduulista.</p>
+
+  <p>K&Atilde;&curren;ytt&Atilde;&curren;j&Atilde;&curren;n
+  sy&Atilde;&para;te luetaan input-funktiolla. fib-funktiota varten
+  halutaan kokonaislukusy&Atilde;&para;te. Sy&Atilde;&para;tteen
+  tyyppi on riippuvainen
+  k&Atilde;&curren;ytt&Atilde;&curren;j&Atilde;&curren;st&Atilde;&curren;,
+  joten se muutetaan kokonaisluvuksi ennen fib-funktion kutsua
+  <code>int(x)</code>-kutsulla. Kokonaislukumuutos voi kuitenkin
+  ep&Atilde;&curren;onnistua, jolloin <code>int(x)</code> nostaa
+  <code>ValueError</code> poikkeuksen. Jotta
+  k&Atilde;&curren;ytt&Atilde;&curren;j&Atilde;&curren;lle saadaan
+  annettua sopiva virheviesti, niin k&Atilde;&curren;sittelemme
+  poikkeuksen try-except-rakenteen avulla.
+  P&Atilde;&curren;&Atilde;&curren;ohjelman lopuksi kutsumme
+  fib-funktiota sy&Atilde;&para;tteell&Atilde;&curren; ja
+  tulostamme sen palautusarvon.</p>
+
+  <h2 id="chapter-2">2. Alkiorakenne &acirc;&euro;&ldquo;
+  millaisista palikoista ohjelmat rakennetaan</h2>
+
+  <ul>
+    <li><a href="#chapter-2-tunnukset">Tunnukset</a></li>
+
+    <li><a href="#chapter-2-varatut-sanat">Varatut sanat,
+    avainsanat</a></li>
+
+    <li><a href=
+    "#chapter-2-literaalivakiot">Literaalivakiot</a></li>
+
+    <li><a href="#chapter-2-erottimet-yms">Erottimet, sisennykset,
+    rivinvaihdot</a></li>
+
+    <li><a href="#chapter-2-edut-ja-haitat">Arvio kieleen
+    valittujen ratkaisujen eduista ja haitoista</a></li>
+  </ul>
+
+  <h3 id="chapter-2-tunnukset">Tunnukset</h3>
+
+  <p>Python 3:ssa tunnukset voidaan nimet&Atilde;&curren;
+  k&Atilde;&curren;ytt&Atilde;&curren;en merkkej&Atilde;&curren;
+  a-z, A-Z, 0-9 ja _. Tunnus ei kuitenkaan voi alkaa numerolla.
+  Pienet ja iso kirjaimet tulkitaan eri kirjaimiksi. Tunnukset
+  voivat olla rajoittamattoman pituisia. Lis&Atilde;&curren;ksi
+  Python 3 tukee joitakin
+  ASCII-j&Atilde;&curren;rjestelm&Atilde;&curren;n ulkopuolisia
+  unicode-merkkej&Atilde;&curren;. Tarkempi listaus tuetuista
+  merkeist&Atilde;&curren; l&Atilde;&para;ytyy osoitteesta:
+  <a href="http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">
+  http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>.
+  Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue,
+  excluding ID_Start. N&Atilde;&curren;iden merkkijoukkojen yhdiste
+  sis&Atilde;&curren;lt&Atilde;&curren;&Atilde;&curren; kaikki
+  unicode-merkit joita voi esiinty&Atilde;&curren; python-tunnuksen
+  nimess&Atilde;&curren;, siten ett&Atilde;&curren; tunnuksen nimi
+  voi alkaa vain ensimm&Atilde;&curren;isen joukon
+  merkill&Atilde;&curren;. <a href=
+  "#ref-tunnukset-py3-spec">[2]</a></p>
+
+  <p>Seuraavassa lyhyt esimerkki joka demonstroi erikoisempien
+  merkkien k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&curren;
+  Python 3 ohjelmassa:</p>
+  <pre class="sh_python">
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
 
@@ -289,24 +363,28 @@ if __name__ == "__main__":
     python_3_tukee_unicodemerkkej&Atilde;&curren;_varsin_laajasti()
 
 </pre>
-<p>Yll&Atilde;&curren; oleva python ohjelma tulostaa konsoliin
-tekstin:</p>
-<pre>
+
+  <p>Yll&Atilde;&curren; oleva python ohjelma tulostaa konsoliin
+  tekstin:</p>
+  <pre>
 Hei vaan ja hellurei! khemrin kieli khmeriksi
 &acirc;&sbquo;&not;-merkki ei ollut sallittu muuttujan nimess&Atilde;&curren; :'( invalid character in identifier (&lt;string&gt;, line 1)
 Hyvin pyyhkii. No problemo, kun &acirc;&sbquo;&not;-merkit vaihdettiin e-kirjaimiksi
 
 </pre>
-<p><a href="esimerkit/unicode_sample.py">Lataa esimerkki
-t&Atilde;&curren;st&Atilde;&curren;</a></p>
-<h3 id="chapter-2-varatut-sanat">Varatut sanat</h3>
-<p>Seuraavassa listattuna (Pyton 3.0.1:n mukainen,
-t&Atilde;&curren;ss&Atilde;&curren; on pieni&Atilde;&curren;
-eroavaisuuksia 2.x -sarjan kanssa) varatut sanat <a href=
-"#ref-varatut-sanat-py3-spec">[1]</a> sen tarkemmin
-niit&Atilde;&curren;
-esittelem&Atilde;&curren;tt&Atilde;&curren;.</p>
-<pre>
+
+  <p><a href="esimerkit/unicode_sample.py">Lataa esimerkki
+  t&Atilde;&curren;st&Atilde;&curren;</a></p>
+
+  <h3 id="chapter-2-varatut-sanat">Varatut sanat</h3>
+
+  <p>Seuraavassa listattuna (Pyton 3.0.1:n mukainen,
+  t&Atilde;&curren;ss&Atilde;&curren; on pieni&Atilde;&curren;
+  eroavaisuuksia 2.x -sarjan kanssa) varatut sanat <a href=
+  "#ref-varatut-sanat-py3-spec">[1]</a> sen tarkemmin
+  niit&Atilde;&curren;
+  esittelem&Atilde;&curren;tt&Atilde;&curren;.</p>
+  <pre>
 False      class      finally    is         return
 None       continue   for        lambda     try
 True       def        from       nonlocal   while
@@ -317,249 +395,294 @@ break      except     in         raise
 
 
 </pre>
-<h3 id="chapter-2-literaalivakiot">Literaalivakiot</h3>
-<p>Python tukee seuraavia literaalivakioita [<a href=
-"#ref-literaalivakiot">4</a>]:</p>
-<ul>
-<li>merkkijonot,<br>
-<code>"hello"</code>, <code>'world'</code>,<br>
-<code>"""Olen<br>
-monella<br>
-rivill&Atilde;&curren;"""</code></li>
-<li>kokonaisluvut,<br>
-<code>7</code>, <code>79228162514264337593543950336</code>,
-<code>0b100110111</code>, <code>0xdeadbeef</code></li>
-<li>liukuluvut,<br>
-<code>3.14</code>, <code>10.</code>, <code>.001</code>,
-<code>1e100</code>, <code>3.14e-10</code>, <code>0e0</code></li>
-<li>imagin&Atilde;&curren;&Atilde;&curren;riluvut<br>
-<code>3.14j</code>, <code>10.j</code>, <code>10j</code>,
-<code>.001j</code>, <code>1e100j</code>,
-<code>3.14e-10j</code></li>
-</ul>
-<p>Numeerisista literaaleista on hyv&Atilde;&curren; mainita
-viel&Atilde;&curren; se, ett&Atilde;&curren; ne
-eiv&Atilde;&curren;t sis&Atilde;&curren;ll&Atilde;&curren;
-etumerkki&Atilde;&curren;. Esimerkiksi merkint&Atilde;&curren;
-<code>-1</code> koostuu yksipaikkaisesta operaatiosta
-<code>-</code> ja literaalista <code>1</code>.</p>
-<h3 id="chapter-2-erottimet-yms">Erottimet, sisennykset,
-rivinvaihdot</h3>
-<p>Pythonissa
-k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n
-sisennyksi&Atilde;&curren; rajaamaan lohkoja.
-Sisennyst&Atilde;&curren; kasvatetaan tiettyjen lausekkeiden
-j&Atilde;&curren;lkeen ja vastaavasti sisennyst&Atilde;&curren;
-pienennet&Atilde;&curren;&Atilde;&curren;n lohkon
-p&Atilde;&curren;&Atilde;&curren;ttymisen merkiksi.
-Sek&Atilde;&curren; tabit ett&Atilde;&curren;
-v&Atilde;&curren;lily&Atilde;&para;nnit kelpaavat sisennysmerkeiksi
-pythonissa.</p>
-<p>Sisennyksen
-m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;ll&Atilde;&curren;
-ei ole v&Atilde;&curren;li&Atilde;&curren;, sisennys voi olla yhden
-tabin tai vaikkapa kuuden v&Atilde;&curren;lily&Atilde;&para;nnin
-pituinen <i>(<b>huom!</b> tabien ja
-v&Atilde;&curren;lily&Atilde;&para;ntien sekaisin
-k&Atilde;&curren;ytt&Atilde;&curren;minen ei ole sallittua
-Pythonissa)</i>. Ainoastaan suhteellisella sisennyksen
-m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;ll&Atilde;&curren;
-on v&Atilde;&curren;li&Atilde;&curren;
-sis&Atilde;&curren;kk&Atilde;&curren;isiss&Atilde;&curren;
-lohkoissa.</p>
-<p>Lauseet erotellaan toisistaan rivinvaihdoilla. Useita lauseita
-voidaan kirjoittaa samalle riville
-k&Atilde;&curren;ytt&Atilde;&curren;m&Atilde;&curren;ll&Atilde;&curren;
-puolipistett&Atilde;&curren;. Kontrollirakenteissa
-totuusarvolausekkeita seuraa aina kaksoispiste ja lausekkeessa ei
-ole pakko k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
-sulkuja.</p>
-<p>Alla olevissa esimerkeiss&Atilde;&curren; kaikki kolme
-if-lausetta tekev&Atilde;&curren;t saman asian <i>(tulostavat sanat
-"spam" ja "ham")</i>:</p>
-<pre class="sh_python">
+
+  <h3 id="chapter-2-literaalivakiot">Literaalivakiot</h3>
+
+  <p>Python tukee seuraavia literaalivakioita [<a href=
+  "#ref-literaalivakiot">4</a>]:</p>
+
+  <ul>
+    <li>merkkijonot,<br>
+    <code>"hello"</code>, <code>'world'</code>,<br>
+    <code>"""Olen<br>
+    monella<br>
+    rivill&Atilde;&curren;"""</code></li>
+
+    <li>kokonaisluvut,<br>
+    <code>7</code>, <code>79228162514264337593543950336</code>,
+    <code>0b100110111</code>, <code>0xdeadbeef</code></li>
+
+    <li>liukuluvut,<br>
+    <code>3.14</code>, <code>10.</code>, <code>.001</code>,
+    <code>1e100</code>, <code>3.14e-10</code>,
+    <code>0e0</code></li>
+
+    <li>imagin&Atilde;&curren;&Atilde;&curren;riluvut<br>
+    <code>3.14j</code>, <code>10.j</code>, <code>10j</code>,
+    <code>.001j</code>, <code>1e100j</code>,
+    <code>3.14e-10j</code></li>
+  </ul>
+
+  <p>Numeerisista literaaleista on hyv&Atilde;&curren; mainita
+  viel&Atilde;&curren; se, ett&Atilde;&curren; ne
+  eiv&Atilde;&curren;t sis&Atilde;&curren;ll&Atilde;&curren;
+  etumerkki&Atilde;&curren;. Esimerkiksi merkint&Atilde;&curren;
+  <code>-1</code> koostuu yksipaikkaisesta operaatiosta
+  <code>-</code> ja literaalista <code>1</code>.</p>
+
+  <h3 id="chapter-2-erottimet-yms">Erottimet, sisennykset,
+  rivinvaihdot</h3>
+
+  <p>Pythonissa
+  k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n
+  sisennyksi&Atilde;&curren; rajaamaan lohkoja.
+  Sisennyst&Atilde;&curren; kasvatetaan tiettyjen lausekkeiden
+  j&Atilde;&curren;lkeen ja vastaavasti sisennyst&Atilde;&curren;
+  pienennet&Atilde;&curren;&Atilde;&curren;n lohkon
+  p&Atilde;&curren;&Atilde;&curren;ttymisen merkiksi.
+  Sek&Atilde;&curren; tabit ett&Atilde;&curren;
+  v&Atilde;&curren;lily&Atilde;&para;nnit kelpaavat
+  sisennysmerkeiksi pythonissa.</p>
+
+  <p>Sisennyksen
+  m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;ll&Atilde;&curren;
+  ei ole v&Atilde;&curren;li&Atilde;&curren;, sisennys voi olla
+  yhden tabin tai vaikkapa kuuden
+  v&Atilde;&curren;lily&Atilde;&para;nnin pituinen <i>(<b>huom!</b>
+  tabien ja v&Atilde;&curren;lily&Atilde;&para;ntien sekaisin
+  k&Atilde;&curren;ytt&Atilde;&curren;minen ei ole sallittua
+  Pythonissa)</i>. Ainoastaan suhteellisella sisennyksen
+  m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;ll&Atilde;&curren;
+  on v&Atilde;&curren;li&Atilde;&curren;
+  sis&Atilde;&curren;kk&Atilde;&curren;isiss&Atilde;&curren;
+  lohkoissa.</p>
+
+  <p>Lauseet erotellaan toisistaan rivinvaihdoilla. Useita lauseita
+  voidaan kirjoittaa samalle riville
+  k&Atilde;&curren;ytt&Atilde;&curren;m&Atilde;&curren;ll&Atilde;&curren;
+  puolipistett&Atilde;&curren;. Kontrollirakenteissa
+  totuusarvolausekkeita seuraa aina kaksoispiste ja lausekkeessa ei
+  ole pakko k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
+  sulkuja.</p>
+
+  <p>Alla olevissa esimerkeiss&Atilde;&curren; kaikki kolme
+  if-lausetta tekev&Atilde;&curren;t saman asian <i>(tulostavat
+  sanat "spam" ja "ham")</i>:</p>
+  <pre class="sh_python">
 if 1 == 1:
     print("spam")
     print("ham")
 
 </pre>
-<pre class="sh_python">
+  <pre class="sh_python">
 if 1 == 1:
     print("spam"); print("ham")
 
 </pre>
-<pre class="sh_python">
+  <pre class="sh_python">
 if 1 == 1: print("spam"); print("ham")
 
 </pre>
-<h3 id="chapter-2-edut-ja-haitat">Arvio kieleen valittujen
-ratkaisujen eduista ja haitoista</h3>
-<p>Unicode-tuki python 3:ssa tekee aidosti mahdolliseksi
-ohjelmoinnin ohjelmoijan omalla
-&Atilde;&curren;idinkielell&Atilde;&curren;.
-T&Atilde;&curren;m&Atilde;&curren; on varmasti monessa
-mieless&Atilde;&curren; hyv&Atilde;&curren; asia ja sen
-hy&Atilde;&para;dynt&Atilde;&curren;minen
-todenn&Atilde;&curren;k&Atilde;&para;isesti parantaa koodin
-luettavuutta
-kehitt&Atilde;&curren;j&Atilde;&curren;yhteis&Atilde;&para;ss&Atilde;&curren;.
-Toisaalta t&Atilde;&curren;ll&Atilde;&curren; alalla ei ole
-ollenkaan tavatonta, ett&Atilde;&curren; ohjelmaa
-kehitet&Atilde;&curren;&Atilde;&curren;n ymp&Atilde;&curren;ri
-maailmaa ja kehitt&Atilde;&curren;jien &Atilde;&curren;idinkielet
-vaihtelevat suuresti. T&Atilde;&curren;ll&Atilde;&para;in on
-k&Atilde;&curren;ytett&Atilde;&curren;v&Atilde;&curren; jotakin
-yhteist&Atilde;&curren; kielt&Atilde;&curren; eli siis
-yleens&Atilde;&curren; englantia ja
-t&Atilde;&curren;m&Atilde;&curren; unicode-tuki ei juurikaan auta.
-Toinen tilanne jolloin koodia ei varmaankaan haluta
-tehd&Atilde;&curren; &Atilde;&curren;idinkielell&Atilde;&curren;
-on, jos tuotetaan avoimen l&Atilde;&curren;hdekoodin ratkaisuja.
-Muutoin saatetaan varsin tehokkaasti eliminoida iso osa
-k&Atilde;&curren;ytt&Atilde;&curren;j&Atilde;&curren;yhteis&Atilde;&para;n
-potentiaalista jatkokehitt&Atilde;&curren;&Atilde;&curren;
-tuotetta. Yleisesti ottaen tuote joka on ohjelmoitu vaikkapa
-suomeksi rajoittaa jatkokehitysmahdollisuuksia vaikka
-alkuper&Atilde;&curren;isen kehitysty&Atilde;&para;n kannalta
-kielivalinnalla olisikin ollut positiivisia vaikutuksia.
-Kustannussyist&Atilde;&curren; jatkokehitys saatettaisiin joissain
-tilanteissa haluta tuottaa jossakin edullisemmassa maassa, mutta
-t&Atilde;&curren;m&Atilde;&curren; ei nyt olekaan mahdollista ilman
-huomattavaa
-k&Atilde;&curren;&Atilde;&curren;nn&Atilde;&para;sty&Atilde;&para;t&Atilde;&curren;.
-Kun lis&Atilde;&curren;ksi otetaan huomioon, ett&Atilde;&curren;
-unicode-tuen sis&Atilde;&curren;llytt&Atilde;&curren;minen
-tunnuksiin monimutkaistaa kielen implementaatioiden toteuttamista,
-niin olen kyll&Atilde;&curren; henkil&Atilde;&para;kohtaisesti
-hieman skeptinen koko ominaisuuden
-j&Atilde;&curren;rkevyydest&Atilde;&curren;. En
-kyll&Atilde;&curren; itse ainakaan ikin&Atilde;&curren; ohjelmoisi
-vakavissani mit&Atilde;&curren;&Atilde;&curren;n
-mill&Atilde;&curren;&Atilde;&curren;n muulla
-kielell&Atilde;&curren; kuin englannilla.</p>
-<p>Pythonissa sisennystapa ei ole ohjelmoijan t&Atilde;&curren;ysin
-vapaasti valittavissa, vaan ohjelmoinnissa pakotetaan
-k&Atilde;&curren;ytt&Atilde;&curren;m&Atilde;&curren;&Atilde;&curren;n
-tietynlaista sisennystyyli&Atilde;&curren;. Etu
-t&Atilde;&curren;st&Atilde;&curren; on, ett&Atilde;&curren;
-ohjelmoija ei voi vahingossa kirjoittaa sekavasti
-sisennetty&Atilde;&curren; koodia, koska se rikkoo ohjelman
-suorituksen. Virheiden mahdollisuus pienenee, kun ohjelma tekee,
-mit&Atilde;&curren; se
-n&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;kin
-tekev&Atilde;&curren;n, kun virheellinen
-sisent&Atilde;&curren;minen ei p&Atilde;&curren;&Atilde;&curren;se
-sekoittamaan lukijaa. Python koodin luettavuutta parantaa se,
-ett&Atilde;&curren; kaikki joutuvat
-k&Atilde;&curren;ytt&Atilde;&curren;m&Atilde;&curren;&Atilde;&curren;n
-yhten&Atilde;&curren;ist&Atilde;&curren; sisennystapaa.</p>
-<h2 id="chapter-3">3. Tunnusten n&Atilde;&curren;kyvyysalueet</h2>
-<!-- TODO: parempi ryhmittely ja otsikkojen nimet -->
-<ul>
-<li><a href="#chapter-3-lohkorakenne">Lohkorakenne</a></li>
-<li><a href="#chapter-3-sidonta">Sidonta</a></li>
-<li><a href=
-"#chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">Sis&Atilde;&curren;kk&Atilde;&curren;iset
-nimiavaruudet ja funktiot</a></li>
-<li><a href=
-"#chapter-3-1-2-ja-3-luokan-arvo">Ensimm&Atilde;&curren;isen,
-toisen ja kolmannen luokan arvo</a></li>
-<li><a href="#chapter-3-edut-ja-haitat">Arvio kieleen valittujen
-ratkaisujen eduista ja haitoista</a></li>
-</ul>
-<h3 id="chapter-3-lohkorakenne">Lohkorakenne</h3>
-<p>Pythonissa lohkoksi kutsutaan
-koodinp&Atilde;&curren;tk&Atilde;&curren;&Atilde;&curren;, joka
-suoritetaan yhten&Atilde;&curren;
-yksikk&Atilde;&para;n&Atilde;&curren;. Seuraavia rakenteita
-kutsutaan lohkoiksi:</p>
-<ul>
-<li>moduuli</li>
-<li>funktion vartalo</li>
-<li>luokan m&Atilde;&curren;&Atilde;&curren;rittely</li>
-<li>jokainen interaktiivisesti kirjoitettu komento</li>
-<li>skriptitiedosto (annettuna tulkille
-komentoriviparametrina)</li>
-<li>skriptikomento (annettuna tulkille -c komentoriviparametrin
-arvona)</li>
-<li>exec() tai eval() -funktioille merkkijonona annettu koodi</li>
-</ul>
-<p>[<a href="#ref-nimet-ja_sidonta-py3-spec">6</a>]</p>
-<p>Kuten on jo aiemmin mainittu Python
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
-sisennyksi&Atilde;&curren;
-m&Atilde;&curren;&Atilde;&curren;rittelem&Atilde;&curren;&Atilde;&curren;n
-lohkoja. Sisennys kasvaa tiettyjen ilmaisujen
-j&Atilde;&curren;lkeen ja puolestaan pienenee lohkon loppumisen
-merkiksi. Samalla tasolla lohkossa sijaitsevat lauseet kirjoitetaan
-jokainen omalle riville k&Atilde;&curren;ytt&Atilde;&curren;en
-samaa sisennyst&Atilde;&curren; (tai tietenkin vaihtoehtoisesti
-kirjoittamalla kaikki samalle riville
-k&Atilde;&curren;ytt&Atilde;&curren;en <code>;</code>
--merkki&Atilde;&curren; erottimena).</p>
-<p>Lohkon m&Atilde;&curren;&Atilde;&curren;rittely voidaan aloittaa
-mm. seuraavilla sanoilla: <code>if, else, elif, for, while, try,
-except, finally, class, def, with, pass</code>.</p>
-<p>Jos lohkon sis&Atilde;&curren;ll&Atilde;&curren;
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
-lokaali muuttuja, on t&Atilde;&curren;m&Atilde;&curren;n muuttujan
-n&Atilde;&curren;kyvyysalue (scope) rajoitettu siihen lohkoon.
-Mik&Atilde;&curren;li tunnus
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
-funktion vartalossa, niin n&Atilde;&curren;kyy se my&Atilde;&para;s
-funktion vartalon sis&Atilde;&curren;isille lohkoille
-(elleiv&Atilde;&curren;t n&Atilde;&curren;m&Atilde;&curren; sido
-tunnukselle uutta merkityst&Atilde;&curren;). Moduulitason
-tunnukset ovat globaaleja. Mik&Atilde;&curren;li lohkon
-sis&Atilde;&curren;lt&Atilde;&curren; halutaan (eksplisiittisesti)
-viitata lohkon ulkopuolisiin muuttujiin, niin voidaan
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren; varattuja
-sanoja nonlocal ja global.
-M&Atilde;&curren;&Atilde;&curren;reell&Atilde;&curren; nonlocal
-vihjataan, ett&Atilde;&curren; halutaan viitata
-n&Atilde;&curren;kyvyysaluehierarkiassa seuraavaan tasoon jolta
-tunnus l&Atilde;&para;ytyy. Vastaavasti
-global-m&Atilde;&curren;&Atilde;&curren;reell&Atilde;&curren;
-siirryt&Atilde;&curren;&Atilde;&curren;n suoraan
-etsim&Atilde;&curren;&Atilde;&curren;n tunnusta globaalilta
-n&Atilde;&curren;kyvyysalueelta.</p>
-<h3 id="chapter-3-sidonta">Sidonta</h3>
-<p>Pythonissa sidonta tapahtuu osittain dynaamisesti ja osittain
-staattisesti.
-K&Atilde;&curren;yt&Atilde;&curren;nn&Atilde;&para;ss&Atilde;&curren;
-siis n&Atilde;&curren;kyvyysalueet (scope)
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
-staattisesti, mutta niit&Atilde;&curren;
-k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n
-dynaamisesti. Eli toisin sanoen eri n&Atilde;&curren;kyvyysalueilla
-olevat tunnukset
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n,
-mutta niihin ei liitet&Atilde;&curren; arvoa. Ajonaikaisesti
-voidaan m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;
-uusia tunnuksia globaalille tasolle. On kuitenkin huomioitava,
-ett&Atilde;&curren; Python-funktioille ei voi
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren; uusia
-lokaaleja tunnuksia funktion parsimisen j&Atilde;&curren;lkeen (eli
-lokaalit muuttujat
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
-staattisesti). Pythonin dokumentaatioissa my&Atilde;&para;s
-vihjataan, ett&Atilde;&curren; staattisuutta tullaan jatkossa
-lis&Atilde;&curren;&Atilde;&curren;m&Atilde;&curren;&Atilde;&curren;n
-(ja n&Atilde;&curren;in ollen dynaamiseen sidontaan nojautumista
-kehotetaan
-v&Atilde;&curren;ltt&Atilde;&curren;m&Atilde;&curren;&Atilde;&curren;n).
-<!--TODO: Timo tarkistapa nämä nyt vielä jostain http://bugs.python.org/issue10043
+
+  <h3 id="chapter-2-edut-ja-haitat">Arvio kieleen valittujen
+  ratkaisujen eduista ja haitoista</h3>
+
+  <p>Unicode-tuki python 3:ssa tekee aidosti mahdolliseksi
+  ohjelmoinnin ohjelmoijan omalla
+  &Atilde;&curren;idinkielell&Atilde;&curren;.
+  T&Atilde;&curren;m&Atilde;&curren; on varmasti monessa
+  mieless&Atilde;&curren; hyv&Atilde;&curren; asia ja sen
+  hy&Atilde;&para;dynt&Atilde;&curren;minen
+  todenn&Atilde;&curren;k&Atilde;&para;isesti parantaa koodin
+  luettavuutta
+  kehitt&Atilde;&curren;j&Atilde;&curren;yhteis&Atilde;&para;ss&Atilde;&curren;.
+  Toisaalta t&Atilde;&curren;ll&Atilde;&curren; alalla ei ole
+  ollenkaan tavatonta, ett&Atilde;&curren; ohjelmaa
+  kehitet&Atilde;&curren;&Atilde;&curren;n ymp&Atilde;&curren;ri
+  maailmaa ja kehitt&Atilde;&curren;jien &Atilde;&curren;idinkielet
+  vaihtelevat suuresti. T&Atilde;&curren;ll&Atilde;&para;in on
+  k&Atilde;&curren;ytett&Atilde;&curren;v&Atilde;&curren; jotakin
+  yhteist&Atilde;&curren; kielt&Atilde;&curren; eli siis
+  yleens&Atilde;&curren; englantia ja
+  t&Atilde;&curren;m&Atilde;&curren; unicode-tuki ei juurikaan
+  auta. Toinen tilanne jolloin koodia ei varmaankaan haluta
+  tehd&Atilde;&curren; &Atilde;&curren;idinkielell&Atilde;&curren;
+  on, jos tuotetaan avoimen l&Atilde;&curren;hdekoodin ratkaisuja.
+  Muutoin saatetaan varsin tehokkaasti eliminoida iso osa
+  k&Atilde;&curren;ytt&Atilde;&curren;j&Atilde;&curren;yhteis&Atilde;&para;n
+  potentiaalista jatkokehitt&Atilde;&curren;&Atilde;&curren;
+  tuotetta. Yleisesti ottaen tuote joka on ohjelmoitu vaikkapa
+  suomeksi rajoittaa jatkokehitysmahdollisuuksia vaikka
+  alkuper&Atilde;&curren;isen kehitysty&Atilde;&para;n kannalta
+  kielivalinnalla olisikin ollut positiivisia vaikutuksia.
+  Kustannussyist&Atilde;&curren; jatkokehitys saatettaisiin
+  joissain tilanteissa haluta tuottaa jossakin edullisemmassa
+  maassa, mutta t&Atilde;&curren;m&Atilde;&curren; ei nyt olekaan
+  mahdollista ilman huomattavaa
+  k&Atilde;&curren;&Atilde;&curren;nn&Atilde;&para;sty&Atilde;&para;t&Atilde;&curren;.
+  Kun lis&Atilde;&curren;ksi otetaan huomioon, ett&Atilde;&curren;
+  unicode-tuen sis&Atilde;&curren;llytt&Atilde;&curren;minen
+  tunnuksiin monimutkaistaa kielen implementaatioiden
+  toteuttamista, niin olen kyll&Atilde;&curren;
+  henkil&Atilde;&para;kohtaisesti hieman skeptinen koko
+  ominaisuuden j&Atilde;&curren;rkevyydest&Atilde;&curren;. En
+  kyll&Atilde;&curren; itse ainakaan ikin&Atilde;&curren;
+  ohjelmoisi vakavissani mit&Atilde;&curren;&Atilde;&curren;n
+  mill&Atilde;&curren;&Atilde;&curren;n muulla
+  kielell&Atilde;&curren; kuin englannilla.</p>
+
+  <p>Pythonissa sisennystapa ei ole ohjelmoijan
+  t&Atilde;&curren;ysin vapaasti valittavissa, vaan ohjelmoinnissa
+  pakotetaan
+  k&Atilde;&curren;ytt&Atilde;&curren;m&Atilde;&curren;&Atilde;&curren;n
+  tietynlaista sisennystyyli&Atilde;&curren;. Etu
+  t&Atilde;&curren;st&Atilde;&curren; on, ett&Atilde;&curren;
+  ohjelmoija ei voi vahingossa kirjoittaa sekavasti
+  sisennetty&Atilde;&curren; koodia, koska se rikkoo ohjelman
+  suorituksen. Virheiden mahdollisuus pienenee, kun ohjelma tekee,
+  mit&Atilde;&curren; se
+  n&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;kin
+  tekev&Atilde;&curren;n, kun virheellinen
+  sisent&Atilde;&curren;minen ei
+  p&Atilde;&curren;&Atilde;&curren;se sekoittamaan lukijaa. Python
+  koodin luettavuutta parantaa se, ett&Atilde;&curren; kaikki
+  joutuvat
+  k&Atilde;&curren;ytt&Atilde;&curren;m&Atilde;&curren;&Atilde;&curren;n
+  yhten&Atilde;&curren;ist&Atilde;&curren; sisennystapaa.</p>
+
+  <h2 id="chapter-3">3. Tunnusten
+  n&Atilde;&curren;kyvyysalueet</h2><!-- TODO: parempi ryhmittely ja otsikkojen nimet -->
+
+  <ul>
+    <li><a href="#chapter-3-lohkorakenne">Lohkorakenne</a></li>
+
+    <li><a href="#chapter-3-sidonta">Sidonta</a></li>
+
+    <li><a href=
+    "#chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">Sis&Atilde;&curren;kk&Atilde;&curren;iset
+    nimiavaruudet ja funktiot</a></li>
+
+    <li><a href=
+    "#chapter-3-1-2-ja-3-luokan-arvo">Ensimm&Atilde;&curren;isen,
+    toisen ja kolmannen luokan arvo</a></li>
+
+    <li><a href="#chapter-3-edut-ja-haitat">Arvio kieleen
+    valittujen ratkaisujen eduista ja haitoista</a></li>
+  </ul>
+
+  <h3 id="chapter-3-lohkorakenne">Lohkorakenne</h3>
+
+  <p>Pythonissa lohkoksi kutsutaan
+  koodinp&Atilde;&curren;tk&Atilde;&curren;&Atilde;&curren;, joka
+  suoritetaan yhten&Atilde;&curren;
+  yksikk&Atilde;&para;n&Atilde;&curren;. Seuraavia rakenteita
+  kutsutaan lohkoiksi:</p>
+
+  <ul>
+    <li>moduuli</li>
+
+    <li>funktion vartalo</li>
+
+    <li>luokan m&Atilde;&curren;&Atilde;&curren;rittely</li>
+
+    <li>jokainen interaktiivisesti kirjoitettu komento</li>
+
+    <li>skriptitiedosto (annettuna tulkille
+    komentoriviparametrina)</li>
+
+    <li>skriptikomento (annettuna tulkille -c komentoriviparametrin
+    arvona)</li>
+
+    <li>exec() tai eval() -funktioille merkkijonona annettu
+    koodi</li>
+  </ul>
+
+  <p>[<a href="#ref-nimet-ja_sidonta-py3-spec">6</a>]</p>
+
+  <p>Kuten on jo aiemmin mainittu Python
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
+  sisennyksi&Atilde;&curren;
+  m&Atilde;&curren;&Atilde;&curren;rittelem&Atilde;&curren;&Atilde;&curren;n
+  lohkoja. Sisennys kasvaa tiettyjen ilmaisujen
+  j&Atilde;&curren;lkeen ja puolestaan pienenee lohkon loppumisen
+  merkiksi. Samalla tasolla lohkossa sijaitsevat lauseet
+  kirjoitetaan jokainen omalle riville
+  k&Atilde;&curren;ytt&Atilde;&curren;en samaa
+  sisennyst&Atilde;&curren; (tai tietenkin vaihtoehtoisesti
+  kirjoittamalla kaikki samalle riville
+  k&Atilde;&curren;ytt&Atilde;&curren;en <code>;</code>
+  -merkki&Atilde;&curren; erottimena).</p>
+
+  <p>Lohkon m&Atilde;&curren;&Atilde;&curren;rittely voidaan
+  aloittaa mm. seuraavilla sanoilla: <code>if, else, elif, for,
+  while, try, except, finally, class, def, with, pass</code>.</p>
+
+  <p>Jos lohkon sis&Atilde;&curren;ll&Atilde;&curren;
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
+  lokaali muuttuja, on t&Atilde;&curren;m&Atilde;&curren;n
+  muuttujan n&Atilde;&curren;kyvyysalue (scope) rajoitettu siihen
+  lohkoon. Mik&Atilde;&curren;li tunnus
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
+  funktion vartalossa, niin n&Atilde;&curren;kyy se
+  my&Atilde;&para;s funktion vartalon sis&Atilde;&curren;isille
+  lohkoille (elleiv&Atilde;&curren;t
+  n&Atilde;&curren;m&Atilde;&curren; sido tunnukselle uutta
+  merkityst&Atilde;&curren;). Moduulitason tunnukset ovat
+  globaaleja. Mik&Atilde;&curren;li lohkon
+  sis&Atilde;&curren;lt&Atilde;&curren; halutaan
+  (eksplisiittisesti) viitata lohkon ulkopuolisiin muuttujiin, niin
+  voidaan k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
+  varattuja sanoja nonlocal ja global.
+  M&Atilde;&curren;&Atilde;&curren;reell&Atilde;&curren; nonlocal
+  vihjataan, ett&Atilde;&curren; halutaan viitata
+  n&Atilde;&curren;kyvyysaluehierarkiassa seuraavaan tasoon jolta
+  tunnus l&Atilde;&para;ytyy. Vastaavasti
+  global-m&Atilde;&curren;&Atilde;&curren;reell&Atilde;&curren;
+  siirryt&Atilde;&curren;&Atilde;&curren;n suoraan
+  etsim&Atilde;&curren;&Atilde;&curren;n tunnusta globaalilta
+  n&Atilde;&curren;kyvyysalueelta.</p>
+
+  <h3 id="chapter-3-sidonta">Sidonta</h3>
+
+  <p>Pythonissa sidonta tapahtuu osittain dynaamisesti ja osittain
+  staattisesti.
+  K&Atilde;&curren;yt&Atilde;&curren;nn&Atilde;&para;ss&Atilde;&curren;
+  siis n&Atilde;&curren;kyvyysalueet (scope)
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
+  staattisesti, mutta niit&Atilde;&curren;
+  k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n
+  dynaamisesti. Eli toisin sanoen eri
+  n&Atilde;&curren;kyvyysalueilla olevat tunnukset
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n,
+  mutta niihin ei liitet&Atilde;&curren; arvoa. Ajonaikaisesti
+  voidaan m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;
+  uusia tunnuksia globaalille tasolle. On kuitenkin huomioitava,
+  ett&Atilde;&curren; Python-funktioille ei voi
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren; uusia
+  lokaaleja tunnuksia funktion parsimisen j&Atilde;&curren;lkeen
+  (eli lokaalit muuttujat
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
+  staattisesti). Pythonin dokumentaatioissa my&Atilde;&para;s
+  vihjataan, ett&Atilde;&curren; staattisuutta tullaan jatkossa
+  lis&Atilde;&curren;&Atilde;&curren;m&Atilde;&curren;&Atilde;&curren;n
+  (ja n&Atilde;&curren;in ollen dynaamiseen sidontaan nojautumista
+  kehotetaan
+  v&Atilde;&curren;ltt&Atilde;&curren;m&Atilde;&curren;&Atilde;&curren;n).
+  <!--TODO: Timo tarkistapa nämä nyt vielä jostain http://bugs.python.org/issue10043
   Lähde: http://docs.python.org/py3k/tutorial/classes.html#python-scopes-and-namespaces --></p>
-<h3>Esimerkki tunnusten n&Atilde;&curren;kyvyydest&Atilde;&curren;,
-lohkorakenteista ja sidonnasta</h3>
-<p>Seuraava esimerkki pyrkii demonstroimaan hieman kaikkea
-tunnusten n&Atilde;&curren;kyvyyteen
-liittyv&Atilde;&curren;&Atilde;&curren;. Siin&Atilde;&curren;
-n&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n miten
-saadaan aikaan ajonaikainen poikkeus sidonnasta ja toisaalta
-my&Atilde;&para;s demonstroidaan muuttujien
-n&Atilde;&curren;kyvyytt&Atilde;&curren;.</p>
-<pre class="sh_python">
+
+  <h3>Esimerkki tunnusten
+  n&Atilde;&curren;kyvyydest&Atilde;&curren;, lohkorakenteista ja
+  sidonnasta</h3>
+
+  <p>Seuraava esimerkki pyrkii demonstroimaan hieman kaikkea
+  tunnusten n&Atilde;&curren;kyvyyteen
+  liittyv&Atilde;&curren;&Atilde;&curren;. Siin&Atilde;&curren;
+  n&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n miten
+  saadaan aikaan ajonaikainen poikkeus sidonnasta ja toisaalta
+  my&Atilde;&para;s demonstroidaan muuttujien
+  n&Atilde;&curren;kyvyytt&Atilde;&curren;.</p>
+  <pre class="sh_python">
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
 
@@ -611,9 +734,10 @@ if __name__ == '__main__':
     print("moduulitasolla if-lohkossa", muuttuja)
   
 </pre>
-<p>Skripti tekee seuraavan tulostuksen (<a href=
-"esimerkit/unbound_excep_esim.py">lataa esimerkki</a>)</p>
-<pre>
+
+  <p>Skripti tekee seuraavan tulostuksen (<a href=
+  "esimerkit/unbound_excep_esim.py">lataa esimerkki</a>)</p>
+  <pre>
 moduulitasolla globaali
 muuttuja on m&Atilde;&curren;&Atilde;&curren;ritelty globaalilla tasolla
 UnboundLocalError: local variable 'muuttuja' referenced before assignment
@@ -623,21 +747,24 @@ lambda lokaali
 moduulitasolla if-lohkossa globaali
   
 </pre>
-<h3 id="chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">
-Sis&Atilde;&curren;kk&Atilde;&curren;iset nimiavaruudet ja
-funktiot</h3>
-<p>Python tukee
-sis&Atilde;&curren;kk&Atilde;&curren;isi&Atilde;&curren;
-nimiavaruuksia versiosta 2.2 l&Atilde;&curren;htien [<a href=
-"#ref-sulkeumat-py22">5</a>]. Sit&Atilde;&curren; ennen
-nimiavaruuksia oli vain kolme: paikallinen nimiavaruus,
-moduulitason nimiavaruus ja
-sis&Atilde;&curren;&Atilde;&curren;nrakennettu nimiavaruus. Vaikka
-funktion m&Atilde;&curren;&Atilde;&curren;rittely oli mahdollista
-toisen funktion sis&Atilde;&curren;ll&Atilde;&curren;, niin
-sis&Atilde;&curren;kk&Atilde;&curren;inen funktio ei voinut viitata
-oman nimiavaruutensa ulkopuolisiin nimiin.</p>
-<pre class="sh_python">
+
+  <h3 id="chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">
+  Sis&Atilde;&curren;kk&Atilde;&curren;iset nimiavaruudet ja
+  funktiot</h3>
+
+  <p>Python tukee
+  sis&Atilde;&curren;kk&Atilde;&curren;isi&Atilde;&curren;
+  nimiavaruuksia versiosta 2.2 l&Atilde;&curren;htien [<a href=
+  "#ref-sulkeumat-py22">5</a>]. Sit&Atilde;&curren; ennen
+  nimiavaruuksia oli vain kolme: paikallinen nimiavaruus,
+  moduulitason nimiavaruus ja
+  sis&Atilde;&curren;&Atilde;&curren;nrakennettu nimiavaruus.
+  Vaikka funktion m&Atilde;&curren;&Atilde;&curren;rittely oli
+  mahdollista toisen funktion
+  sis&Atilde;&curren;ll&Atilde;&curren;, niin
+  sis&Atilde;&curren;kk&Atilde;&curren;inen funktio ei voinut
+  viitata oman nimiavaruutensa ulkopuolisiin nimiin.</p>
+  <pre class="sh_python">
 def eka(p):
     x = "olen ekan x"
     print("--- eka alkaa ---")
@@ -663,8 +790,9 @@ def toka():
 if __name__ == "__main__": # P&Atilde;&curren;&Atilde;&curren;ohjelma
     toka()
 </pre>
-<p>Ohjelma tulostaa:</p>
-<pre>
+
+  <p>Ohjelma tulostaa:</p>
+  <pre>
 --- toka alkaa ---
 --- eka alkaa ---
 olen tokan x
@@ -673,19 +801,20 @@ olen ekan x
 tokan x on muutettu!
 --- toka p&Atilde;&curren;&Atilde;&curren;ttyy ---
 </pre>
-<p>Python tukee my&Atilde;&para;s anonyymej&Atilde;&curren;
-funktioita lambda-lausekkeiden muodossa. Lambda-lausekkeella voi
-helposti luoda pieni&Atilde;&curren; anonyymej&Atilde;&curren;
-funktioita. Esimerkiksi funktio <code>lambda: a, b: a*b</code>
-palauttaa kahden argumenttinsa kertolaskun. Lambda-lauseke on
-kuitenkin aina vain yksi lauseke eik&Atilde;&curren; lause, joten
-siihen ei voi
-sis&Atilde;&curren;llytt&Atilde;&curren;&Atilde;&curren;
-esimerkiksi toisto- tai ehtolauseita suoraan. Se ei siis vastaa
-useimpien muiden kielten anonyymej&Atilde;&curren; funktioita.
-Lambda-lausekkeet voivat viitata nimiavaruutensa ulkopuolisiin
-tunnuksiin kuten funktiot:</p>
-<pre class="sh_python">
+
+  <p>Python tukee my&Atilde;&para;s anonyymej&Atilde;&curren;
+  funktioita lambda-lausekkeiden muodossa. Lambda-lausekkeella voi
+  helposti luoda pieni&Atilde;&curren; anonyymej&Atilde;&curren;
+  funktioita. Esimerkiksi funktio <code>lambda: a, b: a*b</code>
+  palauttaa kahden argumenttinsa kertolaskun. Lambda-lauseke on
+  kuitenkin aina vain yksi lauseke eik&Atilde;&curren; lause, joten
+  siihen ei voi
+  sis&Atilde;&curren;llytt&Atilde;&curren;&Atilde;&curren;
+  esimerkiksi toisto- tai ehtolauseita suoraan. Se ei siis vastaa
+  useimpien muiden kielten anonyymej&Atilde;&curren; funktioita.
+  Lambda-lausekkeet voivat viitata nimiavaruutensa ulkopuolisiin
+  tunnuksiin kuten funktiot:</p>
+  <pre class="sh_python">
 def tee_kertoja(n):
     return lambda x: x * n
 
@@ -693,43 +822,62 @@ f = tee_kertoja(5)
 print(f(3)) # 15
 print(f(5)) # 25
 </pre>
-<h3 id="chapter-3-1-2-ja-3-luokan-arvo">Ensimm&Atilde;&curren;isen,
-toisen ja kolmannen luokan arvo</h3>
-<p>Pythonissa yksi tavoitteista on ollut tehd&Atilde;&curren;
-kaikista objekteista ensimm&Atilde;&curren;isen luokan arvoja, eli
-sellaisia, joita voidaan:</p>
-<ul>
-<li>sijoittaa muuttujaan</li>
-<li>v&Atilde;&curren;litt&Atilde;&curren;&Atilde;&curren;
-parametrina</li>
-<li>palauttaa funktion arvona</li>
-</ul>
-<p>Huomion arvoista on, ett&Atilde;&curren; Pythonissa
-my&Atilde;&para;s metodit ovat ensimm&Atilde;&curren;isen luokan
-arvoja. [<a href="#ref-ensimmaisenluokan">7</a>]</p>
-<h3 id="chapter-3-edut-ja-haitat">Arvio kieleen valittujen
-ratkaisujen eduista ja haitoista</h3>
-<p>Lohkojen pakotettu sisent&Atilde;&curren;minen on
-hyv&Atilde;&curren; asia, koodin luettavuus
-lis&Atilde;&curren;&Atilde;&curren;ntyy ja se my&Atilde;&para;s
-pakottaa kaikki kirjoittamaan koodia samalla tavalla eli
-sisent&Atilde;&curren;en.</p>
-<h2 id="chapter-4">4. Kontrollin ja/tai laskennan ohjaus</h2>
-<p><em>miten perustoiminnallisuudet ilmaistaan</em></p>
-<ul>
-<li><a href="#chapter-4-valinta">Valinta</a></li>
-<li><a href="#chapter-4-toisto">Toisto eli iteraatio</a></li>
-<li><a href="#chapter-4-rekursio">Rekursio</a></li>
-<li><a href="#chapter-4-esimerkkeja">Havainnollisia selostettuja
-pieni&Atilde;&curren; ohjalmaesimerkkej&Atilde;&curren;</a></li>
-<li><a href="#chapter-4-arvio">Arvio kieleen valittujen ratkaisujen
-eduista ja haitoista</a></li>
-</ul>
-<h3 id="chapter-4-valinta">Valinta</h3>
-<h4><code>if</code> -lause</h4>
-<p><code>if</code> -lause koostuu kolmesta eri osasta
-<code>if</code>, <code>elif</code>, <code>else</code>.</p>
-<pre class="sh_python">
+
+  <h3 id="chapter-3-1-2-ja-3-luokan-arvo">
+  Ensimm&Atilde;&curren;isen, toisen ja kolmannen luokan arvo</h3>
+
+  <p>Pythonissa yksi tavoitteista on ollut tehd&Atilde;&curren;
+  kaikista objekteista ensimm&Atilde;&curren;isen luokan arvoja,
+  eli sellaisia, joita voidaan:</p>
+
+  <ul>
+    <li>sijoittaa muuttujaan</li>
+
+    <li>v&Atilde;&curren;litt&Atilde;&curren;&Atilde;&curren;
+    parametrina</li>
+
+    <li>palauttaa funktion arvona</li>
+  </ul>
+
+  <p>Huomion arvoista on, ett&Atilde;&curren; Pythonissa
+  my&Atilde;&para;s metodit ovat ensimm&Atilde;&curren;isen luokan
+  arvoja. [<a href="#ref-ensimmaisenluokan">7</a>]</p>
+
+  <h3 id="chapter-3-edut-ja-haitat">Arvio kieleen valittujen
+  ratkaisujen eduista ja haitoista</h3>
+
+  <p>Lohkojen pakotettu sisent&Atilde;&curren;minen on
+  hyv&Atilde;&curren; asia, koodin luettavuus
+  lis&Atilde;&curren;&Atilde;&curren;ntyy ja se my&Atilde;&para;s
+  pakottaa kaikki kirjoittamaan koodia samalla tavalla eli
+  sisent&Atilde;&curren;en.</p>
+
+  <h2 id="chapter-4">4. Kontrollin ja/tai laskennan ohjaus</h2>
+
+  <p><em>miten perustoiminnallisuudet ilmaistaan</em></p>
+
+  <ul>
+    <li><a href="#chapter-4-valinta">Valinta</a></li>
+
+    <li><a href="#chapter-4-toisto">Toisto eli iteraatio</a></li>
+
+    <li><a href="#chapter-4-rekursio">Rekursio</a></li>
+
+    <li><a href="#chapter-4-esimerkkeja">Havainnollisia
+    selostettuja pieni&Atilde;&curren;
+    ohjalmaesimerkkej&Atilde;&curren;</a></li>
+
+    <li><a href="#chapter-4-arvio">Arvio kieleen valittujen
+    ratkaisujen eduista ja haitoista</a></li>
+  </ul>
+
+  <h3 id="chapter-4-valinta">Valinta</h3>
+
+  <h4><code>if</code> -lause</h4>
+
+  <p><code>if</code> -lause koostuu kolmesta eri osasta
+  <code>if</code>, <code>elif</code>, <code>else</code>.</p>
+  <pre class="sh_python">
 x = int(input("Please enter an integer: "))
 if x &lt; 0:
     x = 0
@@ -741,57 +889,65 @@ elif x == 1:
 else:
     print('More')
 </pre>
-<p>Edellinen koodi tulostaa esim.:</p>
-<pre>
+
+  <p>Edellinen koodi tulostaa esim.:</p>
+  <pre>
 Please enter an integer: <strong>42</strong>
 More
 </pre>
-<p><code>elif</code> -osioita voi yhdess&Atilde;&curren; lauseessa
-olla mielivaltainen
-m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren; tai ei
-yht&Atilde;&curren;&Atilde;&curren;n. My&Atilde;&para;s
-<code>else</code> -osan k&Atilde;&curren;ytt&Atilde;&para; on
-vapaaehtoista. Python ei tue monista muista kielist&Atilde;&curren;
-tuttua switch/case -rakennetta vaan
-t&Atilde;&curren;m&Atilde;&curren; tulee toteuttaa if-lauseella
-[<a href="#ref-controlflow">8</a>].</p>
-<h3 id="chapter-4-toisto">Toisto</h3>
-<p>My&Atilde;&para;s toistolausekkeilla on Pythonissa else -lause
-[<a href="#ref-controlflow">8</a>], joka suoritetaan jos
-<code>for</code> -lauseessa lista loppuu tai jos <code>while</code>
--lause saa arvon <code>False</code>. <code>else</code> -lohkoa ei
-suoriteta jos toistolauseesta poistutaan <code>break</code>
--lauseella.</p>
-<h4><code>for</code> -lause</h4>
-<p>for -lausetta
-k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n iterointiin.
-Lause k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
-hyv&Atilde;&curren;kseen annetun objektin iteraattoria, jota se
-k&Atilde;&curren;y j&Atilde;&curren;rjestyksess&Atilde;&curren;
-l&Atilde;&curren;pi kunnes viimeinen arvo on saavutettu. Muista
-kielist&Atilde;&curren; poiketen
-t&Atilde;&curren;ss&Atilde;&curren; rakenteessa ei voi erikseen
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;
-iteraatioaskelta tai pys&Atilde;&curren;ytysehtoa.</p>
-<pre class="sh_python">
+
+  <p><code>elif</code> -osioita voi yhdess&Atilde;&curren;
+  lauseessa olla mielivaltainen
+  m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren; tai ei
+  yht&Atilde;&curren;&Atilde;&curren;n. My&Atilde;&para;s
+  <code>else</code> -osan k&Atilde;&curren;ytt&Atilde;&para; on
+  vapaaehtoista. Python ei tue monista muista
+  kielist&Atilde;&curren; tuttua switch/case -rakennetta vaan
+  t&Atilde;&curren;m&Atilde;&curren; tulee toteuttaa if-lauseella
+  [<a href="#ref-controlflow">8</a>].</p>
+
+  <h3 id="chapter-4-toisto">Toisto</h3>
+
+  <p>My&Atilde;&para;s toistolausekkeilla on Pythonissa else -lause
+  [<a href="#ref-controlflow">8</a>], joka suoritetaan jos
+  <code>for</code> -lauseessa lista loppuu tai jos
+  <code>while</code> -lause saa arvon <code>False</code>.
+  <code>else</code> -lohkoa ei suoriteta jos toistolauseesta
+  poistutaan <code>break</code> -lauseella.</p>
+
+  <h4><code>for</code> -lause</h4>
+
+  <p>for -lausetta
+  k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n
+  iterointiin. Lause
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
+  hyv&Atilde;&curren;kseen annetun objektin iteraattoria, jota se
+  k&Atilde;&curren;y j&Atilde;&curren;rjestyksess&Atilde;&curren;
+  l&Atilde;&curren;pi kunnes viimeinen arvo on saavutettu. Muista
+  kielist&Atilde;&curren; poiketen
+  t&Atilde;&curren;ss&Atilde;&curren; rakenteessa ei voi erikseen
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;
+  iteraatioaskelta tai pys&Atilde;&curren;ytysehtoa.</p>
+  <pre class="sh_python">
 a = ['cat', 'window', 'defenestrate']
 for x in a:
     print(x, len(x))
 </pre>
-<p>Edellinen koodi tulostaa:</p>
-<pre>
+
+  <p>Edellinen koodi tulostaa:</p>
+  <pre>
 cat 3
 window 6
 defenestrate 12
-</pre>
-Seuraavassa <code>for</code> -lauseessa puretaan listassa olevat
-monikot ja k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n
+</pre>Seuraavassa <code>for</code> -lauseessa puretaan listassa
+olevat monikot ja
+k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n
 <code>string</code> -luokasta
 l&Atilde;&para;ytyv&Atilde;&curren;&Atilde;&curren;
 korvausoperaatiota, joka muuttaa <code>{}</code> -merkkien
 v&Atilde;&curren;list&Atilde;&curren;
 l&Atilde;&para;ytyv&Atilde;&curren; kohdat halutuiksi.
-<pre class="sh_python">
+  <pre class="sh_python">
 animals = [ ('Cat', 'Meow'),
             ('Cow', 'Moo'),
             ('Dog', 'Woof')]
@@ -799,40 +955,45 @@ animals = [ ('Cat', 'Meow'),
 for animal, sound in animals:
     print("{0} says {1}!".format(animal, sound))
 </pre>
-<p>Edellinen koodi tulostaa:</p>
-<pre>
+
+  <p>Edellinen koodi tulostaa:</p>
+  <pre>
 Cat says Meow!
 Cow says Moo!
 Dog says Woof!
 </pre>
-<p>Haluttaessa toistaa tietty koodi useampaan kertaan voidaan
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
-hyv&Atilde;&curren;ksi esim. <code>range()</code> -funktiota, joka
-tuottaa halutun kokoisen kokonaislukuiteraattorin.</p>
-<pre class="sh_python">
+
+  <p>Haluttaessa toistaa tietty koodi useampaan kertaan voidaan
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
+  hyv&Atilde;&curren;ksi esim. <code>range()</code> -funktiota,
+  joka tuottaa halutun kokoisen kokonaislukuiteraattorin.</p>
+  <pre class="sh_python">
 for i in range(5):
     print(i)
 </pre>
-<p>Edellinen koodi tulostaa:</p>
-<pre>
+
+  <p>Edellinen koodi tulostaa:</p>
+  <pre>
 0
 1
 2
 3
 4
 </pre>
-<h4><code>while</code> -lause</h4>
-<p><code>while</code> -lausetta
-k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n suorittamaan
-lauseessa olevaa koodia niin pitk&Atilde;&curren;&Atilde;&curren;n
-kun jatkamisehto pysyy totena [<a href=
-"#ref-compoundstatement">9</a>]. Pythonissa ei ole
-erillist&Atilde;&curren; loppuehtoista do/while -lausetta. Sama
-tulos voidaan kuitenkin saavuttaa muotoilemalla <code>while</code>
--lause oikein (esim. <code>while True:</code> ja
-sis&Atilde;&curren;ll&Atilde;&curren; tarkistus <code>if condition:
-break</code>)</p>
-<pre class="sh_python">
+
+  <h4><code>while</code> -lause</h4>
+
+  <p><code>while</code> -lausetta
+  k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n
+  suorittamaan lauseessa olevaa koodia niin
+  pitk&Atilde;&curren;&Atilde;&curren;n kun jatkamisehto pysyy
+  totena [<a href="#ref-compoundstatement">9</a>]. Pythonissa ei
+  ole erillist&Atilde;&curren; loppuehtoista do/while -lausetta.
+  Sama tulos voidaan kuitenkin saavuttaa muotoilemalla
+  <code>while</code> -lause oikein (esim. <code>while True:</code>
+  ja sis&Atilde;&curren;ll&Atilde;&curren; tarkistus <code>if
+  condition: break</code>)</p>
+  <pre class="sh_python">
 x = 3
 while x &lt; 3:
     print("Loopissa")
@@ -840,63 +1001,72 @@ while x &lt; 3:
 else:
     print("Loopin else")
 </pre>
-<p>Edellinen koodi tulostaa:</p>
-<pre>
+
+  <p>Edellinen koodi tulostaa:</p>
+  <pre>
 Loopissa
 Loopissa
 Loopissa
 Loopin else
 </pre>
-<h4><code>continue</code> &amp; <code>break</code> -lauseet</h4>
-<p><code>continue</code> -lause
-hypp&Atilde;&curren;&Atilde;&curren; toistorakenteessa suoraan
-toistorakenteen seuraavalle iteraatiokierrokselle.
-T&Atilde;&curren;t&Atilde;&curren; voidaan
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren; siis, kun
-halutaan ohittaa osa toistorakenteen koodista juuri
-t&Atilde;&curren;ll&Atilde;&curren; suorituskerralla.
-<code>break</code> -lause lopettaa toistorakenteen suorittamisen
-ilman ns. pys&Atilde;&curren;ytysehdon
-t&Atilde;&curren;yttymist&Atilde;&curren; [<a href=
-"#ref-compoundstatement">9</a>].</p>
-<h3 id="chapter-4-rekursio">Rekursio</h3>
-<p>Rekursiivisissa ohjelmarutiineissa idea on sama kuin
-matemaattisesti
-m&Atilde;&curren;&Atilde;&curren;ritellyiss&Atilde;&curren;
-rekursiivisissa funktioissa, ja rekursiivisesti lasketut
-v&Atilde;&curren;litulokset tallennetaan useimmiten pinoon.
-Viimeisell&Atilde;&curren; rekursiokierroksella pinosta
-ker&Atilde;&curren;t&Atilde;&curren;&Atilde;&curren;n vastaukset
-k&Atilde;&curren;&Atilde;&curren;nteisess&Atilde;&curren;
-j&Atilde;&curren;rjestyksess&Atilde;&curren;. Python tukee
-rekursiota eli sallii funktion kutsua itse
-itse&Atilde;&curren;&Atilde;&curren;n.</p>
-<p>Python ei tee eroa normaalin rekursion tai
-h&Atilde;&curren;nt&Atilde;&curren;rekursion
-v&Atilde;&curren;lill&Atilde;&curren; [<a href=
-"#ref-tail-recursion">11</a>]. Toisin sanoen se ei siis toteuta
-ominaisuuksia (tunnetaan mm. nimill&Atilde;&curren; <em>tail call
-elimination</em> tai <em>tail call optimization</em>), joilla
-voitaisiin optimoida
-tilank&Atilde;&curren;ytt&Atilde;&para;&Atilde;&curren;
-tallettamalla h&Atilde;&curren;nt&Atilde;&curren;rekursiossa
-kutsuttavan funktion aktivaatiotietue kutsujan aktivaatiotietueen
-tilalle pinoon eli muuntamalla rekursio vastaamaan tavallista
-silmukkaa.</p>
-<p>Rekursion syvyys on rajoitettu Pythonissa.
-Tyypillisess&Atilde;&curren; Pythonin implementaatiossa raja-arvo
-on 1000. Raja est&Atilde;&curren;&Atilde;&curren; ikuista silmukkaa
-aiheuttamasta ylivuotoa C:n pinossa ja kaatamasta Pythonia
-[<a href="#ref-library-sys">10</a>]. <code>sys</code> -moduulista
-l&Atilde;&para;ytyv&Atilde;&curren;t mekanismit, joilla voidaan
-selvitt&Atilde;&curren;&Atilde;&curren; maksimaalinen
-rekursiosyvyys (<code>sys.getrecursionlimit()</code>) tai asettaa
-se (<code>sys.setrecursionlimit(int)</code>). Rekursiosyvyyden
-oletusarvo riippuu implementaatiosta, kun taas suurin mahdollinen
-arvo on laitteistoriippuvainen.</p>
-<p>Fibonaccin luvun laskeminen rekursiivisesti. Laskee luvun, jonka
-j&Atilde;&curren;rjestys on n.</p>
-<pre class="sh_python">
+
+  <h4><code>continue</code> &amp; <code>break</code> -lauseet</h4>
+
+  <p><code>continue</code> -lause
+  hypp&Atilde;&curren;&Atilde;&curren; toistorakenteessa suoraan
+  toistorakenteen seuraavalle iteraatiokierrokselle.
+  T&Atilde;&curren;t&Atilde;&curren; voidaan
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren; siis, kun
+  halutaan ohittaa osa toistorakenteen koodista juuri
+  t&Atilde;&curren;ll&Atilde;&curren; suorituskerralla.
+  <code>break</code> -lause lopettaa toistorakenteen suorittamisen
+  ilman ns. pys&Atilde;&curren;ytysehdon
+  t&Atilde;&curren;yttymist&Atilde;&curren; [<a href=
+  "#ref-compoundstatement">9</a>].</p>
+
+  <h3 id="chapter-4-rekursio">Rekursio</h3>
+
+  <p>Rekursiivisissa ohjelmarutiineissa idea on sama kuin
+  matemaattisesti
+  m&Atilde;&curren;&Atilde;&curren;ritellyiss&Atilde;&curren;
+  rekursiivisissa funktioissa, ja rekursiivisesti lasketut
+  v&Atilde;&curren;litulokset tallennetaan useimmiten pinoon.
+  Viimeisell&Atilde;&curren; rekursiokierroksella pinosta
+  ker&Atilde;&curren;t&Atilde;&curren;&Atilde;&curren;n vastaukset
+  k&Atilde;&curren;&Atilde;&curren;nteisess&Atilde;&curren;
+  j&Atilde;&curren;rjestyksess&Atilde;&curren;. Python tukee
+  rekursiota eli sallii funktion kutsua itse
+  itse&Atilde;&curren;&Atilde;&curren;n.</p>
+
+  <p>Python ei tee eroa normaalin rekursion tai
+  h&Atilde;&curren;nt&Atilde;&curren;rekursion
+  v&Atilde;&curren;lill&Atilde;&curren; [<a href=
+  "#ref-tail-recursion">11</a>]. Toisin sanoen se ei siis toteuta
+  ominaisuuksia (tunnetaan mm. nimill&Atilde;&curren; <em>tail call
+  elimination</em> tai <em>tail call optimization</em>), joilla
+  voitaisiin optimoida
+  tilank&Atilde;&curren;ytt&Atilde;&para;&Atilde;&curren;
+  tallettamalla h&Atilde;&curren;nt&Atilde;&curren;rekursiossa
+  kutsuttavan funktion aktivaatiotietue kutsujan aktivaatiotietueen
+  tilalle pinoon eli muuntamalla rekursio vastaamaan tavallista
+  silmukkaa.</p>
+
+  <p>Rekursion syvyys on rajoitettu Pythonissa.
+  Tyypillisess&Atilde;&curren; Pythonin implementaatiossa raja-arvo
+  on 1000. Raja est&Atilde;&curren;&Atilde;&curren; ikuista
+  silmukkaa aiheuttamasta ylivuotoa C:n pinossa ja kaatamasta
+  Pythonia [<a href="#ref-library-sys">10</a>]. <code>sys</code>
+  -moduulista l&Atilde;&para;ytyv&Atilde;&curren;t mekanismit,
+  joilla voidaan selvitt&Atilde;&curren;&Atilde;&curren;
+  maksimaalinen rekursiosyvyys
+  (<code>sys.getrecursionlimit()</code>) tai asettaa se
+  (<code>sys.setrecursionlimit(int)</code>). Rekursiosyvyyden
+  oletusarvo riippuu implementaatiosta, kun taas suurin mahdollinen
+  arvo on laitteistoriippuvainen.</p>
+
+  <p>Fibonaccin luvun laskeminen rekursiivisesti. Laskee luvun,
+  jonka j&Atilde;&curren;rjestys on n.</p>
+  <pre class="sh_python">
 def fib(n):
     if n == 0:
         return 0
@@ -905,254 +1075,351 @@ def fib(n):
     else:
         return fib(n-1) + fib(n-2)
 </pre>
-<h3 id="chapter-4-esimerkkeja">Havainnollisia selostettuja
-pieni&Atilde;&curren; ohjalmaesimerkkej&Atilde;&curren;</h3>
-<h3 id="chapter-4-arvio">Arvio kieleen valittujen ratkaisujen
-eduista ja haitoista</h3>
-<p>Muista ohjelmointikielist&Atilde;&curren; tutut
-<code>do/while</code>- ja <code>switch/case</code> -lauseet on
-j&Atilde;&curren;tetty pois ja niit&Atilde;&curren; ei ole
-toteutettu perustellusta syyst&Atilde;&curren;. Samat
-toiminnallisuudet pystyt&Atilde;&curren;&Atilde;&curren;n
-toteuttamaan jo olemassa olevalla syntaksilla. Toisaalta
-esimerkiksi Javasta tuttu <code>switch-case-break</code>, jossa
-my&Atilde;&para;s ehdon
-t&Atilde;&curren;ytt&Atilde;&curren;v&Atilde;&curren;n kohdan
-j&Atilde;&curren;lkeen tulevat kohdat suoritetaan ellei
-<code>switch</code> -lauseesta poistuta erikseen <code>break</code>
--lauseella, saattaa olla hiukan
-ty&Atilde;&para;l&Atilde;&curren;&Atilde;&curren;mp&Atilde;&curren;&Atilde;&curren;
-toteuttaa Pythonilla.</p>
-<p>Rekursio toimii Pythonissa, mutta esimerkiksi kielen
-alkuper&Atilde;&curren;inen kehitt&Atilde;&curren;j&Atilde;&curren;
-ei henkil&Atilde;&para;kohtaisesti ole sit&Atilde;&curren;
-mielt&Atilde;&curren;, ett&Atilde;&curren; se olisi
-jokap&Atilde;&curren;iv&Atilde;&curren;inen ty&Atilde;&para;kalu
-vaan pikemminkin teoreettinen l&Atilde;&curren;hestymistapa
-matematiikkaan. H&Atilde;&curren;nt&Atilde;&curren;rekursiosta on
-olemassa jonkinasteisia toteutuksia ja virityksi&Atilde;&curren;,
-mutta ainakaan virallisesti se ei ole Pythonin ominaisuus.</p>
-<h2 id="chapter-5">5. Perustietotyypit</h2>
-<p><em>millaisilla arvoilla tai "datalla" pelataan</em></p>
-<ul>
-<li><a href="#chapter-5-perustyypit">Perustyypit ja
-arvoalueet</a></li>
-<li><a href="#chapter-5-vahva-heikko-tyypitys">Vahva tyypitys ~
-heikko tyypitys</a></li>
-<li><a href="#chapter-5-stat-dyn-tyypitys">Staattinen tyypitys ~
-dynaaminen tyypitys</a></li>
-</ul>
-<h3 id="chapter-5-perustyypit">Perustyypit ja arvoalueet</h3>
-<p>Pythoniin on sis&Atilde;&curren;&Atilde;&curren;nrakennettu
-kattava kokoelma perustyyppej&Atilde;&curren;. Pythonissa kaikki on
-olioita, joten varsinaisia primitiivityyppej&Atilde;&curren; ei
-kuitenkaan ole. Toisaalta ohut
-oliok&Atilde;&curren;&Atilde;&curren;re vaikkapa liukulukujen
-p&Atilde;&curren;&Atilde;&curren;ll&Atilde;&curren; ei ei
-k&Atilde;&curren;yt&Atilde;&curren;nn&Atilde;&para;ss&Atilde;&curren;
-eroa alla olevasta implementaatiosta
-mitenk&Atilde;&curren;&Atilde;&curren;n. Vastaavasti
-rajoittamattoman suuret kokonaisluvut ovat
-&Atilde;&curren;&Atilde;&curren;riesimerkki
-p&Atilde;&curren;invastaisesta tilanteesta. Seuraavassa on listattu
-useimmin k&Atilde;&curren;ytetyt tyypit.
-T&Atilde;&curren;m&Atilde;&curren; luku perustuu CPythonin
-tyyppej&Atilde;&curren;
-k&Atilde;&curren;sittelev&Atilde;&curren;&Atilde;&curren;n
-dokumentaatioon [<a href="#ref-stdtypes">12</a>][<a href=
-"#ref-datamodel">13</a>].</p>
-<p>Numeeriset tyypit:</p>
-<table border="1" summary="Numeeriset tyypit">
-<tr>
-<th>Tyyppi</th>
-<th>Tarkoitus</th>
-<th>Arvoalue</th>
-<th>Esimerkki</th>
-</tr>
-<tr>
-<td><code>None</code></td>
-<td>NULL-arvot</td>
-<td>None</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>bool</code></td>
-<td>totuusarvot</td>
-<td>False, True</td>
-<td><code>False</code></td>
-</tr>
-<tr>
-<td><code>int</code></td>
-<td>kokonaisluvut</td>
-<td>&acirc;&circ;&rsquo;&acirc;&circ;&#382; - &acirc;&circ;&#382;
-(*)</td>
-<td><code>-45353</code></td>
-</tr>
-<tr>
-<td><code>float</code></td>
-<td>kaksoistarkkuuden liukuluvut</td>
-<td>(**)</td>
-<td><code>3.141592653589793</code></td>
-</tr>
-<tr>
-<td><code>complex</code></td>
-<td>kompleksiluvut</td>
-<td>(**)</td>
-<td><code>(9+3j)</code></td>
-</tr>
-<tr>
-<th colspan="4">Standardi kirjaston laajennokset numeroille</th>
-</tr>
-<tr>
-<td><code>fractional.Fractional</code></td>
-<td>rationaaliluvut</td>
-<td>ilmeisesti "int/int" (***)</td>
-<td><code>Fraction('14/4')</code><br>
-<code>Fraction(14, 4)</code></td>
-</tr>
-<tr>
-<td><code>decimal.Decimal</code></td>
-<td>tarkat desimaaliluvut</td>
-<td>k&Atilde;&curren;ytt&Atilde;&curren;j&Atilde;&curren;n
-m&Atilde;&curren;&Atilde;&curren;rittelee tarkkuuden</td>
-<td><code>Decimal('1.12456765432345')</code></td>
-</tr>
-</table>
-<p>* Periaatteessa arvoalue on rajoittamaton.
-K&Atilde;&curren;yt&Atilde;&curren;nn&Atilde;&para;ss&Atilde;&curren;
-k&Atilde;&curren;ytett&Atilde;&curren;viss&Atilde;&curren; oleva
-(virtuaali)muisti
-m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren; arvoalueen.</p>
-<p>** Arvoalue riippuu alla olevasta
-toteutuksesta/laitteistosta.</p>
-<p>*** Fractional on abstraktin luokan
-<code>numbers.Rational</code> aliluokka ja ilmeisesti toteutettu
-kahdella kokonaisluvulla (ja siten tarjoaa "rajattoman"
-tarkkuuden).</p>
-<p>Jonotyypit:</p>
-<table border="1" summary="Jonotyypit">
-<tr>
-<th>Tyyppi</th>
-<th>Tarkoitus</th>
-<th>Esimerkki</th>
-</tr>
-<tr>
-<td><code>str</code></td>
-<td>Unicode-merkkijonot (****)</td>
-<td><code>'xyzzy'</code>, <code>"Hello,
-&auml;&cedil;&ndash;&ccedil;&bull;&OElig;"</code></td>
-</tr>
-<tr>
-<td><code>bytes</code></td>
-<td>immutaabelit tavumerkkijonot</td>
-<td><code>b'xyzzy'</code></td>
-</tr>
-<tr>
-<td><code>bytearray</code></td>
-<td>tavumerkkijonot</td>
-<td><code>b'xyzzy'</code></td>
-</tr>
-<tr>
-<td><code>list</code></td>
-<td>listat</td>
-<td><code>[1, 2, 3]</code></td>
-</tr>
-<tr>
-<td><code>tuple</code></td>
-<td>monikot</td>
-<td><code>(1, 2, 3)</code></td>
-</tr>
-</table>
-<p>**** Unicode merkkijonot koostuvat 16 tai
-32-bittisisit&Atilde;&curren; unicode merkeist&Atilde;&curren;.
-Koko riippuu siit&Atilde;&curren;
-k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;nk&Atilde;&para;
-implementaatiossa/ymp&Atilde;&curren;rist&Atilde;&para;ss&Atilde;&curren;
-UCS-2 vai UCS-4. Suurimman tuetun unicodemerkin arvon voi
-kysy&Atilde;&curren; n&Atilde;&curren;in:<br>
-sys.maxunicode.</p>
-<p>Joukkotyypit:</p>
-<table border="1" summary="Joukkotyypit">
-<tr>
-<th>Tyyppi</th>
-<th>Tarkoitus</th>
-<th>Esimerkki</th>
-</tr>
-<tr>
-<td><code>set</code></td>
-<td>joukot</td>
-<td><code>set([32, 26, 12, 54])</code></td>
-</tr>
-<tr>
-<td><code>frozenset</code></td>
-<td>immutaabelit joukot</td>
-<td><code>set([32, 26, 12, 54])</code></td>
-</tr>
-</table>
-<p>Kuvaustyypit:</p>
-<table border="1" summary="Kuvaustyypit">
-<tr>
-<th>Tyyppi</th>
-<th>Tarkoitus</th>
-<th>Esimerkki</th>
-</tr>
-<tr>
-<td><code>dict</code></td>
-<td>avain: arvo -parit</td>
-<td><code>{"one": 1, "two": 2}</code></td>
-</tr>
-</table>
-<h3 id="chapter-5-vahva-heikko-tyypitys">Vahva tyypitys ~ heikko
-tyypitys</h3>
-<p>Python voidaan luokitella vahvasti tyypitetyksi kieliksi. Sen
-vahvoihin tyyppiturvallisuusominaisuuksiin kuuluu muun muassa,
-ett&Atilde;&curren; implisiittisi&Atilde;&curren; tyyppimuunnoksia
-ei k&Atilde;&curren;ytet&Atilde;&curren; (l&Atilde;&curren;hes
-ollenkaan?) ja olioilla on aina tyyppi, eik&Atilde;&curren;
-sit&Atilde;&curren; voi muuttaa (muuttujilla ei ole
-tyyppi&Atilde;&curren;). Vrt. Javassa <code>"spam" + 1</code>
-tuottaa merkkijonon <code>"spam1"</code>. Pythonissa ei numeroa
-suostuta implisiittisesti konvertoimaan vaan tuloksena on poikkeus.
-Vastaavasti C:ss&Atilde;&curren; voidaan esimerkiksi osoittimet
-konvertoida eksplisiittisesti ja siten
-k&Atilde;&curren;yt&Atilde;&curren;nn&Atilde;&para;ss&Atilde;&curren;
-tulkita mik&Atilde;&curren; tahansa olio miksi tahansa olioksi.</p>
-<p>Objektien tyyppi&Atilde;&curren; ei tarkisteta
-k&Atilde;&curren;&Atilde;&curren;nn&Atilde;&para;saikana, vaan ajon
-aikana jotkut operaatiot voivat ep&Atilde;&curren;onnistua (jolloin
-syntyy poikkeus), mik&Atilde;&curren; osoittaa, ett&Atilde;&curren;
-objekti ei ole sopivaa tyyppi&Atilde;&curren;.</p>
-<h3 id="chapter-5-tyypitys">Staattinen tyypitys ~ dynaaminen
-tyypitys</h3>
-<p>Python on dynaamisesti tyypitetty kieli. Vaikka olioiden tyyppi
-onkin aina tiedossa, niin Pythonilla ohjelmoitaessa
-t&Atilde;&curren;m&Atilde;&curren;
-yritet&Atilde;&curren;&Atilde;&curren;n
-j&Atilde;&curren;tt&Atilde;&curren;&Atilde;&curren; mahdollisimman
-pitk&Atilde;&curren;lti huomiotta. Muuttujalla ei ole ennalta
-m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;tty&Atilde;&curren;
-tyyppi&Atilde;&curren;. Funktioiden parametrien
-tyyppi&Atilde;&curren; ei normaalisti tarkisteta vaan noudatetaan
-ns. "duck typing" -paradigmaa, jonka ajatus on, ett&Atilde;&curren;
-"Jos se vaakkuu kuin ankka ja k&Atilde;&curren;velee kuin ankka,
-niin sen t&Atilde;&curren;ytyy olla ankka." Olion(Pythonissa kaikki
-ovat olioita) tyyppi
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
-tutkimalla sen metodeita ja attribuutteja. Tyypillisesti
-k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n EAFP (Easier
-to Ask Forgiveness than Permission) -tyyli&Atilde;&curren;. Kun
-jotakin metodia yritet&Atilde;&curren;&Atilde;&curren;n
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;, ei olion
-tyyppi&Atilde;&curren; tarkisteta etuk&Atilde;&curren;teen, vaan
-k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n mielummin
-poikkeuksia. Lyhyesti ideana on siis se, ett&Atilde;&curren; ei
-v&Atilde;&curren;litet&Atilde;&curren; siit&Atilde;&curren;,
-mist&Atilde;&curren; olio on periytynyt, vaan siit&Atilde;&curren;,
-pystyyk&Atilde;&para; se suorittamaan halutun
-teht&Atilde;&curren;v&Atilde;&curren;n. Seuraavassa esimerkki "duck
-typing" -paradigman
-k&Atilde;&curren;yt&Atilde;&para;st&Atilde;&curren;:</p>
-<pre class="sh_python">
+
+  <h3 id="chapter-4-esimerkkeja">Havainnollisia selostettuja
+  pieni&Atilde;&curren; ohjalmaesimerkkej&Atilde;&curren;</h3>
+
+  <h3 id="chapter-4-arvio">Arvio kieleen valittujen ratkaisujen
+  eduista ja haitoista</h3>
+
+  <p>Muista ohjelmointikielist&Atilde;&curren; tutut
+  <code>do/while</code>- ja <code>switch/case</code> -lauseet on
+  j&Atilde;&curren;tetty pois ja niit&Atilde;&curren; ei ole
+  toteutettu perustellusta syyst&Atilde;&curren;. Samat
+  toiminnallisuudet pystyt&Atilde;&curren;&Atilde;&curren;n
+  toteuttamaan jo olemassa olevalla syntaksilla. Toisaalta
+  esimerkiksi Javasta tuttu <code>switch-case-break</code>, jossa
+  my&Atilde;&para;s ehdon
+  t&Atilde;&curren;ytt&Atilde;&curren;v&Atilde;&curren;n kohdan
+  j&Atilde;&curren;lkeen tulevat kohdat suoritetaan ellei
+  <code>switch</code> -lauseesta poistuta erikseen
+  <code>break</code> -lauseella, saattaa olla hiukan
+  ty&Atilde;&para;l&Atilde;&curren;&Atilde;&curren;mp&Atilde;&curren;&Atilde;&curren;
+  toteuttaa Pythonilla.</p>
+
+  <p>Rekursio toimii Pythonissa, mutta esimerkiksi kielen
+  alkuper&Atilde;&curren;inen
+  kehitt&Atilde;&curren;j&Atilde;&curren; ei
+  henkil&Atilde;&para;kohtaisesti ole sit&Atilde;&curren;
+  mielt&Atilde;&curren;, ett&Atilde;&curren; se olisi
+  jokap&Atilde;&curren;iv&Atilde;&curren;inen ty&Atilde;&para;kalu
+  vaan pikemminkin teoreettinen l&Atilde;&curren;hestymistapa
+  matematiikkaan. H&Atilde;&curren;nt&Atilde;&curren;rekursiosta on
+  olemassa jonkinasteisia toteutuksia ja virityksi&Atilde;&curren;,
+  mutta ainakaan virallisesti se ei ole Pythonin ominaisuus.</p>
+
+  <h2 id="chapter-5">5. Perustietotyypit</h2>
+
+  <p><em>millaisilla arvoilla tai "datalla" pelataan</em></p>
+
+  <ul>
+    <li><a href="#chapter-5-perustyypit">Perustyypit ja
+    arvoalueet</a></li>
+
+    <li><a href="#chapter-5-vahva-heikko-tyypitys">Vahva tyypitys ~
+    heikko tyypitys</a></li>
+
+    <li><a href="#chapter-5-stat-dyn-tyypitys">Staattinen tyypitys
+    ~ dynaaminen tyypitys</a></li>
+  </ul>
+
+  <h3 id="chapter-5-perustyypit">Perustyypit ja arvoalueet</h3>
+
+  <p>Pythoniin on sis&Atilde;&curren;&Atilde;&curren;nrakennettu
+  kattava kokoelma perustyyppej&Atilde;&curren;. Pythonissa kaikki
+  on olioita, joten varsinaisia primitiivityyppej&Atilde;&curren;
+  ei kuitenkaan ole. Toisaalta ohut
+  oliok&Atilde;&curren;&Atilde;&curren;re vaikkapa liukulukujen
+  p&Atilde;&curren;&Atilde;&curren;ll&Atilde;&curren; ei ei
+  k&Atilde;&curren;yt&Atilde;&curren;nn&Atilde;&para;ss&Atilde;&curren;
+  eroa alla olevasta implementaatiosta
+  mitenk&Atilde;&curren;&Atilde;&curren;n. Vastaavasti
+  rajoittamattoman suuret kokonaisluvut ovat
+  &Atilde;&curren;&Atilde;&curren;riesimerkki
+  p&Atilde;&curren;invastaisesta tilanteesta. Seuraavassa on
+  listattu useimmin k&Atilde;&curren;ytetyt tyypit.
+  T&Atilde;&curren;m&Atilde;&curren; luku perustuu CPythonin
+  tyyppej&Atilde;&curren;
+  k&Atilde;&curren;sittelev&Atilde;&curren;&Atilde;&curren;n
+  dokumentaatioon [<a href="#ref-stdtypes">12</a>][<a href=
+  "#ref-datamodel">13</a>].</p>
+
+  <p>Numeeriset tyypit:</p>
+
+  <table border="1" summary="Numeeriset tyypit">
+    <tr>
+      <th>Tyyppi</th>
+
+      <th>Tarkoitus</th>
+
+      <th>Arvoalue</th>
+
+      <th>Esimerkki</th>
+    </tr>
+
+    <tr>
+      <td><code>None</code></td>
+
+      <td>NULL-arvot</td>
+
+      <td>None</td>
+
+      <td><code>None</code></td>
+    </tr>
+
+    <tr>
+      <td><code>bool</code></td>
+
+      <td>totuusarvot</td>
+
+      <td>False, True</td>
+
+      <td><code>False</code></td>
+    </tr>
+
+    <tr>
+      <td><code>int</code></td>
+
+      <td>kokonaisluvut</td>
+
+      <td>&acirc;&circ;&rsquo;&acirc;&circ;&#382; -
+      &acirc;&circ;&#382; (*)</td>
+
+      <td><code>-45353</code></td>
+    </tr>
+
+    <tr>
+      <td><code>float</code></td>
+
+      <td>kaksoistarkkuuden liukuluvut</td>
+
+      <td>(**)</td>
+
+      <td><code>3.141592653589793</code></td>
+    </tr>
+
+    <tr>
+      <td><code>complex</code></td>
+
+      <td>kompleksiluvut</td>
+
+      <td>(**)</td>
+
+      <td><code>(9+3j)</code></td>
+    </tr>
+
+    <tr>
+      <th colspan="4">Standardi kirjaston laajennokset
+      numeroille</th>
+    </tr>
+
+    <tr>
+      <td><code>fractional.Fractional</code></td>
+
+      <td>rationaaliluvut</td>
+
+      <td>ilmeisesti "int/int" (***)</td>
+
+      <td><code>Fraction('14/4')</code><br>
+      <code>Fraction(14, 4)</code></td>
+    </tr>
+
+    <tr>
+      <td><code>decimal.Decimal</code></td>
+
+      <td>tarkat desimaaliluvut</td>
+
+      <td>k&Atilde;&curren;ytt&Atilde;&curren;j&Atilde;&curren;n
+      m&Atilde;&curren;&Atilde;&curren;rittelee tarkkuuden</td>
+
+      <td><code>Decimal('1.12456765432345')</code></td>
+    </tr>
+  </table>
+
+  <p>* Periaatteessa arvoalue on rajoittamaton.
+  K&Atilde;&curren;yt&Atilde;&curren;nn&Atilde;&para;ss&Atilde;&curren;
+  k&Atilde;&curren;ytett&Atilde;&curren;viss&Atilde;&curren; oleva
+  (virtuaali)muisti
+  m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;
+  arvoalueen.</p>
+
+  <p>** Arvoalue riippuu alla olevasta
+  toteutuksesta/laitteistosta.</p>
+
+  <p>*** Fractional on abstraktin luokan
+  <code>numbers.Rational</code> aliluokka ja ilmeisesti toteutettu
+  kahdella kokonaisluvulla (ja siten tarjoaa "rajattoman"
+  tarkkuuden).</p>
+
+  <p>Jonotyypit:</p>
+
+  <table border="1" summary="Jonotyypit">
+    <tr>
+      <th>Tyyppi</th>
+
+      <th>Tarkoitus</th>
+
+      <th>Esimerkki</th>
+    </tr>
+
+    <tr>
+      <td><code>str</code></td>
+
+      <td>Unicode-merkkijonot (****)</td>
+
+      <td><code>'xyzzy'</code>, <code>"Hello,
+      &auml;&cedil;&ndash;&ccedil;&bull;&OElig;"</code></td>
+    </tr>
+
+    <tr>
+      <td><code>bytes</code></td>
+
+      <td>immutaabelit tavumerkkijonot</td>
+
+      <td><code>b'xyzzy'</code></td>
+    </tr>
+
+    <tr>
+      <td><code>bytearray</code></td>
+
+      <td>tavumerkkijonot</td>
+
+      <td><code>b'xyzzy'</code></td>
+    </tr>
+
+    <tr>
+      <td><code>list</code></td>
+
+      <td>listat</td>
+
+      <td><code>[1, 2, 3]</code></td>
+    </tr>
+
+    <tr>
+      <td><code>tuple</code></td>
+
+      <td>monikot</td>
+
+      <td><code>(1, 2, 3)</code></td>
+    </tr>
+  </table>
+
+  <p>**** Unicode merkkijonot koostuvat 16 tai
+  32-bittisisit&Atilde;&curren; unicode merkeist&Atilde;&curren;.
+  Koko riippuu siit&Atilde;&curren;
+  k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;nk&Atilde;&para;
+  implementaatiossa/ymp&Atilde;&curren;rist&Atilde;&para;ss&Atilde;&curren;
+  UCS-2 vai UCS-4. Suurimman tuetun unicodemerkin arvon voi
+  kysy&Atilde;&curren; n&Atilde;&curren;in:<br>
+  sys.maxunicode.</p>
+
+  <p>Joukkotyypit:</p>
+
+  <table border="1" summary="Joukkotyypit">
+    <tr>
+      <th>Tyyppi</th>
+
+      <th>Tarkoitus</th>
+
+      <th>Esimerkki</th>
+    </tr>
+
+    <tr>
+      <td><code>set</code></td>
+
+      <td>joukot</td>
+
+      <td><code>set([32, 26, 12, 54])</code></td>
+    </tr>
+
+    <tr>
+      <td><code>frozenset</code></td>
+
+      <td>immutaabelit joukot</td>
+
+      <td><code>set([32, 26, 12, 54])</code></td>
+    </tr>
+  </table>
+
+  <p>Kuvaustyypit:</p>
+
+  <table border="1" summary="Kuvaustyypit">
+    <tr>
+      <th>Tyyppi</th>
+
+      <th>Tarkoitus</th>
+
+      <th>Esimerkki</th>
+    </tr>
+
+    <tr>
+      <td><code>dict</code></td>
+
+      <td>avain: arvo -parit</td>
+
+      <td><code>{"one": 1, "two": 2}</code></td>
+    </tr>
+  </table>
+
+  <h3 id="chapter-5-vahva-heikko-tyypitys">Vahva tyypitys ~ heikko
+  tyypitys</h3>
+
+  <p>Python voidaan luokitella vahvasti tyypitetyksi kieliksi. Sen
+  vahvoihin tyyppiturvallisuusominaisuuksiin kuuluu muun muassa,
+  ett&Atilde;&curren; implisiittisi&Atilde;&curren;
+  tyyppimuunnoksia ei k&Atilde;&curren;ytet&Atilde;&curren;
+  (l&Atilde;&curren;hes ollenkaan?) ja olioilla on aina tyyppi,
+  eik&Atilde;&curren; sit&Atilde;&curren; voi muuttaa (muuttujilla
+  ei ole tyyppi&Atilde;&curren;). Vrt. Javassa <code>"spam" +
+  1</code> tuottaa merkkijonon <code>"spam1"</code>. Pythonissa ei
+  numeroa suostuta implisiittisesti konvertoimaan vaan tuloksena on
+  poikkeus. Vastaavasti C:ss&Atilde;&curren; voidaan esimerkiksi
+  osoittimet konvertoida eksplisiittisesti ja siten
+  k&Atilde;&curren;yt&Atilde;&curren;nn&Atilde;&para;ss&Atilde;&curren;
+  tulkita mik&Atilde;&curren; tahansa olio miksi tahansa
+  olioksi.</p>
+
+  <p>Objektien tyyppi&Atilde;&curren; ei tarkisteta
+  k&Atilde;&curren;&Atilde;&curren;nn&Atilde;&para;saikana, vaan
+  ajon aikana jotkut operaatiot voivat ep&Atilde;&curren;onnistua
+  (jolloin syntyy poikkeus), mik&Atilde;&curren; osoittaa,
+  ett&Atilde;&curren; objekti ei ole sopivaa
+  tyyppi&Atilde;&curren;.</p>
+
+  <h3 id="chapter-5-tyypitys">Staattinen tyypitys ~ dynaaminen
+  tyypitys</h3>
+
+  <p>Python on dynaamisesti tyypitetty kieli. Vaikka olioiden
+  tyyppi onkin aina tiedossa, niin Pythonilla ohjelmoitaessa
+  t&Atilde;&curren;m&Atilde;&curren;
+  yritet&Atilde;&curren;&Atilde;&curren;n
+  j&Atilde;&curren;tt&Atilde;&curren;&Atilde;&curren;
+  mahdollisimman pitk&Atilde;&curren;lti huomiotta. Muuttujalla ei
+  ole ennalta
+  m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;tty&Atilde;&curren;
+  tyyppi&Atilde;&curren;. Funktioiden parametrien
+  tyyppi&Atilde;&curren; ei normaalisti tarkisteta vaan noudatetaan
+  ns. "duck typing" -paradigmaa, jonka ajatus on,
+  ett&Atilde;&curren; "Jos se vaakkuu kuin ankka ja
+  k&Atilde;&curren;velee kuin ankka, niin sen t&Atilde;&curren;ytyy
+  olla ankka." Olion(Pythonissa kaikki ovat olioita) tyyppi
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
+  tutkimalla sen metodeita ja attribuutteja. Tyypillisesti
+  k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n EAFP
+  (Easier to Ask Forgiveness than Permission)
+  -tyyli&Atilde;&curren;. Kun jotakin metodia
+  yritet&Atilde;&curren;&Atilde;&curren;n
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;, ei olion
+  tyyppi&Atilde;&curren; tarkisteta etuk&Atilde;&curren;teen, vaan
+  k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n mielummin
+  poikkeuksia. Lyhyesti ideana on siis se, ett&Atilde;&curren; ei
+  v&Atilde;&curren;litet&Atilde;&curren; siit&Atilde;&curren;,
+  mist&Atilde;&curren; olio on periytynyt, vaan
+  siit&Atilde;&curren;, pystyyk&Atilde;&para; se suorittamaan
+  halutun teht&Atilde;&curren;v&Atilde;&curren;n. Seuraavassa
+  esimerkki "duck typing" -paradigman
+  k&Atilde;&curren;yt&Atilde;&para;st&Atilde;&curren;:</p>
+  <pre class="sh_python">
 class Duck:
     def quack(self):
         print("Quaaaaaack!")
@@ -1178,21 +1445,21 @@ def game():
     in_the_forest(john)
  
 game()
-</pre>
-<!-- Merkkaa lähteet Timo
+</pre><!-- Merkkaa lähteet Timo
   http://en.wikipedia.org/wiki/Type_safety
   http://en.wikipedia.org/wiki/Strong_typing
   http://en.wikipedia.org/wiki/Duck_typing
   http://wiki.python.org/moin/Why%20is%20Python%20a%20dynamic%20language%20and%20also%20a%20strongly%20typed%20language
   -->
-<p>Muuttujan tyypin voi tarvittaessa tarkistaa
-<code>isinstance</code> -funktiolla. <code>isinstance</code>
-tarkistaa onko sille parametrina annettu muuttuja parametrina
-annetun tyypin tai luokan instanssi. Seuraavassa
-esimerkkej&Atilde;&curren; sen
-k&Atilde;&curren;yt&Atilde;&para;st&Atilde;&curren; Python
--konsolissa:</p>
-<pre>
+
+  <p>Muuttujan tyypin voi tarvittaessa tarkistaa
+  <code>isinstance</code> -funktiolla. <code>isinstance</code>
+  tarkistaa onko sille parametrina annettu muuttuja parametrina
+  annetun tyypin tai luokan instanssi. Seuraavassa
+  esimerkkej&Atilde;&curren; sen
+  k&Atilde;&curren;yt&Atilde;&para;st&Atilde;&curren; Python
+  -konsolissa:</p>
+  <pre>
 &gt;&gt;&gt; isinstance(42, str)
 False
 &gt;&gt;&gt; isinstance('stringi', int)
@@ -1202,77 +1469,95 @@ True
 &gt;&gt;&gt; isinstance('stringi', str)
 True
 </pre>
-<h2 id="chapter-6">6. Laskennan kapselointi</h2>
-<p><em>miten toiminnallisuuksia abstrahoidaan ja
-niist&Atilde;&curren; rakennetaan uusia
-toiminnallisuuksia?</em></p>
-<ul>
-<li><a href="#chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai
-alifunktiot</a></li>
-<li><a href=
-"#chapter-6-parametrivalitys">Parametriv&Atilde;&curren;litys</a></li>
-<li><a href="#chapter-6-poikkeukset">Suoritusaikaisiin virheisiin
-varautumisen v&Atilde;&curren;lineet &acirc;&euro;&ldquo;
-poikkeukset</a></li>
-<li><a href="#chapter-6-rinnakkaislaskenta">Miten kieli tukee
-rinnakkaista laskentaa</a></li>
-<li><a href=
-"#chapter-6-ohjelmaarkkitehtuurit">Tyypillisi&Atilde;&curren;
-ohjelma-arkkitehtuureja</a></li>
-<li><a href="#chapter-6-arvio">Arvio kieleen valittujen ratkaisujen
-eduista ja haitoista</a></li>
-</ul>
-<h3 id="chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai
-alifunktiot</h3>
-<p>Funktio
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
-avainsanalla <i>def</i>, jota tulee seurata funktion nimi ja
-muodolliset parametrit. Funktio on siis muotoa <i>def</i> [nimi]
-<i>(</i>[parametrit]<i>)</i>, ja normaaliin Python tapaan lohkon
-merkiksi tulee kaksoispiste. Funktion rungon muodostavat lausekkeet
-alkavat seuraavalta rivilt&Atilde;&curren; ja niiden tulee olla
-sisennettyin&Atilde;&curren;.</p>
-<p>Pythonissa on sallittu sis&Atilde;&curren;kk&Atilde;&curren;iset
-funktiom&Atilde;&curren;&Atilde;&curren;rittelyt. Funktion
-<i>f1</i> sis&Atilde;&curren;ll&Atilde;&curren;
-m&Atilde;&curren;&Atilde;&curren;ritelty funktio <i>f2</i>
-p&Atilde;&curren;&Atilde;&curren;see k&Atilde;&curren;siksi f1:n
-muuttujiin. Jos f2 m&Atilde;&curren;&Atilde;&curren;rittelee
-p&Atilde;&curren;&Atilde;&curren;llekk&Atilde;&curren;isi&Atilde;&curren;
-nimi&Atilde;&curren; f1:n kanssa,
-ymp&Atilde;&curren;r&Atilde;&para;iv&Atilde;&curren;n funktion
-nimet peittyv&Atilde;&curren;t.
-N&Atilde;&curren;kyvyyksist&Atilde;&curren; on kerrottu tarkemmin
-<a href="#chapter-3">luvussa 3</a></p>
-<p>Funktion ensimm&Atilde;&curren;inen lause voi olla
-string-literaali, jolloin se toimii funktion
-dokumentaatiomerkkijonona eli
-<i>docstringin&Atilde;&curren;</i>.</p>
-<pre class="sh_python">
+
+  <h2 id="chapter-6">6. Laskennan kapselointi</h2>
+
+  <p><em>miten toiminnallisuuksia abstrahoidaan ja
+  niist&Atilde;&curren; rakennetaan uusia
+  toiminnallisuuksia?</em></p>
+
+  <ul>
+    <li><a href="#chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai
+    alifunktiot</a></li>
+
+    <li><a href=
+    "#chapter-6-parametrivalitys">Parametriv&Atilde;&curren;litys</a></li>
+
+    <li><a href="#chapter-6-poikkeukset">Suoritusaikaisiin
+    virheisiin varautumisen v&Atilde;&curren;lineet
+    &acirc;&euro;&ldquo; poikkeukset</a></li>
+
+    <li><a href="#chapter-6-rinnakkaislaskenta">Miten kieli tukee
+    rinnakkaista laskentaa</a></li>
+
+    <li><a href=
+    "#chapter-6-ohjelmaarkkitehtuurit">Tyypillisi&Atilde;&curren;
+    ohjelma-arkkitehtuureja</a></li>
+
+    <li><a href="#chapter-6-arvio">Arvio kieleen valittujen
+    ratkaisujen eduista ja haitoista</a></li>
+  </ul>
+
+  <h3 id="chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai
+  alifunktiot</h3>
+
+  <p>Funktio
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
+  avainsanalla <i>def</i>, jota tulee seurata funktion nimi ja
+  muodolliset parametrit. Funktio on siis muotoa <i>def</i> [nimi]
+  <i>(</i>[parametrit]<i>)</i>, ja normaaliin Python tapaan lohkon
+  merkiksi tulee kaksoispiste. Funktion rungon muodostavat
+  lausekkeet alkavat seuraavalta rivilt&Atilde;&curren; ja niiden
+  tulee olla sisennettyin&Atilde;&curren;.</p>
+
+  <p>Pythonissa on sallittu
+  sis&Atilde;&curren;kk&Atilde;&curren;iset
+  funktiom&Atilde;&curren;&Atilde;&curren;rittelyt. Funktion
+  <i>f1</i> sis&Atilde;&curren;ll&Atilde;&curren;
+  m&Atilde;&curren;&Atilde;&curren;ritelty funktio <i>f2</i>
+  p&Atilde;&curren;&Atilde;&curren;see k&Atilde;&curren;siksi f1:n
+  muuttujiin. Jos f2 m&Atilde;&curren;&Atilde;&curren;rittelee
+  p&Atilde;&curren;&Atilde;&curren;llekk&Atilde;&curren;isi&Atilde;&curren;
+  nimi&Atilde;&curren; f1:n kanssa,
+  ymp&Atilde;&curren;r&Atilde;&para;iv&Atilde;&curren;n funktion
+  nimet peittyv&Atilde;&curren;t.
+  N&Atilde;&curren;kyvyyksist&Atilde;&curren; on kerrottu tarkemmin
+  <a href="#chapter-3">luvussa 3</a></p>
+
+  <p>Funktion ensimm&Atilde;&curren;inen lause voi olla
+  string-literaali, jolloin se toimii funktion
+  dokumentaatiomerkkijonona eli
+  <i>docstringin&Atilde;&curren;</i>.</p>
+  <pre class="sh_python">
 def funktio(viesti):
     """Funktion docstring"""
     print(viesti)
   
 </pre>
-<p>Pythonissa kaikki funktiot palauttavat arvon, my&Atilde;&para;s
-sellaisissa tapauksissa, kun funktiolla ei ole <i>return</i>
-lausetta. Ilman return-lausetta funktiot palauttavat arvon
-<i>None</i>. [<a href="#ref-funktiot">16</a>]</p>
-<h3 id="chapter-6-parametrivalitys">
-Parametriv&Atilde;&curren;litys</h3>
-<p>Pythonissa parametrinv&Atilde;&curren;litys on toteutettu
-olioviitteill&Atilde;&curren;, jotka
-v&Atilde;&curren;litet&Atilde;&curren;&Atilde;&curren;n
-arvoparametrein&Atilde;&curren;. Joidenkin olioiden arvo voi
-muuttua. Oliota, jonka arvo voi muuttua, kutsutaan
-<em>mutaabeliksi</em> olioksi, vastaavasti muuttumatonta oliota
-kutsutaan <em>immutaabeliksi</em> olioksi. Olion muuttumattomuus
-m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;ytyy sen tyypin
-mukaan. Esimerkiksi numeeriset tyypit, stringit ja monikot ovat
-muuttumattomia, mutta dict- ja list-rakenteet ovat muuttuvia.</p>
-<p>Seuraavassa esimerkki
-parametrinv&Atilde;&curren;lityksest&Atilde;&curren;:</p>
-<pre class="sh_python">
+
+  <p>Pythonissa kaikki funktiot palauttavat arvon,
+  my&Atilde;&para;s sellaisissa tapauksissa, kun funktiolla ei ole
+  <i>return</i> lausetta. Ilman return-lausetta funktiot
+  palauttavat arvon <i>None</i>. [<a href=
+  "#ref-funktiot">16</a>]</p>
+
+  <h3 id="chapter-6-parametrivalitys">
+  Parametriv&Atilde;&curren;litys</h3>
+
+  <p>Pythonissa parametrinv&Atilde;&curren;litys on toteutettu
+  olioviitteill&Atilde;&curren;, jotka
+  v&Atilde;&curren;litet&Atilde;&curren;&Atilde;&curren;n
+  arvoparametrein&Atilde;&curren;. Joidenkin olioiden arvo voi
+  muuttua. Oliota, jonka arvo voi muuttua, kutsutaan
+  <em>mutaabeliksi</em> olioksi, vastaavasti muuttumatonta oliota
+  kutsutaan <em>immutaabeliksi</em> olioksi. Olion muuttumattomuus
+  m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;ytyy sen tyypin
+  mukaan. Esimerkiksi numeeriset tyypit, stringit ja monikot ovat
+  muuttumattomia, mutta dict- ja list-rakenteet ovat muuttuvia.</p>
+
+  <p>Seuraavassa esimerkki
+  parametrinv&Atilde;&curren;lityksest&Atilde;&curren;:</p>
+  <pre class="sh_python">
 def muuta1(y):
     print('muuta1 sai', y)
     y = [1, 2, 3]
@@ -1320,33 +1605,36 @@ muuta3 muutti y arvoksi egg and bacon
 muuta3 j&Atilde;&curren;lkeen x arvo on spam spam spam
 '''
 </pre>
-<p>Funktio muuta1 yritt&Atilde;&curren;&Atilde;&curren; muuttaa
-saamansa listaparametrin arvoksi <code>[1, 2, 3]</code>
-sijoittamalla siihen uuden listainstanssin, mutta
-t&Atilde;&curren;m&Atilde;&curren; ei toimi vaikka listarakenne
-onkin mutaabeli, koska <code>y = [1, 2, 3]</code> korvaa vain
-parametrimuuttujan paikallisen kopion arvon.
-<code>muuta2</code>-funktio muuttaa onnistuneesti listaparametrin
-arvoksi <code>[1, 2, 3]</code>
-k&Atilde;&curren;ytt&Atilde;&curren;m&Atilde;&curren;ll&Atilde;&curren;
-listaolion append-metodia.</p>
-<p>String-tyyppi on Pythonissa muuttumaton, joten muuta3-funktion
-tyylinen stringin uudelleensijoitus parametriin ei
-my&Atilde;&para;sk&Atilde;&curren;&Atilde;&curren;n toimi.</p>
-<p>Python tukee tavallisen parametrien lis&Atilde;&curren;ksi
-vaihtuvan mittaisia parametrilistoja ja nimettyj&Atilde;&curren;
-parametrej&Atilde;&curren;. Parametrilista otetaan
-k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&para;n
-erikoissyntaksilla <code>*args</code>, jossa <code>args</code> on
-parametrit sis&Atilde;&curren;lt&Atilde;&curren;v&Atilde;&curren;
-listamuuttuja. Vastaavasti nimetyt parametrit otetaan
-k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&para;n
-<code>**kwargs</code> syntaksilla, jossa <code>kwargs</code>
-sis&Atilde;&curren;lt&Atilde;&curren;&Atilde;&curren; nimetyt
-parametrit <code>dict</code>-avainarvorakenteessa. Seuraavassa
-esimerkki niiden
-k&Atilde;&curren;yt&Atilde;&para;st&Atilde;&curren;:</p>
-<pre class="sh_python">
+
+  <p>Funktio muuta1 yritt&Atilde;&curren;&Atilde;&curren; muuttaa
+  saamansa listaparametrin arvoksi <code>[1, 2, 3]</code>
+  sijoittamalla siihen uuden listainstanssin, mutta
+  t&Atilde;&curren;m&Atilde;&curren; ei toimi vaikka listarakenne
+  onkin mutaabeli, koska <code>y = [1, 2, 3]</code> korvaa vain
+  parametrimuuttujan paikallisen kopion arvon.
+  <code>muuta2</code>-funktio muuttaa onnistuneesti listaparametrin
+  arvoksi <code>[1, 2, 3]</code>
+  k&Atilde;&curren;ytt&Atilde;&curren;m&Atilde;&curren;ll&Atilde;&curren;
+  listaolion append-metodia.</p>
+
+  <p>String-tyyppi on Pythonissa muuttumaton, joten muuta3-funktion
+  tyylinen stringin uudelleensijoitus parametriin ei
+  my&Atilde;&para;sk&Atilde;&curren;&Atilde;&curren;n toimi.</p>
+
+  <p>Python tukee tavallisen parametrien lis&Atilde;&curren;ksi
+  vaihtuvan mittaisia parametrilistoja ja nimettyj&Atilde;&curren;
+  parametrej&Atilde;&curren;. Parametrilista otetaan
+  k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&para;n
+  erikoissyntaksilla <code>*args</code>, jossa <code>args</code> on
+  parametrit sis&Atilde;&curren;lt&Atilde;&curren;v&Atilde;&curren;
+  listamuuttuja. Vastaavasti nimetyt parametrit otetaan
+  k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&para;n
+  <code>**kwargs</code> syntaksilla, jossa <code>kwargs</code>
+  sis&Atilde;&curren;lt&Atilde;&curren;&Atilde;&curren; nimetyt
+  parametrit <code>dict</code>-avainarvorakenteessa. Seuraavassa
+  esimerkki niiden
+  k&Atilde;&curren;yt&Atilde;&para;st&Atilde;&curren;:</p>
+  <pre class="sh_python">
 def tulosta_kaikki(a, b, *c, **d):
     print('tavalliset parametrit: ', a, b)
     print('listaparametrit: ')
@@ -1377,15 +1665,16 @@ nimiparametrit:
 ('e', 2.72)
 '''
 </pre>
-<p>Pythonissa voidaan
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
-my&Atilde;&para;s oletusparametreja [<a href=
-"#ref-funktiot">16</a>], jolloin funktiota voidaan kutsua
-pienemm&Atilde;&curren;ll&Atilde;&curren;
-m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;ll&Atilde;&curren;
-parametreja kuin mit&Atilde;&curren; on mainittu sen
-m&Atilde;&curren;&Atilde;&curren;rittelyss&Atilde;&curren;.</p>
-<pre class="sh_python">
+
+  <p>Pythonissa voidaan
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
+  my&Atilde;&para;s oletusparametreja [<a href=
+  "#ref-funktiot">16</a>], jolloin funktiota voidaan kutsua
+  pienemm&Atilde;&curren;ll&Atilde;&curren;
+  m&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;ll&Atilde;&curren;
+  parametreja kuin mit&Atilde;&curren; on mainittu sen
+  m&Atilde;&curren;&Atilde;&curren;rittelyss&Atilde;&curren;.</p>
+  <pre class="sh_python">
 def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
     while True:
         ok = input(prompt)
@@ -1404,10 +1693,11 @@ def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
 # ask_ok('OK to overwrite the file?', 2)
 # ask_ok('OK to overwrite the file?', 2, 'Come on, only yes or no!')
 </pre>
-<p>Oletusarvot evaluoidaan
-m&Atilde;&curren;&Atilde;&curren;rittelykohdassaan omalla
-n&Atilde;&curren;kyvyysalueellaan.</p>
-<pre class="sh_python">
+
+  <p>Oletusarvot evaluoidaan
+  m&Atilde;&curren;&Atilde;&curren;rittelykohdassaan omalla
+  n&Atilde;&curren;kyvyysalueellaan.</p>
+  <pre class="sh_python">
 i = 5
 
 def f(arg=i):
@@ -1416,12 +1706,13 @@ def f(arg=i):
 i = 16
 f() # Tulostaa arvon 5
 </pre>
-<p>Oletusarvot sidotaan vain kerran.
-T&Atilde;&curren;ll&Atilde;&curren; on
-v&Atilde;&curren;li&Atilde;&curren; varsinkin jos oletusarvona
-k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n mutaabelia
-oliota kuten esim. listaa tai sanakirjaa.</p>
-<pre class="sh_python">
+
+  <p>Oletusarvot sidotaan vain kerran.
+  T&Atilde;&curren;ll&Atilde;&curren; on
+  v&Atilde;&curren;li&Atilde;&curren; varsinkin jos oletusarvona
+  k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n mutaabelia
+  oliota kuten esim. listaa tai sanakirjaa.</p>
+  <pre class="sh_python">
   def f(a, L=[]):
     L.append(a)
     return L
@@ -1436,13 +1727,15 @@ print(f(3))
 # [1, 2]
 # [1, 2, 3]
 </pre>
-<p>Funktioita voidaan my&Atilde;&para;s kutsua
-k&Atilde;&curren;ytt&Atilde;&curren;m&Atilde;&curren;ll&Atilde;&curren;
-nimettyj&Atilde;&curren; parametreja [<a href=
-"#ref-funktiot">16</a>] esim. <code>parametrin_nimi = arvo</code>,
-jolloin arvot voidaan j&Atilde;&curren;rjestell&Atilde;&curren;
-kutsujan haluamaan j&Atilde;&curren;rjestykseen.</p>
-<pre class="sh_python">
+
+  <p>Funktioita voidaan my&Atilde;&para;s kutsua
+  k&Atilde;&curren;ytt&Atilde;&curren;m&Atilde;&curren;ll&Atilde;&curren;
+  nimettyj&Atilde;&curren; parametreja [<a href=
+  "#ref-funktiot">16</a>] esim. <code>parametrin_nimi =
+  arvo</code>, jolloin arvot voidaan
+  j&Atilde;&curren;rjestell&Atilde;&curren; kutsujan haluamaan
+  j&Atilde;&curren;rjestykseen.</p>
+  <pre class="sh_python">
 def foo(bar,fuu):
     print("BAR: {}".format(bar))
     print("FUU: {}".format(fuu))
@@ -1456,29 +1749,33 @@ foo("Eka", fuu = "Toka")
 # BAR: Eka
 # FUU: Toka
 </pre>
-<h3 id="chapter-6-poikkeukset">Suoritusaikaisiin virheisiin
-varautumisen v&Atilde;&curren;lineet &acirc;&euro;&ldquo;
-poikkeukset</h3>
-<p>Python 3:n poikkeuksien k&Atilde;&curren;sittely toimii niin
-tavanomaisesti, ett&Atilde;&curren; ainoastaan Python 2 -ohjelmoija
-voi pit&Atilde;&curren;&Atilde;&curren; sit&Atilde;&curren;
-jotenkin odottamattomana. Python 2:sta stacktrace tallennettiin
-globaaliin muuttujaan ja t&Atilde;&curren;st&Atilde;&curren;
-seurasi, ett&Atilde;&curren; mik&Atilde;&curren;li poikkeus syntyi
-ja poikkeuksen k&Atilde;&curren;sittelyn aikana syntyi toinen
-poikkeus, niin ensimm&Atilde;&curren;isen poikkeuksen stacktrace
-katosi, jollei ohjelmoija ollut itse laittanut sit&Atilde;&curren;
-jonnekin talteen. N&Atilde;&curren;in k&Atilde;&curren;vi
-my&Atilde;&para;s jos
-poikkeusk&Atilde;&curren;sittelij&Atilde;&curren;ss&Atilde;&curren;
-paketoi k&Atilde;&curren;sitellyn poikkeuksen toiseen poikkeukseen.
-T&Atilde;&curren;m&Atilde;&curren; Python 2:den ominaisuus ei
-periytynyt Python 3:een. Siisp&Atilde;&curren; poikkeukset
-k&Atilde;&curren;ytt&Atilde;&curren;ytyv&Atilde;&curren;t Python
-3:ssa hyvin Javamaiseen tapaan. Suurimmat erot muihin kieliin
-lienev&Atilde;&curren;t syntaktisia tai toteutuksen
-yksityiskohtia.</p>
-<pre class="sh_python">
+
+  <h3 id="chapter-6-poikkeukset">Suoritusaikaisiin virheisiin
+  varautumisen v&Atilde;&curren;lineet &acirc;&euro;&ldquo;
+  poikkeukset</h3>
+
+  <p>Python 3:n poikkeuksien k&Atilde;&curren;sittely toimii niin
+  tavanomaisesti, ett&Atilde;&curren; ainoastaan Python 2
+  -ohjelmoija voi pit&Atilde;&curren;&Atilde;&curren;
+  sit&Atilde;&curren; jotenkin odottamattomana. Python 2:sta
+  stacktrace tallennettiin globaaliin muuttujaan ja
+  t&Atilde;&curren;st&Atilde;&curren; seurasi, ett&Atilde;&curren;
+  mik&Atilde;&curren;li poikkeus syntyi ja poikkeuksen
+  k&Atilde;&curren;sittelyn aikana syntyi toinen poikkeus, niin
+  ensimm&Atilde;&curren;isen poikkeuksen stacktrace katosi, jollei
+  ohjelmoija ollut itse laittanut sit&Atilde;&curren; jonnekin
+  talteen. N&Atilde;&curren;in k&Atilde;&curren;vi
+  my&Atilde;&para;s jos
+  poikkeusk&Atilde;&curren;sittelij&Atilde;&curren;ss&Atilde;&curren;
+  paketoi k&Atilde;&curren;sitellyn poikkeuksen toiseen
+  poikkeukseen. T&Atilde;&curren;m&Atilde;&curren; Python 2:den
+  ominaisuus ei periytynyt Python 3:een. Siisp&Atilde;&curren;
+  poikkeukset
+  k&Atilde;&curren;ytt&Atilde;&curren;ytyv&Atilde;&curren;t Python
+  3:ssa hyvin Javamaiseen tapaan. Suurimmat erot muihin kieliin
+  lienev&Atilde;&curren;t syntaktisia tai toteutuksen
+  yksityiskohtia.</p>
+  <pre class="sh_python">
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
 
@@ -1519,15 +1816,17 @@ if __name__ == "__main__":
     main()
     
   
-</pre>
-<a href="esimerkit/poikkeukset.py">Lataa esimerkki
+</pre><a href="esimerkit/poikkeukset.py">Lataa esimerkki
 t&Atilde;&curren;st&Atilde;&curren;.</a>
-<p>Ohjelman tulosteet eri
-sy&Atilde;&para;tteill&Atilde;&curren;:</p>
-<dl>
-<dt>0</dt>
-<dd>
-<pre>
+
+  <p>Ohjelman tulosteet eri
+  sy&Atilde;&para;tteill&Atilde;&curren;:</p>
+
+  <dl>
+    <dt>0</dt>
+
+    <dd>
+      <pre>
 Anna positiivinen luku:
 0
 ZeroDivisionError
@@ -1540,10 +1839,13 @@ None
     1/jakaja
 T&Atilde;&curren;m&Atilde;&curren; printataan aina
   
-</pre></dd>
-<dt>-1</dt>
-<dd>
-<pre>
+</pre>
+    </dd>
+
+    <dt>-1</dt>
+
+    <dd>
+      <pre>
 Anna positiivinen luku:
 -1
 ValueError tai NegativeNumberError
@@ -1555,10 +1857,13 @@ Traceback (most recent call last):
     raise NegativeNumberError("Negatiivinen numero ei ole t&Atilde;&curren;ss&Atilde;&curren; sallittu")
 __main__.NegativeNumberError: Negatiivinen numero ei ole t&Atilde;&curren;ss&Atilde;&curren; sallittu
   
-</pre></dd>
-<dt>yks</dt>
-<dd>
-<pre>
+</pre>
+    </dd>
+
+    <dt>yks</dt>
+
+    <dd>
+      <pre>
 Anna positiivinen luku:
 yks
 ValueError tai NegativeNumberError
@@ -1570,56 +1875,64 @@ Traceback (most recent call last):
     jakaja = int(input())
 ValueError: invalid literal for int() with base 10: 'yks'
   
-</pre></dd>
-<dt>ctrl + c</dt>
-<dd>
-<pre>
+</pre>
+    </dd>
+
+    <dt>ctrl + c</dt>
+
+    <dd>
+      <pre>
 Anna positiivinen luku:
 ^CJokin muu meni pieleen
 T&Atilde;&curren;m&Atilde;&curren; printataan aina
   
-</pre></dd>
-</dl>
-<h3 id="chapter-6-rinnakkaislaskenta">Miten kieli tukee
-rinnakkaista laskentaa</h3>
-<p>Python ei erityisemmin tue rinnakkaisuutta. Pythonissa (ainakin
-CPython implementaatiossa) on
-k&Atilde;&curren;yt&Atilde;&para;ss&Atilde;&curren; GIL eli Global
-Interpreter Lock. GIL:in tarkoitus on yksinkertaisesti
-est&Atilde;&curren;&Atilde;&curren; Pythonin bytecoden rinnakkainen
-suorittaminen. T&Atilde;&curren;m&Atilde;&curren; tarkoittaa
-sit&Atilde;&curren;, ett&Atilde;&curren; riippumatta
-siit&Atilde;&curren; montako ydint&Atilde;&curren;/prosessoria on
-k&Atilde;&curren;ytett&Atilde;&curren;viss&Atilde;&curren; ja
-moneenko s&Atilde;&curren;ikeeseen Python-ohjelman suoritus on
-jaettu, samanaikaisesti voi kuitenkin yleens&Atilde;&curren;
-suorittaa vain yksi s&Atilde;&curren;ie. Ratkaisuun on
-p&Atilde;&curren;&Atilde;&curren;dytty siksi, ett&Atilde;&curren;
-CPython implementaatiosta on n&Atilde;&curren;in saatu paljon
-tehokkaampi ja my&Atilde;&para;s yksinkertaisempi. Aikaisemmin
-CPythonista kokeiltiin versiota, joka jossa GIL oli poistettu,
-mutta sen katsottiin heikent&Atilde;&curren;v&Atilde;&curren;n
-aivan liikaa Pythonin tehokkuutta yksiytimisill&Atilde;&curren;
-j&Atilde;&curren;rjestelmill&Atilde;&curren; (ainakin 30%
-tehottomampi). Toistaiseksi t&Atilde;&curren;h&Atilde;&curren;n ei
-ole odotettavissa mit&Atilde;&curren;&Atilde;&curren;n muutosta.
-T&Atilde;&curren;m&Atilde;&curren; ei toki tarkoita,
-etteik&Atilde;&para; Pythonilla voitaisi saavuttaa aitoa
-rinnakkaisuutta. Rinnakkaisuuteen on vain
-k&Atilde;&curren;ytett&Atilde;&curren;v&Atilde;&curren; prosesseja
-tai C/C++ laajennoksia joissa GIL vapautetaan. My&Atilde;&para;s
-esimerkiksi IO-operaatioiden yhteydess&Atilde;&curren; GIL
-vapautetaan, joten tiedostoja voi lukea eri
-s&Atilde;&curren;ikeiss&Atilde;&curren;kin aidosti rinnakkain.
-Mielenkiintoinen kysymys on kuinka pitk&Atilde;&curren;lle nykyinen
-kanta pit&Atilde;&curren;&Atilde;&curren;, kun yksiytimiset
-prosessorit tulevat yh&Atilde;&curren; harvinaisemmiksi ja lopulta
-katoavat kokonaan historiaan. <a href=
-"#ref-gil-ref">[14]</a><a href="#ref-gil-faq">[15]</a></p>
-<p>Seuraavassa viel&Atilde;&curren; pieni demonstraatio
-siit&Atilde;&curren; mit&Atilde;&curren;
-t&Atilde;&curren;m&Atilde;&curren; tarkoittaa.</p>
-<pre class="sh_python">
+</pre>
+    </dd>
+  </dl>
+
+  <h3 id="chapter-6-rinnakkaislaskenta">Miten kieli tukee
+  rinnakkaista laskentaa</h3>
+
+  <p>Python ei erityisemmin tue rinnakkaisuutta. Pythonissa
+  (ainakin CPython implementaatiossa) on
+  k&Atilde;&curren;yt&Atilde;&para;ss&Atilde;&curren; GIL eli
+  Global Interpreter Lock. GIL:in tarkoitus on yksinkertaisesti
+  est&Atilde;&curren;&Atilde;&curren; Pythonin bytecoden
+  rinnakkainen suorittaminen. T&Atilde;&curren;m&Atilde;&curren;
+  tarkoittaa sit&Atilde;&curren;, ett&Atilde;&curren; riippumatta
+  siit&Atilde;&curren; montako ydint&Atilde;&curren;/prosessoria on
+  k&Atilde;&curren;ytett&Atilde;&curren;viss&Atilde;&curren; ja
+  moneenko s&Atilde;&curren;ikeeseen Python-ohjelman suoritus on
+  jaettu, samanaikaisesti voi kuitenkin yleens&Atilde;&curren;
+  suorittaa vain yksi s&Atilde;&curren;ie. Ratkaisuun on
+  p&Atilde;&curren;&Atilde;&curren;dytty siksi, ett&Atilde;&curren;
+  CPython implementaatiosta on n&Atilde;&curren;in saatu paljon
+  tehokkaampi ja my&Atilde;&para;s yksinkertaisempi. Aikaisemmin
+  CPythonista kokeiltiin versiota, joka jossa GIL oli poistettu,
+  mutta sen katsottiin heikent&Atilde;&curren;v&Atilde;&curren;n
+  aivan liikaa Pythonin tehokkuutta yksiytimisill&Atilde;&curren;
+  j&Atilde;&curren;rjestelmill&Atilde;&curren; (ainakin 30%
+  tehottomampi). Toistaiseksi t&Atilde;&curren;h&Atilde;&curren;n
+  ei ole odotettavissa mit&Atilde;&curren;&Atilde;&curren;n
+  muutosta. T&Atilde;&curren;m&Atilde;&curren; ei toki tarkoita,
+  etteik&Atilde;&para; Pythonilla voitaisi saavuttaa aitoa
+  rinnakkaisuutta. Rinnakkaisuuteen on vain
+  k&Atilde;&curren;ytett&Atilde;&curren;v&Atilde;&curren;
+  prosesseja tai C/C++ laajennoksia joissa GIL vapautetaan.
+  My&Atilde;&para;s esimerkiksi IO-operaatioiden
+  yhteydess&Atilde;&curren; GIL vapautetaan, joten tiedostoja voi
+  lukea eri s&Atilde;&curren;ikeiss&Atilde;&curren;kin aidosti
+  rinnakkain. Mielenkiintoinen kysymys on kuinka
+  pitk&Atilde;&curren;lle nykyinen kanta
+  pit&Atilde;&curren;&Atilde;&curren;, kun yksiytimiset prosessorit
+  tulevat yh&Atilde;&curren; harvinaisemmiksi ja lopulta katoavat
+  kokonaan historiaan. <a href="#ref-gil-ref">[14]</a><a href=
+  "#ref-gil-faq">[15]</a></p>
+
+  <p>Seuraavassa viel&Atilde;&curren; pieni demonstraatio
+  siit&Atilde;&curren; mit&Atilde;&curren;
+  t&Atilde;&curren;m&Atilde;&curren; tarkoittaa.</p>
+  <pre class="sh_python">
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
 
@@ -1670,12 +1983,12 @@ def main():
 
 if __name__ == "__main__":
     main()
-</pre>
-<a href="esimerkit/rinnakkaisuus.py">Voit ladata esimerkin
+</pre><a href="esimerkit/rinnakkaisuus.py">Voit ladata esimerkin
 t&Atilde;&curren;st&Atilde;&curren;.</a>
-<p>Testin tuloksena omalla Linux-kannettavallani konsoliin ilmestyy
-jotakin t&Atilde;&curren;llaista:</p>
-<pre>
+
+  <p>Testin tuloksena omalla Linux-kannettavallani konsoliin
+  ilmestyy jotakin t&Atilde;&curren;llaista:</p>
+  <pre>
 Konessa on 2 prosessoria.
 
  moniprosessitesti
@@ -1734,85 +2047,97 @@ yksiprosessitesti 3.42161202431
 s&Atilde;&curren;ietesti 3.89715909958
 moniprosessitesti 2.04168510437
 </pre>
-<p>Tuloksista n&Atilde;&curren;hd&Atilde;&curren;&Atilde;&curren;n
-selv&Atilde;&curren;sti, ett&Atilde;&curren; s&Atilde;&curren;ikeet
-toimivat kaikkista hitaimmin.
-Pelk&Atilde;&curren;st&Atilde;&curren;&Atilde;&curren;n kahdella
-ytimell&Atilde;&curren; varustettu kannettavani toimi prosesseilla
-l&Atilde;&curren;hes 50% nopeammin verrattuna
-s&Atilde;&curren;ikeisiin. S&Atilde;&curren;ikeet toimivat jopa
-hitaammin kuin yksiprosessitesti. S&Atilde;&curren;iealtaan
-allokointi on toki
-ylim&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;ist&Atilde;&curren;
-ty&Atilde;&para;t&Atilde;&curren;, mutta kyseess&Atilde;&curren; ei
-voi olla niin raskas operaatio, ett&Atilde;&curren;
-s&Atilde;&curren;ietesti voisi
-mitenk&Atilde;&curren;&Atilde;&curren;n
-p&Atilde;&curren;&Atilde;&curren;st&Atilde;&curren;
-l&Atilde;&curren;hes puoli sekuntia nopeampaan aikaan ja edes
-samalle viivalle yksiprosessitestin tuloksen kanssa. Kysymys on
-vain siit&Atilde;&curren;, ett&Atilde;&curren;
-s&Atilde;&curren;ikeet eiv&Atilde;&curren;t tuo
-mit&Atilde;&curren;&Atilde;&curren;n aitoa rinnakkaisuutta
-laskentaan vaan ainoastaan
-lis&Atilde;&curren;&Atilde;&curren;v&Atilde;&curren;t
-synkronointitarvetta. GIL:in ansiosta synkronointi on toki
-yksinkertaista, mutta prosessoriaikaa
-pit&Atilde;&curren;&Atilde;&curren; silti tasapuolisesti jakaa
-s&Atilde;&curren;ikeiden v&Atilde;&curren;lill&Atilde;&curren; ja
-suoritusvuoroja vaihdella. Kuten kommenteistakin ilmenneen, niin
-mik&Atilde;&curren;li olisimme tulostusten
-v&Atilde;&curren;lill&Atilde;&curren; nukkuneet silmukassa
-py&Atilde;&para;rimisen sijasta olisi s&Atilde;&curren;ietesti
-noussutkin nopeimmaksi. T&Atilde;&curren;m&Atilde;&curren; johtuu
-tietenkin siit&Atilde;&curren;, ett&Atilde;&curren;
-s&Atilde;&curren;ikeet ovat kevyempi&Atilde;&curren; kuin prosessit
-ja voivat toki kaikki nukkua samaan aikaan siin&Atilde;&curren;
-miss&Atilde;&curren; prosessitkin.</p>
-<h2 id="chapter-7">7. Datan kapselointi</h2>
-<ul>
-<li><a href="#chapter-7-raktyypit">Rakenteiset ja kapseloidut
-tyypit</a></li>
-<li><a href="#chapter-7-oliotluokat">Oliot ja luokat</a></li>
-<li><a href="#chapter-7-arvosem">Arvo- ja viitesemantiikka</a></li>
-</ul>
-<h3 id="chapter-7-raktyypit">Rakenteiset ja kapseloidut tyypit</h3>
-<h4>Moduulit ja paketit</h4>
-<p>Pythonissa l&Atilde;&curren;hdekooditiedosto muodostaa moduulin.
-Moduulin nimi on tiedostonimi ilman
-tiedostop&Atilde;&curren;&Atilde;&curren;tett&Atilde;&curren;
-<code>.py</code>. Ajettavan moduulin nime&Atilde;&curren; voi
-moduulissa kysy&Atilde;&curren; <code>__name__</code> -metodilla.
-Moduulin tarkoitus on koota yhteen
-m&Atilde;&curren;&Atilde;&curren;rittelyit&Atilde;&curren;
-(funktioita, luokkia, muuttujia). Moduuli voidaan sitten jostakin
-toisaalta (esimerkiksi toisesta moduulista)
-pyyt&Atilde;&curren;&Atilde;&curren;
-k&Atilde;&curren;ytett&Atilde;&curren;v&Atilde;&curren;ksi. Moduuli
-voidaan pyyt&Atilde;&curren;&Atilde;&curren;
-k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&para;n avainsanan
-<code>import</code> avulla. T&Atilde;&curren;m&Atilde;&curren;
-voidaan tehd&Atilde;&curren; esimerkiksi n&Atilde;&curren;in:</p>
-<pre class="sh_python">
+
+  <p>Tuloksista
+  n&Atilde;&curren;hd&Atilde;&curren;&Atilde;&curren;n
+  selv&Atilde;&curren;sti, ett&Atilde;&curren;
+  s&Atilde;&curren;ikeet toimivat kaikkista hitaimmin.
+  Pelk&Atilde;&curren;st&Atilde;&curren;&Atilde;&curren;n kahdella
+  ytimell&Atilde;&curren; varustettu kannettavani toimi
+  prosesseilla l&Atilde;&curren;hes 50% nopeammin verrattuna
+  s&Atilde;&curren;ikeisiin. S&Atilde;&curren;ikeet toimivat jopa
+  hitaammin kuin yksiprosessitesti. S&Atilde;&curren;iealtaan
+  allokointi on toki
+  ylim&Atilde;&curren;&Atilde;&curren;r&Atilde;&curren;ist&Atilde;&curren;
+  ty&Atilde;&para;t&Atilde;&curren;, mutta kyseess&Atilde;&curren;
+  ei voi olla niin raskas operaatio, ett&Atilde;&curren;
+  s&Atilde;&curren;ietesti voisi
+  mitenk&Atilde;&curren;&Atilde;&curren;n
+  p&Atilde;&curren;&Atilde;&curren;st&Atilde;&curren;
+  l&Atilde;&curren;hes puoli sekuntia nopeampaan aikaan ja edes
+  samalle viivalle yksiprosessitestin tuloksen kanssa. Kysymys on
+  vain siit&Atilde;&curren;, ett&Atilde;&curren;
+  s&Atilde;&curren;ikeet eiv&Atilde;&curren;t tuo
+  mit&Atilde;&curren;&Atilde;&curren;n aitoa rinnakkaisuutta
+  laskentaan vaan ainoastaan
+  lis&Atilde;&curren;&Atilde;&curren;v&Atilde;&curren;t
+  synkronointitarvetta. GIL:in ansiosta synkronointi on toki
+  yksinkertaista, mutta prosessoriaikaa
+  pit&Atilde;&curren;&Atilde;&curren; silti tasapuolisesti jakaa
+  s&Atilde;&curren;ikeiden v&Atilde;&curren;lill&Atilde;&curren; ja
+  suoritusvuoroja vaihdella. Kuten kommenteistakin ilmenneen, niin
+  mik&Atilde;&curren;li olisimme tulostusten
+  v&Atilde;&curren;lill&Atilde;&curren; nukkuneet silmukassa
+  py&Atilde;&para;rimisen sijasta olisi s&Atilde;&curren;ietesti
+  noussutkin nopeimmaksi. T&Atilde;&curren;m&Atilde;&curren; johtuu
+  tietenkin siit&Atilde;&curren;, ett&Atilde;&curren;
+  s&Atilde;&curren;ikeet ovat kevyempi&Atilde;&curren; kuin
+  prosessit ja voivat toki kaikki nukkua samaan aikaan
+  siin&Atilde;&curren; miss&Atilde;&curren; prosessitkin.</p>
+
+  <h2 id="chapter-7">7. Datan kapselointi</h2>
+
+  <ul>
+    <li><a href="#chapter-7-raktyypit">Rakenteiset ja kapseloidut
+    tyypit</a></li>
+
+    <li><a href="#chapter-7-oliotluokat">Oliot ja luokat</a></li>
+
+    <li><a href="#chapter-7-arvosem">Arvo- ja
+    viitesemantiikka</a></li>
+  </ul>
+
+  <h3 id="chapter-7-raktyypit">Rakenteiset ja kapseloidut
+  tyypit</h3>
+
+  <h4>Moduulit ja paketit</h4>
+
+  <p>Pythonissa l&Atilde;&curren;hdekooditiedosto muodostaa
+  moduulin. Moduulin nimi on tiedostonimi ilman
+  tiedostop&Atilde;&curren;&Atilde;&curren;tett&Atilde;&curren;
+  <code>.py</code>. Ajettavan moduulin nime&Atilde;&curren; voi
+  moduulissa kysy&Atilde;&curren; <code>__name__</code> -metodilla.
+  Moduulin tarkoitus on koota yhteen
+  m&Atilde;&curren;&Atilde;&curren;rittelyit&Atilde;&curren;
+  (funktioita, luokkia, muuttujia). Moduuli voidaan sitten jostakin
+  toisaalta (esimerkiksi toisesta moduulista)
+  pyyt&Atilde;&curren;&Atilde;&curren;
+  k&Atilde;&curren;ytett&Atilde;&curren;v&Atilde;&curren;ksi.
+  Moduuli voidaan pyyt&Atilde;&curren;&Atilde;&curren;
+  k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&para;n avainsanan
+  <code>import</code> avulla. T&Atilde;&curren;m&Atilde;&curren;
+  voidaan tehd&Atilde;&curren; esimerkiksi n&Atilde;&curren;in:</p>
+  <pre class="sh_python">
 import moduuli
   
 #kutsutaan
 moduuli.moduulissa_m&Atilde;&curren;&Atilde;&curren;ritelty_funktio()
 </pre>
-<p>Kuten tuosta esimerkist&Atilde;&curren;kin
-n&Atilde;&curren;hd&Atilde;&curren;&Atilde;&curren;n, niin
-moduulissa
-m&Atilde;&curren;&Atilde;&curren;riteltyj&Atilde;&curren; asioita
-ei tuoda suoraan osaksi sen hetkist&Atilde;&curren; symbolitaulua,
-vaan ainoastaan moduulin nimi tuodaan sinne ja sen
-sis&Atilde;&curren;lt&Atilde;&para;&Atilde;&para;n viitataan
-sit&Atilde;&curren; kautta. Toisenlaista
-k&Atilde;&curren;yt&Atilde;&para;st&Atilde;&curren; saadaan aikaan,
-jos yksinkertaisesti
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
-nimi my&Atilde;&para;s sellaisenaan symbolitauluun. Eli vaikkapa
-n&Atilde;&curren;in:</p>
-<pre class="sh_python">
+
+  <p>Kuten tuosta esimerkist&Atilde;&curren;kin
+  n&Atilde;&curren;hd&Atilde;&curren;&Atilde;&curren;n, niin
+  moduulissa
+  m&Atilde;&curren;&Atilde;&curren;riteltyj&Atilde;&curren; asioita
+  ei tuoda suoraan osaksi sen hetkist&Atilde;&curren;
+  symbolitaulua, vaan ainoastaan moduulin nimi tuodaan sinne ja sen
+  sis&Atilde;&curren;lt&Atilde;&para;&Atilde;&para;n viitataan
+  sit&Atilde;&curren; kautta. Toisenlaista
+  k&Atilde;&curren;yt&Atilde;&para;st&Atilde;&curren; saadaan
+  aikaan, jos yksinkertaisesti
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n
+  nimi my&Atilde;&para;s sellaisenaan symbolitauluun. Eli vaikkapa
+  n&Atilde;&curren;in:</p>
+  <pre class="sh_python">
 import moduuli
   
 #m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;&Atilde;&curren;n nimi moduulissa_m&Atilde;&curren;&Atilde;&curren;ritelty_funktio viittaamaan
@@ -1822,41 +2147,44 @@ moduulissa_m&Atilde;&curren;&Atilde;&curren;ritelty_funktio = moduuli.moduulissa
 #ja nyt voimme viitata funktioon suoraan ilman moduulia
 moduulissa_m&Atilde;&curren;&Atilde;&curren;ritelty_funktio()
 </pre>
-<p>Yll&Atilde;&curren; esitetty&Atilde;&curren; tapaa elegantimpi
-tapa tuoda nimi&Atilde;&curren; lokaaliin nimiavaruuteen on
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
-<code>import</code> -lauseen erityismuotoa. Voidaan sanoa
-<code>from module import
-moduulissa_m&Atilde;&curren;&Atilde;&curren;ritelty_funktio</code>.
-T&Atilde;&curren;m&Atilde;&curren; ei toki ole aivan sama kuin
-yll&Atilde;&curren;, sill&Atilde;&curren;
-t&Atilde;&curren;ss&Atilde;&curren; tapauksessa vain ja ainoastaan
-t&Atilde;&curren;m&Atilde;&curren; yksi funktio
-liitet&Atilde;&curren;&Atilde;&curren;n moduulista osaksi
-t&Atilde;&curren;t&Atilde;&curren; moduulia ja siten siis
-mitk&Atilde;&curren;&Atilde;&curren;n muut moduulin nimet
-eiv&Atilde;&curren;t ole edes moduulin nimen kautta viitattavissa
-t&Atilde;&curren;ss&Atilde;&curren; nimiavaruudessa.</p>
-<p>Jos kuitenkin kaikki moduulin nimet halutaan tuoda toisen
-moduulin lokaaliin nimiavaruuteen sellaisenaan, niin
-t&Atilde;&curren;m&Atilde;&curren;kin on mahdollista.
-T&Atilde;&curren;ll&Atilde;&para;in
-k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n edellisen
-<code>import</code> -lauseen variantin erikoismuotoa. Eli sanomme:
-<code>from moduuli import *</code>.</p>
-<p>Python ei ilmeisesti tue piirreluokkia (<em>eng. trait</em>).
-Kuitenkin n&Atilde;&curren;ytt&Atilde;&curren;isi
-silt&Atilde;&curren;, ett&Atilde;&curren; Pythonillakin
-t&Atilde;&curren;t&Atilde;&curren; tekniikkaa voidaan jossain
-m&Atilde;&curren;&Atilde;&curren;rin matkia moduulien avulla.
-Esimerkiksi luokan funktiot voidaan
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;
-erillisess&Atilde;&curren; moduulissa ja sitten
-sis&Atilde;&curren;llytt&Atilde;&curren;&Atilde;&curren; luokan
-m&Atilde;&curren;&Atilde;&curren;rittelyss&Atilde;&curren; ne
-toisesta moduulista osaksi lokaalia nimiavaruutta. Seuraavassa
-yksinkertainen esimerkki:</p>
-<pre class="sh_python">
+
+  <p>Yll&Atilde;&curren; esitetty&Atilde;&curren; tapaa elegantimpi
+  tapa tuoda nimi&Atilde;&curren; lokaaliin nimiavaruuteen on
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
+  <code>import</code> -lauseen erityismuotoa. Voidaan sanoa
+  <code>from module import
+  moduulissa_m&Atilde;&curren;&Atilde;&curren;ritelty_funktio</code>.
+  T&Atilde;&curren;m&Atilde;&curren; ei toki ole aivan sama kuin
+  yll&Atilde;&curren;, sill&Atilde;&curren;
+  t&Atilde;&curren;ss&Atilde;&curren; tapauksessa vain ja
+  ainoastaan t&Atilde;&curren;m&Atilde;&curren; yksi funktio
+  liitet&Atilde;&curren;&Atilde;&curren;n moduulista osaksi
+  t&Atilde;&curren;t&Atilde;&curren; moduulia ja siten siis
+  mitk&Atilde;&curren;&Atilde;&curren;n muut moduulin nimet
+  eiv&Atilde;&curren;t ole edes moduulin nimen kautta viitattavissa
+  t&Atilde;&curren;ss&Atilde;&curren; nimiavaruudessa.</p>
+
+  <p>Jos kuitenkin kaikki moduulin nimet halutaan tuoda toisen
+  moduulin lokaaliin nimiavaruuteen sellaisenaan, niin
+  t&Atilde;&curren;m&Atilde;&curren;kin on mahdollista.
+  T&Atilde;&curren;ll&Atilde;&para;in
+  k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n edellisen
+  <code>import</code> -lauseen variantin erikoismuotoa. Eli
+  sanomme: <code>from moduuli import *</code>.</p>
+
+  <p>Python ei ilmeisesti tue piirreluokkia (<em>eng. trait</em>).
+  Kuitenkin n&Atilde;&curren;ytt&Atilde;&curren;isi
+  silt&Atilde;&curren;, ett&Atilde;&curren; Pythonillakin
+  t&Atilde;&curren;t&Atilde;&curren; tekniikkaa voidaan jossain
+  m&Atilde;&curren;&Atilde;&curren;rin matkia moduulien avulla.
+  Esimerkiksi luokan funktiot voidaan
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;
+  erillisess&Atilde;&curren; moduulissa ja sitten
+  sis&Atilde;&curren;llytt&Atilde;&curren;&Atilde;&curren; luokan
+  m&Atilde;&curren;&Atilde;&curren;rittelyss&Atilde;&curren; ne
+  toisesta moduulista osaksi lokaalia nimiavaruutta. Seuraavassa
+  yksinkertainen esimerkki:</p>
+  <pre class="sh_python">
 #!/usr/bin/python3.1
 # -*- coding: UTF-8 -*-
 # moduuli1.py
@@ -1883,78 +2211,86 @@ def tee_jotain(self):
 
   
 </pre>
-<p>Suorittamalla moduuli1.py-moduulin skriptin&Atilde;&curren;
-konsolissa, tulostuu konsoliin:</p>
-<pre>
+
+  <p>Suorittamalla moduuli1.py-moduulin skriptin&Atilde;&curren;
+  konsolissa, tulostuu konsoliin:</p>
+  <pre>
 Moduulissa 2 m&Atilde;&curren;&Atilde;&curren;ritelty
 Moduulissa 1 m&Atilde;&curren;&Atilde;&curren;ritelty
 </pre>
-<h4>Paketit (<em>Packages</em>) ja alimoduulit
-(<em>submodules</em>)</h4>
-<p>Monista moduulien muodostaman kokonaisuuden voi koota paketiksi.
-Paketit ovat erityist&Atilde;&curren; tiedostorakennetta
-noudattavia hakemistoja. Pakein nimi on sen juurihakemiston nimi.
-Juurikansion tulee
-sis&Atilde;&curren;lt&Atilde;&curren;&Atilde;&curren; __init__.py
--tiedosto sen merkiksi, ett&Atilde;&curren; kyseess&Atilde;&curren;
-on paketti. Samoin my&Atilde;&para;s kaikkien alikansioiden (joiden
-halutaan olevan osa pakettia) tulee
-sis&Atilde;&curren;lt&Atilde;&curren;&Atilde;&curren;
-t&Atilde;&curren;m&Atilde;&curren; tiedosto. __init__.py voi
-kuitenkin olla tyhj&Atilde;&curren;. Esimerkki paketin
-hakemistorakenteesta:</p>
-<pre>
+
+  <h4>Paketit (<em>Packages</em>) ja alimoduulit
+  (<em>submodules</em>)</h4>
+
+  <p>Monista moduulien muodostaman kokonaisuuden voi koota
+  paketiksi. Paketit ovat erityist&Atilde;&curren;
+  tiedostorakennetta noudattavia hakemistoja. Pakein nimi on sen
+  juurihakemiston nimi. Juurikansion tulee
+  sis&Atilde;&curren;lt&Atilde;&curren;&Atilde;&curren; __init__.py
+  -tiedosto sen merkiksi, ett&Atilde;&curren;
+  kyseess&Atilde;&curren; on paketti. Samoin my&Atilde;&para;s
+  kaikkien alikansioiden (joiden halutaan olevan osa pakettia)
+  tulee sis&Atilde;&curren;lt&Atilde;&curren;&Atilde;&curren;
+  t&Atilde;&curren;m&Atilde;&curren; tiedosto. __init__.py voi
+  kuitenkin olla tyhj&Atilde;&curren;. Esimerkki paketin
+  hakemistorakenteesta:</p>
+  <pre>
 paketin_juuri/
 paketin_juuri/__init__.py
 paketin_juuri/alipaketti/__init__.py
 paketin_juuri/alipaketti/alimoduuli.py
 </pre>
-<p>Nyt alimoduuliin voidaan viitata vaikkapa
-n&Atilde;&curren;in:<br>
-<code>import paketin_juuri.alipaketti.alimoduuli</code><br>
-Mik&Atilde;&curren;li paketeista halutaan tyypillisesti ottaa
-kerrallaan k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&para;n
-kokonainen alipaketti tai koko paketti
-itsess&Atilde;&curren;&Atilde;&curren;n, olisi luontevaa
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
-tehd&Atilde;&curren; se jotenkin n&Atilde;&curren;in:<br>
-<code>from paketin_juuri.alipaketti import *</code><br>
-Ja n&Atilde;&curren;in se tehd&Atilde;&curren;&Atilde;&curren;nkin.
-Pakettien etsiminen ja kaikkien tuominen voisi olla
-potentiaalisesti paitsi raskas ja hidas operaatio my&Atilde;&para;s
-aiheuttaa yll&Atilde;&curren;tt&Atilde;&curren;vi&Atilde;&curren;
-ja vaarallisia sivuvaikutuksia. Ongelma on ratkaistu siten,
-ett&Atilde;&curren; mik&Atilde;&curren;li paketin
-yll&Atilde;&curren;pit&Atilde;&curren;j&Atilde;&curren; haluaa
-mahdollistaa t&Atilde;&curren;llaisen
-massasis&Atilde;&curren;llytt&Atilde;&curren;misen (mass include),
-niin h&Atilde;&curren;nen tulee
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren; kunkin
-tason __inti__.py-tiedostossa muuttujan <code>__all__</code>
-arvoksi lista niist&Atilde;&curren; alimoduuleista, jotka tulisi
-t&Atilde;&curren;ll&Atilde;&para;in
-sis&Atilde;&curren;llytt&Atilde;&curren;&Atilde;&curren;.</p>
-<!-- TODO: Listat, dictit, tuplet yms..? -->
-<!-- TODO: Vois jauhasta sanasen tostakin... <p>
+
+  <p>Nyt alimoduuliin voidaan viitata vaikkapa
+  n&Atilde;&curren;in:<br>
+  <code>import paketin_juuri.alipaketti.alimoduuli</code><br>
+  Mik&Atilde;&curren;li paketeista halutaan tyypillisesti ottaa
+  kerrallaan k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&para;n
+  kokonainen alipaketti tai koko paketti
+  itsess&Atilde;&curren;&Atilde;&curren;n, olisi luontevaa
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
+  tehd&Atilde;&curren; se jotenkin n&Atilde;&curren;in:<br>
+  <code>from paketin_juuri.alipaketti import *</code><br>
+  Ja n&Atilde;&curren;in se
+  tehd&Atilde;&curren;&Atilde;&curren;nkin. Pakettien etsiminen ja
+  kaikkien tuominen voisi olla potentiaalisesti paitsi raskas ja
+  hidas operaatio my&Atilde;&para;s aiheuttaa
+  yll&Atilde;&curren;tt&Atilde;&curren;vi&Atilde;&curren; ja
+  vaarallisia sivuvaikutuksia. Ongelma on ratkaistu siten,
+  ett&Atilde;&curren; mik&Atilde;&curren;li paketin
+  yll&Atilde;&curren;pit&Atilde;&curren;j&Atilde;&curren; haluaa
+  mahdollistaa t&Atilde;&curren;llaisen
+  massasis&Atilde;&curren;llytt&Atilde;&curren;misen (mass
+  include), niin h&Atilde;&curren;nen tulee
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren; kunkin
+  tason __inti__.py-tiedostossa muuttujan <code>__all__</code>
+  arvoksi lista niist&Atilde;&curren; alimoduuleista, jotka tulisi
+  t&Atilde;&curren;ll&Atilde;&para;in
+  sis&Atilde;&curren;llytt&Atilde;&curren;&Atilde;&curren;.</p>
+  <!-- TODO: Listat, dictit, tuplet yms..? -->
+  <!-- TODO: Vois jauhasta sanasen tostakin... <p>
   from collections import namedtuple
   Student = namedtuple('Student', 'name serialnum school gradelevel')
   </p>
   -->
-<h3 id="chapter-7-oliotluokat">Oliot ja luokat</h3>
-<p>Pythonissa luokat ovat olioita, kuten kaikki muutkin
-tietotyypit. Luokat ovat my&Atilde;&para;s dynaamisia: ne luodaan
-ajoaikaisesti, ja niit&Atilde;&curren; voidaan muokata luomisen
-j&Atilde;&curren;lkeenkin. Luokkien j&Atilde;&curren;senmuuttujat
-ovat normaalisti julkisia. Privaattien muuttujien luomiseen on
-rajallinen tuki: kirjoittamalla muuttujan nimen eteen kaksi
-alaviivaa saadaan muuttuja
-k&Atilde;&curren;ytt&Atilde;&curren;ytym&Atilde;&curren;&Atilde;&curren;n,
-ik&Atilde;&curren;&Atilde;&curren;n kuin se olisi privaatti ( esim:
-<i>__spam</i>). Jos data-attribuutilla ja metodilla on sama nimi,
-metodin nimi peittyy.</p>
-<p>Luokkam&Atilde;&curren;&Atilde;&curren;rittely
-yksinkertaisimmillaan:</p>
-<pre class="sh_python">
+
+  <h3 id="chapter-7-oliotluokat">Oliot ja luokat</h3>
+
+  <p>Pythonissa luokat ovat olioita, kuten kaikki muutkin
+  tietotyypit. Luokat ovat my&Atilde;&para;s dynaamisia: ne luodaan
+  ajoaikaisesti, ja niit&Atilde;&curren; voidaan muokata luomisen
+  j&Atilde;&curren;lkeenkin. Luokkien j&Atilde;&curren;senmuuttujat
+  ovat normaalisti julkisia. Privaattien muuttujien luomiseen on
+  rajallinen tuki: kirjoittamalla muuttujan nimen eteen kaksi
+  alaviivaa saadaan muuttuja
+  k&Atilde;&curren;ytt&Atilde;&curren;ytym&Atilde;&curren;&Atilde;&curren;n,
+  ik&Atilde;&curren;&Atilde;&curren;n kuin se olisi privaatti (
+  esim: <i>__spam</i>). Jos data-attribuutilla ja metodilla on sama
+  nimi, metodin nimi peittyy.</p>
+
+  <p>Luokkam&Atilde;&curren;&Atilde;&curren;rittely
+  yksinkertaisimmillaan:</p>
+  <pre class="sh_python">
 class ClassName:
     &lt;lause-1&gt;
     .
@@ -1962,63 +2298,71 @@ class ClassName:
     .
     &lt;lause-N&gt;
 </pre>
-<p>Luokkam&Atilde;&curren;&Atilde;&curren;rittelyihin
-p&Atilde;&curren;tee sama kuin funktioidenkin
-m&Atilde;&curren;&Atilde;&curren;rittelyihin: ne tulee suorittaa,
-ennen kuin niit&Atilde;&curren; voidaan
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren; ohjelmassa.
-(Jos luokkam&Atilde;&curren;&Atilde;&curren;rittely on laitettu
-<code>if</code> -lauseen sis&Atilde;&curren;&Atilde;&curren;n,
-sit&Atilde;&curren; ei voida
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren; ennenkuin
-<code>if</code> -lause on suoritettu) Kun
-luokkam&Atilde;&curren;&Atilde;&curren;rittelyst&Atilde;&curren;
-poistutaan normaalisti, syntyy luokka-olio.</p>
-<p>Pythonissa <code>self</code> vastaa Javan
-<code>this</code>-k&Atilde;&curren;sky&Atilde;&curren;.
-Sill&Atilde;&curren; viitataan luokan nykyiseen
-ilmentym&Atilde;&curren;&Atilde;&curren;n. Se tulee antaa
-jokaisessa
-metodim&Atilde;&curren;&Atilde;&curren;rittelyss&Atilde;&curren;
-metodin ensimm&Atilde;&curren;iseksi parametriksi, vaikka
-kutsuattessa metodia <code>self</code> -parametrille ei anneta
-arvoa (Python hoitaa itse t&Atilde;&curren;m&Atilde;&curren;n).
-<code>self</code> ei ole varattu sana, joten sen tilalla voitaisiin
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren; muutakin,
-mutta koodin luettavuuden vuoksi sen
-k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&curren;
-suositellaan.</p>
-<pre class="sh_python">
+
+  <p>Luokkam&Atilde;&curren;&Atilde;&curren;rittelyihin
+  p&Atilde;&curren;tee sama kuin funktioidenkin
+  m&Atilde;&curren;&Atilde;&curren;rittelyihin: ne tulee suorittaa,
+  ennen kuin niit&Atilde;&curren; voidaan
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren; ohjelmassa.
+  (Jos luokkam&Atilde;&curren;&Atilde;&curren;rittely on laitettu
+  <code>if</code> -lauseen sis&Atilde;&curren;&Atilde;&curren;n,
+  sit&Atilde;&curren; ei voida
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren; ennenkuin
+  <code>if</code> -lause on suoritettu) Kun
+  luokkam&Atilde;&curren;&Atilde;&curren;rittelyst&Atilde;&curren;
+  poistutaan normaalisti, syntyy luokka-olio.</p>
+
+  <p>Pythonissa <code>self</code> vastaa Javan
+  <code>this</code>-k&Atilde;&curren;sky&Atilde;&curren;.
+  Sill&Atilde;&curren; viitataan luokan nykyiseen
+  ilmentym&Atilde;&curren;&Atilde;&curren;n. Se tulee antaa
+  jokaisessa
+  metodim&Atilde;&curren;&Atilde;&curren;rittelyss&Atilde;&curren;
+  metodin ensimm&Atilde;&curren;iseksi parametriksi, vaikka
+  kutsuattessa metodia <code>self</code> -parametrille ei anneta
+  arvoa (Python hoitaa itse t&Atilde;&curren;m&Atilde;&curren;n).
+  <code>self</code> ei ole varattu sana, joten sen tilalla
+  voitaisiin k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
+  muutakin, mutta koodin luettavuuden vuoksi sen
+  k&Atilde;&curren;ytt&Atilde;&para;&Atilde;&curren;
+  suositellaan.</p>
+  <pre class="sh_python">
 class Luokka:
     def metodi(self, parametri1, parametri2):
         ...
 </pre>
-<h4>Luokkaoliot</h4>
-<p>Luokkaoliot tukevat kahdenlaisia operaatioita:
-<i>attribuuttiviittauksia</i> ja <i>ilmentymien luomista</i>.</p>
-<p>Attribuuttiviittauksessa syntaksi on <i>olio.nimi</i>.
-Esimerkkin&Atilde;&curren; olevan
-luokkam&Atilde;&curren;&Atilde;&curren;rittelyn tapauksessa
-Luokka.i palauttaisi kokonaisluvun ja Luokka.metodi palauttaisi
-funktio-olion.</p>
-<pre class="sh_python">
+
+  <h4>Luokkaoliot</h4>
+
+  <p>Luokkaoliot tukevat kahdenlaisia operaatioita:
+  <i>attribuuttiviittauksia</i> ja <i>ilmentymien luomista</i>.</p>
+
+  <p>Attribuuttiviittauksessa syntaksi on <i>olio.nimi</i>.
+  Esimerkkin&Atilde;&curren; olevan
+  luokkam&Atilde;&curren;&Atilde;&curren;rittelyn tapauksessa
+  Luokka.i palauttaisi kokonaisluvun ja Luokka.metodi palauttaisi
+  funktio-olion.</p>
+  <pre class="sh_python">
 class Luokka:
     i = 1
     def metodi(self):
         return 'spam'
 </pre>
-<p>Ilmentymien luominen toimii kuin luokka-olio olisi parametriton
-funktio, joka palauttaa luokan uuden ilmentym&Atilde;&curren;n.</p>
-<pre>
+
+  <p>Ilmentymien luominen toimii kuin luokka-olio olisi
+  parametriton funktio, joka palauttaa luokan uuden
+  ilmentym&Atilde;&curren;n.</p>
+  <pre>
 x = Luokka()
 </pre>
-<p>Luokkaan voidaan
-m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;
-erikoismetodi <code>__init__()</code>, jota kutsutaan
-automaattisesti, kun olio on luotu. <code>__init__()</code>:n
-avulla ilmentym&Atilde;&curren; voidaan alustaa johonkin haluttuun
-tilaan.</p>
-<pre class="sh_python">
+
+  <p>Luokkaan voidaan
+  m&Atilde;&curren;&Atilde;&curren;ritell&Atilde;&curren;
+  erikoismetodi <code>__init__()</code>, jota kutsutaan
+  automaattisesti, kun olio on luotu. <code>__init__()</code>:n
+  avulla ilmentym&Atilde;&curren; voidaan alustaa johonkin
+  haluttuun tilaan.</p>
+  <pre class="sh_python">
 class Luvut:
     def __init__(self, luku1, luku2):
         self.r = luku1
@@ -2027,10 +2371,12 @@ class Luvut:
 x = Luvut(3, 4)
 x.r, x.i #(3, 4)
 </pre>
-<h4>Periytyminen</h4>
-<p>Pythonissa luokkaperiytyminen on toteutettu seuraavanlaisella
-syntaksilla:</p>
-<pre class="sh_python">
+
+  <h4>Periytyminen</h4>
+
+  <p>Pythonissa luokkaperiytyminen on toteutettu seuraavanlaisella
+  syntaksilla:</p>
+  <pre class="sh_python">
 class Luokka(Yliluokka):
     &lt;lause-1&gt;
     .
@@ -2038,51 +2384,58 @@ class Luokka(Yliluokka):
     .
     &lt;lause-N&gt;
 </pre>
-<p>Luokka <code>Luokka</code> perii yliluokan
-<code>Yliluokka</code> j&Atilde;&curren;senet ja sen yliluokan
-j&Atilde;&curren;senet kunnes saavutaan <code>object</code>
-kantaluokkaan. Peritty luokka voi korvata yliluokan metodeita
-yksinkertaisesti
-m&Atilde;&curren;&Atilde;&curren;rittelem&Atilde;&curren;ll&Atilde;&curren;
-ne uudelleen. Yliluokan metodeihin voi viitata
-<code>Yliluokka.metodi(self, parametrit)</code>
-tyylisell&Atilde;&curren; syntaksilla tai java-tyylisesti
-<code>super()</code>-funktiolla.</p>
-<h4>Moniperiytyminen</h4>
-<p>Pythonissa on mahdollista
-periytt&Atilde;&curren;&Atilde;&curren; luokka monesta luokasta.
-Yleinen syntaksi t&Atilde;&curren;h&Atilde;&curren;n on sama kuin
-yhden luokan periytymisess&Atilde;&curren; paitsi
-ett&Atilde;&curren; periytetyt luokat erotellaan pilkuilla.</p>
-<p>Moniperiytymisen niin kutsuttu <em>timanttiongelma</em> on se,
-ett&Atilde;&curren; periytett&Atilde;&curren;ess&Atilde;&curren;
-luokka D luokista B ja C, joilla on sama is&Atilde;&curren;luokka
-A, on ep&Atilde;&curren;selv&Atilde;&curren;&Atilde;&curren; kumman
-luokan, B vai C, metodeilla korvataan is&Atilde;&curren;luokan
-aliluokissa, B ja C, korvatut j&Atilde;&curren;senet [<a href=
-"#ref-diamond-rule">18</a>]. Pythonissa
-t&Atilde;&curren;m&Atilde;&curren; ongelma on ratkaistu
-periytt&Atilde;&curren;m&Atilde;&curren;ll&Atilde;&curren; kaikki
-luokat yhteisest&Atilde;&curren; <code>object</code> luokasta ja
-muodostamalla periytymiselle tietty
-periytymisj&Atilde;&curren;rjestyslista. Luokkien
-periytymisj&Atilde;&curren;rjestyslista muodostetaan hiukan
-yksinkertaistaen
-l&Atilde;&curren;pik&Atilde;&curren;ym&Atilde;&curren;ll&Atilde;&curren;
-luokat syvyyshaulla vasemmalta oikealle, jonka
-j&Atilde;&curren;lkeen listasta poistetaan jo kerran
-l&Atilde;&curren;pik&Atilde;&curren;ydyt luokat.</p>
-<p>Seuraavassa esimerkki moniperiytymisest&Atilde;&curren;.
-Esimerkiss&Atilde;&curren; on edell&Atilde;&curren; kuvatun
-kaltainen moniperint&Atilde;&curren;tilanne luokista A, B, C ja D.
-Luokka D periytet&Atilde;&curren;&Atilde;&curren;n luokista B ja C.
-Periytymishakuj&Atilde;&curren;rjestys on
-t&Atilde;&curren;ss&Atilde;&curren; tapauksessa lista <code>[D, B,
-A, C, A]</code>, joka supistuu muotoon <code>[D, B, C, A]</code>,
-kun kaksoiskappaleet poistetaan niin ett&Atilde;&curren; vain
-viimeinen viittaus luokkaan j&Atilde;&curren;&Atilde;&curren;
-j&Atilde;&curren;ljelle listaan.</p>
-<pre class="sh_python">
+
+  <p>Luokka <code>Luokka</code> perii yliluokan
+  <code>Yliluokka</code> j&Atilde;&curren;senet ja sen yliluokan
+  j&Atilde;&curren;senet kunnes saavutaan <code>object</code>
+  kantaluokkaan. Peritty luokka voi korvata yliluokan metodeita
+  yksinkertaisesti
+  m&Atilde;&curren;&Atilde;&curren;rittelem&Atilde;&curren;ll&Atilde;&curren;
+  ne uudelleen. Yliluokan metodeihin voi viitata
+  <code>Yliluokka.metodi(self, parametrit)</code>
+  tyylisell&Atilde;&curren; syntaksilla tai java-tyylisesti
+  <code>super()</code>-funktiolla.</p>
+
+  <h4>Moniperiytyminen</h4>
+
+  <p>Pythonissa on mahdollista
+  periytt&Atilde;&curren;&Atilde;&curren; luokka monesta luokasta.
+  Yleinen syntaksi t&Atilde;&curren;h&Atilde;&curren;n on sama kuin
+  yhden luokan periytymisess&Atilde;&curren; paitsi
+  ett&Atilde;&curren; periytetyt luokat erotellaan pilkuilla.</p>
+
+  <p>Moniperiytymisen niin kutsuttu <em>timanttiongelma</em> on se,
+  ett&Atilde;&curren; periytett&Atilde;&curren;ess&Atilde;&curren;
+  luokka D luokista B ja C, joilla on sama is&Atilde;&curren;luokka
+  A, on ep&Atilde;&curren;selv&Atilde;&curren;&Atilde;&curren;
+  kumman luokan, B vai C, metodeilla korvataan
+  is&Atilde;&curren;luokan aliluokissa, B ja C, korvatut
+  j&Atilde;&curren;senet [<a href="#ref-diamond-rule">18</a>].
+  Pythonissa t&Atilde;&curren;m&Atilde;&curren; ongelma on
+  ratkaistu
+  periytt&Atilde;&curren;m&Atilde;&curren;ll&Atilde;&curren; kaikki
+  luokat yhteisest&Atilde;&curren; <code>object</code> luokasta ja
+  muodostamalla periytymiselle tietty
+  periytymisj&Atilde;&curren;rjestyslista. Luokkien
+  periytymisj&Atilde;&curren;rjestyslista muodostetaan hiukan
+  yksinkertaistaen
+  l&Atilde;&curren;pik&Atilde;&curren;ym&Atilde;&curren;ll&Atilde;&curren;
+  luokat syvyyshaulla vasemmalta oikealle, jonka
+  j&Atilde;&curren;lkeen listasta poistetaan jo kerran
+  l&Atilde;&curren;pik&Atilde;&curren;ydyt luokat.</p>
+
+  <p>Seuraavassa esimerkki moniperiytymisest&Atilde;&curren;.
+  Esimerkiss&Atilde;&curren; on edell&Atilde;&curren; kuvatun
+  kaltainen moniperint&Atilde;&curren;tilanne luokista A, B, C ja
+  D. Luokka D periytet&Atilde;&curren;&Atilde;&curren;n luokista B
+  ja C. Periytymishakuj&Atilde;&curren;rjestys on
+  t&Atilde;&curren;ss&Atilde;&curren; tapauksessa lista <code>[D,
+  B, A, C, A]</code>, joka supistuu muotoon <code>[D, B, C,
+  A]</code>, kun kaksoiskappaleet poistetaan niin
+  ett&Atilde;&curren; vain viimeinen viittaus luokkaan
+  j&Atilde;&curren;&Atilde;&curren; j&Atilde;&curren;ljelle
+  listaan.</p>
+  <pre class="sh_python">
 # Kuvio luokkamallista
 #
 #    A
@@ -2097,147 +2450,178 @@ class D(B, C):
     .
     .
     &lt;lause-N&gt;
-</pre>
-<!-- TODO: Lähteet kuntoon -->
-L&Atilde;&curren;hteen&Atilde;&curren;:
-http://docs.python.org/tutorial/modules.html
-<h3 id="chapter-7-arvosem">Arvo- ja viitesemantiikka</h3>
-<p>Muuttujat Pythonissa
-sis&Atilde;&curren;lt&Atilde;&curren;v&Atilde;&curren;t
-pelk&Atilde;&curren;st&Atilde;&curren;&Atilde;&curren;n viittauksen
-olioon [<a href="#ref-call-by-ref">17</a>]. Viittauksen kohteena
-olevat oliot
-sis&Atilde;&curren;lt&Atilde;&curren;v&Atilde;&curren;t
-my&Atilde;&para;s tyyppitietonsa eli mink&Atilde;&curren; luokan
-olion ilmentym&Atilde;&curren; on kyseess&Atilde;&curren;.
-Esimerkiksi funktiokutsussa annettu parametri on siis vain viittaus
-johonkin olioon, joka kuten aiemmin on jo mainittu, on joko
-immutaabeli tai ei. Kutsuttu funktio ei voi muuttaa kutsujansa
-olioviitett&Atilde;&curren;, eli esimerkiksi seuraavanlainen
-funktio ei pystyisi muuttamaan
-alkuper&Atilde;&curren;ist&Atilde;&curren; stringi&Atilde;&curren;
-ollenkaan, vaan sen tulisi palauttaa viite uuteen string
--olioon.</p>
-<pre class="sh_python">
+</pre><!-- TODO: Lähteet kuntoon -->
+  L&Atilde;&curren;hteen&Atilde;&curren;:
+  http://docs.python.org/tutorial/modules.html
+
+  <h3 id="chapter-7-arvosem">Arvo- ja viitesemantiikka</h3>
+
+  <p>Muuttujat Pythonissa
+  sis&Atilde;&curren;lt&Atilde;&curren;v&Atilde;&curren;t
+  pelk&Atilde;&curren;st&Atilde;&curren;&Atilde;&curren;n
+  viittauksen olioon [<a href="#ref-call-by-ref">17</a>].
+  Viittauksen kohteena olevat oliot
+  sis&Atilde;&curren;lt&Atilde;&curren;v&Atilde;&curren;t
+  my&Atilde;&para;s tyyppitietonsa eli mink&Atilde;&curren; luokan
+  olion ilmentym&Atilde;&curren; on kyseess&Atilde;&curren;.
+  Esimerkiksi funktiokutsussa annettu parametri on siis vain
+  viittaus johonkin olioon, joka kuten aiemmin on jo mainittu, on
+  joko immutaabeli tai ei. Kutsuttu funktio ei voi muuttaa
+  kutsujansa olioviitett&Atilde;&curren;, eli esimerkiksi
+  seuraavanlainen funktio ei pystyisi muuttamaan
+  alkuper&Atilde;&curren;ist&Atilde;&curren;
+  stringi&Atilde;&curren; ollenkaan, vaan sen tulisi palauttaa
+  viite uuteen string -olioon.</p>
+  <pre class="sh_python">
 def muuta_str(s):
     s = "Uusi stringi" # funktion paikallinen muuttuja viittaamaan uuteen olioon
 
 a = "asdf"
 muuta_str(a)
 </pre>
-<p>Muuttujaan sijoittaminen (esimerkiksi <code>a = b</code>)
-asettaa muuttujan osoittamaan, tyypist&Atilde;&curren; riippumatta,
-johonkin olioon. Mutaabeleja olioita voidaan muuttaa
-muutosoperaatioilla kutsutussa metodissa.</p>
-<pre class="sh_python">
+
+  <p>Muuttujaan sijoittaminen (esimerkiksi <code>a = b</code>)
+  asettaa muuttujan osoittamaan, tyypist&Atilde;&curren;
+  riippumatta, johonkin olioon. Mutaabeleja olioita voidaan muuttaa
+  muutosoperaatioilla kutsutussa metodissa.</p>
+  <pre class="sh_python">
 def add_bananas(l):
     l.append("bananas")
 
 a = ["apples", "tomatoes"]
 add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
-</pre>
-<!-- <p>copy.copy() copy.deepcopy()</p> -->
-<h2 id="chapter-8">8. Yhteenveto</h2>
-<!-- Luennon aikana annetut kommentit 
+</pre><!-- <p>copy.copy() copy.deepcopy()</p> -->
+
+  <h2 id="chapter-8">8. Yhteenveto</h2>
+  <!-- Luennon aikana annetut kommentit 
   
   Ei mitään erityisiä kommentteja
   traitit = piirreluokat
   Viitteet kuntoon eli viittauksia lisää.
   
   -->
-<p>Python on voimakas dynaaminen ohjelmointikieli, jolla on monia
-k&Atilde;&curren;ytt&Atilde;&para;kohteita. Sen
-t&Atilde;&curren;rkeimpi&Atilde;&curren; ominaisuuksia ovat
-helppolukuisuus, modulaarisuus, introspektio kyvyt, laaja standardi
-kirjasto ja laajennettavuus C/C++-koodilla.</p>
-<p>Pythonia k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n
-usein skriptikielen&Atilde;&curren; sen
-helppok&Atilde;&curren;ytt&Atilde;&para;isyyden ja joustavuuden
-takia. Esimerkiksi monet Linux-distribuutiot
-k&Atilde;&curren;ytt&Atilde;&curren;v&Atilde;&curren;t Pythonia
-asennuksessaan tai
-paketointij&Atilde;&curren;rjestelm&Atilde;&curren;n toteutuksessa.
-Python toimitetaankin nyky&Atilde;&curren;&Atilde;&curren;n jo
-usein Linux-distribuution mukana.</p>
-<p>Python-tulkki sulautetaan usein ohjelmien
-sis&Atilde;&curren;&Atilde;&curren;n skriptausrajapinnaksi.
-Esimerkiksi 3D-mallinnusohjelma Blender, rasteripiirto-ohjelma GIMP
-ja jotkin tietokonepelit
-hy&Atilde;&para;dynt&Atilde;&curren;v&Atilde;&curren;t Pythonia
-n&Atilde;&curren;in. Web-ohjelmointia varten on kehitetty monia
-ohjelmistokehyksi&Atilde;&curren; kuten Django, Pylons, TurboGears,
-web2py, Flask ja Zope. Niit&Atilde;&curren; voidaan
-k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
-web-palvelinten kuten Apachen kanssa WSGI:n kautta, joka on
-erikseen Pythonin ja palvelinten
-v&Atilde;&curren;list&Atilde;&curren; vuorovaikutusta varten
-kehitetty rajapinta. Tieteellist&Atilde;&curren; laskentaa varten
-on olemassa NumPy, SciPy ja monia muita kirjastoja.</p>
-<h2 id="lahteet">L&Atilde;&curren;hteet</h2>
-<ol>
-<li id="ref-varatut-sanat-py3-spec"><a href=
-"http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#keywords">
-http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#keywords</a></li>
-<li id="ref-tunnukset-py3-spec"><a href=
-"http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords">
-http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords</a></li>
-<li id="ref-history-of-python"><a href=
-"http://en.wikipedia.org/wiki/History_of_Python">http://en.wikipedia.org/wiki/History_of_Python</a></li>
-<li id="ref-literaalivakiot"><a href=
-"http://docs.python.org/py3k/reference/lexical_analysis.html#literals">
-http://docs.python.org/py3k/reference/lexical_analysis.html#literals</a></li>
-<li id="ref-sulkeumat-py22"><a href=
-"http://docs.python.org/release/2.2.3/whatsnew/node9.html">http://docs.python.org/release/2.2.3/whatsnew/node9.html</a></li>
-<li id="ref-nimet-ja_sidonta-py3-spec"><a href=
-"http://docs.python.org/py3k/reference/executionmodel.html#naming-and-binding">
-http://docs.python.org/py3k/reference/executionmodel.html#naming-and-binding</a></li>
-<li id="ref-ensimmaisenluokan"><a href=
-"http://python-history.blogspot.com/2009/02/first-class-everything.html">
-http://python-history.blogspot.com/2009/02/first-class-everything.html</a></li>
-<li id="ref-controlflow"><a href=
-"http://docs.python.org/py3k/tutorial/controlflow.html">Python v3.2
-documentation &acirc;&euro;&rdquo; 4. More Control Flow
-Tools</a></li>
-<li id="ref-compoundstatement"><a href=
-"http://docs.python.org/py3k/reference/compound_stmts.html">Python
-v3.2 documentation &acirc;&euro;&rdquo; 7. Compound
-statements</a></li>
-<li id="ref-library-sys"><a href=
-"http://docs.python.org/py3k/library/sys.html">Python v3.2
-documentation &acirc;&euro;&rdquo; 27.1. sys &acirc;&euro;&rdquo;
-System-specific parameters and functions</a></li>
-<li id="ref-tail-recursion"><a href=
-"http://neopythonic.blogspot.com/2009/04/tail-recursion-elimination.html">
-Neopythonic &acirc;&euro;&rdquo; Tail Recursion
-Elimination</a></li>
-<li id="ref-stdtypes"><a href=
-"http://docs.python.org/release/3.1.3/library/stdtypes.html">Python
-v3.2 documentation &acirc;&euro;&rdquo; 5. Built-in Types</a></li>
-<li id="ref-datamodel"><a href=
-"http://docs.python.org/release/3.1.3/reference/datamodel.html">Python
-v3.2 documentation &acirc;&euro;&rdquo; 3. Data model</a></li>
-<li id="ref-gil-def"><a href=
-"http://docs.python.org/py3k/glossary.html#term-global-interpreter-lock">
-GIL - Global Interpeter Lock</a></li>
-<li id="ref-gil-faq"><a href=
-"http://docs.python.org/py3k/faq/library.html?highlight=gil#can-t-we-get-rid-of-the-global-interpreter-lock">
-Can't we get rid of the Global Identifier Lock?</a></li>
-<li id="ref-funktiot"><a href=
-"http://docs.python.org/release/3.1.3/tutorial/controlflow.html#defining-functions">
-http://docs.python.org/release/3.1.3/tutorial/controlflow.html#defining-functions</a></li>
-<li id="ref-call-by-ref"><a href=
-"http://docs.python.org/faq/programming.html#how-do-i-write-a-function-with-output-parameters-call-by-reference">
-Python v3.2 documentation &Acirc;&raquo; Python Frequently Asked
-Questions &Acirc;&raquo; How do I write a function with output
-parameters (call by reference)?</a></li>
-<li id="ref-diamond-rule"><a href=
-"http://docs.python.org/py3k/whatsnew/2.2.html#multiple-inheritance-the-diamond-rule">
-Python v3.2 documentation &Acirc;&raquo; What&acirc;&euro;&trade;s
-New in Python &Acirc;&raquo; Multiple Inheritance: The Diamond
-Rule</a></li>
-</ol>
-<p><small>Copyright &copy; 2011 Juhani &Atilde;&hellip;hman, Juha
-Louhiranta, Matti Nauha, Timo Lehto</small></p>
-<p><small><code>import antigravity</code> ;)</small></p>
+
+  <p>Python on voimakas dynaaminen ohjelmointikieli, jolla on monia
+  k&Atilde;&curren;ytt&Atilde;&para;kohteita. Sen
+  t&Atilde;&curren;rkeimpi&Atilde;&curren; ominaisuuksia ovat
+  helppolukuisuus, modulaarisuus, introspektio kyvyt, laaja
+  standardi kirjasto ja laajennettavuus C/C++-koodilla.</p>
+
+  <p>Pythonia
+  k&Atilde;&curren;ytet&Atilde;&curren;&Atilde;&curren;n usein
+  skriptikielen&Atilde;&curren; sen
+  helppok&Atilde;&curren;ytt&Atilde;&para;isyyden ja joustavuuden
+  takia. Esimerkiksi monet Linux-distribuutiot
+  k&Atilde;&curren;ytt&Atilde;&curren;v&Atilde;&curren;t Pythonia
+  asennuksessaan tai
+  paketointij&Atilde;&curren;rjestelm&Atilde;&curren;n
+  toteutuksessa. Python toimitetaankin
+  nyky&Atilde;&curren;&Atilde;&curren;n jo usein
+  Linux-distribuution mukana.</p>
+
+  <p>Python-tulkki sulautetaan usein ohjelmien
+  sis&Atilde;&curren;&Atilde;&curren;n skriptausrajapinnaksi.
+  Esimerkiksi 3D-mallinnusohjelma Blender, rasteripiirto-ohjelma
+  GIMP ja jotkin tietokonepelit
+  hy&Atilde;&para;dynt&Atilde;&curren;v&Atilde;&curren;t Pythonia
+  n&Atilde;&curren;in. Web-ohjelmointia varten on kehitetty monia
+  ohjelmistokehyksi&Atilde;&curren; kuten Django, Pylons,
+  TurboGears, web2py, Flask ja Zope. Niit&Atilde;&curren; voidaan
+  k&Atilde;&curren;ytt&Atilde;&curren;&Atilde;&curren;
+  web-palvelinten kuten Apachen kanssa WSGI:n kautta, joka on
+  erikseen Pythonin ja palvelinten
+  v&Atilde;&curren;list&Atilde;&curren; vuorovaikutusta varten
+  kehitetty rajapinta. Tieteellist&Atilde;&curren; laskentaa varten
+  on olemassa NumPy, SciPy ja monia muita kirjastoja.</p>
+
+  <h2 id="lahteet">L&Atilde;&curren;hteet</h2>
+
+  <ol>
+    <li id="ref-varatut-sanat-py3-spec"><a href=
+    "http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#keywords">
+    http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#keywords</a></li>
+
+    <li id="ref-tunnukset-py3-spec"><a href=
+    "http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords">
+    http://docs.python.org/release/3.0.1/reference/lexical_analysis.html#identifiers-and-keywords</a></li>
+
+    <li id="ref-history-of-python"><a href=
+    "http://en.wikipedia.org/wiki/History_of_Python">http://en.wikipedia.org/wiki/History_of_Python</a></li>
+
+    <li id="ref-literaalivakiot"><a href=
+    "http://docs.python.org/py3k/reference/lexical_analysis.html#literals">
+    http://docs.python.org/py3k/reference/lexical_analysis.html#literals</a></li>
+
+    <li id="ref-sulkeumat-py22"><a href=
+    "http://docs.python.org/release/2.2.3/whatsnew/node9.html">http://docs.python.org/release/2.2.3/whatsnew/node9.html</a></li>
+
+    <li id="ref-nimet-ja_sidonta-py3-spec"><a href=
+    "http://docs.python.org/py3k/reference/executionmodel.html#naming-and-binding">
+    http://docs.python.org/py3k/reference/executionmodel.html#naming-and-binding</a></li>
+
+    <li id="ref-ensimmaisenluokan"><a href=
+    "http://python-history.blogspot.com/2009/02/first-class-everything.html">
+    http://python-history.blogspot.com/2009/02/first-class-everything.html</a></li>
+
+    <li id="ref-controlflow"><a href=
+    "http://docs.python.org/py3k/tutorial/controlflow.html">Python
+    v3.2 documentation &acirc;&euro;&rdquo; 4. More Control Flow
+    Tools</a></li>
+
+    <li id="ref-compoundstatement"><a href=
+    "http://docs.python.org/py3k/reference/compound_stmts.html">Python
+    v3.2 documentation &acirc;&euro;&rdquo; 7. Compound
+    statements</a></li>
+
+    <li id="ref-library-sys"><a href=
+    "http://docs.python.org/py3k/library/sys.html">Python v3.2
+    documentation &acirc;&euro;&rdquo; 27.1. sys
+    &acirc;&euro;&rdquo; System-specific parameters and
+    functions</a></li>
+
+    <li id="ref-tail-recursion"><a href=
+    "http://neopythonic.blogspot.com/2009/04/tail-recursion-elimination.html">
+    Neopythonic &acirc;&euro;&rdquo; Tail Recursion
+    Elimination</a></li>
+
+    <li id="ref-stdtypes"><a href=
+    "http://docs.python.org/release/3.1.3/library/stdtypes.html">Python
+    v3.2 documentation &acirc;&euro;&rdquo; 5. Built-in
+    Types</a></li>
+
+    <li id="ref-datamodel"><a href=
+    "http://docs.python.org/release/3.1.3/reference/datamodel.html">
+    Python v3.2 documentation &acirc;&euro;&rdquo; 3. Data
+    model</a></li>
+
+    <li id="ref-gil-def"><a href=
+    "http://docs.python.org/py3k/glossary.html#term-global-interpreter-lock">
+    GIL - Global Interpeter Lock</a></li>
+
+    <li id="ref-gil-faq"><a href=
+    "http://docs.python.org/py3k/faq/library.html?highlight=gil#can-t-we-get-rid-of-the-global-interpreter-lock">
+    Can't we get rid of the Global Identifier Lock?</a></li>
+
+    <li id="ref-funktiot"><a href=
+    "http://docs.python.org/release/3.1.3/tutorial/controlflow.html#defining-functions">
+    http://docs.python.org/release/3.1.3/tutorial/controlflow.html#defining-functions</a></li>
+
+    <li id="ref-call-by-ref"><a href=
+    "http://docs.python.org/faq/programming.html#how-do-i-write-a-function-with-output-parameters-call-by-reference">
+    Python v3.2 documentation &Acirc;&raquo; Python Frequently
+    Asked Questions &Acirc;&raquo; How do I write a function with
+    output parameters (call by reference)?</a></li>
+
+    <li id="ref-diamond-rule"><a href=
+    "http://docs.python.org/py3k/whatsnew/2.2.html#multiple-inheritance-the-diamond-rule">
+    Python v3.2 documentation &Acirc;&raquo;
+    What&acirc;&euro;&trade;s New in Python &Acirc;&raquo; Multiple
+    Inheritance: The Diamond Rule</a></li>
+  </ol>
+
+  <p><small>Copyright &copy; 2011 Juhani &Atilde;&hellip;hman, Juha
+  Louhiranta, Matti Nauha, Timo Lehto</small></p>
+
+  <p><small><code>import antigravity</code> ;)</small></p>
 </body>
 </html>
