@@ -2085,7 +2085,16 @@ def add_bananas(l):
 
 a = ["apples", "tomatoes"]
 add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
-</pre><!-- <p>copy.copy() copy.deepcopy()</p> -->
+</pre>
+
+  <p>Muuttujan arvon sijoittaminen eli arvon kopiointi suoritetaan
+  <code>copy</code> pakkauksen <code>copy</code>- tai
+  <code>deepcopy</code>-funktioilla. <code>copy</code>-funktio luo
+  pinnallisen kopion saamastaan oliosta ja <code>deepcopy</code> on
+  syväkopion. Pinnallinen kopio on uusi olio, jonka sisäisiin
+  olioihin on asetettu viitteet vanhan olion viitteisiin. Deepcopy
+  eli syväkopio luo rekursiivisesti saamansa olion kaikista
+  viitteistä kopiot.</p>
 
   <h2 id="chapter-8">8. Yhteenveto</h2>
   <!-- Luennon aikana annetut kommentit 
@@ -2208,10 +2217,9 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
     "http://docs.python.org/py3k/whatsnew/2.2.html#multiple-inheritance-the-diamond-rule">
     Python v3.2 documentation » What’s New in Python » Multiple
     Inheritance: The Diamond Rule</a></li>
-    
+
     <li id="ref-about"><a href=
-    "http://www.python.org/about/">
-    Python - About</a></li>
+    "http://www.python.org/about/">Python - About</a></li>
   </ol>
 
   <p><small>Copyright © 2011 Juhani Åhman, Juha Louhiranta, Matti
