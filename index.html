@@ -1159,24 +1159,24 @@ def fib(n):
   poikkeus), mikä osoittaa, että objekti ei ole sopivaa
   tyyppiä.</p>
 
-  <h3 id="chapter-5-tyypitys">Staattinen tyypitys ~ dynaaminen
+  <h3 id="chapter-5-stat-dyn-tyypitys">Staattinen tyypitys ~ dynaaminen
   tyypitys</h3>
 
   <p>Python on dynaamisesti tyypitetty kieli. Vaikka olioiden
   tyyppi onkin aina tiedossa, niin Pythonilla ohjelmoitaessa tämä
   yritetään jättää mahdollisimman pitkälti huomiotta. Muuttujalla
   ei ole ennalta määrättyä tyyppiä. Funktioiden parametrien tyyppiä
-  ei normaalisti tarkisteta vaan noudatetaan ns. "duck typing"
+  ei normaalisti tarkisteta vaan noudatetaan ns. <em>duck typing</em>
   -paradigmaa, jonka ajatus on, että "Jos se vaakkuu kuin ankka ja
-  kävelee kuin ankka, niin sen täytyy olla ankka." Olion(Pythonissa
+  kävelee kuin ankka, niin sen täytyy olla ankka." Olion (Pythonissa
   kaikki ovat olioita) tyyppi määritellään tutkimalla sen metodeita
   ja attribuutteja. Tyypillisesti käytetään EAFP (Easier to Ask
   Forgiveness than Permission) -tyyliä. Kun jotakin metodia
   yritetään käyttää, ei olion tyyppiä tarkisteta etukäteen, vaan
   käytetään mielummin poikkeuksia. Lyhyesti ideana on siis se, että
   ei välitetä siitä, mistä olio on periytynyt, vaan siitä, pystyykö
-  se suorittamaan halutun tehtävän. Seuraavassa esimerkki "duck
-  typing" -paradigman käytöstä:</p>
+  se suorittamaan halutun tehtävän. Seuraavassa esimerkki <em>duck
+  typing</em> -paradigman käytöstä:</p>
   <pre class="sh_python">
 class Duck:
     def quack(self):
@@ -1243,6 +1243,8 @@ True
 
     <li><a href="#chapter-6-rinnakkaislaskenta">Miten kieli tukee
     rinnakkaista laskentaa</a></li>
+    
+    <li><a href="#chapter-6-generaattorit">Generaattorit</a></li>
 
     <li><a href="#chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä
     ohjelma-arkkitehtuureja</a></li>
@@ -1598,6 +1600,44 @@ Tämä printataan aina
 </pre>
     </dd>
   </dl>
+  
+  <h3 id="chapter-6-generaattorit">Generaattorit (<code>yield</code>)</h3>
+  
+  <p>Generaattorit ovat yksinkertainen työkalu iteraattorien
+  luomiseen [<a href="#ref-generators">29</a>], joita voi tietenkin luoda muillakin keinoilla. Ne luodaan samaan
+  tapaan kuin tavalliset funktiot, mutta niissä käytetään <code>return</code>
+  -lauseen sijasta <code>yield</code> -lausetta. Kutsuttaessa
+  generaattorin <code>next()</code> -funktiota, se jatkaa suoritusta siitä mihin
+  se edellisellä kerralla jäi ja palauttaa arvon kohdatessaan jälleen <code>yield</code> -lauseen.</p>
+  
+  <p>Generaattoreille luodaan automaattisesti iteraattoreista tyypillisesti löytyvät <code>__iter__()</code> and <code>__next__()</code> -metodit. Suorituksen tila ja paikallisten muuttujien arvot jäävät muistiin. Generaattorien suorituksen loppuessa nostetaan automaattisesti <code>StopIteration</code> poikkeus, joka kertoo kutsujalle iteroinnin loppumisesta.</p>
+  
+  <p>Seuraavaksi esimerkki fibonaccin lukujen laskemisesta generaattorin avulla:</p>
+  <pre class="sh_python">
+def fib(n):
+    """Palauttaa Fibonaccin lukuja, kunnes saavutetaan luku, joka on suurempi kuin syöttöluku."""
+    yield 0
+    a, b = 0, 1
+    while b <= n:
+        a, b = b, a+b
+        yield a
+
+for f in fib(20):
+    print(f)
+</pre>
+
+  <p>Edellinen koodi tulostaa:</p>
+  
+  <pre>
+0
+1
+1
+2
+3
+5
+8
+13
+</pre>
 
   <h3 id="chapter-6-rinnakkaislaskenta">Miten kieli tukee
   rinnakkaista laskentaa</h3>
@@ -2291,6 +2331,9 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
     <li id="ref-instanceobject"><a href=
     "http://docs.python.org/py3k/tutorial/classes.html#instance-objects">
     http://docs.python.org/py3k/tutorial/classes.html#instance-objects</a></li>
+    
+    <li id="ref-generators"><a href="http://docs.python.org/py3k/tutorial/classes.html#generators">
+    Python v3.2 documentation » The Python Tutorial » Generators</a></li>
   </ol>
 
   <p><small>Copyright © 2011 Juhani Åhman, Juha Louhiranta, Matti
