@@ -67,18 +67,18 @@
 
   <h2 id="chapter-1">1. Kielen taustaa ja miniesimerkki</h2>
 
-  <ul>
-    <li><a href="#chapter-1-historia">Historia</a></li>
+  <ol class="sub-toc">
+    <li><span>1.1.</span><a href="#chapter-1-historia">Historia</a></li>
 
-    <li><a href="#chapter-1-perustietoa">Python
+    <li><span>1.2.</span><a href="#chapter-1-perustietoa">Python
     perustietoa</a></li>
 
-    <li><a href="#chapter-1-kayttokohteet">Käyttökohteet</a></li>
+    <li><span>1.3.</span><a href="#chapter-1-kayttokohteet">Käyttökohteet</a></li>
 
-    <li><a href="#chapter-1-fibonacci">Fibonacci esimerkki</a></li>
-  </ul>
+    <li><span>1.4.</span><a href="#chapter-1-fibonacci">Fibonacci esimerkki</a></li>
+  </ol>
 
-  <h3 id="chapter-1-historia">Historia</h3>
+  <h3 id="chapter-1-historia">1.1. Historia</h3>
 
   <p>Pythonin historia alkaa 1980-luvulta. Ensimmäinen versio
   ohjelmointikielestä kehitettiin 80-luvun loppupuolella Guido van
@@ -106,7 +106,7 @@
   hyödyntämisen ilman uudempaan syntaksiin siirtymistä. [<a href=
   "#ref-history-of-python">3</a>]</p>
 
-  <h3 id="chapter-1-perustietoa">Python perustietoa</h3>
+  <h3 id="chapter-1-perustietoa">1.2. Python perustietoa</h3>
 
   <ul>
     <li>Keskeinen suunnittelufilosofia: selkeä, luettava
@@ -170,9 +170,9 @@
   <p>Muita Python toteutuksia on esimerkiksi <a href=
   "http://www.jython.org/">Jython</a> (JVM), <a href=
   "http://ironpython.net/">IronPython</a> (.NET) ja <a href=
-  "http://pypy.org/">PyPy</a>.</p>
+  "http://pypy.org/">PyPy</a> (Python).</p>
 
-  <h3 id="chapter-1-kayttokohteet">Käyttökohteet</h3>
+  <h3 id="chapter-1-kayttokohteet">1.3. Käyttökohteet</h3>
 
   <p>Yksi suosittu tapa hyödyntää Pythonia on sen käyttäminen
   skriptikielenä erilaisissa sovelluksissa. Pythonia käyttävät
@@ -188,7 +188,7 @@
   peruskomponentteihin. Python löytyy muun muassa useimmista Linux
   distribuutioista, OpenBSD:stä, ja Mac OS X:stä.</p>
 
-  <h3 id="chapter-1-fibonacci">Fibonacci esimerkki</h3>
+  <h3 id="chapter-1-fibonacci">1.4. Fibonacci esimerkki</h3>
 
   <p>Seuraavassa esimerkki ohjelmasta, joka lukee yhden
   syöttöluvun, laskee ensimmäisen Fibonaccin luvun, joka on
@@ -251,28 +251,28 @@ if __name__ == "__main__": # Pääohjelma
   <h2 id="chapter-2">2. Alkiorakenne – millaisista palikoista
   ohjelmat rakennetaan</h2>
 
-  <ul>
-    <li><a href="#chapter-2-tunnukset">Tunnukset</a></li>
+  <ol class="sub-toc">
+    <li><span>2.1.</span><a href="#chapter-2-tunnukset">Tunnukset</a></li>
 
-    <li><a href="#chapter-2-varatut-sanat">Varatut sanat,
+    <li><span>2.2.</span><a href="#chapter-2-varatut-sanat">Varatut sanat,
     avainsanat</a></li>
 
-    <li><a href=
+    <li><span>2.3.</span><a href=
     "#chapter-2-literaalivakiot">Literaalivakiot</a></li>
 
-    <li><a href="#chapter-2-erottimet-yms">Erottimet, sisennykset,
+    <li><span>2.4.</span><a href="#chapter-2-erottimet-yms">Erottimet, sisennykset,
     rivinvaihdot</a></li>
 
-    <li><a href="#chapter-2-edut-ja-haitat">Arvio kieleen
+    <li><span>2.5.</span><a href="#chapter-2-edut-ja-haitat">Arvio kieleen
     valittujen ratkaisujen eduista ja haitoista</a></li>
-  </ul>
+  </ol>
 
-  <h3 id="chapter-2-tunnukset">Tunnukset</h3>
+  <h3 id="chapter-2-tunnukset">2.1. Tunnukset</h3>
 
   <p>Python 3:ssa tunnukset voidaan nimetä käyttäen merkkejä a-z,
   A-Z, 0-9 ja _. Tunnus ei kuitenkaan voi alkaa numerolla. Pienet
   ja iso kirjaimet tulkitaan eri kirjaimiksi. Tunnukset voivat olla
-  rajoittamattoman pituisia. Lisäksi Python 3 tukee joitakin
+  rajoittamattoman pituisia. Lisäksi Python 3 tukee suurta joukkoa
   ASCII-järjestelmän ulkopuolisia unicode-merkkejä. Tarkempi
   listaus tuetuista merkeistä löytyy osoitteesta: <a href=
   "http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>.
@@ -317,7 +317,7 @@ Hyvin pyyhkii. No problemo, kun €-merkit vaihdettiin e-kirjaimiksi
   <p><a href="esimerkit/unicode_sample.py">Lataa esimerkki
   tästä</a></p>
 
-  <h3 id="chapter-2-varatut-sanat">Varatut sanat</h3>
+  <h3 id="chapter-2-varatut-sanat">2.2. Varatut sanat</h3>
 
   <p>Seuraavassa listattuna (Pyton 3.0.1:n mukainen, tässä on
   pieniä eroavaisuuksia 2.x -sarjan kanssa) varatut sanat <a href=
@@ -335,7 +335,7 @@ break      except     in         raise
 
 </pre>
 
-  <h3 id="chapter-2-literaalivakiot">Literaalivakiot</h3>
+  <h3 id="chapter-2-literaalivakiot">2.3. Literaalivakiot</h3>
 
   <p>Python tukee seuraavia literaalivakioita [<a href=
   "#ref-literaalivakiot">4</a>]:</p>
@@ -367,7 +367,7 @@ break      except     in         raise
   koostuu yksipaikkaisesta operaatiosta <code>-</code> ja
   literaalista <code>1</code>.</p>
 
-  <h3 id="chapter-2-erottimet-yms">Erottimet, sisennykset,
+  <h3 id="chapter-2-erottimet-yms">2.4. Erottimet, sisennykset,
   rivinvaihdot</h3>
 
   <p>Pythonissa käytetään sisennyksiä rajaamaan lohkoja. Sisennystä
@@ -406,10 +406,10 @@ if 1 == 1: print("spam"); print("ham")
 
 </pre>
 
-  <h3 id="chapter-2-edut-ja-haitat">Arvio kieleen valittujen
+  <h3 id="chapter-2-edut-ja-haitat">2.5. Arvio kieleen valittujen
   ratkaisujen eduista ja haitoista</h3>
 
-  <p>Unicode-tuki python 3:ssa tekee aidosti mahdolliseksi
+  <p>Unicode-tuki Python 3:ssa tekee aidosti mahdolliseksi
   ohjelmoinnin ohjelmoijan omalla äidinkielellä. Tämä on varmasti
   monessa mielessä hyvä asia ja sen hyödyntäminen todennäköisesti
   parantaa koodin luettavuutta kehittäjäyhteisössä. Toisaalta tällä
@@ -446,26 +446,30 @@ if 1 == 1: print("spam"); print("ham")
   <h2 id="chapter-3">3. Tunnusten näkyvyysalueet</h2>
   <!-- TODO: parempi ryhmittely ja otsikkojen nimet -->
 
-  <ul>
-    <li><a href="#chapter-3-lohkorakenne">Lohkorakenne</a></li>
+  <ol class="sub-toc">
+    <li><span>3.1.</span><a href="#chapter-3-lohkorakenne">Lohkorakenne</a></li>
 
-    <li><a href="#chapter-3-sidonta">Sidonta</a></li>
+    <li><span>3.2.</span><a href="#chapter-3-sidonta">Sidonta</a></li>
 
-    <li><a href=
+    <li><span>3.3,</span><a href=
+    "#chapter-3-sidonta-esim">Esimerkki tunnusten näkyvyydestä, lohkorakenteista ja
+    sidonnasta</a></li>
+    
+    <li><span>3.4.</span><a href=
     "#chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">Sisäkkäiset
     nimiavaruudet ja funktiot</a></li>
-
-    <li><a href="#chapter-3-1-2-ja-3-luokan-arvo">Ensimmäisen,
+    
+    <li><span>3.5.</span><a href="#chapter-3-1-2-ja-3-luokan-arvo">Ensimmäisen,
     toisen ja kolmannen luokan arvo</a></li>
 
-    <li><a href="#chapter-3-edut-ja-haitat">Arvio kieleen
+    <li><span>3.6.</span><a href="#chapter-3-edut-ja-haitat">Arvio kieleen
     valittujen ratkaisujen eduista ja haitoista</a></li>
-  </ul>
+  </ol>
 
-  <h3 id="chapter-3-lohkorakenne">Lohkorakenne</h3>
+  <h3 id="chapter-3-lohkorakenne">3.1. Lohkorakenne</h3>
 
   <p>Pythonissa lohkoksi kutsutaan koodinpätkää, joka suoritetaan
-  yhtenä yksikkönä. Seuraavia rakenteita kutsutaan lohkoiksi:</p>
+  yhtenä yksikkönä. Seuraavia rakenteita kutsutaan lohkoiksi: [<a href="#ref-nimet-ja_sidonta-py3-spec">6</a>]</p>
 
   <ul>
     <li>moduuli</li>
@@ -485,8 +489,6 @@ if 1 == 1: print("spam"); print("ham")
     <li>exec() tai eval() -funktioille merkkijonona annettu
     koodi</li>
   </ul>
-
-  <p>[<a href="#ref-nimet-ja_sidonta-py3-spec">6</a>]</p>
 
   <p>Kuten on jo aiemmin mainittu Python käyttää sisennyksiä
   määrittelemään lohkoja. Sisennys kasvaa tiettyjen ilmaisujen
@@ -513,7 +515,7 @@ if 1 == 1: print("spam"); print("ham")
   global-määreellä siirrytään suoraan etsimään tunnusta globaalilta
   näkyvyysalueelta.</p>
 
-  <h3 id="chapter-3-sidonta">Sidonta</h3>
+  <h3 id="chapter-3-sidonta">3.2. Sidonta</h3>
 
   <p>Pythonissa sidonta tapahtuu osittain dynaamisesti ja osittain
   staattisesti. Käytännössä siis näkyvyysalueet (scope)
@@ -530,7 +532,7 @@ if 1 == 1: print("spam"); print("ham")
   <!--TODO: Timo tarkistapa nämä nyt vielä jostain http://bugs.python.org/issue10043
   Lähde: http://docs.python.org/py3k/tutorial/classes.html#python-scopes-and-namespaces --></p>
 
-  <h3>Esimerkki tunnusten näkyvyydestä, lohkorakenteista ja
+  <h3 id="chapter-3-sidonta-esim">3.3 Esimerkki tunnusten näkyvyydestä, lohkorakenteista ja
   sidonnasta</h3>
 
   <p>Seuraava esimerkki pyrkii demonstroimaan hieman kaikkea
@@ -604,7 +606,7 @@ moduulitasolla if-rakenteessa globaali
 </pre>
 
   <h3 id="chapter-3-sisakkaiset-nimiavaruudet-ja-funktiot">
-  Sisäkkäiset nimiavaruudet ja funktiot</h3>
+  3.4 Sisäkkäiset nimiavaruudet ja funktiot</h3>
 
   <p>Python tukee sisäkkäisiä nimiavaruuksia versiosta 2.2 lähtien
   [<a href="#ref-sulkeumat-py22">5</a>]. Sitä ennen nimiavaruuksia
@@ -668,7 +670,7 @@ print(f(3)) # 15
 print(f(5)) # 25
 </pre>
 
-  <h3 id="chapter-3-1-2-ja-3-luokan-arvo">Ensimmäisen, toisen ja
+  <h3 id="chapter-3-1-2-ja-3-luokan-arvo">3.5. Ensimmäisen, toisen ja
   kolmannen luokan arvo</h3>
 
   <p>Pythonissa yksi tavoitteista on ollut tehdä kaikista
@@ -687,7 +689,7 @@ print(f(5)) # 25
   ensimmäisen luokan arvoja. [<a href=
   "#ref-ensimmaisenluokan">7</a>]</p>
 
-  <h3 id="chapter-3-edut-ja-haitat">Arvio kieleen valittujen
+  <h3 id="chapter-3-edut-ja-haitat">3.6. Arvio kieleen valittujen
   ratkaisujen eduista ja haitoista</h3>
 
   <p>Lohkojen pakotettu sisentäminen on hyvä asia, koodin
@@ -698,21 +700,21 @@ print(f(5)) # 25
 
   <p><em>miten perustoiminnallisuudet ilmaistaan</em></p>
 
-  <ul>
-    <li><a href="#chapter-4-valinta">Valinta</a></li>
+  <ol class="sub-toc">
+    <li><span>4.1.</span><a href="#chapter-4-valinta">Valinta</a></li>
 
-    <li><a href="#chapter-4-toisto">Toisto eli iteraatio</a></li>
+    <li><span>4.2.</span><a href="#chapter-4-toisto">Toisto eli iteraatio</a></li>
 
-    <li><a href="#chapter-4-rekursio">Rekursio</a></li>
+    <li><span>4.3.</span><a href="#chapter-4-rekursio">Rekursio</a></li>
 
-    <li><a href="#chapter-4-esimerkkeja">Havainnollisia
+    <li><span>4.4.</span><a href="#chapter-4-esimerkkeja">Havainnollisia
     selostettuja pieniä ohjalmaesimerkkejä</a></li>
 
-    <li><a href="#chapter-4-arvio">Arvio kieleen valittujen
+    <li><span>4.5.</span><a href="#chapter-4-arvio">Arvio kieleen valittujen
     ratkaisujen eduista ja haitoista</a></li>
-  </ul>
+  </ol>
 
-  <h3 id="chapter-4-valinta">Valinta</h3>
+  <h3 id="chapter-4-valinta">4.1. Valinta</h3>
 
   <h4><code>if</code> -lause</h4>
 
@@ -743,7 +745,7 @@ More
   tuttua switch/case -rakennetta vaan tämä tulee toteuttaa
   if-rakenneella [<a href="#ref-controlflow">8</a>].</p>
 
-  <h3 id="chapter-4-toisto">Toisto</h3>
+  <h3 id="chapter-4-toisto">4.2. Toisto eli iteraatio</h3>
 
   <p>Myös toistolausekkeilla on Pythonissa else -lause [<a href=
   "#ref-controlflow">8</a>], joka suoritetaan jos <code>for</code>
@@ -841,7 +843,7 @@ Loopin else
   toistorakenteen suorittamisen ilman ns. pysäytysehdon täyttymistä
   [<a href="#ref-compoundstatement">9</a>].</p>
 
-  <h3 id="chapter-4-rekursio">Rekursio</h3>
+  <h3 id="chapter-4-rekursio">4.3. Rekursio</h3>
 
   <p>Rekursiivisissa ohjelmarutiineissa idea on sama kuin
   matemaattisesti määritellyissä rekursiivisissa funktioissa, ja
@@ -882,10 +884,10 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 </pre>
 
-  <h3 id="chapter-4-esimerkkeja">Havainnollisia selostettuja pieniä
+  <h3 id="chapter-4-esimerkkeja">4.4. Havainnollisia selostettuja pieniä
   ohjalmaesimerkkejä</h3>
 
-  <h3 id="chapter-4-arvio">Arvio kieleen valittujen ratkaisujen
+  <h3 id="chapter-4-arvio">4.5. Arvio kieleen valittujen ratkaisujen
   eduista ja haitoista</h3>
 
   <p>Muista ohjelmointikielistä tutut <code>do/while</code>- ja
@@ -909,18 +911,18 @@ def fib(n):
 
   <p><em>millaisilla arvoilla tai "datalla" pelataan</em></p>
 
-  <ul>
-    <li><a href="#chapter-5-perustyypit">Perustyypit ja
+  <ol class="sub-toc">
+    <li><span>5.1.</span><a href="#chapter-5-perustyypit">Perustyypit ja
     arvoalueet</a></li>
 
-    <li><a href="#chapter-5-vahva-heikko-tyypitys">Vahva tyypitys ~
+    <li><span>5.2.</span><a href="#chapter-5-vahva-heikko-tyypitys">Vahva tyypitys ~
     heikko tyypitys</a></li>
 
-    <li><a href="#chapter-5-stat-dyn-tyypitys">Staattinen tyypitys
+    <li><span>5.3.</span><a href="#chapter-5-stat-dyn-tyypitys">Staattinen tyypitys
     ~ dynaaminen tyypitys</a></li>
-  </ul>
+  </ol>
 
-  <h3 id="chapter-5-perustyypit">Perustyypit ja arvoalueet</h3>
+  <h3 id="chapter-5-perustyypit">5.1 Perustyypit ja arvoalueet</h3>
 
   <p>Pythoniin on sisäänrakennettu kattava kokoelma perustyyppejä.
   Pythonissa kaikki on olioita, joten varsinaisia
@@ -1140,7 +1142,7 @@ def fib(n):
     </tr>
   </table>
 
-  <h3 id="chapter-5-vahva-heikko-tyypitys">Vahva tyypitys ~ heikko
+  <h3 id="chapter-5-vahva-heikko-tyypitys">5.2. Vahva tyypitys ~ heikko
   tyypitys</h3>
 
   <p>Python voidaan luokitella vahvasti tyypitetyksi kieliksi. Sen
@@ -1159,7 +1161,7 @@ def fib(n):
   poikkeus), mikä osoittaa, että objekti ei ole sopivaa
   tyyppiä.</p>
 
-  <h3 id="chapter-5-stat-dyn-tyypitys">Staattinen tyypitys ~ dynaaminen
+  <h3 id="chapter-5-stat-dyn-tyypitys">5.3. Staattinen tyypitys ~ dynaaminen
   tyypitys</h3>
 
   <p>Python on dynaamisesti tyypitetty kieli. Vaikka olioiden
@@ -1231,29 +1233,30 @@ True
   <p><em>miten toiminnallisuuksia abstrahoidaan ja niistä
   rakennetaan uusia toiminnallisuuksia?</em></p>
 
-  <ul>
-    <li><a href="#chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai
+  <ol class="sub-toc">
+    <li><span>6.1.</span><a href="#chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai
     alifunktiot</a></li>
 
-    <li><a href=
+    <li><span>6.2.</span><a href=
     "#chapter-6-parametrivalitys">Parametrivälitys</a></li>
 
-    <li><a href="#chapter-6-poikkeukset">Suoritusaikaisiin
+    <li><span>6.3.</span><a href="#chapter-6-poikkeukset">Suoritusaikaisiin
     virheisiin varautumisen välineet – poikkeukset</a></li>
 
-    <li><a href="#chapter-6-rinnakkaislaskenta">Miten kieli tukee
+    <li><span>6.4.</span><a href="#chapter-6-rinnakkaislaskenta">Miten kieli tukee
     rinnakkaista laskentaa</a></li>
     
-    <li><a href="#chapter-6-generaattorit">Generaattorit</a></li>
-
-    <li><a href="#chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä
+    <li><span>6.5.</span><a href="#chapter-6-generaattorit">Generaattorit</a></li>
+    
+    <!--TODO: Kaks vikaa kappaletta puuttuvat? -->
+    <li><span>6.6.</span><a href="#chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä
     ohjelma-arkkitehtuureja</a></li>
 
-    <li><a href="#chapter-6-arvio">Arvio kieleen valittujen
+    <li><span>6.7.</span><a href="#chapter-6-arvio">Arvio kieleen valittujen
     ratkaisujen eduista ja haitoista</a></li>
-  </ul>
+  </ol>
 
-  <h3 id="chapter-6-aliohjelmat">Nimetyt aliohjelmat ja/tai
+  <h3 id="chapter-6-aliohjelmat">6.1. Nimetyt aliohjelmat ja/tai
   alifunktiot</h3>
 
   <p>Funktio määritellään avainsanalla <i>def</i>, jota tulee
@@ -1284,7 +1287,7 @@ def funktio(viesti):
   return-lausetta funktiot palauttavat arvon <i>None</i>. [<a href=
   "#ref-funktiot">16</a>]</p>
 
-  <h3 id="chapter-6-parametrivalitys">Parametrivälitys</h3>
+  <h3 id="chapter-6-parametrivalitys">6.2 Parametrivälitys</h3>
 
   <p>Pythonissa parametrinvälitys on toteutettu olioviitteillä,
   jotka välitetään arvoparametreinä. Joidenkin olioiden arvo voi
@@ -1473,7 +1476,7 @@ foo("Eka", fuu = "Toka")
 # FUU: Toka
 </pre>
 
-  <h3 id="chapter-6-poikkeukset">Suoritusaikaisiin virheisiin
+  <h3 id="chapter-6-poikkeukset">6.3. Suoritusaikaisiin virheisiin
   varautumisen välineet – poikkeukset</h3>
 
   <p>Python 3:n poikkeuksien käsittely toimii niin tavanomaisesti,
@@ -1639,7 +1642,7 @@ for f in fib(20):
 13
 </pre>
 
-  <h3 id="chapter-6-rinnakkaislaskenta">Miten kieli tukee
+  <h3 id="chapter-6-rinnakkaislaskenta">6.4. Miten kieli tukee
   rinnakkaista laskentaa</h3>
 
   <p>Python ei erityisemmin tue rinnakkaisuutta. Pythonissa
@@ -1805,17 +1808,17 @@ moniprosessitesti 2.04168510437
 
   <h2 id="chapter-7">7. Datan kapselointi</h2>
 
-  <ul>
-    <li><a href="#chapter-7-raktyypit">Rakenteiset ja kapseloidut
+  <ol class="sub-toc">
+    <li><span>7.1.</span><a href="#chapter-7-raktyypit">Rakenteiset ja kapseloidut
     tyypit</a></li>
 
-    <li><a href="#chapter-7-oliotluokat">Oliot ja luokat</a></li>
+    <li><span>7.2.</span><a href="#chapter-7-oliotluokat">Oliot ja luokat</a></li>
 
-    <li><a href="#chapter-7-arvosem">Arvo- ja
+    <li><span>7.3.</span><a href="#chapter-7-arvosem">Arvo- ja
     viitesemantiikka</a></li>
-  </ul>
+  </ol>
 
-  <h3 id="chapter-7-raktyypit">Rakenteiset ja kapseloidut
+  <h3 id="chapter-7-raktyypit">7.1. Rakenteiset ja kapseloidut
   tyypit</h3>
 
   <h4>Moduulit ja paketit</h4>
@@ -1930,7 +1933,7 @@ paketin_juuri/alipaketti/alimoduuli.py
   </p>
   -->
 
-  <h3 id="chapter-7-oliotluokat">Oliot ja luokat</h3>
+  <h3 id="chapter-7-oliotluokat">7.2. Oliot ja luokat</h3>
 
   <p>Pythonissa luokat ovat olioita, kuten kaikki muutkin
   tietotyypit. Luokat ovat myös dynaamisia: ne luodaan
@@ -2132,7 +2135,7 @@ class D(B, C):
 </pre><!-- TODO: Lähteet kuntoon -->
   Lähteenä: http://docs.python.org/tutorial/modules.html
 
-  <h3 id="chapter-7-arvosem">Arvo- ja viitesemantiikka</h3>
+  <h3 id="chapter-7-arvosem">7.3. Arvo- ja viitesemantiikka</h3>
 
   <p>Muuttujat Pythonissa sisältävät pelkästään viittauksen olioon
   [<a href="#ref-call-by-ref">17</a>]. Viittauksen kohteena olevat

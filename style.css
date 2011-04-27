@@ -17,3 +17,5 @@ ul.toc, ol.toc {background: #eef; border: 1px solid #ccf; padding-top: 5px; padd
 
 #logo { vertical-align: middle;}
 
+.sub-toc {list-style-type: none; padding-left:2em;}
+.sub-toc li span { display: inline-block; width: 2em }
