@@ -2098,8 +2098,10 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
 
   <p>Python on voimakas dynaaminen ohjelmointikieli, jolla on monia
   käyttökohteita. Sen tärkeimpiä ominaisuuksia ovat
-  helppolukuisuus, modulaarisuus, introspektio kyvyt, laaja
-  standardi kirjasto ja laajennettavuus C/C++-koodilla.</p>
+  helppolukuisuus, modulaarisuus, intuiivinen luokkamalli,
+  introspektio kyvyt, poikkeustenkäsittely, korkean tason
+  datatyypit, laaja standardi kirjasto ja laajennettavuus
+  C/C++-koodilla [<a href="#ref-about">18</a>].</p>
 
   <p>Pythonia käytetään usein skriptikielenä sen
   helppokäyttöisyyden ja joustavuuden takia. Esimerkiksi monet
@@ -2117,6 +2119,18 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
   palvelinten välistä vuorovaikutusta varten kehitetty rajapinta.
   Tieteellistä laskentaa varten on olemassa NumPy, SciPy ja monia
   muita kirjastoja.</p>
+
+  <p>Pythonin dynaamisen tyypitysjärjestelmän kääntöpuoli on että
+  mahdolliset virheet koodissa huomataan vasta suoritusaikana,
+  syntaksivirheitä lukuunottamatta, eikä käännösaikana kuten
+  monissa muissa kielissä. Python on nopea kieli tulkattavaksi
+  kieleksi, mutta joskus suoritusnopeuskriittinen koodi täytyy
+  toteuttaa C/C++-laajennoksilla, jotta se olisi kelvollista. Tämä
+  on usein hankalampaa kuin tavallisen Python-koodin
+  kirjoittaminen. Rinnakkaislaskentaa vaivaa Pythonissa GIL, joka
+  estää säikeiden suorittamisen samanaikaisesti monella ytimellä.
+  GILin poistaminen Pythonista on yhä avoin kysymys, johon ei näytä
+  tulevan ratkaisua lähitulevaisuudessa.</p>
 
   <h2 id="lahteet">Lähteet</h2>
 
@@ -2194,6 +2208,10 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
     "http://docs.python.org/py3k/whatsnew/2.2.html#multiple-inheritance-the-diamond-rule">
     Python v3.2 documentation » What’s New in Python » Multiple
     Inheritance: The Diamond Rule</a></li>
+    
+    <li id="ref-about"><a href=
+    "http://www.python.org/about/">
+    Python - About</a></li>
   </ol>
 
   <p><small>Copyright © 2011 Juhani Åhman, Juha Louhiranta, Matti
