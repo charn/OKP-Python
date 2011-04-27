@@ -1835,20 +1835,6 @@ moduulissa_määritelty_funktio()
   sitten sisällyttää luokan määrittelyssä ne toisesta moduulista
   osaksi lokaalia nimiavaruutta. Seuraavassa yksinkertainen
   esimerkki:</p>
-
-  <p>Jos kuitenkin kaikki moduulin nimet halutaan tuoda toisen
-  moduulin lokaaliin nimiavaruuteen sellaisenaan, niin tämäkin on
-  mahdollista. Tällöin käytetään edellisen <code>import</code>
-  -lauseen variantin erikoismuotoa. Eli sanomme: <code>from moduuli
-  import *</code>.</p>
-
-  <p>Python ei ilmeisesti tue piirreluokkia (<em>eng. trait</em>).
-  Kuitenkin näyttäisi siltä, että Pythonillakin tätä tekniikkaa
-  voidaan jossain määrin matkia moduulien avulla. Esimerkiksi
-  luokan funktiot voidaan määritellä erillisessä moduulissa ja
-  sitten sisällyttää luokan määrittelyssä ne toisesta moduulista
-  osaksi lokaalia nimiavaruutta. Seuraavassa yksinkertainen
-  esimerkki:</p>
   <pre class="sh_python">
 *- coding: UTF-8 -*- # moduuli1.py class Luokka:
   from moduuli2 import tee_jotain def tee_jotain_muuta(self):
