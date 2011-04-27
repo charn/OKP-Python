@@ -1898,7 +1898,7 @@ tällöin sisällyttää.
 
   <h3 id="chapter-7-oliotluokat">Oliot ja luokat</h3>
   
-  <p>Pythonissa luokat ovat olioita, kuten kaikki muutkin tietotyypit. Luokat ovat myös dynaamisia: ne luodaan ajoaikaisesti, ja niitä voidaan muokata luomisen jälkeenkin. Luokkien jäsenmuuttujat ovat normaalisti julkisia. Privaattien muuttujien luomiseen on rajallinen tuki: kirjoittamalla muuttujan nimen eteen kaksi alaviivaa saadaan muuttuja käyttäytymään, ikään kuin se olisi privaatti ( esim: <code>__spam</code>).</p>
+  <p>Pythonissa luokat ovat olioita, kuten kaikki muutkin tietotyypit. Luokat ovat myös dynaamisia: ne luodaan ajoaikaisesti, ja niitä voidaan muokata luomisen jälkeenkin. Luokkien jäsenmuuttujat ovat normaalisti julkisia, eikä Pythonissa ole mahdollista piilottaa dataa, [http://docs.python.org/py3k/tutorial/classes.html#random-remarks] vaan kaikki perustuu ohjelmointikäytäntöihin. Privaattien muuttujien luomiseen on rajallinen tuki: kirjoittamalla muuttujan nimen eteen kaksi alaviivaa saadaan muuttuja käyttäytymään, ikään kuin se olisi privaatti ( esim: <code>__spam</code>).</p>
   
   <p>Jos data-attribuutilla ja metodilla on sama nimi, metodin nimi peittyy. Nimiongelmien välttämiseksi suositellaan käyttämään jonkinlaista nimeämiskäytäntöä, esimerkiksi nimeämällä metodit niin, että nimi alkaa isolla kirjaimella.</p>
   
@@ -1952,8 +1952,12 @@ class Luvut:
         self.i = luku2
 
 x = Luvut(3, 4)
-x.r, x.i #(3, 4)
+x.r, x.i #tulostaa: (3, 4)
 </pre>
+
+  <h4>Ilmentymäoliot</h4>
+  
+  <h4>Metodioliot</h4>
 
   <h4>Periytyminen</h4>
 
