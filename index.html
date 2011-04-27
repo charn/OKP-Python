@@ -1958,7 +1958,7 @@ class Luokka:
   <p>Attribuuttiviittauksessa syntaksi on <code>olio.nimi</code>.
   Esimerkkinä olevan luokkamäärittelyn tapauksessa
   <code>Luokka.i</code> palauttaisi kokonaisluvun ja
-  <code>Luokka.metodi</code> palauttaisi funktio-olion.</p>
+  <code>Luokka.metodi</code> palauttaisi funktio-olion (<code>Luokka.metodi(Luokka)</code> palauttaisi merkkijonon "spam").</p>
   <pre class="sh_python">
 class Luokka:
     i = 1
@@ -1987,8 +1987,25 @@ x.r, x.i #tulostaa: (3, 4)
 </pre>
 
   <h4>Ilmentymäoliot</h4>
+  
+  <p>Ilmentymäoliot eivät ymmärrä muuta kuin attribuuttiviittauksia. Attribuuttinimiä on kahdenlaisia: data-attribuutteja ja metodeita.</p>
+  
+  <p>Data attribuutit ovat "ilmentymämuuttujia". Ne luodaan kuten paikalliset muuttujatkin, eli silloin kun niihin asetetaan jonkin arvo.</p>
 
   <h4>Metodioliot</h4>
+  
+  <p>Yksinkertainen metodikutsu:</p>
+  
+  <pre class="sh_python">x.metodi() #Luokka -esimerkissä palauttaisi "spam"</pre>
+  
+  <p>Metodia ei ole kuitenkaan pakko aina kutsua suoraan. <code>x.metodi</code> on metodiolio, joka voidaan tallentaa muuttujaan, jota kutsutaan myöhemmin.</p>
+  
+  <pre class="sh_python">metodimuuttuja = x.metodi
+while True:
+    print(metodimuuttuja())
+#Tulostaa "loputtomassa" loopissa metodin palauttamaa merkkijonoa</pre>
+
+  <p>Ajatellaan edelleen, että <code>x</code> on luokan <code>Luokka</code> ilmentymä. Tällöin <code>x.metodi</code> ei kuitenkaan ole sama asia kuin <code>Luokka.metodi</code>, sillä <code>x.metodi</code> on <i>metodiolio</i> ja <code>Luokka.metodi</code> on <i>funktio-olio</i>.</p>
 
   <h4>Periytyminen</h4>
 
