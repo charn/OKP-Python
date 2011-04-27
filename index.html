@@ -1906,18 +1906,21 @@ paketin_juuri/alipaketti/alimoduuli.py
   <p>Pythonissa luokat ovat olioita, kuten kaikki muutkin
   tietotyypit. Luokat ovat myös dynaamisia: ne luodaan
   ajoaikaisesti, ja niitä voidaan muokata luomisen jälkeenkin.
-  Luokkien jäsenmuuttujat ovat normaalisti julkisia [<a href="#ref-classes">21</a>], eikä
-  Pythonissa ole mahdollista piilottaa dataa,
+  Luokkien jäsenmuuttujat ovat normaalisti julkisia [<a href=
+  "#ref-classes">21</a>], eikä Pythonissa ole mahdollista piilottaa
+  dataa,
   [http://docs.python.org/py3k/tutorial/classes.html#random-remarks]
   vaan kaikki perustuu ohjelmointikäytäntöihin. Privaattien
   muuttujien luomiseen on rajallinen tuki: kirjoittamalla muuttujan
   nimen eteen kaksi alaviivaa saadaan muuttuja käyttäytymään, ikään
-  kuin se olisi privaatti ( esim: <code>__spam</code>). [<a href="#ref-private">22</a>]</p>
+  kuin se olisi privaatti ( esim: <code>__spam</code>). [<a href=
+  "#ref-private">22</a>]</p>
 
   <p>Jos data-attribuutilla ja metodilla on sama nimi, metodin nimi
   peittyy. Nimiongelmien välttämiseksi suositellaan käyttämään
   jonkinlaista nimeämiskäytäntöä, esimerkiksi nimeämällä metodit
-  niin, että nimi alkaa isolla kirjaimella. [<a href="#ref-random">23</a>]</p>
+  niin, että nimi alkaa isolla kirjaimella. [<a href=
+  "#ref-random">23</a>]</p>
 
   <p>Luokkamäärittely yksinkertaisimmillaan:</p>
   <pre class="sh_python">
@@ -1934,7 +1937,8 @@ class ClassName:
   käyttää ohjelmassa. (Jos luokkamäärittely on laitettu
   <code>if</code> -lauseen sisään, sitä ei voida käyttää ennen kuin
   <code>if</code> -lause on suoritettu) Kun luokkamäärittelystä
-  poistutaan normaalisti, syntyy luokkaolio. [<a href="#ref-classdefinition">24</a>]</p>
+  poistutaan normaalisti, syntyy luokkaolio. [<a href=
+  "#ref-classdefinition">24</a>]</p>
 
   <h4>Self</h4>
 
@@ -1952,17 +1956,27 @@ class Luokka:
         ...
 </pre>
 
-  <p>Self:in toiminta voi tuntua hieman kummalliselta, joten selvennykseksi pieni esimerkki: Jos on määritelty luokka <code>Luokka</code> ja siitä on olemassa ilmentymä <code>olio</code>. Kun kutsutaan tuon ilmentymän metodia <code>olio.metodi(parametri1, parametri2)</code> kutsu muutetaan automaattisesti muotoon <code>Luokka.metodi(olio, parametri1, parametri2)</code>. [<a href="#ref-self">25</a>] [<a href="#ref-method">26</a>]</p>
+  <p>Self:in toiminta voi tuntua hieman kummalliselta, joten
+  selvennykseksi pieni esimerkki: Jos on määritelty luokka
+  <code>Luokka</code> ja siitä on olemassa ilmentymä
+  <code>olio</code>. Kun kutsutaan tuon ilmentymän metodia
+  <code>olio.metodi(parametri1, parametri2)</code> kutsu muutetaan
+  automaattisesti muotoon <code>Luokka.metodi(olio, parametri1,
+  parametri2)</code>. [<a href="#ref-self">25</a>] [<a href=
+  "#ref-method">26</a>]</p>
 
   <h4>Luokkaoliot</h4>
 
   <p>Luokkaoliot tukevat kahdenlaisia operaatioita:
-  <i>attribuuttiviittauksia</i> ja <i>ilmentymien luomista</i>. [<a href="#ref-classobject">27</a>]</p>
+  <i>attribuuttiviittauksia</i> ja <i>ilmentymien luomista</i>.
+  [<a href="#ref-classobject">27</a>]</p>
 
   <p>Attribuuttiviittauksessa syntaksi on <code>olio.nimi</code>.
   Esimerkkinä olevan luokkamäärittelyn tapauksessa
   <code>Luokka.i</code> palauttaisi kokonaisluvun ja
-  <code>Luokka.metodi</code> palauttaisi funktio-olion (<code>Luokka.metodi(Luokka)</code> palauttaisi merkkijonon "spam").</p>
+  <code>Luokka.metodi</code> palauttaisi funktio-olion
+  (<code>Luokka.metodi(Luokka)</code> palauttaisi merkkijonon
+  "spam").</p>
   <pre class="sh_python">
 class Luokka:
     i = 1
@@ -1991,25 +2005,38 @@ x.r, x.i #tulostaa: (3, 4)
 </pre>
 
   <h4>Ilmentymäoliot</h4>
-  
-  <p>Ilmentymäoliot eivät ymmärrä muuta kuin attribuuttiviittauksia. Attribuuttinimiä on kahdenlaisia: data-attribuutteja ja metodeita.</p>
-  
-  <p>Data attribuutit ovat "ilmentymämuuttujia". Ne luodaan kuten paikalliset muuttujatkin, eli silloin kun niihin asetetaan jonkin arvo. [<a href="#ref-instanceobject">28</a>]</p>
+
+  <p>Ilmentymäoliot eivät ymmärrä muuta kuin
+  attribuuttiviittauksia. Attribuuttinimiä on kahdenlaisia:
+  data-attribuutteja ja metodeita.</p>
+
+  <p>Data attribuutit ovat "ilmentymämuuttujia". Ne luodaan kuten
+  paikalliset muuttujatkin, eli silloin kun niihin asetetaan jonkin
+  arvo. [<a href="#ref-instanceobject">28</a>]</p>
 
   <h4>Metodioliot</h4>
-  
+
   <p>Yksinkertainen metodikutsu:</p>
-  
-  <pre class="sh_python">x.metodi() #Luokka -esimerkissä palauttaisi "spam"</pre>
-  
-  <p>Metodia ei ole kuitenkaan pakko aina kutsua suoraan. <code>x.metodi</code> on metodiolio, joka voidaan tallentaa muuttujaan, jota kutsutaan myöhemmin. [<a href="#ref-method">26</a>]</p>
-  
-  <pre class="sh_python">metodimuuttuja = x.metodi
+  <pre class="sh_python">
+x.metodi() #Luokka -esimerkissä palauttaisi "spam"
+</pre>
+
+  <p>Metodia ei ole kuitenkaan pakko aina kutsua suoraan.
+  <code>x.metodi</code> on metodiolio, joka voidaan tallentaa
+  muuttujaan, jota kutsutaan myöhemmin. [<a href=
+  "#ref-method">26</a>]</p>
+  <pre class="sh_python">
+metodimuuttuja = x.metodi
 while True:
     print(metodimuuttuja())
-#Tulostaa "loputtomassa" loopissa metodin palauttamaa merkkijonoa</pre>
+#Tulostaa "loputtomassa" loopissa metodin palauttamaa merkkijonoa
+</pre>
 
-  <p>Ajatellaan edelleen, että <code>x</code> on luokan <code>Luokka</code> ilmentymä. Tällöin <code>x.metodi</code> ei kuitenkaan ole sama asia kuin <code>Luokka.metodi</code>, sillä <code>x.metodi</code> on <i>metodiolio</i> ja <code>Luokka.metodi</code> on <i>funktio-olio</i>.</p>
+  <p>Ajatellaan edelleen, että <code>x</code> on luokan
+  <code>Luokka</code> ilmentymä. Tällöin <code>x.metodi</code> ei
+  kuitenkaan ole sama asia kuin <code>Luokka.metodi</code>, sillä
+  <code>x.metodi</code> on <i>metodiolio</i> ja
+  <code>Luokka.metodi</code> on <i>funktio-olio</i>.</p>
 
   <h4>Periytyminen</h4>
 
@@ -2245,30 +2272,36 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
     <li id="ref-copy"><a href=
     "http://docs.python.org/library/copy.html">copy — Shallow and
     deep copy operations</a></li>
-    
+
     <li id="ref-classes"><a href=
     "http://docs.python.org/py3k/tutorial/classes.html#classes">http://docs.python.org/py3k/tutorial/classes.html#tut-private</a></li>
-    
+
     <li id="ref-private"><a href=
-    "http://docs.python.org/py3k/tutorial/classes.html#tut-private">http://docs.python.org/py3k/tutorial/classes.html#tut-private</a></li>
-    
+    "http://docs.python.org/py3k/tutorial/classes.html#tut-private">
+    http://docs.python.org/py3k/tutorial/classes.html#tut-private</a></li>
+
     <li id="ref-random"><a href=
-    "http://docs.python.org/py3k/tutorial/classes.html#random-remarks">http://docs.python.org/py3k/tutorial/classes.html#random-remarks</a></li>
-    
+    "http://docs.python.org/py3k/tutorial/classes.html#random-remarks">
+    http://docs.python.org/py3k/tutorial/classes.html#random-remarks</a></li>
+
     <li id="ref-classdefinition"><a href=
-    "http://docs.python.org/py3k/tutorial/classes.html#class-definition-syntax">http://docs.python.org/py3k/tutorial/classes.html#class-definition-syntax</a></li>
-    
+    "http://docs.python.org/py3k/tutorial/classes.html#class-definition-syntax">
+    http://docs.python.org/py3k/tutorial/classes.html#class-definition-syntax</a></li>
+
     <li id="ref-self"><a href=
     "http://www.ibiblio.org/g2swap/byteofpython/read/self.html">http://www.ibiblio.org/g2swap/byteofpython/read/self.html</a></li>
-    
+
     <li id="ref-method"><a href=
-    "http://docs.python.org/py3k/tutorial/classes.html#method-objects">http://docs.python.org/py3k/tutorial/classes.html#method-objects</a></li>
-    
+    "http://docs.python.org/py3k/tutorial/classes.html#method-objects">
+    http://docs.python.org/py3k/tutorial/classes.html#method-objects</a></li>
+
     <li id="ref-classobject"><a href=
-    "http://docs.python.org/py3k/tutorial/classes.html#class-objects">http://docs.python.org/py3k/tutorial/classes.html#class-objects</a></li>
-    
+    "http://docs.python.org/py3k/tutorial/classes.html#class-objects">
+    http://docs.python.org/py3k/tutorial/classes.html#class-objects</a></li>
+
     <li id="ref-instanceobject"><a href=
-    "http://docs.python.org/py3k/tutorial/classes.html#instance-objects">http://docs.python.org/py3k/tutorial/classes.html#instance-objects</a></li>
+    "http://docs.python.org/py3k/tutorial/classes.html#instance-objects">
+    http://docs.python.org/py3k/tutorial/classes.html#instance-objects</a></li>
   </ol>
 
   <p><small>Copyright © 2011 Juhani Åhman, Juha Louhiranta, Matti
