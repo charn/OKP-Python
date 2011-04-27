@@ -65,6 +65,10 @@
     <li><a href="#lahteet">Lähteet</a></li>
   </ol>
 
+  <h2 id="cahpter-0">Johdanto</h2>
+  
+  <p>Tämä Pythonin kevytspesifikaatio on toteutettu keväällä 2011 osana Helsingin yliopiston tietojenkäsittelytieteen laitoksen Ohjelmointikielten periaatteet -kurssia. Tämän työn tarkoituksena on antaa yleiskatsaus Python-kielen ominaisuuksista etenkin uusimman 3.x -kehityshaaran mukaisesti.</p>
+
   <h2 id="chapter-1">1. Kielen taustaa ja miniesimerkki</h2>
 
   <ol class="sub-toc">
@@ -225,9 +229,9 @@ if __name__ == "__main__": # Pääohjelma
   ollut kokonaisluku.</p>
 
   <p>Varsinainen Fibonacci luvun laskeminen tapahtuu
-  fib-funktiossa. fib-funktio asettaa ensiksi muuttujille a ja b
+  <code>fib</code> -funktiossa. <code>fib</code> -funktio asettaa ensiksi muuttujille a ja b
   Fibonaccin lukujonon alkuarvot <code>a = 0</code> ja <code>b =
-  1</code>. Lukujonon lukuja lasketaan while-silmukassa, kunnes
+  1</code>. Lukujonon lukuja lasketaan <code>while</code> -silmukassa, kunnes
   viimeisin laskettu Fibonaccin luku <code>b = a+b</code> on
   syöttölukua suurempi. Lopuksi palautamme halutun luvun.</p>
 
@@ -237,15 +241,15 @@ if __name__ == "__main__": # Pääohjelma
   pääohjelma-alueen vain kun moduuli suoritetaan pääohjelmana eikä
   importattuna jostain toisesta moduulista.</p>
 
-  <p>Käyttäjän syöte luetaan input-funktiolla. fib-funktiota varten
+  <p>Käyttäjän syöte luetaan <code>input</code> -funktiolla. <code>fib</code> -funktiota varten
   halutaan kokonaislukusyöte. Syötteen tyyppi on riippuvainen
   käyttäjästä, joten se muutetaan kokonaisluvuksi ennen
   fib-funktion kutsua <code>int(x)</code>-kutsulla.
   Kokonaislukumuutos voi kuitenkin epäonnistua, jolloin
   <code>int(x)</code> nostaa <code>ValueError</code> poikkeuksen.
   Jotta käyttäjälle saadaan annettua sopiva virheviesti, niin
-  käsittelemme poikkeuksen try-except-rakenteen avulla. Pääohjelman
-  lopuksi kutsumme fib-funktiota syötteellä ja tulostamme sen
+  käsittelemme poikkeuksen <code>try</code>-<code>except</code> -rakenteen avulla. Pääohjelman
+  lopuksi kutsumme <code>fib</code> -funktiota syötteellä ja tulostamme sen
   palautusarvon.</p>
 
   <h2 id="chapter-2">2. Alkiorakenne – millaisista palikoista
@@ -278,7 +282,7 @@ if __name__ == "__main__": # Pääohjelma
   "http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>.
   Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue,
   excluding ID_Start. Näiden merkkijoukkojen yhdiste sisältää
-  kaikki unicode-merkit joita voi esiintyä python-tunnuksen
+  kaikki unicode -merkit joita voi esiintyä python-tunnuksen
   nimessä, siten että tunnuksen nimi voi alkaa vain ensimmäisen
   joukon merkillä. <a href="#ref-tunnukset-py3-spec">[2]</a></p>
 
@@ -319,7 +323,7 @@ Hyvin pyyhkii. No problemo, kun €-merkit vaihdettiin e-kirjaimiksi
 
   <h3 id="chapter-2-varatut-sanat">2.2. Varatut sanat</h3>
 
-  <p>Seuraavassa listattuna (Pyton 3.0.1:n mukainen, tässä on
+  <p>Seuraavassa listattuna (Python 3.0.1:n mukainen, tässä on
   pieniä eroavaisuuksia 2.x -sarjan kanssa) varatut sanat <a href=
   "#ref-varatut-sanat-py3-spec">[1]</a> sen tarkemmin niitä
   esittelemättä.</p>
@@ -356,7 +360,7 @@ break      except     in         raise
     <code>1e100</code>, <code>3.14e-10</code>,
     <code>0e0</code></li>
 
-    <li>imaginääriluvut<br>
+    <li>imaginaariluvut<br>
     <code>3.14j</code>, <code>10.j</code>, <code>10j</code>,
     <code>.001j</code>, <code>1e100j</code>,
     <code>3.14e-10j</code></li>
@@ -388,7 +392,7 @@ break      except     in         raise
   Kontrollirakenteissa totuusarvolausekkeita seuraa aina
   kaksoispiste ja lausekkeessa ei ole pakko käyttää sulkuja.</p>
 
-  <p>Alla olevissa esimerkeissä kaikki kolme if-rakennetta tekevät
+  <p>Alla olevissa esimerkeissä kaikki kolme <code>if</code> -rakennetta tekevät
   saman asian <i>(tulostavat sanat "spam" ja "ham")</i>:</p>
   <pre class="sh_python">
 if 1 == 1:
@@ -416,7 +420,7 @@ if 1 == 1: print("spam"); print("ham")
   alalla ei ole ollenkaan tavatonta, että ohjelmaa kehitetään
   ympäri maailmaa ja kehittäjien äidinkielet vaihtelevat suuresti.
   Tällöin on käytettävä jotakin yhteistä kieltä eli siis yleensä
-  englantia ja tämä unicode-tuki ei juurikaan auta. Toinen tilanne
+  englantia ja tämä unicode -tuki ei juurikaan auta. Toinen tilanne
   jolloin koodia ei varmaankaan haluta tehdä äidinkielellä on, jos
   tuotetaan avoimen lähdekoodin ratkaisuja. Muutoin saatetaan
   varsin tehokkaasti eliminoida iso osa käyttäjäyhteisön
@@ -427,7 +431,7 @@ if 1 == 1: print("spam"); print("ham")
   Kustannussyistä jatkokehitys saatettaisiin joissain tilanteissa
   haluta tuottaa jossakin edullisemmassa maassa, mutta tämä ei nyt
   olekaan mahdollista ilman huomattavaa käännöstyötä. Kun lisäksi
-  otetaan huomioon, että unicode-tuen sisällyttäminen tunnuksiin
+  otetaan huomioon, että unicode -tuen sisällyttäminen tunnuksiin
   monimutkaistaa kielen implementaatioiden toteuttamista, niin olen
   kyllä henkilökohtaisesti hieman skeptinen koko ominaisuuden
   järkevyydestä. En kyllä itse ainakaan ikinä ohjelmoisi
@@ -483,10 +487,10 @@ if 1 == 1: print("spam"); print("ham")
     <li>skriptitiedosto (annettuna tulkille
     komentoriviparametrina)</li>
 
-    <li>skriptikomento (annettuna tulkille -c komentoriviparametrin
+    <li>skriptikomento (annettuna tulkille <code>-c</code> komentoriviparametrin
     arvona)</li>
 
-    <li>exec() tai eval() -funktioille merkkijonona annettu
+    <li><code>exec()</code> tai <code>eval()</code> -funktioille merkkijonona annettu
     koodi</li>
   </ul>
 
@@ -509,21 +513,21 @@ if 1 == 1: print("spam"); print("ham")
   tunnukselle uutta merkitystä). Moduulitason tunnukset ovat
   globaaleja. Mikäli lohkon sisältä halutaan (eksplisiittisesti)
   viitata lohkon ulkopuolisiin muuttujiin, niin voidaan käyttää
-  varattuja sanoja nonlocal ja global. Määreellä nonlocal
+  varattuja sanoja <code>nonlocal</code> ja <code>global</code>. Määreellä <code>nonlocal</code>
   vihjataan, että halutaan viitata näkyvyysaluehierarkiassa
   seuraavaan tasoon jolta tunnus löytyy. Vastaavasti
-  global-määreellä siirrytään suoraan etsimään tunnusta globaalilta
+  <code>global</code> -määreellä siirrytään suoraan etsimään tunnusta globaalilta
   näkyvyysalueelta.</p>
 
   <h3 id="chapter-3-sidonta">3.2. Sidonta</h3>
 
   <p>Pythonissa sidonta tapahtuu osittain dynaamisesti ja osittain
-  staattisesti. Käytännössä siis näkyvyysalueet (scope)
+  staattisesti. Käytännössä siis näkyvyysalueet (<em>scope</em>)
   määritellään staattisesti, mutta niitä käytetään dynaamisesti.
   Eli toisin sanoen eri näkyvyysalueilla olevat tunnukset
   määritellään, mutta niihin ei liitetä arvoa. Ajonaikaisesti
   voidaan määritellä uusia tunnuksia globaalille tasolle. On
-  kuitenkin huomioitava, että Python-funktioille ei voi määritellä
+  kuitenkin huomioitava, että Python -funktioille ei voi määritellä
   uusia lokaaleja tunnuksia funktion parsimisen jälkeen (eli
   lokaalit muuttujat määritellään staattisesti). Pythonin
   dokumentaatioissa [<a href="#ref-scopes-and-namespaces">30</a>] myös vihjataan, että staattisuutta tullaan
@@ -1080,10 +1084,10 @@ def fib(n):
     </tr>
   </table>
 
-  <p>**** Unicode merkkijonot koostuvat 16 tai 32-bittisisitä
-  unicode merkeistä. Koko riippuu siitä käytetäänkö
+  <p>**** Unicode -merkkijonot koostuvat 16 tai 32-bittisisitä
+  unicode -merkeistä. Koko riippuu siitä käytetäänkö
   implementaatiossa/ympäristössä UCS-2 vai UCS-4. Suurimman tuetun
-  unicodemerkin arvon voi kysyä näin:<br>
+  unicode -merkin arvon voi kysyä näin:<br>
   sys.maxunicode.</p>
 
   <p>Joukkotyypit:</p>
@@ -1164,8 +1168,8 @@ def fib(n):
   -paradigmaa, jonka ajatus on, että "Jos se vaakkuu kuin ankka ja
   kävelee kuin ankka, niin sen täytyy olla ankka." Olion (Pythonissa
   kaikki ovat olioita) tyyppi määritellään tutkimalla sen metodeita
-  ja attribuutteja. Tyypillisesti käytetään EAFP (Easier to Ask
-  Forgiveness than Permission) -tyyliä. Kun jotakin metodia
+  ja attribuutteja. Tyypillisesti käytetään EAFP (<em>Easier to Ask
+  Forgiveness than Permission</em>) -tyyliä. Kun jotakin metodia
   yritetään käyttää, ei olion tyyppiä tarkisteta etukäteen, vaan
   käytetään mielummin poikkeuksia. Lyhyesti ideana on siis se, että
   ei välitetä siitä, mistä olio on periytynyt, vaan siitä, pystyykö
@@ -1266,7 +1270,7 @@ True
 
   <p>Funktion ensimmäinen lause voi olla string-literaali, jolloin
   se toimii funktion dokumentaatiomerkkijonona eli
-  <i>docstringinä</i>.</p>
+  <em>docstringinä</em>.</p>
   <pre class="sh_python">
 def funktio(viesti):
     """Funktion docstring"""
@@ -1276,7 +1280,7 @@ def funktio(viesti):
 
   <p>Pythonissa kaikki funktiot palauttavat arvon, myös sellaisissa
   tapauksissa, kun funktiolla ei ole <i>return</i> lausetta. Ilman
-  return-lausetta funktiot palauttavat arvon <i>None</i>. [<a href=
+  <code>return</code> -lausetta funktiot palauttavat arvon <code>None</code>. [<a href=
   "#ref-funktiot">16</a>]</p>
 
   <h3 id="chapter-6-parametrivalitys">6.2 Parametrivälitys</h3>
@@ -1287,8 +1291,8 @@ def funktio(viesti):
   <em>mutaabeliksi</em> olioksi, vastaavasti muuttumatonta oliota
   kutsutaan <em>immutaabeliksi</em> olioksi. Olion muuttumattomuus
   määräytyy sen tyypin mukaan. Esimerkiksi numeeriset tyypit,
-  stringit ja monikot ovat muuttumattomia, mutta dict- ja
-  list-rakenteet ovat muuttuvia.</p>
+  stringit ja monikot ovat muuttumattomia, mutta <code>dict</code>- ja
+  <code>list</code> -rakenteet ovat muuttuvia.</p>
 
   <p>Seuraavassa esimerkki parametrinvälityksestä:</p>
   <pre class="sh_python">
@@ -1347,7 +1351,7 @@ muuta3 jälkeen x arvo on spam spam spam
   parametrimuuttujan paikallisen kopion arvon.
   <code>muuta2</code>-funktio muuttaa onnistuneesti listaparametrin
   arvoksi <code>[1, 2, 3]</code> käyttämällä listaolion
-  append-metodia.</p>
+  <code>append</code> -metodia.</p>
 
   <p>String-tyyppi on Pythonissa muuttumaton, joten muuta3-funktion
   tyylinen stringin uudelleensijoitus parametriin ei myöskään
@@ -1360,7 +1364,7 @@ muuta3 jälkeen x arvo on spam spam spam
   sisältävä listamuuttuja. Vastaavasti nimetyt parametrit otetaan
   käyttöön <code>**kwargs</code> syntaksilla, jossa
   <code>kwargs</code> sisältää nimetyt parametrit
-  <code>dict</code>-avainarvorakenteessa. Seuraavassa esimerkki
+  <code>dict</code> -avain-arvorakenteessa. Seuraavassa esimerkki
   niiden käytöstä:</p>
   <pre class="sh_python">
 def tulosta_kaikki(a, b, *c, **d):
@@ -1605,7 +1609,7 @@ Tämä printataan aina
   generaattorin <code>next()</code> -funktiota, se jatkaa suoritusta siitä mihin
   se edellisellä kerralla jäi ja palauttaa arvon kohdatessaan jälleen <code>yield</code> -lauseen.</p>
   
-  <p>Generaattoreille luodaan automaattisesti iteraattoreista tyypillisesti löytyvät <code>__iter__()</code> and <code>__next__()</code> -metodit. Suorituksen tila ja paikallisten muuttujien arvot jäävät muistiin. Generaattorien suorituksen loppuessa nostetaan automaattisesti <code>StopIteration</code> poikkeus, joka kertoo kutsujalle iteroinnin loppumisesta.</p>
+  <p>Generaattoreille luodaan automaattisesti iteraattoreista tyypillisesti löytyvät <code>__iter__()</code> ja <code>__next__()</code> -metodit. Suorituksen tila ja paikallisten muuttujien arvot jäävät muistiin. Generaattorien suorituksen loppuessa nostetaan automaattisesti <code>StopIteration</code> poikkeus, joka kertoo kutsujalle iteroinnin loppumisesta.</p>
   
   <p>Seuraavaksi esimerkki fibonaccin lukujen laskemisesta generaattorin avulla:</p>
   <pre class="sh_python">
