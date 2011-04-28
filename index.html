@@ -1250,12 +1250,14 @@ True
     <li><span>6.5.</span><a href="#chapter-6-rinnakkaislaskenta">Miten kieli tukee
     rinnakkaista laskentaa</a></li>
     
-    <!--TODO: Kaks vikaa kappaletta puuttuvat? -->
     <li><span>6.6.</span><a href="#chapter-6-ohjelmaarkkitehtuurit">Tyypillisiä
     ohjelma-arkkitehtuureja</a></li>
 
+<!--TODO: 
     <li><span>6.7.</span><a href="#chapter-6-arvio">Arvio kieleen valittujen
     ratkaisujen eduista ja haitoista</a></li>
+    -->
+    
   </ol>
 
   <h3 id="chapter-6-aliohjelmat">6.1. Nimetyt aliohjelmat ja/tai
@@ -1807,7 +1809,19 @@ moniprosessitesti 2.04168510437
   nopeimmaksi. Tämä johtuu tietenkin siitä, että säikeet ovat
   kevyempiä kuin prosessit ja voivat toki kaikki nukkua samaan
   aikaan siinä missä prosessitkin.</p>
-
+  
+  <h3 id="chapter-6-ohjelmaarkkitehtuurit">6.6 Tyypillisiä ohjelma-arkkitehtuureja</h3>
+  <p>
+  Pythonia käytetään hyvin moninaisiin tarkoituksiin <a href="#ref-wiki-py-usage">[33]</a>.
+  Siksipä Pythonin yhteydessä on vaikea puhua jostakin tietystä vallitsevasta arkkitehtonisesta
+  piirteestä, jota yleenäs noudatetaan. Pythonille ominaisena voidaan kuitenkin pitää esimerkiksi
+  <em>duck typing</em>-paradigman käyttöä ja <em>EAFP</em>-tyyliä, joita jo käsiteltiinkin luvussa
+  <a href="#chapter-5-stat-dyn-tyypitys">5.3. Staattinen tyypitys ~ dynaaminen tyypitys</a>. Tyypillisin
+  syy miksi Python valitaan, johonkin ohjelmointiprojektiin lienee sen dynaamisuus ja laajennettavuus
+  (paljon valmmiita moduuleja). Täten ei liene ihme, että tyypilliset arkktehtuurit ovat enneminkin
+  ohjeistusta erittäin dynaamiseen, nopeaan (tuottaa) ja laajennettavaan ohjelmointiin.
+  </p>
+  
   <h2 id="chapter-7">7. Datan kapselointi</h2>
 
   <ol class="sub-toc">
@@ -2373,6 +2387,8 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
     <li id="ref-modules-packages"><a href="http://docs.python.org/py3k/tutorial/modules.html#packages">Packages</a></li>
     
     <li id="ref-modules"><a href="http://docs.python.org/tutorial/modules.html">Modules</a></li>
+    
+    <li id="ref-wiki-py-usage"><a href="http://en.wikipedia.org/wiki/Python_%28programming_language%29#Usage">Wikipedia - Python usage</a></li>
   </ol>
 
   <p><small>Copyright © 2011 Juhani Åhman, Juha Louhiranta, Matti
