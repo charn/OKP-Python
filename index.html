@@ -1813,9 +1813,11 @@ moniprosessitesti 2.04168510437
   <h3 id="chapter-7-raktyypit">7.1. Rakenteiset ja kapseloidut
   tyypit</h3>
 
-  <h4>7.1.1. Moduulit ja paketit</h4>
+  <h4>7.1.1. Moduulit</h4>
 
-  <p>Pythonissa lähdekooditiedosto muodostaa moduulin. Moduulin
+  <p>Tässä kappaleessa on pyritty tiivistämään oleellisimmat asiat
+  Pythonin dokumentaation moduuli-osiosta <a href="#ref-modules">[32]</a>.
+  Pythonissa lähdekooditiedosto muodostaa moduulin. Moduulin
   nimi on tiedostonimi ilman tiedostopäätettä <code>.py</code>.
   Ajettavan moduulin nimeä voi moduulissa kysyä
   <code>__name__</code> -metodilla. Moduulin tarkoitus on koota
@@ -1871,12 +1873,18 @@ moduulissa_määritelty_funktio()
   osaksi lokaalia nimiavaruutta. Seuraavassa yksinkertainen
   esimerkki:</p>
   <pre class="sh_python">
-*- coding: UTF-8 -*- # moduuli1.py class Luokka:
-  from moduuli2 import tee_jotain def tee_jotain_muuta(self):
-  print("Moduulissa 1 määritelty") def main(): l = Luokka()
-  l.tee_jotain() l.tee_jotain_muuta() if __name__ == "__main__":
-  main() #!/usr/bin/python3.1 # -*- coding: UTF-8 -*- # moduuli2.py
-  def tee_jotain(self): print("Moduulissa 2 määritelty")
+#!/usr/bin/python3.1
+#-*- coding: UTF-8 -*- # moduuli1.py class Luokka:
+from moduuli2 import tee_jotain def tee_jotain_muuta(self):
+print("Moduulissa 1 määritelty") def main(): l = Luokka()
+l.tee_jotain() l.tee_jotain_muuta() if __name__ == "__main__":
+main()
+
+#------------------------------
+
+#!/usr/bin/python3.1
+# -*- coding: UTF-8 -*- # moduuli2.py
+def tee_jotain(self): print("Moduulissa 2 määritelty")
 </pre>
 
   <p>Suorittamalla moduuli1.py-moduulin skriptinä konsolissa,
@@ -1888,8 +1896,8 @@ Moduulissa 1 määritelty
 
   <h4>7.1.2. Paketit (<em>Packages</em>) ja alimoduulit
   (<em>submodules</em>)</h4>
-
-  <p>Monista moduuleista muodostuvan kokonaisuuden voi koota
+  <p>Pythonin dokumentaatiossa <a href="#ref-modules-packages">[31]</a> kerrotaan paketeista muun muassa
+  seuraavanlaisia asioita. Monista moduuleista muodostuvan kokonaisuuden voi koota
   paketiksi. Paketit ovat erityistä tiedostorakennetta noudattavia
   hakemistoja. Pakein nimi on sen juurihakemiston nimi.
   Juurikansion tulee sisältää __init__.py -tiedosto sen merkiksi,
@@ -1904,7 +1912,7 @@ paketin_juuri/alipaketti/__init__.py
 paketin_juuri/alipaketti/alimoduuli.py
 </pre>
 
-  <p>Nyt alimoduuliin voidaan viitata vaikkapa näin:<br>
+  <p>Nyt alimoduuliin voidaan viitata käyttäen pistenotaatiota vaikkapa näin:<br>
   <code>import paketin_juuri.alipaketti.alimoduuli</code><br>
   Mikäli paketeista halutaan tyypillisesti ottaa kerrallaan
   käyttöön kokonainen alipaketti tai koko paketti itsessään, olisi
@@ -2338,6 +2346,10 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
     
     <li id="ref-scopes-and-namespaces"><a href="http://docs.python.org/py3k/tutorial/classes.html#python-scopes-and-namespaces">
     Python scopes and namespaces</a></li>
+    
+    <li id="ref-modules-packages"><a href="http://docs.python.org/py3k/tutorial/modules.html#packages">Packages</a></li>
+    
+    <li id="ref-modules"><a href="http://docs.python.org/tutorial/modules.html">Modules</a></li>
   </ol>
 
   <p><small>Copyright © 2011 Juhani Åhman, Juha Louhiranta, Matti
