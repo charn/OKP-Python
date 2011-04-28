@@ -1146,13 +1146,13 @@ def fib(n):
   <h3 id="chapter-5-vahva-heikko-tyypitys">5.2. Vahva tyypitys ~ heikko
   tyypitys</h3>
 
-  <p>Python voidaan luokitella vahvasti tyypitetyksi kieliksi. Sen
-  vahvoihin tyyppiturvallisuusominaisuuksiin kuuluu muun muassa,
+  <p>Python voidaan luokitella vahvasti tyypitetyksi kieliksi <a href="#ref-type-safety">[34]</a>.
+  Sen vahvoihin tyyppiturvallisuusominaisuuksiin kuuluu muun muassa,
   että implisiittisiä tyyppimuunnoksia ei käytetä (lähes
   ollenkaan?) ja olioilla on aina tyyppi, eikä sitä voi muuttaa
-  (muuttujilla ei ole tyyppiä). Vrt. Javassa <code>"spam" +
-  1</code> tuottaa merkkijonon <code>"spam1"</code>. Pythonissa ei
-  numeroa suostuta implisiittisesti konvertoimaan vaan tuloksena on
+  (muuttujilla ei ole tyyppiä) <a href="#ref-strong-typing">[35]</a>. Vertaa,
+  Javassa <code>"spam" + 1</code> tuottaa merkkijonon <code>"spam1"</code>.
+  Pythonissa ei numeroa suostuta implisiittisesti konvertoimaan vaan tuloksena on
   poikkeus. Vastaavasti C:ssä voidaan esimerkiksi osoittimet
   konvertoida eksplisiittisesti ja siten käytännössä tulkita mikä
   tahansa olio miksi tahansa olioksi.</p>
@@ -1165,14 +1165,17 @@ def fib(n):
   <h3 id="chapter-5-stat-dyn-tyypitys">5.3. Staattinen tyypitys ~ dynaaminen
   tyypitys</h3>
 
-  <p>Python on dynaamisesti tyypitetty kieli. Vaikka olioiden
+  <p>Python on dynaamisesti tyypitetty kieli <a href="#ref-why-py-strong-and-dyn">[37]</a>.
+  Vaikka olioiden
   tyyppi onkin aina tiedossa, niin Pythonilla ohjelmoitaessa tämä
   yritetään jättää mahdollisimman pitkälti huomiotta. Muuttujalla
-  ei ole ennalta määrättyä tyyppiä. Funktioiden parametrien tyyppiä
-  ei normaalisti tarkisteta vaan noudatetaan ns. <em>duck typing</em>
-  -paradigmaa, jonka ajatus on, että "Jos se vaakkuu kuin ankka ja
-  kävelee kuin ankka, niin sen täytyy olla ankka." Olion (Pythonissa
-  kaikki ovat olioita) tyyppi määritellään tutkimalla sen metodeita
+  ei ole ennalta määrättyä tyyppiä <a href="#ref-why-py-strong-and-dyn">[37]</a>.
+  Funktioiden parametrien tyyppiä
+  ei normaalisti tarkisteta vaan noudatetaan niin sanottua <em>duck typing</em>
+  -paradigmaa, jonka ajatuksen voi kiteyttää aforismilla: "Jos se vaakkuu kuin ankka ja
+  kävelee kuin ankka, niin sen täytyy olla ankka." <a href="#ref-duck-typing">[36]</a>.
+  Olion (Pythonissa
+  kaikki ovat olioita) tyyppi määritellään tutkimalla sen metodeja
   ja attribuutteja. Tyypillisesti käytetään EAFP (<em>Easier to Ask
   Forgiveness than Permission</em>) -tyyliä. Kun jotakin metodia
   yritetään käyttää, ei olion tyyppiä tarkisteta etukäteen, vaan
@@ -1206,12 +1209,7 @@ def game():
     in_the_forest(john)
  
 game()
-</pre><!-- Merkkaa lähteet Timo
-  http://en.wikipedia.org/wiki/Type_safety
-  http://en.wikipedia.org/wiki/Strong_typing
-  http://en.wikipedia.org/wiki/Duck_typing
-  http://wiki.python.org/moin/Why%20is%20Python%20a%20dynamic%20language%20and%20also%20a%20strongly%20typed%20language
-  -->
+</pre>
 
   <p>Muuttujan tyypin voi tarvittaessa tarkistaa
   <code>isinstance</code>-funktiolla. <code>isinstance</code>
@@ -2387,6 +2385,17 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
     <li id="ref-modules"><a href="http://docs.python.org/tutorial/modules.html">Modules</a></li>
     
     <li id="ref-wiki-py-usage"><a href="http://en.wikipedia.org/wiki/Python_%28programming_language%29#Usage">Wikipedia - Python usage</a></li>
+    
+    <li id="ref-type-safety"><a href="http://en.wikipedia.org/wiki/Type_safety">Type safety</a></li>
+    
+    <li id="ref-strong-typing"><a href="http://en.wikipedia.org/wiki/Strong_typing">Strong typing</a></li>
+    
+    <li id="ref-duck-typing"><a href="http://en.wikipedia.org/wiki/Duck_typing">Duck typing</a></li>
+    
+    <li id="ref-why-py-strong-and-dyn">
+      <a href="http://wiki.python.org/moin/Why%20is%20Python%20a%20dynamic%20language%20and%20also%20a%20strongly%20typed%20language">
+      Why is Python a dynamic language and also strongly typed language?</a>
+    </li>
   </ol>
 
   <p><small>Copyright © 2011 Juhani Åhman, Juha Louhiranta, Matti
