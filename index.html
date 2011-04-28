@@ -66,7 +66,7 @@
 
   <h2 id="cahpter-0">Johdanto</h2>
   
-  <p>Tämä Pythonin kevytspesifikaatio on toteutettu keväällä 2011 osana Helsingin yliopiston tietojenkäsittelytieteen laitoksen Ohjelmointikielten periaatteet -kurssia. Tämän työn tarkoituksena on antaa yleiskatsaus Python-kielen ominaisuuksista etenkin uusimman 3.x -kehityshaaran mukaisesti.</p>
+  <p>Tämä Pythonin kevytspesifikaatio on toteutettu keväällä 2011 osana Helsingin yliopiston tietojenkäsittelytieteen laitoksen Ohjelmointikielten periaatteet -kurssia. Tämän työn tarkoituksena on antaa yleiskatsaus Python-kielen ominaisuuksista etenkin uusimman 3.x-kehityshaaran mukaisesti.</p>
 
   <h2 id="chapter-1">1. Kielen taustaa ja miniesimerkki</h2>
   
@@ -88,14 +88,13 @@
   <p>Pythonin historia alkaa 1980-luvulta. Ensimmäinen versio
   ohjelmointikielestä kehitettiin 80-luvun loppupuolella Guido van
   Rossumin toimesta. Python kehitettiin ABC kielen seuraajaksi,
-  joka kykenee mm. poikkeusten käsittelyyn ja yhteistyöhön Amoeba
-  -käyttöjärjestelmän kanssa. Kielen alun perin kehittänyt van
+  joka kykenee mm. poikkeusten käsittelyyn ja yhteistyöhön Amoeba-käyttöjärjestelmän kanssa. Kielen alun perin kehittänyt van
   Rossum on edelleen aktiivisesti mukana kielen kehittämisessä</p>
 
   <p>Python 2.0, julkaistiin 16. lokakuuta 2000. Toinen versio
   sisälsi useita uusia ominaisuuksia, mukaan lukien täydellisen
   roskienkeruumekanismin ja Unicode-tuen. Muutos tapahtui myös
-  kielen kehitysprosessissa. Python -yhteisölle annettiin vapaammat
+  kielen kehitysprosessissa. Python-yhteisölle annettiin vapaammat
   kädet osallistua mukaan kielen kehitykseen.</p>
 
   <p>Joulukuussa 2008 ilmestyi 3.0, jolla haluttiin korjata
@@ -154,17 +153,17 @@
     Blender)</i></li>
 
     <li>Käytössä myös muun muassa <a href=
-    "http://www.djangoproject.com/">Django</a> -frameworkissa.</li>
+    "http://www.djangoproject.com/">Django</a>-frameworkissa.</li>
 
     <li>Python nimi tulee tv-sarjasta <i>Monty Python's Flying
     Circus</i>.</li>
   </ul>
 
   <p>Pythonista on tällä hetkellä olemassa kaksi vakaata haaraa.
-  2.x -haara saa tällä hetkellä pelkkiä virheitä korjaavia
-  päivityksiä. Uudet ominaisuudet kehitetään vain 3.x -haaralle.
+  2.x-haara saa tällä hetkellä pelkkiä virheitä korjaavia
+  päivityksiä. Uudet ominaisuudet kehitetään vain 3.x-haaralle.
   Suurempi osa kolmansien osapuolien ohjelmistoista käyttää vielä
-  Pythonin 2.x -versiota.</p>
+  Pythonin 2.x-versiota.</p>
 
   <p>Yleisin Pythonin toteutus on CPython, joka on kirjoitettu
   C-kielellä. CPython kääntää Python ohjelmat. Se kääntää Python
@@ -230,9 +229,9 @@ if __name__ == "__main__": # Pääohjelma
   ollut kokonaisluku.</p>
 
   <p>Varsinainen Fibonacci luvun laskeminen tapahtuu
-  <code>fib</code> -funktiossa. <code>fib</code> -funktio asettaa ensiksi muuttujille a ja b
+  <code>fib</code>-funktiossa. <code>fib</code>-funktio asettaa ensiksi muuttujille a ja b
   Fibonaccin lukujonon alkuarvot <code>a = 0</code> ja <code>b =
-  1</code>. Lukujonon lukuja lasketaan <code>while</code> -silmukassa, kunnes
+  1</code>. Lukujonon lukuja lasketaan <code>while</code>-silmukassa, kunnes
   viimeisin laskettu Fibonaccin luku <code>b = a+b</code> on
   syöttölukua suurempi. Lopuksi palautamme halutun luvun.</p>
 
@@ -242,15 +241,15 @@ if __name__ == "__main__": # Pääohjelma
   pääohjelma-alueen vain kun moduuli suoritetaan pääohjelmana eikä
   importattuna jostain toisesta moduulista.</p>
 
-  <p>Käyttäjän syöte luetaan <code>input</code> -funktiolla. <code>fib</code> -funktiota varten
+  <p>Käyttäjän syöte luetaan <code>input</code>-funktiolla. <code>fib</code>-funktiota varten
   halutaan kokonaislukusyöte. Syötteen tyyppi on riippuvainen
   käyttäjästä, joten se muutetaan kokonaisluvuksi ennen
   fib-funktion kutsua <code>int(x)</code>-kutsulla.
   Kokonaislukumuutos voi kuitenkin epäonnistua, jolloin
   <code>int(x)</code> nostaa <code>ValueError</code> poikkeuksen.
   Jotta käyttäjälle saadaan annettua sopiva virheviesti, niin
-  käsittelemme poikkeuksen <code>try</code>-<code>except</code> -rakenteen avulla. Pääohjelman
-  lopuksi kutsumme <code>fib</code> -funktiota syötteellä ja tulostamme sen
+  käsittelemme poikkeuksen <code>try</code>-<code>except</code>-rakenteen avulla. Pääohjelman
+  lopuksi kutsumme <code>fib</code>-funktiota syötteellä ja tulostamme sen
   palautusarvon.</p>
 
   <h2 id="chapter-2">2. Alkiorakenne</h2>
@@ -286,7 +285,7 @@ if __name__ == "__main__": # Pääohjelma
   "http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html">http://www.dcl.hpi.uni-potsdam.de/home/loewis/table-3131.html</a>.
   Merkit on jaoteltu kahteen osaan: ID_Start ja ID_Continue,
   excluding ID_Start. Näiden merkkijoukkojen yhdiste sisältää
-  kaikki unicode -merkit joita voi esiintyä python-tunnuksen
+  kaikki unicode-merkit joita voi esiintyä python-tunnuksen
   nimessä, siten että tunnuksen nimi voi alkaa vain ensimmäisen
   joukon merkillä. <a href="#ref-tunnukset-py3-spec">[2]</a></p>
 
@@ -328,7 +327,7 @@ Hyvin pyyhkii. No problemo, kun €-merkit vaihdettiin e-kirjaimiksi
   <h3 id="chapter-2-varatut-sanat">2.2. Varatut sanat</h3>
 
   <p>Seuraavassa listattuna (Python 3.0.1:n mukainen, tässä on
-  pieniä eroavaisuuksia 2.x -sarjan kanssa) varatut sanat <a href=
+  pieniä eroavaisuuksia 2.x-sarjan kanssa) varatut sanat <a href=
   "#ref-varatut-sanat-py3-spec">[1]</a> sen tarkemmin niitä
   esittelemättä.</p>
   <pre>
@@ -396,7 +395,7 @@ break      except     in         raise
   Kontrollirakenteissa totuusarvolausekkeita seuraa aina
   kaksoispiste ja lausekkeessa ei ole pakko käyttää sulkuja.</p>
 
-  <p>Alla olevissa esimerkeissä kaikki kolme <code>if</code> -rakennetta tekevät
+  <p>Alla olevissa esimerkeissä kaikki kolme <code>if</code>-rakennetta tekevät
   saman asian <i>(tulostavat sanat "spam" ja "ham")</i>:</p>
   <pre class="sh_python">
 if 1 == 1:
@@ -424,7 +423,7 @@ if 1 == 1: print("spam"); print("ham")
   alalla ei ole ollenkaan tavatonta, että ohjelmaa kehitetään
   ympäri maailmaa ja kehittäjien äidinkielet vaihtelevat suuresti.
   Tällöin on käytettävä jotakin yhteistä kieltä eli siis yleensä
-  englantia ja tämä unicode -tuki ei juurikaan auta. Toinen tilanne
+  englantia ja tämä unicode-tuki ei juurikaan auta. Toinen tilanne
   jolloin koodia ei varmaankaan haluta tehdä äidinkielellä on, jos
   tuotetaan avoimen lähdekoodin ratkaisuja. Muutoin saatetaan
   varsin tehokkaasti eliminoida iso osa käyttäjäyhteisön
@@ -435,7 +434,7 @@ if 1 == 1: print("spam"); print("ham")
   Kustannussyistä jatkokehitys saatettaisiin joissain tilanteissa
   haluta tuottaa jossakin edullisemmassa maassa, mutta tämä ei nyt
   olekaan mahdollista ilman huomattavaa käännöstyötä. Kun lisäksi
-  otetaan huomioon, että unicode -tuen sisällyttäminen tunnuksiin
+  otetaan huomioon, että unicode-tuen sisällyttäminen tunnuksiin
   monimutkaistaa kielen implementaatioiden toteuttamista, niin olen
   kyllä henkilökohtaisesti hieman skeptinen koko ominaisuuden
   järkevyydestä. En kyllä itse ainakaan ikinä ohjelmoisi
@@ -496,7 +495,7 @@ if 1 == 1: print("spam"); print("ham")
     <li>skriptikomento (annettuna tulkille <code>-c</code> komentoriviparametrin
     arvona)</li>
 
-    <li><code>exec()</code> tai <code>eval()</code> -funktioille merkkijonona annettu
+    <li><code>exec</code>- tai <code>eval</code>-funktioille merkkijonona annettu
     koodi</li>
   </ul>
 
@@ -506,7 +505,7 @@ if 1 == 1: print("spam"); print("ham")
   Samalla tasolla lohkossa sijaitsevat lauseet kirjoitetaan
   jokainen omalle riville käyttäen samaa sisennystä (tai tietenkin
   vaihtoehtoisesti kirjoittamalla kaikki samalle riville käyttäen
-  <code>;</code> -merkkiä erottimena).</p>
+  <code>;</code>-merkkiä erottimena).</p>
 
   <p>Lohkon määrittely voidaan aloittaa mm. seuraavilla sanoilla:
   <code>if, else, elif, for, while, try, except, finally, class,
@@ -522,7 +521,7 @@ if 1 == 1: print("spam"); print("ham")
   varattuja sanoja <code>nonlocal</code> ja <code>global</code>. Määreellä <code>nonlocal</code>
   vihjataan, että halutaan viitata näkyvyysaluehierarkiassa
   seuraavaan tasoon jolta tunnus löytyy. Vastaavasti
-  <code>global</code> -määreellä siirrytään suoraan etsimään tunnusta globaalilta
+  <code>global</code>-määreellä siirrytään suoraan etsimään tunnusta globaalilta
   näkyvyysalueelta.</p>
 
   <h3 id="chapter-3-sidonta">3.2. Sidonta</h3>
@@ -533,7 +532,7 @@ if 1 == 1: print("spam"); print("ham")
   Eli toisin sanoen eri näkyvyysalueilla olevat tunnukset
   määritellään, mutta niihin ei liitetä arvoa. Ajonaikaisesti
   voidaan määritellä uusia tunnuksia globaalille tasolle. On
-  kuitenkin huomioitava, että Python -funktioille ei voi määritellä
+  kuitenkin huomioitava, että Python-funktioille ei voi määritellä
   uusia lokaaleja tunnuksia funktion parsimisen jälkeen (eli
   lokaalit muuttujat määritellään staattisesti). Pythonin
   dokumentaatioissa [<a href="#ref-scopes-and-namespaces">30</a>] myös vihjataan, että staattisuutta tullaan
@@ -721,9 +720,9 @@ print(f(5)) # 25
 
   <h3 id="chapter-4-valinta">4.1. Valinta</h3>
 
-  <h4>4.1.1. <code>if</code> -lause</h4>
+  <h4>4.1.1. <code>if</code>-lause</h4>
 
-  <p><code>if</code> -lause koostuu kolmesta eri osasta
+  <p><code>if</code>-lause koostuu kolmesta eri osasta
   <code>if</code>, <code>elif</code>, <code>else</code>.</p>
   <pre class="sh_python">
 x = int(input("Please enter an integer: "))
@@ -744,23 +743,23 @@ Please enter an integer: <strong>42</strong>
 More
 </pre>
 
-  <p><code>elif</code> -osioita voi yhdessä lauseessa olla
-  mielivaltainen määrä tai ei yhtään. Myös <code>else</code> -osan
+  <p><code>elif</code>-osioita voi yhdessä lauseessa olla
+  mielivaltainen määrä tai ei yhtään. Myös <code>else</code>-osan
   käyttö on vapaaehtoista. Python ei tue monista muista kielistä
-  tuttua switch/case -rakennetta vaan tämä tulee toteuttaa
+  tuttua switch-case-rakennetta vaan tämä tulee toteuttaa
   if-rakenneella [<a href="#ref-controlflow">8</a>].</p>
 
   <h3 id="chapter-4-toisto">4.2. Toisto eli iteraatio</h3>
 
-  <p>Myös toistolausekkeilla on Pythonissa else -lause [<a href=
-  "#ref-controlflow">8</a>], joka suoritetaan jos <code>for</code>
-  -lauseessa lista loppuu tai jos <code>while</code> -lause saa
-  arvon <code>False</code>. <code>else</code> -lohkoa ei suoriteta
-  jos toistolauseesta poistutaan <code>break</code> -lauseella.</p>
+  <p>Myös toistolausekkeilla on Pythonissa else-lause [<a href=
+  "#ref-controlflow">8</a>], joka suoritetaan jos <code>for</code>-lauseessa
+  lista loppuu tai jos <code>while</code>-lause saa
+  arvon <code>False</code>. <code>else</code>-lohkoa ei suoriteta
+  jos toistolauseesta poistutaan <code>break</code>-lauseella.</p>
 
-  <h4>4.2.1. <code>for</code> -lause</h4>
+  <h4>4.2.1. <code>for</code>-lause</h4>
 
-  <p>for -lausetta käytetään iterointiin. Lause käyttää hyväkseen
+  <p><code>for</code>-lausetta käytetään iterointiin. Lause käyttää hyväkseen
   annetun objektin iteraattoria, jota se käy järjestyksessä läpi
   kunnes viimeinen arvo on saavutettu. Muista kielistä poiketen
   tässä rakenteessa ei voi erikseen määritellä iteraatioaskelta tai
@@ -776,9 +775,9 @@ for x in a:
 cat 3
 window 6
 defenestrate 12
-</pre>Seuraavassa <code>for</code> -lauseessa puretaan listassa
-olevat monikot ja käytetään <code>string</code> -luokasta löytyvää
-korvausoperaatiota, joka muuttaa <code>{}</code> -merkkien välistä
+</pre>Seuraavassa <code>for</code>-lauseessa puretaan listassa
+olevat monikot ja käytetään <code>string</code>-luokasta löytyvää
+korvausoperaatiota, joka muuttaa <code>{}</code>-merkkien välistä
 löytyvä kohdat halutuiksi.
   <pre class="sh_python">
 animals = [ ('Cat', 'Meow'),
@@ -797,7 +796,7 @@ Dog says Woof!
 </pre>
 
   <p>Haluttaessa toistaa tietty koodi useampaan kertaan voidaan
-  käyttää hyväksi esim. <code>range()</code> -funktiota, joka
+  käyttää hyväksi esimerkiksi <code>range</code>-funktiota, joka
   tuottaa halutun kokoisen kokonaislukuiteraattorin.</p>
   <pre class="sh_python">
 for i in range(5):
@@ -813,13 +812,13 @@ for i in range(5):
 4
 </pre>
 
-  <h4>4.2.2. <code>while</code> -lause</h4>
+  <h4>4.2.2. <code>while</code>-lause</h4>
 
-  <p><code>while</code> -lausetta käytetään suorittamaan lauseessa
+  <p><code>while</code>-lausetta käytetään suorittamaan lauseessa
   olevaa koodia niin pitkään kun jatkamisehto pysyy totena
   [<a href="#ref-compoundstatement">9</a>]. Pythonissa ei ole
-  erillistä loppuehtoista do/while -lausetta. Sama tulos voidaan
-  kuitenkin saavuttaa muotoilemalla <code>while</code> -lause
+  erillistä loppuehtoista do-while-lausetta. Sama tulos voidaan
+  kuitenkin saavuttaa muotoilemalla <code>while</code>-lause
   oikein (esim. <code>while True:</code> ja sisällä tarkistus
   <code>if condition: break</code>)</p>
   <pre class="sh_python">
@@ -839,12 +838,12 @@ Loopissa
 Loopin else
 </pre>
 
-  <h4>4.2.3. <code>continue</code> &amp; <code>break</code> -lauseet</h4>
+  <h4>4.2.3. <code>continue</code> &amp; <code>break</code>-lauseet</h4>
 
-  <p><code>continue</code> -lause hyppää toistorakenteessa suoraan
+  <p><code>continue</code>-lause hyppää toistorakenteessa suoraan
   toistorakenteen seuraavalle iteraatiokierrokselle. Tätä voidaan
   käyttää siis, kun halutaan ohittaa osa toistorakenteen koodista
-  juuri tällä suorituskerralla. <code>break</code> -lause lopettaa
+  juuri tällä suorituskerralla. <code>break</code>-lause lopettaa
   toistorakenteen suorittamisen ilman ns. pysäytysehdon täyttymistä
   [<a href="#ref-compoundstatement">9</a>].</p>
 
@@ -869,8 +868,8 @@ Loopin else
   <p>Rekursion syvyys on rajoitettu Pythonissa. Tyypillisessä
   Pythonin implementaatiossa raja-arvo on 1000. Raja estää ikuista
   silmukkaa aiheuttamasta ylivuotoa C:n pinossa ja kaatamasta
-  Pythonia [<a href="#ref-library-sys">10</a>]. <code>sys</code>
-  -moduulista löytyvät mekanismit, joilla voidaan selvittää
+  Pythonia [<a href="#ref-library-sys">10</a>]. <code>sys</code>-moduulista
+  löytyvät mekanismit, joilla voidaan selvittää
   maksimaalinen rekursiosyvyys
   (<code>sys.getrecursionlimit()</code>) tai asettaa se
   (<code>sys.setrecursionlimit(int)</code>). Rekursiosyvyyden
@@ -893,13 +892,13 @@ def fib(n):
   eduista ja haitoista</h3>
 
   <p>Muista ohjelmointikielistä tutut <code>do/while</code>- ja
-  <code>switch/case</code> -lauseet on jätetty pois ja niitä ei ole
+  <code>switch/case</code>-lauseet on jätetty pois ja niitä ei ole
   toteutettu perustellusta syystä. Samat toiminnallisuudet
   pystytään toteuttamaan jo olemassa olevalla syntaksilla.
   Toisaalta esimerkiksi Javasta tuttu
   <code>switch-case-break</code>, jossa myös ehdon täyttävän kohdan
-  jälkeen tulevat kohdat suoritetaan ellei <code>switch</code>
-  -lauseesta poistuta erikseen <code>break</code> -lauseella,
+  jälkeen tulevat kohdat suoritetaan ellei <code>switch</code>-lauseesta
+  oistuta erikseen <code>break</code>-lauseella,
   saattaa olla hiukan työläämpää toteuttaa Pythonilla.</p>
 
   <p>Rekursio toimii Pythonissa, mutta esimerkiksi kielen
@@ -1090,10 +1089,10 @@ def fib(n):
     </tr>
   </table>
 
-  <p>**** Unicode -merkkijonot koostuvat 16 tai 32-bittisisitä
-  unicode -merkeistä. Koko riippuu siitä käytetäänkö
+  <p>**** Unicode-merkkijonot koostuvat 16- tai 32-bittisisitä
+  unicode-merkeistä. Koko riippuu siitä käytetäänkö
   implementaatiossa/ympäristössä UCS-2 vai UCS-4. Suurimman tuetun
-  unicode -merkin arvon voi kysyä näin:<br>
+  unicode-merkin arvon voi kysyä näin:<br>
   sys.maxunicode.</p>
 
   <p>Joukkotyypit:</p>
@@ -1215,10 +1214,10 @@ game()
   -->
 
   <p>Muuttujan tyypin voi tarvittaessa tarkistaa
-  <code>isinstance</code> -funktiolla. <code>isinstance</code>
+  <code>isinstance</code>-funktiolla. <code>isinstance</code>
   tarkistaa onko sille parametrina annettu muuttuja parametrina
   annetun tyypin tai luokan instanssi. Seuraavassa esimerkkejä sen
-  käytöstä Python -konsolissa:</p>
+  käytöstä Python-konsolissa:</p>
   <pre>
 &gt;&gt;&gt; isinstance(42, str)
 False
@@ -1288,7 +1287,7 @@ def funktio(viesti):
 
   <p>Pythonissa kaikki funktiot palauttavat arvon, myös sellaisissa
   tapauksissa, kun funktiolla ei ole <i>return</i> lausetta. Ilman
-  <code>return</code> -lausetta funktiot palauttavat arvon <code>None</code>. [<a href=
+  <code>return</code>-lausetta funktiot palauttavat arvon <code>None</code>. [<a href=
   "#ref-funktiot">16</a>]</p>
 
   <h3 id="chapter-6-parametrivalitys">6.2 Parametrivälitys</h3>
@@ -1300,7 +1299,7 @@ def funktio(viesti):
   kutsutaan <em>immutaabeliksi</em> olioksi. Olion muuttumattomuus
   määräytyy sen tyypin mukaan. Esimerkiksi numeeriset tyypit,
   stringit ja monikot ovat muuttumattomia, mutta <code>dict</code>- ja
-  <code>list</code> -rakenteet ovat muuttuvia.</p>
+  <code>list</code>-rakenteet ovat muuttuvia.</p>
 
   <p>Seuraavassa esimerkki parametrinvälityksestä:</p>
   <pre class="sh_python">
@@ -1359,7 +1358,7 @@ muuta3 jälkeen x arvo on spam spam spam
   parametrimuuttujan paikallisen kopion arvon.
   <code>muuta2</code>-funktio muuttaa onnistuneesti listaparametrin
   arvoksi <code>[1, 2, 3]</code> käyttämällä listaolion
-  <code>append</code> -metodia.</p>
+  <code>append</code>-metodia.</p>
 
   <p>String-tyyppi on Pythonissa muuttumaton, joten muuta3-funktion
   tyylinen stringin uudelleensijoitus parametriin ei myöskään
@@ -1372,7 +1371,7 @@ muuta3 jälkeen x arvo on spam spam spam
   sisältävä listamuuttuja. Vastaavasti nimetyt parametrit otetaan
   käyttöön <code>**kwargs</code> syntaksilla, jossa
   <code>kwargs</code> sisältää nimetyt parametrit
-  <code>dict</code> -avain-arvorakenteessa. Seuraavassa esimerkki
+  <code>dict</code>-avain-arvorakenteessa. Seuraavassa esimerkki
   niiden käytöstä:</p>
   <pre class="sh_python">
 def tulosta_kaikki(a, b, *c, **d):
@@ -1612,12 +1611,12 @@ Tämä printataan aina
   
   <p>Generaattorit ovat yksinkertainen työkalu iteraattorien
   luomiseen [<a href="#ref-generators">29</a>], joita voi tietenkin luoda muillakin keinoilla. Ne luodaan samaan
-  tapaan kuin tavalliset funktiot, mutta niissä käytetään <code>return</code>
-  -lauseen sijasta <code>yield</code> -lausetta. Kutsuttaessa
-  generaattorin <code>next()</code> -funktiota, se jatkaa suoritusta siitä mihin
-  se edellisellä kerralla jäi ja palauttaa arvon kohdatessaan jälleen <code>yield</code> -lauseen.</p>
+  tapaan kuin tavalliset funktiot, mutta niissä käytetään <code>return</code>-lauseen
+  sijasta <code>yield</code>-lausetta. Kutsuttaessa
+  generaattorin <code>next()</code>-funktiota, se jatkaa suoritusta siitä mihin
+  se edellisellä kerralla jäi ja palauttaa arvon kohdatessaan jälleen <code>yield</code>-lauseen.</p>
   
-  <p>Generaattoreille luodaan automaattisesti iteraattoreista tyypillisesti löytyvät <code>__iter__()</code> ja <code>__next__()</code> -metodit. Suorituksen tila ja paikallisten muuttujien arvot jäävät muistiin. Generaattorien suorituksen loppuessa nostetaan automaattisesti <code>StopIteration</code> poikkeus, joka kertoo kutsujalle iteroinnin loppumisesta.</p>
+  <p>Generaattoreille luodaan automaattisesti iteraattoreista tyypillisesti löytyvät metodit <code>__iter__</code> ja <code>__next__</code>. Suorituksen tila ja paikallisten muuttujien arvot jäävät muistiin. Generaattorien suorituksen loppuessa nostetaan automaattisesti <code>StopIteration</code> poikkeus, joka kertoo kutsujalle iteroinnin loppumisesta.</p>
   
   <p>Seuraavaksi esimerkki fibonaccin lukujen laskemisesta generaattorin avulla:</p>
   <pre class="sh_python">
@@ -1844,7 +1843,7 @@ moniprosessitesti 2.04168510437
   Pythonissa lähdekooditiedosto muodostaa moduulin. Moduulin
   nimi on tiedostonimi ilman tiedostopäätettä <code>.py</code>.
   Ajettavan moduulin nimeä voi moduulissa kysyä
-  <code>__name__</code> -metodilla. Moduulin tarkoitus on koota
+  <code>__name__</code>-metodilla. Moduulin tarkoitus on koota
   yhteen määrittelyitä (funktioita, luokkia, muuttujia). Moduuli
   voidaan sitten jostakin toisaalta (esimerkiksi toisesta
   moduulista) pyytää käytettäväksi. Moduuli voidaan pyytää käyttöön
@@ -1875,7 +1874,7 @@ moduulissa_määritelty_funktio()
 </pre>
 
   <p>Yllä esitettyä tapaa elegantimpi tapa tuoda nimiä lokaaliin
-  nimiavaruuteen on käyttää <code>import</code> -lauseen
+  nimiavaruuteen on käyttää <code>import</code>-lauseen
   erityismuotoa. Voidaan sanoa <code>from module import
   moduulissa_määritelty_funktio</code>. Tämä ei toki ole aivan sama
   kuin yllä, sillä tässä tapauksessa vain ja ainoastaan tämä yksi
@@ -1885,8 +1884,8 @@ moduulissa_määritelty_funktio()
 
   <p>Jos kuitenkin kaikki moduulin nimet halutaan tuoda toisen
   moduulin lokaaliin nimiavaruuteen sellaisenaan, niin tämäkin on
-  mahdollista. Tällöin käytetään edellisen <code>import</code>
-  -lauseen variantin erikoismuotoa. Eli sanomme: <code>from moduuli
+  mahdollista. Tällöin käytetään edellisen <code>import</code>-lauseen
+  variantin erikoismuotoa. Eli sanomme: <code>from moduuli
   import *</code>.</p>
 
   <p>Python ei ilmeisesti tue piirreluokkia (<em>eng. trait</em>).
@@ -1937,7 +1936,7 @@ Moduulissa 1 määritelty
   seuraavanlaisia asioita. Monista moduuleista muodostuvan kokonaisuuden voi koota
   paketiksi. Paketit ovat erityistä tiedostorakennetta noudattavia
   hakemistoja. Pakein nimi on sen juurihakemiston nimi.
-  Juurikansion tulee sisältää __init__.py -tiedosto sen merkiksi,
+  Juurikansion tulee sisältää <code>__init__.py</code>-tiedosto sen merkiksi,
   että kyseessä on paketti. Samoin myös kaikkien alikansioiden
   (joiden halutaan olevan osa pakettia) tulee sisältää tämä
   tiedosto. __init__.py voi kuitenkin olla tyhjä. Esimerkki paketin
@@ -1998,8 +1997,8 @@ class ClassName:
   <p>Luokkamäärittelyihin pätee sama kuin funktioidenkin
   määrittelyihin: ne tulee suorittaa, ennen kuin niitä voidaan
   käyttää ohjelmassa. (Jos luokkamäärittely on laitettu
-  <code>if</code> -lauseen sisään, sitä ei voida käyttää ennen kuin
-  <code>if</code> -lause on suoritettu) Kun luokkamäärittelystä
+  <code>if</code>-lauseen sisään, sitä ei voida käyttää ennen kuin
+  <code>if</code>-lause on suoritettu) Kun luokkamäärittelystä
   poistutaan normaalisti, syntyy luokkaolio. [<a href=
   "#ref-classdefinition">24</a>]</p>
 
@@ -2009,7 +2008,7 @@ class ClassName:
   <code>this</code>-käskyä. Sillä viitataan luokan nykyiseen
   ilmentymään. Se tulee antaa jokaisessa metodimäärittelyssä
   metodin ensimmäiseksi parametriksi, vaikka kutsuttaessa metodia
-  <code>self</code> -parametrille ei anneta arvoa (Python hoitaa
+  <code>self</code>-parametrille ei anneta arvoa (Python hoitaa
   itse tämän). <code>self</code> ei ole varattu sana, joten sen
   tilalla voitaisiin käyttää muutakin, mutta koodin luettavuuden
   vuoksi sen käyttöä suositellaan.</p>
@@ -2081,7 +2080,7 @@ x.r, x.i #tulostaa: (3, 4)
 
   <p>Yksinkertainen metodikutsu:</p>
   <pre class="sh_python">
-x.metodi() #Luokka -esimerkissä palauttaisi "spam"
+x.metodi() #Luokka-esimerkissä palauttaisi "spam"
 </pre>
 
   <p>Metodia ei ole kuitenkaan pakko aina kutsua suoraan.
@@ -2176,8 +2175,7 @@ class D(B, C):
   aiemmin on jo mainittu, on joko immutaabeli tai ei. Kutsuttu
   funktio ei voi muuttaa kutsujansa olioviitettä, eli esimerkiksi
   seuraavanlainen funktio ei pystyisi muuttamaan alkuperäistä
-  stringiä ollenkaan, vaan sen tulisi palauttaa viite uuteen string
-  -olioon.</p>
+  stringiä ollenkaan, vaan sen tulisi palauttaa viite uuteen string-olioon.</p>
   <pre class="sh_python">
 def muuta_str(s):
     s = "Uusi stringi" # funktion paikallinen muuttuja viittaamaan uuteen olioon
