@@ -46,8 +46,7 @@
     <li><a href="#chapter-1">Kielen taustaa ja
     miniesimerkki</a></li>
 
-    <li><a href="#chapter-2">Alkiorakenne – millaisista palikoista
-    ohjelmat rakennetaan</a></li>
+    <li><a href="#chapter-2">Alkiorakenne</a></li>
 
     <li><a href="#chapter-3">Tunnusten näkyvyysalueet</a></li>
 
@@ -70,6 +69,8 @@
   <p>Tämä Pythonin kevytspesifikaatio on toteutettu keväällä 2011 osana Helsingin yliopiston tietojenkäsittelytieteen laitoksen Ohjelmointikielten periaatteet -kurssia. Tämän työn tarkoituksena on antaa yleiskatsaus Python-kielen ominaisuuksista etenkin uusimman 3.x -kehityshaaran mukaisesti.</p>
 
   <h2 id="chapter-1">1. Kielen taustaa ja miniesimerkki</h2>
+  
+  <p>Tässä luvussa käsittelemme hieman kielen taustaa ja sen syntyä. Käymme lyhyesti läpi sen ominaisuuksia ja mahdollisia käyttökohteita. Lopuksi näytämme Pythonilla toteutetun Fibonaccin lukujonoa koskevan esimerkin.</p>
 
   <ol class="sub-toc">
     <li><span>1.1.</span><a href="#chapter-1-historia">Historia</a></li>
@@ -252,8 +253,11 @@ if __name__ == "__main__": # Pääohjelma
   lopuksi kutsumme <code>fib</code> -funktiota syötteellä ja tulostamme sen
   palautusarvon.</p>
 
-  <h2 id="chapter-2">2. Alkiorakenne – millaisista palikoista
-  ohjelmat rakennetaan</h2>
+  <h2 id="chapter-2">2. Alkiorakenne</h2>
+  
+  <p>Tässä luvussa käymme läpi millaisista osista ohjelmat rakennetaan. Kerromme
+  muutamista syntaksii liittyvistä seikoista kuten mm. omien tunnusten luontiin
+  liittyvät säännöt, listan varatuista sanoista.</p>
 
   <ol class="sub-toc">
     <li><span>2.1.</span><a href="#chapter-2-tunnukset">Tunnukset</a></li>
@@ -449,6 +453,8 @@ if 1 == 1: print("spam"); print("ham")
 
   <h2 id="chapter-3">3. Tunnusten näkyvyysalueet</h2>
   <!-- TODO: parempi ryhmittely ja otsikkojen nimet -->
+  
+  <p>Tässä luvussa kerromme miten ja missä itse määritellyt rakenteet ovat käytettävissä.</p>
 
   <ol class="sub-toc">
     <li><span>3.1.</span><a href="#chapter-3-lohkorakenne">Lohkorakenne</a></li>
@@ -700,7 +706,7 @@ print(f(5)) # 25
 
   <h2 id="chapter-4">4. Kontrollin ja/tai laskennan ohjaus</h2>
 
-  <p><em>miten perustoiminnallisuudet ilmaistaan</em></p>
+  <p>Tässä luvussa kerromme miten perustoiminnallisuudet ilmaistaan. Esittelemme millaisia mahdollisuuksia Pythonissa on valintaan, iteraatioon ja rekursioon liittyvissä asioissa.</p>
 
   <ol class="sub-toc">
     <li><span>4.1.</span><a href="#chapter-4-valinta">Valinta</a></li>
@@ -1878,17 +1884,30 @@ moduulissa_määritelty_funktio()
   esimerkki:</p>
   <pre class="sh_python">
 #!/usr/bin/python3.1
-#-*- coding: UTF-8 -*- # moduuli1.py class Luokka:
-from moduuli2 import tee_jotain def tee_jotain_muuta(self):
-print("Moduulissa 1 määritelty") def main(): l = Luokka()
-l.tee_jotain() l.tee_jotain_muuta() if __name__ == "__main__":
-main()
+#-*- coding: UTF-8 -*-
+# moduuli1.py
+
+class Luokka:
+    from moduuli2 import tee_jotain
+
+    def tee_jotain_muuta(self):
+        print("Moduulissa 1 määritelty")
+    
+def main(): 
+    l = Luokka()
+    l.tee_jotain()
+    l.tee_jotain_muuta()
+    
+if __name__ == "__main__":
+    main()
 
 #------------------------------
 
 #!/usr/bin/python3.1
-# -*- coding: UTF-8 -*- # moduuli2.py
-def tee_jotain(self): print("Moduulissa 2 määritelty")
+# -*- coding: UTF-8 -*-
+# moduuli2.py
+def tee_jotain(self):
+    print("Moduulissa 2 määritelty")
 </pre>
 
   <p>Suorittamalla moduuli1.py-moduulin skriptinä konsolissa,
