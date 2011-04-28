@@ -2185,10 +2185,18 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
 
   <p>Python on voimakas dynaaminen ohjelmointikieli, jolla on monia
   käyttökohteita. Sen tärkeimpiä ominaisuuksia ovat
-  helppolukuisuus, modulaarisuus, intuiivinen luokkamalli,
-  introspektio kyvyt, poikkeustenkäsittely, korkean tason
-  datatyypit, laaja standardi kirjasto ja laajennettavuus
-  C/C++-koodilla [<a href="#ref-about">20</a>].</p>
+  <ul>
+    <li>helppolukuisuus</li>
+    <li>modulaarisuus</li>
+    <li>intuiivinen luokkamalli</li>
+    <li>introspektio kyvyt</li>
+    <li>poikkeustenkäsittely</li>
+    <li>korkean tason datatyypit</li>
+    <li>laaja standardikirjasto</li>
+    <li>laajennettavuus C/C++-koodilla</li>
+    <li>ilmainen (opensource)</li>
+  </ul>
+  [<a href="#ref-about">20</a>]</p>
 
   <p>Pythonia käytetään usein skriptikielenä sen
   helppokäyttöisyyden ja joustavuuden takia. Esimerkiksi monet
@@ -2210,11 +2218,15 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
   <p>Pythonin dynaamisen tyypitysjärjestelmän kääntöpuoli on että
   mahdolliset virheet koodissa huomataan vasta suoritusaikana,
   syntaksivirheitä lukuun ottamatta, eikä käännösaikana kuten
-  monissa muissa kielissä. Python on nopea kieli tulkattavaksi
+  monissa muissa kielissä.</p>
+  
+  <p>Python on nopea kieli tulkattavaksi
   kieleksi, mutta joskus suoritusnopeuskriittinen koodi täytyy
   toteuttaa C/C++-laajennoksilla, jotta se olisi kelvollista. Tämä
   on usein hankalampaa kuin tavallisen Python-koodin
-  kirjoittaminen. Rinnakkaislaskentaa vaivaa Pythonissa GIL, joka
+  kirjoittaminen.</p>
+  
+  <p>Rinnakkaislaskentaa vaivaa Pythonissa GIL, joka
   estää säikeiden suorittamisen samanaikaisesti monella ytimellä.
   GILin poistaminen Pythonista on yhä avoin kysymys, johon ei näytä
   tulevan ratkaisua lähitulevaisuudessa.</p>
