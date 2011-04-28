@@ -66,7 +66,11 @@
 
   <h2 id="cahpter-0">Johdanto</h2>
   
-  <p>Tämä Pythonin kevytspesifikaatio on toteutettu keväällä 2011 osana Helsingin yliopiston tietojenkäsittelytieteen laitoksen Ohjelmointikielten periaatteet -kurssia. Tämän työn tarkoituksena on antaa yleiskatsaus Python-kielen ominaisuuksista etenkin uusimman 3.x-kehityshaaran mukaisesti.</p>
+  <p>Tämä Pythonin kevytspesifikaatio on toteutettu keväällä 2011 osana Helsingin
+  yliopiston tietojenkäsittelytieteen laitoksen Ohjelmointikielten periaatteet
+  -kurssia. Tämän työn tarkoituksena on antaa yleiskatsaus Python-kielen
+  ominaisuuksista. Dokumentaatiomme koskee ensisijaisesti Pythonin 3.x-kehityshaaraa,
+  mutta suurin osa pätee myös vanhempiinkin versioihin.</p>
 
   <h2 id="chapter-1">1. Kielen taustaa ja miniesimerkki</h2>
   
@@ -184,13 +188,13 @@
   Blender, kuvankäsittelyohjelma GIMP ja se on toinen valittavissa
   oleva skriptikieli Google Docsissa</p>
 
-  <p>Erilaisten kirjastojen <i>(NumPy, SciPy, Matplotlib, ...)</i>
+  <p>Erilaisten kirjastojen, muun muassa NumPy, SciPy, Matplotlib
   avulla Pythonia voidaan käyttää tehokkaasti tieteelliseen
   laskentaan.</p>
 
   <p>Monissa käyttöjärjestelmissä Python kuuluu
   peruskomponentteihin. Python löytyy muun muassa useimmista Linux
-  distribuutioista, OpenBSD:stä, ja Mac OS X:stä.</p>
+  distribuutioista, OpenBSD:stä ja Mac OS X:stä.</p>
 
   <h3 id="chapter-1-fibonacci">1.4. Fibonacci esimerkki</h3>
 
@@ -737,7 +741,7 @@ else:
     print('More')
 </pre>
 
-  <p>Edellinen koodi tulostaa esim.:</p>
+  <p>Edellinen koodi tuottaa esimerkiksi seuraavanlaisen tulosteen:</p>
   <pre>
 Please enter an integer: <strong>42</strong>
 More
@@ -751,7 +755,7 @@ More
 
   <h3 id="chapter-4-toisto">4.2. Toisto eli iteraatio</h3>
 
-  <p>Myös toistolausekkeilla on Pythonissa else-lause [<a href=
+  <p>Monista kielistä poiketen toistolausekkeilla on Pythonissa else-lause [<a href=
   "#ref-controlflow">8</a>], joka suoritetaan jos <code>for</code>-lauseessa
   lista loppuu tai jos <code>while</code>-lause saa
   arvon <code>False</code>. <code>else</code>-lohkoa ei suoriteta
@@ -1811,11 +1815,11 @@ moniprosessitesti 2.04168510437
   <p>
   Pythonia käytetään hyvin moninaisiin tarkoituksiin <a href="#ref-wiki-py-usage">[33]</a>.
   Siksipä Pythonin yhteydessä on vaikea puhua jostakin tietystä vallitsevasta arkkitehtonisesta
-  piirteestä, jota yleenäs noudatetaan. Pythonille ominaisena voidaan kuitenkin pitää esimerkiksi
+  piirteestä, jota yleensä noudatetaan. Pythonille ominaisena voidaan kuitenkin pitää esimerkiksi
   <em>duck typing</em>-paradigman käyttöä ja <em>EAFP</em>-tyyliä, joita jo käsiteltiinkin luvussa
   <a href="#chapter-5-stat-dyn-tyypitys">5.3. Staattinen tyypitys ~ dynaaminen tyypitys</a>. Tyypillisin
   syy miksi Python valitaan, johonkin ohjelmointiprojektiin lienee sen dynaamisuus ja laajennettavuus
-  (paljon valmmiita moduuleja). Täten ei liene ihme, että tyypilliset arkktehtuurit ovat enneminkin
+  (paljon valmmiita moduuleja). Täten ei liene ihme, että tyypilliset arkktehtuurit ovat ennemminkin
   ohjeistusta erittäin dynaamiseen, nopeaan (tuottaa) ja laajennettavaan ohjelmointiin.
   </p>
   
@@ -2195,7 +2199,7 @@ add_bananas(a) # a = ['apples', 'tomatoes', 'bananas']
 </pre>
 
   <p>Muuttujan arvon sijoittaminen eli arvon kopiointi suoritetaan
-  <code>copy</code> pakkauksen <code>copy</code>- tai
+  <code>copy</code>-pakkauksen <code>copy</code>- tai
   <code>deepcopy</code>-funktioilla [<a href="#ref-copy">20</a>].
   <code>copy</code>-funktio luo pinnallisen kopion saamastaan
   oliosta ja <code>deepcopy</code> on syväkopion. Pinnallinen kopio
