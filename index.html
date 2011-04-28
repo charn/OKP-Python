@@ -1821,7 +1821,7 @@ moniprosessitesti 2.04168510437
   <h3 id="chapter-7-raktyypit">7.1. Rakenteiset ja kapseloidut
   tyypit</h3>
 
-  <h4>Moduulit ja paketit</h4>
+  <h4>7.1.1. Moduulit ja paketit</h4>
 
   <p>Pythonissa lähdekooditiedosto muodostaa moduulin. Moduulin
   nimi on tiedostonimi ilman tiedostopäätettä <code>.py</code>.
@@ -1894,7 +1894,7 @@ Moduulissa 2 määritelty
 Moduulissa 1 määritelty
 </pre>
 
-  <h4>Paketit (<em>Packages</em>) ja alimoduulit
+  <h4>7.1.2. Paketit (<em>Packages</em>) ja alimoduulit
   (<em>submodules</em>)</h4>
 
   <p>Monista moduulien muodostaman kokonaisuuden voi koota
@@ -1972,7 +1972,7 @@ class ClassName:
   poistutaan normaalisti, syntyy luokkaolio. [<a href=
   "#ref-classdefinition">24</a>]</p>
 
-  <h4>Self</h4>
+  <h4>7.2.1. Self</h4>
 
   <p>Pythonissa <code>self</code> vastaa Javan
   <code>this</code>-käskyä. Sillä viitataan luokan nykyiseen
@@ -1997,7 +1997,7 @@ class Luokka:
   parametri2)</code>. [<a href="#ref-self">25</a>] [<a href=
   "#ref-method">26</a>]</p>
 
-  <h4>Luokkaoliot</h4>
+  <h4>7.2.2. Luokkaoliot</h4>
 
   <p>Luokkaoliot tukevat kahdenlaisia operaatioita:
   <i>attribuuttiviittauksia</i> ja <i>ilmentymien luomista</i>.
@@ -2036,7 +2036,7 @@ x = Luvut(3, 4)
 x.r, x.i #tulostaa: (3, 4)
 </pre>
 
-  <h4>Ilmentymäoliot</h4>
+  <h4>7.2.3. Ilmentymäoliot</h4>
 
   <p>Ilmentymäoliot eivät ymmärrä muuta kuin
   attribuuttiviittauksia. Attribuuttinimiä on kahdenlaisia:
@@ -2046,7 +2046,7 @@ x.r, x.i #tulostaa: (3, 4)
   paikalliset muuttujatkin, eli silloin kun niihin asetetaan jonkin
   arvo. [<a href="#ref-instanceobject">28</a>]</p>
 
-  <h4>Metodioliot</h4>
+  <h4>7.2.4. Metodioliot</h4>
 
   <p>Yksinkertainen metodikutsu:</p>
   <pre class="sh_python">
@@ -2070,7 +2070,7 @@ while True:
   <code>x.metodi</code> on <i>metodiolio</i> ja
   <code>Luokka.metodi</code> on <i>funktio-olio</i>.</p>
 
-  <h4>Periytyminen</h4>
+  <h4>7.2.5. Periytyminen</h4>
 
   <p>Pythonissa luokkaperiytyminen on toteutettu seuraavanlaisella
   syntaksilla:</p>
@@ -2092,7 +2092,7 @@ class Luokka(Yliluokka):
   syntaksilla tai Java-tyylisesti
   <code>super()</code>-funktiolla.</p>
 
-  <h4>Moniperiytyminen</h4>
+  <h4>7.2.6. Moniperiytyminen</h4>
 
   <p>Pythonissa on mahdollista periyttää luokka monesta luokasta.
   Yleinen syntaksi tähän on sama kuin yhden luokan periytymisessä
